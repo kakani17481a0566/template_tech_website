@@ -3464,6 +3464,7 @@
 	} 
 	}
 	
+	
 /* ----------------------------------------------------
 	COLOR SCHEMES
 ------------------------------------------------------- */
@@ -3883,3 +3884,41 @@
 	.videooverlay .general-title h2 {
 		color:#fff;
 	}
+/*titles*/
+	.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  max-width: 90%;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.video-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.video-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Optional fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}

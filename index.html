@@ -4,7 +4,7 @@
   
   <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
 
-  <title>NUEROPI PRIVATE TECH LIMITED</title>
+  <title>NUEROPI TECH PRIVATE  LIMITED</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
@@ -112,20 +112,24 @@
     
     
     <!-- Hero Section with Video in Background -->
-<div class="video-hero">
-  <video autoplay muted loop playsinline>
-    <source src="https://res.cloudinary.com/kakani7/video/upload/v1753160588/MSI/AdobeStock_1205291813_Video_HD_Preview_adxqvo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
+<video
+  id="video-carousel"
+  autoplay
+  muted
+  playsinline
+  preload="auto"
+  style="background-color: black; width: 100%; height: 100%; object-fit: cover;"
+></video>
+
+
 
 
 	<div class="white-wrapper">
     	<div class="container">
         	<div class="messagebox">
-            	<h2>Jollyany is Simple, <mark class="rotate">Powerful Theme, Amazing Theme, Superb Theme</mark> With Endless Possibilties</h2>
-                <p class="lead">Hey Everyone! We are Jollyany and we make really beautiful and amazing stuff. This can be used to describe what you do,<br>
-				how you do it, & who you do it for. Don’t Miss the Awesome Theme</p>
+            	<h2>NeuroPi is Powered by <mark class="rotate">Genetics, Neuroscience & AI</mark> for Precision Learning & Performance</h2>
+                <!-- <p class="lead">Hey Everyone! We are Jollyany and we make really beautiful and amazing stuff. This can be used to describe what you do,<br>
+				how you do it, & who you do it for. Don’t Miss the Awesome Theme</p> -->
                 <a class="btn btn-primary btn-lg" href="#">Purchase Now</a> <a class="btn btn-dark btn-lg" href="#">Tell Me More!</a>
             </div><!-- end messagebox -->
 		</div><!-- end container -->
@@ -668,6 +672,55 @@
 		});
 	});
   </script>
+
+  <script>
+  const videoList = [
+    "https://res.cloudinary.com/kakani7/video/upload/v1753160588/MSI/AdobeStock_1205291813_Video_HD_Preview_adxqvo.mp4",
+    "https://res.cloudinary.com/kakani7/video/upload/v1753362011/WhatsApp_Video_2025-07-24_at_13.14.45_57f1b5bf_winfru.mp4",
+    "https://res.cloudinary.com/kakani7/video/upload/v1753362011/WhatsApp_Video_2025-07-24_at_13.19.08_d98eabd5_kunjbn.mp4",
+    "https://res.cloudinary.com/kakani7/video/upload/v1753361192/MSI/VIDEOS/WhatsApp_Video_2025-07-24_at_13.20.29_b4d1cfbb_ydbsno.mp4",
+    "https://res.cloudinary.com/kakani7/video/upload/v1753361055/MSI/VIDEOS/Video_8_g0ie6a.mp4",
+    "https://res.cloudinary.com/kakani7/video/upload/v1753366472/MSI/VIDEOS/7_zckdua.mp4", 
+    "https://res.cloudinary.com/kakani7/video/upload/v1753361019/MSI/VIDEOS/Video_4_ch8gih.mp4",
+    "https://res.cloudinary.com/kakani7/video/upload/v1753361016/MSI/VIDEOS/Video_2_qqvipc.mp4"
+  ];
+
+  const videoElement = document.getElementById("video-carousel");
+  let currentIndex = 0;
+
+  function playVideo(index) {
+    if (!videoList[index]) {
+      console.error("Invalid video index:", index);
+      return;
+    }
+
+    videoElement.src = videoList[index];
+    videoElement.load();
+
+    videoElement.onloadedmetadata = () => {
+      videoElement.play().catch(err => {
+        console.warn("Autoplay error:", err);
+        // Skip and try next
+        currentIndex = (currentIndex + 1) % videoList.length;
+        playVideo(currentIndex);
+      });
+    };
+  }
+
+  videoElement.addEventListener("error", () => {
+    console.warn("Video failed to load, skipping...");
+    currentIndex = (currentIndex + 1) % videoList.length;
+    playVideo(currentIndex);
+  });
+
+  videoElement.addEventListener("ended", () => {
+    currentIndex = (currentIndex + 1) % videoList.length;
+    playVideo(currentIndex);
+  });
+
+  // Kick off
+  playVideo(currentIndex);
+</script>
 
 
   </body>
