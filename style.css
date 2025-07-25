@@ -189,6 +189,20 @@
 		clear:both;
 		margin-bottom:80px !important;
 	}
+	/* Prevent stretching */
+.navbar-brand img {
+  height: auto;
+  max-height: 70px;   /* You can adjust this */
+  width: auto;        /* Ensure width scales proportionally */
+  max-width: 100%;
+  object-fit: contain;
+}
+/* @media (max-width: 768px) {
+  .navbar-brand img {
+    max-height: 40px;
+  }
+} */
+
 /* ----------------------------------------------------
 	TOPBAR & HEADER
 ------------------------------------------------------- */
@@ -554,7 +568,18 @@
 	#footer-style-1 .widget .title h3 {
 		text-transform:none;
 	}
-	
+	.btn-gold {
+	background-color: #F7D069;
+	color: #1A4255;
+	border: none;
+	transition: all 0.3s ease;
+	}
+
+	.btn-gold:hover {
+		background-color: #ffffff;
+		color: #1A4255;
+}
+
 /* ----------------------------------------------------
 	SIDEBAR & WIDGETS
 ------------------------------------------------------- */
@@ -3920,5 +3945,76 @@
   to {
     opacity: 1;
     transform: translate(-50%, -50%);
+  }
+}
+.video-carousel-wrapper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#carouselVideo {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
+
+.video-carousel-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out;
+}
+
+.video-carousel-item.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+.video-carousel-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-tagline {
+  position: absolute;
+  bottom: 22%; /* ⬆️ Moved up from 10% */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem; /* ⬆️ Increased font size */
+  font-weight: 700;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem 2rem;
+  color: white;
+  text-align: center;
+  border-radius: 12px;
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.85);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  max-width: 90%;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    transform: translate(-50%, 30%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
   }
 }

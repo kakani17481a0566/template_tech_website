@@ -89,7 +89,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="index.html" class="navbar-brand">
-  <img src="https://res.cloudinary.com/kakani7/image/upload/v1753414605/MSI/LOGO/newlogo_ai_g_nrcusl.png" alt="MSI Logo" style="height: 80px;" />
+  <img src="https://res.cloudinary.com/kakani7/image/upload/v1753414605/MSI/LOGO/newlogo_ai_g_nrcusl.png" alt="MSI Logo"  />
 </a>
 
         		</div><!-- end navbar-header -->
@@ -112,14 +112,21 @@
     
     
     <!-- Hero Section with Video in Background -->
-<video
+<!-- <video
   id="video-carousel"
   autoplay
   muted
   playsinline
   preload="auto"
   style="background-color: black; width: 100%; height: 100%; object-fit: cover;"
-></video>
+></video> -->
+<!-- *videos* -->
+<div class="video-carousel-container">
+  <video id="carouselVideo" autoplay muted playsinline></video>
+  <div class="video-tagline" id="videoTagline"></div>
+</div>
+
+
 
 
 
@@ -213,7 +220,7 @@
                     <p>Accusantium quam, ultricies eget tempor id, aliquam eget nibh et. Maecen aliquam, risus at semper.</p>
                     </div>
                     <div class="col-lg-2">
-                    <a class="btn pull-right btn-default btn-lg margin-top" href="#">Purchase now!</a>
+                    <a class="btn pull-right btn-lg margin-top btn-gold" href="#">Purchase now!</a>
                     </div>
                 </div><!-- end messagebox -->
 		</div><!-- end container -->
@@ -673,7 +680,7 @@
 	});
   </script>
 
-  <script>
+  <!-- <script>
   const videoList = [
     "https://res.cloudinary.com/kakani7/video/upload/v1753160588/MSI/AdobeStock_1205291813_Video_HD_Preview_adxqvo.mp4",
     "https://res.cloudinary.com/kakani7/video/upload/v1753362011/WhatsApp_Video_2025-07-24_at_13.14.45_57f1b5bf_winfru.mp4",
@@ -720,7 +727,85 @@
 
   // Kick off
   playVideo(currentIndex);
+</script> -->
+<script>
+  const videos = [
+    {
+      src: "https://res.cloudinary.com/kakani7/video/upload/v1753160588/MSI/AdobeStock_1205291813_Video_HD_Preview_adxqvo.mp4",
+      tagline: "Welcome to the future of education"
+    },
+    {
+      src: "https://res.cloudinary.com/kakani7/video/upload/v1753362011/WhatsApp_Video_2025-07-24_at_13.14.45_57f1b5bf_winfru.mp4",
+      tagline: "Learning Differences Meet Personalised Solutions."
+    },
+    {
+      src: "https://res.cloudinary.com/kakani7/video/upload/v1753362011/WhatsApp_Video_2025-07-24_at_13.19.08_d98eabd5_kunjbn.mp4",
+      tagline: "Elevate Thinking, Enhance Learning, Excel Academically."
+    },
+    {
+      src: "https://res.cloudinary.com/kakani7/video/upload/v1753361192/MSI/VIDEOS/WhatsApp_Video_2025-07-24_at_13.20.29_b4d1cfbb_ydbsno.mp4",
+      tagline: "Precision Insights for Smarter Clinical Decisions."
+    },
+    {
+      src: "https://res.cloudinary.com/kakani7/video/upload/v1753361055/MSI/VIDEOS/Video_8_g0ie6a.mp4",
+      tagline: "Advancing Cognitive Resilience for Long-Duration Space Missions."
+    },
+    {
+      src: "https://res.cloudinary.com/kakani7/video/upload/v1753366472/MSI/VIDEOS/7_zckdua.mp4",
+      tagline: "Where Human Limits End, Precision Performance Begins."
+    },
+    {
+      src: "https://res.cloudinary.com/kakani7/video/upload/v1753361019/MSI/VIDEOS/Video_4_ch8gih.mp4",
+      tagline: "Precision Performance from the Inside Out"
+    },
+    {
+      src: "https://res.cloudinary.com/kakani7/video/upload/v1753361016/MSI/VIDEOS/Video_2_qqvipc.mp4",
+      tagline: "Personalizing Every Child’s Learning Journey"
+    }
+  ];
+
+  let index = 0;
+  const videoEl = document.getElementById("carouselVideo");
+  const taglineEl = document.getElementById("videoTagline");
+
+  function typeText(text, element, speed = 40, callback) {
+    element.innerHTML = ""; // Clear previous
+    let i = 0;
+
+    function typeChar() {
+      if (i < text.length) {
+        element.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeChar, speed);
+      } else if (callback) {
+        callback();
+      }
+    }
+
+    typeChar();
+  }
+
+  function playNext() {
+    const current = videos[index];
+    videoEl.src = current.src;
+    videoEl.load();
+    videoEl.onloadeddata = () => {
+      videoEl.play();
+      typeText(`“${current.tagline}”`, taglineEl);
+    };
+
+    videoEl.onended = () => {
+      index = (index + 1) % videos.length;
+      playNext();
+    };
+  }
+
+  // Start
+  playNext();
 </script>
+
+
+
 
 
   </body>
