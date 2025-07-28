@@ -3995,12 +3995,12 @@
   object-fit: cover;
 }
 
-.video-tagline {
+/* .video-tagline {
   position: absolute;
-  bottom: 22%; /* ⬆️ Moved up from 10% */
+  bottom: 22%; 
   left: 50%;
   transform: translateX(-50%);
-  font-size: 3rem; /* ⬆️ Increased font size */
+  font-size: 3rem; 
   font-weight: 700;
   background-color: rgba(0, 0, 0, 0.6);
   padding: 1rem 2rem;
@@ -4021,7 +4021,7 @@
   .video-tagline {
     font-size: 1.2rem;
   }
-}
+} */
 
 @media (max-width: 480px) {
   .video-carousel-wrapper {
