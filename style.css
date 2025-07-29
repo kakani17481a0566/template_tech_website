@@ -2771,7 +2771,7 @@
 		border-radius:500px !important;
 	}
 	.service-icon i {
-		color:#1A4255;
+		color:#00C9EA;
 	}
 	.little-padding {
 		padding:5px 0 0 !important;
@@ -2974,7 +2974,7 @@
 		color:#fff;
 	}
 	.calloutbox h2 {
-		font-size:28px;
+		font-size:34px;
 		padding:0;
 		margin:0;
 		text-transform:uppercase;
@@ -2985,6 +2985,9 @@
 		color:#fff;
 		padding:30px 20px 20px;
 		overflow:hidden;
+	}
+	.card-text{
+		font-size: 22px;
 	}
 	.calloutbox .btn-dark:hover {
 		background:#232323;
@@ -4276,3 +4279,4 @@ border-left:2px solid #FFD43B;
   color: #1A4255;
 }
 
+/* Hamburger Menu */
