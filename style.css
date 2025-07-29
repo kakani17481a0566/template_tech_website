@@ -424,7 +424,8 @@
 	.social-icons {
 		padding:0;
 		display:block; 
-		overflow:hidden
+		overflow:hidden;
+		
 	}
 	.social-icons span a {
 		/* border-left:1px solid #f2f2f2; */
