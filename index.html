@@ -149,7 +149,7 @@
             	<h2>What is <span>NeuroPi</span>?</h2>
                 <hr>
                 <p class="lead">NeuroPi is a precision neurogenomic and AI-driven technology suite that helps unlock the full potential of the human brain
-                  across every stage of life and every field of performance.  Whether you're a student, soldier, athlete, or executive, NeuroPi
+                  across every stage of life and every field of performance.  Whether you are a student, soldier, athlete, or executive, NeuroPi
                   helps you think sharper, train harder, perform better, and live smarter.
                 </p>
             </div><!-- end general title -->
@@ -247,12 +247,12 @@
         	<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
             	<div class="widget">
                 	<h3>WHY <span>NEUROPI</span> IS TRULY ONE-OF-KIND?</h3>
-                    <p>NeuroPi doesn’t just monitor your brain — it  <SPAN style="color:#FFD43B; font-weight: bold;"> understands it, learns from it,</SPAN> and<span  style="color:#FFD43B; font-weight: bold;"> helps you optimize it</span> with science-backed insights.</p>
+                    <p>NeuroPi doesn’t just monitor your brain — it  <SPAN style="color:#FFD43B; font-weight: bold;"> understands it, learns from it </SPAN> and <span  style="color:#FFD43B; font-weight: bold;"> helps you optimize it</span> with science-backed insights.</p>
                     <div id="accordion-first" class="clearfix">
                         <div class="accordion" id="accordion2">
                           <div class="accordion-group">
                             <div class="accordion-heading">
-                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                              <a class="accordion-toggle"   href="#collapseOne">
                                 <em class="fa fa-plus icon-fixed-width"></em>Neurogenomic Integration
                               </a>
                             </div>
@@ -270,7 +270,7 @@
                           </div>
                           <div class="accordion-group">
                             <div class="accordion-heading">
-                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                              <a class="accordion-toggle"   href="#collapseTwo">
                                 <em class="fa fa-plus icon-fixed-width"></em> Real-Time Brain & Cognitive Mapping
                               </a>
                             </div>
@@ -289,7 +289,7 @@
                           </div>
                           <div class="accordion-group">
                             <div class="accordion-heading">
-                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                              <a class="accordion-toggle"  href="#collapseThree">
                                 <em class="fa fa-plus icon-fixed-width"></em>AI-Powered Personalization
                               </a>
                             </div>
@@ -307,7 +307,7 @@
                           </div>
                           <div class="accordion-group">
                             <div class="accordion-heading">
-                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+                              <a class="accordion-toggle"  href="#collapseFour">
                                 <em class="fa fa-plus icon-fixed-width"></em>360º Human Optimization
                               </a>
                             </div>
@@ -325,7 +325,7 @@
                           </div>
                           <div class="accordion-group">
                             <div class="accordion-heading">
-                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
+                              <a class="accordion-toggle"   href="#collapseFive">
                                 <em class="fa fa-plus icon-fixed-width"></em>Built for Every Age, Every Role
                               </a>
                             </div>
@@ -343,7 +343,7 @@
                           </div> 
                           <div class="accordion-group">
                             <div class="accordion-heading">
-                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">
+                              <a class="accordion-toggle"   href="#collapseSix">
                                 <em class="fa fa-plus icon-fixed-width"></em>Ethical, Private, and Secure
                               </a>
                             </div>
@@ -894,6 +894,35 @@ function handleSwipe() {
   }
 }
 
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.accordion-toggle').on('click', function (e) {
+      e.preventDefault();
+
+      var target = $(this).attr('href');
+
+      // Check if target is already open
+      var isOpen = $(target).hasClass('in');
+
+      // Close all panels
+      $('.accordion-body').collapse('hide');
+
+      // Open only if it wasn't already open
+      if (!isOpen) {
+        $(target).collapse('show');
+      }
+
+      // Optional: Icon toggle (plus/minus)
+      $('.accordion-toggle em').removeClass('fa-minus').addClass('fa-plus'); // reset
+      if (!isOpen) {
+        $(this).find('em').removeClass('fa-plus').addClass('fa-minus'); // active icon
+      }
+    });
+  });
 </script>
 
 <!-- hamburger menu -->
