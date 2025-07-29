@@ -2739,6 +2739,20 @@
 	.services_vertical .icon-container {
 		float:left;
 	}
+	.service_vertical_box:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+/* Add padding to text content so it doesn't go under the floated icon */
+	.service_vertical_box h3,
+	.service_vertical_box p,
+	.service_vertical_box a.readmore {
+	margin-left: 100px;
+	display: block;
+	}
+
 	.icon-container {
 		border: 1px solid #FFFFFF;
 		border-radius: 100px;
