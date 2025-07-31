@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NeuroPi : Neurogenetics+AI</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      margin: 0;
+      padding: 60px 20px;
+      background-color: #f9f9f9;
+      color: #1a1a1a;
+    }
+
+    .section-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      max-width: 1200px;
+      margin: 0 auto 60px auto;
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .section-card.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .text-content {
+      flex: 1 1 500px;
+      max-width: 550px;
+    }
+
+    .text-content h2 {
+      font-size: 2rem;
+      color: #1A4255;
+      margin-bottom: 20px;
+    }
+
+    .text-content p {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      color: #333;
+    }
+
+    .text-content ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    .text-content li {
+      margin-bottom: 8px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 24px;
+      border: 2px solid #1A4255;
+      color: #1A4255;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #1A4255;
+      color: #fff;
+    }
+
+    .image-content {
+      flex: 1 1 500px;
+      text-align: center;
+    }
+
+    .image-content img,
+    .image-content video {
+      width: 100%;
+      max-width: 550px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: block;
+      height: auto;
+    }
+
+    .video-section {
+      max-width: 960px;
+      margin: 0 auto 60px;
+      border: 1px solid #ddd;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .video-section video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .section-card,
+      .section-card.reverse {
+        flex-direction: column;
+        padding: 24px;
+      }
+
+      .text-content h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Section 1: Image Right + Text Left -->
+  <section class="section-card">
+    <div class="text-content">
+      <h2>Unlocking Every Child’s Potential</h2>
+      <p>
+        Personalising the learning journey to optimise strengths and address potential challenges.
+      </p>
+      <p>
+        <strong>NeuroPi</strong> represents a cutting-edge, data-driven approach to early education—aligning teaching, health, nutrition, and emotional support with each child’s unique biology. Combining genomics, neuroscience, and AI, we help nurture every child’s full potential.
+      </p>
+      <p><strong>We identify strengths and vulnerabilities in:</strong></p>
+      <ul>
+        <li>🧠 Learning & Memory</li>
+        <li>🎯 Attention & Focus</li>
+        <li>💖 Emotional Regulation</li>
+        <li>🏃 Physical Performance</li>
+        <li>🍎 Nutritional Response</li>
+        <li>💊 Medication Compatibility</li>
+      </ul>
+      <p><strong>Who we serve:</strong></p>
+      <ul>
+        <li>🏫 K–12 Schools & EdTech partners</li>
+        <li>🩺 Paediatricians, clinicians, nutritionists, psychologists</li>
+        <li>⚽ Youth sports academies and performance centers</li>
+        <li>👨‍👩‍👧‍👦 High-performing families & neurodiverse learners</li>
+      </ul>
+      <a href="#register" class="cta-button">Register to Learn More</a>
+    </div>
+    <div class="image-content">
+      <img src="https://res.cloudinary.com/kakani7/image/upload/v1753806716/MSI/VIDEOS/images/WhatsApp_Image_2025-07-29_at_22.01.30_20f45ac8_esvmql.jpg" alt="Empowered child with mentor">
+    </div>
+  </section>
+
+  <!-- ✅ Section 2: Full-Width Standalone Video -->
+  <div class="video-section">
+    <video autoplay muted loop playsinline>
+      <source src="https://res.cloudinary.com/kakani7/video/upload/v1753361019/MSI/VIDEOS/Video_4_ch8gih.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- ✅ Section 3: Video Left + Text Right -->
+  <!-- <section class="section-card reverse">
+    <div class="image-content">
+      <video autoplay muted loop playsinline>
+        <source src="https://res.cloudinary.com/kakani7/video/upload/v1753361019/MSI/VIDEOS/Video_4_ch8gih.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="text-content">
+      <h2>Our Vision in Motion</h2>
+      <p>NeuroPi in action — experience how we bring AI-powered precision learning to life.</p>
+      <ul>
+        <li>🎬 Watch real classroom integrations</li>
+        <li>🤖 See technology support diverse learners</li>
+        <li>🌍 Explore global success stories</li>
+      </ul>
+      <a href="#learn-more" class="cta-button">Explore the Vision</a>
+    </div>
+  </section> -->
+
+  <!-- ✅ Section 4: Image Right + Text Left (Final Card) -->
+  <!-- <section class="section-card reverse">
+    <div class="text-content">
+      <h2>Unlocking Every Child’s Potential</h2>
+      <p>
+        Personalising the learning journey to optimise strengths and address potential challenges.
+      </p>
+      <p>
+        <strong>NeuroPi</strong> represents a cutting-edge, data-driven approach to early education—aligning teaching, health, nutrition, and emotional support with each child’s unique biology. Combining genomics, neuroscience, and AI, we help nurture every child’s full potential.
+      </p>
+      <p><strong>We identify strengths and vulnerabilities in:</strong></p>
+      <ul>
+        <li>🧠 Learning & Memory</li>
+        <li>🎯 Attention & Focus</li>
+        <li>💖 Emotional Regulation</li>
+        <li>🏃 Physical Performance</li>
+        <li>🍎 Nutritional Response</li>
+        <li>💊 Medication Compatibility</li>
+      </ul>
+      <p><strong>Who we serve:</strong></p>
+      <ul>
+        <li>🏫 K–12 Schools & EdTech partners</li>
+        <li>🩺 Paediatricians, clinicians, nutritionists, psychologists</li>
+        <li>⚽ Youth sports academies and performance centers</li>
+        <li>👨‍👩‍👧‍👦 High-performing families & neurodiverse learners</li>
+      </ul>
+      <a href="#register" class="cta-button">Register to Learn More</a>
+    </div>
+    <div class="image-content">
+      <img src="https://res.cloudinary.com/kakani7/image/upload/v1753806716/MSI/VIDEOS/images/WhatsApp_Image_2025-07-29_at_22.01.30_20f45ac8_esvmql.jpg" alt="Empowered child with mentor">
+    </div>
+  </section> -->
+
+</body>
+</html>
