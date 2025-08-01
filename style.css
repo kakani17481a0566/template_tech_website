@@ -5570,3 +5570,20 @@ mark,
 }
 
 
+.social-icons {
+  padding: 0;
+  display: block;
+  overflow: hidden;
+}
+
+.social-icons span a {
+  font-size: 14px;
+  text-align: center;
+  width: 40px;
+  height: 42px;
+  line-height: 42px;
+  overflow: hidden;
+  display: block;
+  float: left;
+  color: white; /* This ensures visibility on dark background */
+}
