@@ -5587,3 +5587,11 @@ mark,
   float: left;
   color: white; /* This ensures visibility on dark background */
 }
+
+.working-process-section {
+  margin-bottom: 150px;
+}
+.awards-section {
+  padding-top: 60px;
+}
+
