@@ -1222,7 +1222,6 @@
       "66d78f20fde2ae84afdc6040_optum-healthcare-logo.png.bv.webp",
       "800px-Genpact_logo.svg.png.bv.webp",
       "Accenture-Logo.jpg.bv.webp",
-      "Amaron-Logo.jpg.bv.webp",
       "Broadcom-Logo.jpg.bv.webp",
       "cognizant-1.png.bv.webp",
       "Cyient_logo-1.jpg.bv.webp",
@@ -1231,6 +1230,7 @@
       "hcl.png.bv.webp",
       "hhimachal.png.bv.webp",
       "hps.png.bv.webp",
+      "ICICI-Bank-Logo.jpg.bv.webp",
       "Infosys_logo.svg.png",
       "kidzen-logo.png",
       "KWE-Logo.jpg.bv.webp",
@@ -1241,36 +1241,37 @@
       "oracle_logo.png.bv.webp",
       "ppppresvas-1.png.bv.webp",
       "proeves-logo.png",
+      "QCIty.jpg.bv.webp",
       "Religare-Logo.jpg.bv.webp",
       "Samudara-Infra-Logo.jpg.bv.webp",
       "SSC_Technologies_logo.svg.png.bv.webp",
       "TCS-Logo.jpg.bv.webp",
+      "Tech-Mahindra-Logo.jpg.bv.webp",
       "TSWREIS-Logo.jpg.bv.webp",
       "TTWREIS-Logo.jpg.bv.webp",
       "ValueLabs_LLP_Logo-scaled.jpg.bv.webp",
-      "Vodafone-Logo-1.jpg.bv.webp",
       "Wells_Fargo_Logo_2020.svg.png",
       "wipro-2.png.bv.webp",
       "Xoriant-Logo.png.bv.webp",
       "Zinnia-Home-1.png"
     ];
 
-    // Sort logos alphabetically
-    logoFiles.sort();
+    logoFiles.sort(); // Sort alphabetically
 
     const ticker = document.getElementById("logoTicker");
 
+    // Append logos twice for continuous scroll
     const appendLogos = () => {
       logoFiles.forEach((file, index) => {
         const img = document.createElement("img");
-        img.src = "logo/" + file; // Adjust path as needed
+        img.src = "logo/" + file; // Ensure path is correct (e.g., /logo/filename.jpg)
         img.alt = "Logo " + (index + 1);
         ticker.appendChild(img);
       });
     };
 
-    appendLogos(); // Original
-    appendLogos(); // Duplicate
+    appendLogos();
+    appendLogos(); // Duplicate set for seamless scrolling
   </script>
 
 <script>
