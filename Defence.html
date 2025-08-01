@@ -115,7 +115,7 @@
             font-size: 2.5rem;
             color: #1A4255;
             margin-bottom: 20px;
-            font-weight: 700;
+            font-weight:700;
         }
 
         .text-content p {
@@ -123,7 +123,7 @@
             line-height: 1.7;
             margin-bottom: 16px;
             color: #008281;
-            font-weight: 400;
+            font-weight:400;
         }
 
         .text-content ul {
@@ -134,7 +134,6 @@
             padding-left: 0;
             margin-left: 0;
         }
-
         .text-content li {
             margin-bottom: 8px;
             font-size: 1.7rem;
@@ -187,40 +186,39 @@
             display: block;
         }
 
-        /* ✅ Apply vertical stacking ONLY for screens smaller than 768px */
-        @media (max-width: 767px) {
+      /* ✅ Apply vertical stacking ONLY for screens smaller than 768px */
+@media (max-width: 767px) {
+  .section-card,
+  .section-card.reverse {
+    flex-direction: column;
+    padding: 24px;
+  }
 
-            .section-card,
-            .section-card.reverse {
-                flex-direction: column;
-                padding: 24px;
-            }
+  .text-content h2 {
+    font-size: 2rem;
+  }
 
-            .text-content h2 {
-                font-size: 2rem;
-            }
+  .text-content p {
+    font-size: 1.3rem;
+  }
 
-            .text-content p {
-                font-size: 1.3rem;
-            }
+  .text-content li {
+    font-size: 1.2rem;
+  }
 
-            .text-content li {
-                font-size: 1.2rem;
-            }
+  .pill-tag {
+    font-size: 1.3rem;
+  }
 
-            .pill-tag {
-                font-size: 1.3rem;
-            }
-
-            .image-content img {
-                max-width: 100%;
-                height: auto;
-            }
-        }
-
+  .image-content img {
+    max-width: 100%;
+    height: auto;
+  }
+}
 
 
 
+        
 
         .pill-tag {
             background-color: #1A4255;
@@ -269,30 +267,51 @@
 
 
     <section class="section-card">
+        
 
         <div class="text-content">
-            <span class="pill-tag">Sports</span>
+            <span class="pill-tag">Defence</span>
 
-            <h2>Discovering Athletic Potential Before It’s Lost</h2>
-            <p>Young Athletes Often Miss Opportunities Due To Late Development Or Wrong-Fit Training</p>
-            <p>By turning data related to muscle composition, oxygen use, metabolism, and other factors, scientists
-                and coaches can personalize training plans and predict athletic performance, training responses,
-                injury risk, and recovery.</p>
-            <h2><strong>✅Benefits of <span class="neuro-title">NeuroPi<sup class="tm-badge">TM</sup> for Sports</strong></h2>
+            <h2>Precision Cognitive Readiness. Enhanced Human Performance.</h2>
+            <p>Personalising the learning journey to optimise strengths and address potential challenges.</p>
+            <p>In an age where human performance can define mission success or failure, 
+                <span class="neuro-title">NeuroPi<sup class="tm-badge">TM</sup> offers a secure, scalable, and science-backed solution to augment cognitive 
+                and emotional readiness at every level—from the battlefield to the control room. 
+                By integrating genetic data, cognitive analytics, and real-time performance monitoring, 
+                <span class="neuro-title">NeuroPi<sup class="tm-badge">TM</sup> supports mission-critical decisions, stress mitigation, and optimized training outcomes for defence, 
+                aerospace, and critical operations personnel.</p>
+            <h2>Use Cases in Defence</h2>
+            <h3>🧠 Cognitive Resilience & Stress Profiling</h3>
             <ul>
-                <li>🔎 Early identification of performance potential</li>
-                <li>🤖  AI-driven training and learning insights</li>
-                <li>🤾‍♂️ Sports development profiles</li>
-                <li>📄 Personalized training plans</li>
-                <li>🔄 Reduced overtraining</li>
-                <li>🥗 Customized nutrition</li>
-                <li>🛡️ Injury prevention programs</li>
-                <li>♻️ Tailored rehab and recovery strategies</li>
-                <li>📣 Talent alerts and multi-sport recommendations</li>
-                <li>🔒 Fully secure, parent-consented platform</li>
-
+                <li>• Genetic and neurobiological assessment of stress tolerance, cognitive fatigue, and burnout risk</li>
+                <li>• Early detection of susceptibility to PTSD, anxiety, or decision fatigue</li>
+                <li>• Deployment of personalized stress mitigation and recovery protocols</li>
             </ul>
-            
+            <h3>🏃 Human Performance Optimization</h3>
+            <ul>
+                <li>• Identify operators with natural strengths in reaction speed, vigilance, or multitasking</li>
+                <li>• Tailor training regimens and nutrition based on genetic markers</li>
+                <li>• Improve recovery times, endurance, and mental focus under duress</li>
+            </ul>
+            <h3>🎯 Role-Specific Talent Matching</h3>
+            <ul>
+                <li>• Genetic and cognitive alignment with mission-critical roles (e.g., drone operators, commanders, medics)</li>
+                <li>• Adaptive training tools based on neuroplasticity and learning styles</li>
+            </ul>
+            <h3>🛡️ Mental Health & Readiness Monitoring</h3>
+            <ul>
+                <li>• Real-time dashboards for tracking neurocognitive health pre- and post-deployment</li>
+                <li>• Integration with wearable data and behavioral analytics for performance loops</li>
+            </ul>
+
+            <h3>Defence Applications</h3>
+            <ul>
+                <li>🥷 Special Forces Human Augmentation Programs</br>(Stealth, performance, elite readiness)</li>
+                <li>✈️ Pilot and Operator Screening Protocols</br>(Aviation, drones, mission-critical operator roles)</li>
+                <li>🧠 Cognitive Health in Long-Term Deployment</br>(Brain health, endurance, psychological resilience)</li>
+                <li>🎖️ Precision Wellness in Veterans & Post-Service Transition</br>(Support, reintegration, personalized post-duty care)</li>
+            </ul>
+
             <a href="#register" class="cta-button">Register to Learn More</a>
         </div>
         <div class="image-content">
@@ -301,13 +320,13 @@
         </div>
     </section>
     <!-- ✅ Section 2: Full-Width Standalone Video -->
-    <div class="video-section">
+    <!-- <div class="video-section">
         <video autoplay muted loop playsinline>
             <source src="https://res.cloudinary.com/kakani7/video/upload/v1753361019/MSI/VIDEOS/Video_4_ch8gih.mp4"
                 type="video/mp4" />
             Your browser does not support the video tag.
         </video>
-    </div>
+    </div> -->
 
     <!-- ✅ Footer Section -->
     <footer id="footer-style-1">
