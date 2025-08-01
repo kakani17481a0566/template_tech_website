@@ -211,6 +211,7 @@
 </head>
 <body>
   <div class="container" id="register">
+    <button class="close-button" onclick="closeForm()" href="index.html">×</button>
     <h2>Registration Form</h2>
     <form action="#" method="post">
       <div class="form-group">
@@ -326,8 +327,8 @@
       button.textContent = selected.length > 0 ? selected.join(', ') : 'Select Interests';
     }
 
-    function closeForm() {
-      document.getElementById('register').style.display = 'none';
+     function closeForm() {
+      window.location.href = 'index.html'; // Redirect to index.html
     }
   </script>
 </body>
