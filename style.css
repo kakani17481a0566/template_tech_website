@@ -5595,3 +5595,51 @@ mark,
   padding-top: 60px;
 }
 
+/* ---------------------partners-------------- */
+.neuro-carousel-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .neuro-carousel-track {
+    display: flex;
+    width: max-content;
+    animation: scrollLeft 80s linear infinite;
+    gap: 40px;
+  }
+
+  .neuro-carousel-track img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+    /* filter: grayscale(100%); */
+    transition: filter 0.3s ease;
+  }
+
+  .neuro-carousel-track img:hover {
+    filter: grayscale(0%);
+  }
+
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Optional pause on hover */
+  .neuro-carousel-wrapper:hover .neuro-carousel-track {
+    animation-play-state: paused;
+  }
+
+  @media (max-width: 600px) {
+    .neuro-carousel-track img {
+      height: 40px;
+    }
+  }
