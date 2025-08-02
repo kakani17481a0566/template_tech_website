@@ -4648,6 +4648,16 @@ mark,
 	background-color: rgba(0, 0, 0, 0.4);
 }
 
+#videobgfull video {
+  object-fit: cover;
+}
+
+.videooverlay {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
 .videooverlay .general-title h2 {
 	color: #fff;
 }

@@ -487,7 +487,14 @@
     </div><!-- end container -->
   </div><!-- end grey-wrapper -->
 
-  <div id="videobgfull">
+<div id="videobgfull" style="position: relative; overflow: hidden;">
+
+<video autoplay muted loop playsinline
+  style="position: absolute; top: 0; left: 0; min-width: 100%; min-height: 100%; object-fit: cover; z-index: -1;">
+  <source src="https://res.cloudinary.com/kakani7/video/upload/f_auto,q_auto/v1754130590/MSI/VIDEOS/5669506_Coll_wavebreak_Animation_1920x1080_fpdieo.mov" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
     <div class="videooverlay">
       <div class="container">
         <div class="general-title">
@@ -1039,22 +1046,6 @@
   <script type="text/javascript" src="js/video_background.js"></script>
 
 
-  <script>
-    jQuery(document).ready(function ($) {
-      var Video_back = new video_background($("#videobgfull"), {
-        "position": "absolute",	//Stick within the div
-        "z-index": "-1",		//Behind everything
-        "loop": true, 			//Loop when it reaches the end
-        "autoplay": true,		//Autoplay at start
-        "muted": true,			//Muted at start
-        "youtube": "hT6eSm-UhiM",	//Youtube video id
-        "start": 5,					//Start with 6 seconds offset (to pass the introduction in this case for example)
-        "video_ratio": 1.7778, 		// width/height -> If none provided sizing of the video is set to adjust
-        "fallback_image": "videos/main.jpg",	//Fallback image path
-      });
-    });
-  </script>
-
 
 
   <!-- videos and navigation buttons -->
@@ -1315,6 +1306,32 @@
       }
     }
   </script>
+<script>
+  const video = document.getElementById("bgVideo");
+
+  // Catch general video element errors
+  video.addEventListener("error", function (e) {
+    console.error("❌ Video element error:", e);
+    alert("⚠️ Video failed to load. Please check the file path or format.");
+  });
+
+  // Catch source load errors
+  const source = video.querySelector("source");
+  source.onerror = function (e) {
+    console.error("❌ Video source error:", e);
+    alert("⚠️ Video source could not be loaded.");
+  };
+
+  // Optional: Log success once video starts playing
+  video.addEventListener("playing", function () {
+    console.log("✅ Background video is playing successfully.");
+  });
+
+  // Optional: Log when the video is ready
+  video.addEventListener("canplaythrough", function () {
+    console.log("🎥 Video loaded and ready to play through.");
+  });
+</script>
 
 
 </body>
