@@ -293,59 +293,91 @@
         }
       }
 
-      
+      /* */
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1000;
+      }
 
-/* */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: none;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1000;
-}
+      /* Blur and darken background */
+      .modal::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(8px);
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+      }
 
-/* Blur and darken background */
-.modal::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(8px);
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 1;
-}
+      /* Fullscreen iframe with no padding */
+      .modal-content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        background: none;
+      }
 
-/* Fullscreen iframe with no padding */
-.modal-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  background: none;
-}
+      /* Close button on top right */
+      .close-button {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 32px;
+        color: white;
+        background: transparent;
+        border: none;
+        z-index: 3;
+        cursor: pointer;
+      }
 
-/* Close button on top right */
-.close-button {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 32px;
-  color: white;
-  background: transparent;
-  border: none;
-  z-index: 3;
-  cursor: pointer;
-}
+      .form_closebutton {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 36px;
+        height: 36px;
+        background-color: #ffd43b;
+        color: #1a4255;
+        border: none;
+        border-radius: 50%;
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 100;
+        transition: all 0.2s ease-in-out;
+        box-shadow: 0 2px 6px #1a4255;
+      }
 
+      .form_closebutton:hover,
+      .form_closebutton:focus {
+        background-color: #ffbb00;
+        color: #d00000;
+        transform: scale(1.05);
+        outline: none;
+      }
 
+      .form_closebutton:active {
+        transform: scale(0.95);
+        box-shadow: 0 1px 3px #1a4255;
+      }
     </style>
   </head>
 
@@ -380,45 +412,72 @@
       </div>
     </header>
 
-   <section class="section-card">
+    <section
+      class="section-card reverse"
+      id="sportsCard"
+      style="position: relative; transition: opacity 0.3s ease"
+    >
+      <button class="form_closebutton" onclick="goBack()" aria-label="Close">×</button>
 
-        <div class="text-content">
-            <span class="pill-tag">Sports</span>
+      <div class="text-content">
+        <span class="pill-tag">Sports</span>
 
-            <h2>Discovering Athletic Potential Before It’s Lost</h2>
-            <p>Young Athletes Often Miss Opportunities Due To Late Development Or Wrong-Fit Training</p>
-            <p>By turning data related to muscle composition, oxygen use, metabolism, and other factors, scientists
-                and coaches can personalize training plans and predict athletic performance, training responses,
-                injury risk, and recovery.</p>
-            <h2><strong>✅Benefits of <span class="neuro-title">NeuroPi<sup class="tm-badge">TM</sup> for Sports</strong></h2>
-            <ul>
-                <li>🔎 Early identification of performance potential</li>
-                <li>🤖  AI-driven training and learning insights</li>
-                <li>🤾‍♂️ Sports development profiles</li>
-                <li>📄 Personalized training plans</li>
-                <li>🔄 Reduced overtraining</li>
-                <li>🥗 Customized nutrition</li>
-                <li>🛡️ Injury prevention programs</li>
-                <li>♻️ Tailored rehab and recovery strategies</li>
-                <li>📣 Talent alerts and multi-sport recommendations</li>
-                <li>🔒 Fully secure, parent-consented platform</li>
+        <h2>Discovering Athletic Potential Before It’s Lost</h2>
+        <p>
+          Young Athletes Often Miss Opportunities Due To Late Development Or
+          Wrong-Fit Training
+        </p>
+        <p>
+          By turning data related to muscle composition, oxygen use, metabolism,
+          and other factors, scientists and coaches can personalize training
+          plans and predict athletic performance, training responses, injury
+          risk, and recovery.
+        </p>
 
-            </ul>
+        <h2>
+          <strong
+            >✅ Benefits of
+            <span class="neuro-title"
+              >NeuroPi<sup class="tm-badge">TM</sup></span
+            >
+            for Sports</strong
+          >
+        </h2>
+        <ul>
+          <li>🔎 Early identification of performance potential</li>
+          <li>🤖 AI-driven training and learning insights</li>
+          <li>🤾‍♂️ Sports development profiles</li>
+          <li>📄 Personalized training plans</li>
+          <li>🔄 Reduced overtraining</li>
+          <li>🥗 Customized nutrition</li>
+          <li>🛡️ Injury prevention programs</li>
+          <li>♻️ Tailored rehab and recovery strategies</li>
+          <li>📣 Talent alerts and multi-sport recommendations</li>
+          <li>🔒 Fully secure, parent-consented platform</li>
+        </ul>
 
-            <a href="#register" class="cta-button" onclick="openModal()">Register to Learn More</a>
-        </div>
-        <div class="image-content">
-            <img src="https://res.cloudinary.com/kakani7/image/upload/v1753806716/MSI/VIDEOS/images/WhatsApp_Image_2025-07-29_at_22.01.30_20f45ac8_esvmql.jpg"
-                alt="Empowered child with mentor">
-        </div>
+        <a href="#register" class="cta-button" onclick="openModal()"
+          >Register to Learn More</a
+        >
+      </div>
+
+      <div class="image-content">
+        <img
+          src="https://res.cloudinary.com/kakani7/image/upload/v1753806716/MSI/VIDEOS/images/WhatsApp_Image_2025-07-29_at_22.01.30_20f45ac8_esvmql.jpg"
+          alt="Empowered child with mentor"
+        />
+      </div>
     </section>
+
     <!-- ✅ Section 2: Full-Width Standalone Video -->
     <div class="video-section">
-        <video autoplay muted loop playsinline>
-            <source src="https://res.cloudinary.com/kakani7/video/upload/v1753361019/MSI/VIDEOS/Video_4_ch8gih.mp4"
-                type="video/mp4" />
-            Your browser does not support the video tag.
-        </video>
+      <video autoplay muted loop playsinline>
+        <source
+          src="https://res.cloudinary.com/kakani7/video/upload/v1753361019/MSI/VIDEOS/Video_4_ch8gih.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
     </div>
 
     <!-- ✅ Footer Section -->
@@ -614,20 +673,20 @@
     <div class="dmtop">Scroll to Top</div>
 
     <!-- Registration Modal -->
- <div id="registrationModal" class="modal">
-  <div class="modal-overlay"></div> <!-- Blur effect -->
-  <div class="modal-content">
-    <span class="close-button" onclick="closeModal()">&times;</span>
-    <iframe
-      src="RegistrationForm.html"
-      width="100%"
-      height="100%"
-      frameborder="0"
-      style="border-radius: 8px"
-    ></iframe>
-  </div>
-</div>
-
+    <div id="registrationModal" class="modal">
+      <div class="modal-overlay"></div>
+      <!-- Blur effect -->
+      <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <iframe
+          src="RegistrationForm.html"
+          width="100%"
+          height="100%"
+          frameborder="0"
+          style="border-radius: 8px"
+        ></iframe>
+      </div>
+    </div>
 
     <!-- ✅ All Scripts -->
     <script src="js/jquery.js"></script>
@@ -673,6 +732,16 @@
         });
       });
     </script>
+    <!-- Form close  -->
+    <script>
+      function goBack() {
+        const section = document.getElementById("sportsCard");
+        section.style.opacity = "0";
+        setTimeout(() => {
+          window.location.href = "index.html#sports-section";
+        }, 300);
+      }
+    </script>
 
     <!-- Hamburger and Scroll -->
     <script>
@@ -702,6 +771,8 @@
           closeModal();
         }
       };
+
+      //
     </script>
   </body>
 </html>
