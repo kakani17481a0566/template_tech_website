@@ -114,8 +114,8 @@
         flex-wrap: wrap;
         align-items: center;
         gap: 40px;
+        position: relative; /* Needed for absolute positioning of close button */
       }
-
       .section-card.reverse {
         flex-direction: row-reverse;
       }
@@ -199,11 +199,11 @@
         display: block;
       }
       neuro-title {
-	position: relative;
-	display: inline-block;
-	font-weight: bold;
-	font-size: 1.5em;
-}
+        position: relative;
+        display: inline-block;
+        font-weight: bold;
+        font-size: 1.5em;
+      }
 
       /* ✅ Apply vertical stacking ONLY for screens smaller than 768px */
       @media (max-width: 767px) {
@@ -299,59 +299,93 @@
         }
       }
 
-      
+      /* */
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1000;
+      }
 
-/* */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: none;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1000;
-}
+      /* Blur and darken background */
+      .modal::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(8px);
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+      }
 
-/* Blur and darken background */
-.modal::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(8px);
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 1;
-}
+      /* Fullscreen iframe with no padding */
+      .modal-content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        background: none;
+      }
 
-/* Fullscreen iframe with no padding */
-.modal-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  background: none;
-}
+      /* Close button on top right */
+      .close-button {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 32px;
+        color: white;
+        background: transparent;
+        border: none;
+        z-index: 3;
+        cursor: pointer;
+      }
 
-/* Close button on top right */
-.close-button {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 32px;
-  color: white;
-  background: transparent;
-  border: none;
-  z-index: 3;
-  cursor: pointer;
-}
+      /* ----- Form Close button----- */
 
+      .form_closebutton {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 36px;
+        height: 36px;
+        background-color: #ffd43b;
+        color: #1A4255;
+        border: none;
+        border-radius: 50%;
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 100;
+        transition: all 0.2s ease-in-out;
+        box-shadow: 0 2px 6px #1A4255;
+      }
 
+      .form_closebutton:hover,
+      .form_closebutton:focus {
+        background-color: #ffbb00;
+        color: #d00000;
+        transform: scale(1.05);
+        outline: none;
+      }
+
+      .form_closebutton:active {
+        transform: scale(0.95);
+        box-shadow: 0 1px 3px #1A4255;
+      }
     </style>
   </head>
 
@@ -386,9 +420,11 @@
       </div>
     </header>
 
-    <section class="section-card">
+    <section class="section-card" id="infoCard">
+      <button class="form_closebutton" onclick="goBack()">×</button>
+
       <div class="text-content">
-        <span class="pill-tag">Early Education</span>
+        <span class="pill-tag">Early Early Education Education</span>
 
         <h2>Unlocking Every Child’s Potential</h2>
         <p>
@@ -396,12 +432,13 @@
           potential challenges.
         </p>
         <p>
-          <span class="neuro-title">NeuroPi<sup class="tm-badge">TM</sup></span> represents a cutting-edge, data-driven
-          approach to early education—aligning teaching, health, nutrition, and
-          emotional support with each child’s unique biology. Combining
-          genomics, neuroscience, and AI, we help nurture every child’s full
-          potential.
+          <span class="neuro-title">NeuroPi<sup class="tm-badge">TM</sup></span>
+          represents a cutting-edge, data-driven approach to early
+          education—aligning teaching, health, nutrition, and emotional support
+          with each child’s unique biology. Combining genomics, neuroscience,
+          and AI, we help nurture every child’s full potential.
         </p>
+
         <h2><strong>We identify strengths and vulnerabilities in:</strong></h2>
         <ul>
           <li>🧠 Learning & Memory</li>
@@ -411,6 +448,7 @@
           <li>🍎 Nutritional Response</li>
           <li>💊 Medication Compatibility</li>
         </ul>
+
         <h2><strong>Who we serve:</strong></h2>
         <ul>
           <li>🏫 K–12 Schools & EdTech partners</li>
@@ -418,6 +456,7 @@
           <li>⚽ Youth sports academies and performance centers</li>
           <li>👨‍👩‍👧‍👦 High-performing families & neurodiverse learners</li>
         </ul>
+
         <a href="#" class="cta-button" onclick="openModal()"
           >Register to Learn More</a
         >
@@ -634,20 +673,20 @@
     <div class="dmtop">Scroll to Top</div>
 
     <!-- Registration Modal -->
- <div id="registrationModal" class="modal">
-  <div class="modal-overlay"></div> <!-- Blur effect -->
-  <div class="modal-content">
-    <span class="close-button" onclick="closeModal()">&times;</span>
-    <iframe
-      src="RegistrationForm.html"
-      width="100%"
-      height="100%"
-      frameborder="0"
-      style="border-radius: 8px"
-    ></iframe>
-  </div>
-</div>
-
+    <div id="registrationModal" class="modal">
+      <div class="modal-overlay"></div>
+      <!-- Blur effect -->
+      <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <iframe
+          src="RegistrationForm.html"
+          width="100%"
+          height="100%"
+          frameborder="0"
+          style="border-radius: 8px"
+        ></iframe>
+      </div>
+    </div>
 
     <!-- ✅ All Scripts -->
     <script src="js/jquery.js"></script>
@@ -692,6 +731,16 @@
           fallback_image: "videos/main.jpg",
         });
       });
+    </script>
+
+    <!-- Form Close Button -->
+    <script>
+      function goBack() {
+        document.getElementById("infoCard").style.opacity = "0";
+        setTimeout(() => {
+          window.location.href = "index.html#early-education";
+        }, 300); // 300ms delay for fade effect
+      }
     </script>
 
     <!-- Hamburger and Scroll -->

@@ -18,6 +18,7 @@
     }
 
     .section-card {
+      position: relative;
       background-color: #fff;
       border: 1px solid #ddd;
       border-radius: 16px;
@@ -29,10 +30,39 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 40px;
+      transition: opacity 0.4s ease, transform 0.4s ease;
     }
 
     .section-card.reverse {
       flex-direction: row-reverse;
+    }
+
+    .section-card.fade-out {
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
+      height: 0;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 16px;
+      right: 24px;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: #1A4255;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .section-card.reverse .close-button {
+      right: auto;
+      left: 24px;
     }
 
     .text-content {
@@ -119,6 +149,15 @@
       .text-content h2 {
         font-size: 1.5rem;
       }
+
+      .close-button {
+        top: 8px;
+        right: 16px;
+      }
+
+      .section-card.reverse .close-button {
+        left: 16px;
+      }
     }
   </style>
 </head>
@@ -126,6 +165,7 @@
 
   <!-- ✅ Section 1: Image Right + Text Left -->
   <section class="section-card">
+    <button class="close-button" onclick="fadeOutSection(this)">×</button>
     <div class="text-content">
       <h2>Unlocking Every Child’s Potential</h2>
       <p>
@@ -165,8 +205,9 @@
     </video>
   </div>
 
-  <!-- ✅ Section 3: Video Left + Text Right -->
-  <!-- <section class="section-card reverse">
+  <!-- ✅ Section 3: Reversed Section with Close Button -->
+  <section class="section-card reverse">
+    <button class="close-button" onclick="fadeOutSection(this)">×</button>
     <div class="image-content">
       <video autoplay muted loop playsinline>
         <source src="https://res.cloudinary.com/kakani7/video/upload/v1753361019/MSI/VIDEOS/Video_4_ch8gih.mp4" type="video/mp4" />
@@ -183,40 +224,14 @@
       </ul>
       <a href="#learn-more" class="cta-button">Explore the Vision</a>
     </div>
-  </section> -->
+  </section>
 
-  <!-- ✅ Section 4: Image Right + Text Left (Final Card) -->
-  <!-- <section class="section-card reverse">
-    <div class="text-content">
-      <h2>Unlocking Every Child’s Potential</h2>
-      <p>
-        Personalising the learning journey to optimise strengths and address potential challenges.
-      </p>
-      <p>
-        <strong>NeuroPi</strong> represents a cutting-edge, data-driven approach to early education—aligning teaching, health, nutrition, and emotional support with each child’s unique biology. Combining genomics, neuroscience, and AI, we help nurture every child’s full potential.
-      </p>
-      <p><strong>We identify strengths and vulnerabilities in:</strong></p>
-      <ul>
-        <li>🧠 Learning & Memory</li>
-        <li>🎯 Attention & Focus</li>
-        <li>💖 Emotional Regulation</li>
-        <li>🏃 Physical Performance</li>
-        <li>🍎 Nutritional Response</li>
-        <li>💊 Medication Compatibility</li>
-      </ul>
-      <p><strong>Who we serve:</strong></p>
-      <ul>
-        <li>🏫 K–12 Schools & EdTech partners</li>
-        <li>🩺 Paediatricians, clinicians, nutritionists, psychologists</li>
-        <li>⚽ Youth sports academies and performance centers</li>
-        <li>👨‍👩‍👧‍👦 High-performing families & neurodiverse learners</li>
-      </ul>
-      <a href="#register" class="cta-button">Register to Learn More</a>
-    </div>
-    <div class="image-content">
-      <img src="https://res.cloudinary.com/kakani7/image/upload/v1753806716/MSI/VIDEOS/images/WhatsApp_Image_2025-07-29_at_22.01.30_20f45ac8_esvmql.jpg" alt="Empowered child with mentor">
-    </div>
-  </section> -->
+  <script>
+    function fadeOutSection(button) {
+      const section = button.closest('.section-card');
+      section.classList.add('fade-out');
+    }
+  </script>
 
 </body>
 </html>
