@@ -1,0 +1,152 @@
+/* === Header Layout === */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 10px 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(255, 255, 255, 0);
+  border-bottom: 1px solid #f2f2f2;
+}
+
+/* Transparent Header */
+.header.transparent {
+  background: transparent;
+  box-shadow: none;
+}
+
+.header.transparent .nav-links a,
+.header.transparent .menu-toggle .bar {
+  color: white;
+  background-color: white;
+}
+
+/* Scrolled Header */
+.header.scrolled {
+  background: white !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #ddd !important;
+}
+
+.header.scrolled .nav-links a {
+  color: #1a4255;
+}
+
+.header.scrolled .menu-toggle .bar {
+  background-color: #1a4255;
+}
+
+/* === Navbar Core === */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo img {
+  height: 120px;
+  width: auto;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  font-weight: 550;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'PT Sans', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background-color: #FFD43B;
+  color: #1a4255;
+  border-radius: 4px;
+}
+
+/* === Hamburger Toggle === */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+/* === Responsive Mobile Menu === */
+@media (max-width: 1024px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 250px;
+    padding: 10px 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 8px 8px;
+    z-index: 999;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links a {
+    color: #1a4255;
+  }
+
+  .header.transparent .nav-links {
+    background: #222;
+  }
+
+  .header.transparent .nav-links a {
+    color: white;
+  }
+
+  .header.scrolled .nav-links {
+    background: white;
+  }
+
+  .header.scrolled .nav-links a {
+    color: #1a4255;
+  }
+}
