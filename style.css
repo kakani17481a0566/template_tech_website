@@ -691,7 +691,7 @@ section::after {
 }
 
 .btn-gold {
-	background-color: #F7D069;
+	background-color: #ff471d;
 	color: #1A4255;
 	border: none;
 	transition: all 0.3s ease;
@@ -3433,7 +3433,7 @@ acronym {
 }
 
 .doc .yellow {
-	color: #F7C221 !important;
+	color: #ff471d !important;
 }
 
 .doc .milestone-details {
@@ -4184,22 +4184,22 @@ acronym {
 ------------------------------------------------------- */
 
 .arrow-left {
-	border-right-color: #f7c221;
+	border-right-color: #ff471d;
 }
 
 #bbpress-forums li.bbp-header,
 #bbpress-forums li.bbp-footer {
-	border-top-color: #f7c221 !important;
+	border-top-color: #ff471d !important;
 }
 
 .buddy_members .popover.top>.arrow:after,
 .buddy_carousel .popover.top>.arrow:after {
-	border-top: 10px solid #f7c221 !important;
+	border-top: 10px solid #ff471d !important;
 }
 
 .tp-bullets.simplebullets .bullet:hover,
 .tp-bullets.simplebullets .bullet.selected {
-	border-color: #f7c221 !important;
+	border-color: #ff471d !important;
 }
 
 .post-wrapper-top h2,
@@ -4235,16 +4235,16 @@ blockquote,
 .magnifier .btn-default:active,
 .service-icon-circle,
 .general-title hr {
-	border-color: #f7c221;
+	border-color: #ff471d;
 }
 
 #header-style-1 .dropdown-menu,
 #header-style-1 .yamm .dropdown.yamm-fw .dropdown-menu {
-	border-top-color: #f7c221 !important;
+	border-top-color: #ff471d !important;
 }
 
 #three-parallax .testimonial h3 {
-	color: #f7c221 !important;
+	color: #ff471d !important;
 }
 
 .blog_button,
@@ -4288,13 +4288,13 @@ a.readmore,
 .group_box i,
 #topbar .callus i,
 #topbar .topbar-cart i {
-	color: #f7c221;
+	color: #ff471d;
 }
 
 .timeline-badge.danger,
 .flex-control-paging li a.flex-active,
 .tparrows:hover {
-	background-color: #f7c221 !important;
+	background-color: #ff471d !important;
 }
 
 .demo_changer .demo-icon,
@@ -4396,7 +4396,7 @@ mark,
 #header-style-1 .navbar-default .navbar-nav>.open>a:hover,
 #header-style-1 .navbar-default .navbar-nav>.open>a:focus,
 #topbar .social-icons span a:hover {
-	background-color: #f7c221;
+	background-color: #ff471d;
 }
 
 .flex-direction-nav a,
@@ -4514,7 +4514,7 @@ mark,
 }
 
 #maintenance1 .yellow {
-	color: #F7C221 !important;
+	color: #ff471d !important;
 }
 
 #maintenance1 .subscribe .lead,
@@ -4873,14 +4873,14 @@ mark,
 	line-height: 1.5;
 	font-family: "Lato", sans-serif;
 	padding-left: 30px;
-	border-left-color: #FFD43B;
-	border-left: 2px solid #FFD43B;
+	border-left-color: #ff471d;
+	border-left: 2px solid #ff471d;
 
 }
 
 /* 🟧 Button */
 .read-button {
-	background-color: #FFD43B;
+	background-color: #ff471d;
 	color: #1A4255;
 	padding: 10px 22px;
 	text-decoration: none;
@@ -4893,7 +4893,7 @@ mark,
 }
 
 .read-button:hover {
-	background-color: #F7E99F;
+	background-color: #ff471d;
 	color: #1A4255;
 }
 
@@ -5209,7 +5209,7 @@ mark,
 }
 
 .achor-tag:hover {
-	background-color: #FFD43B;
+	background-color: #ff471d;
 	/* Yellow */
 	color: #1a4255;
 	/* Optional: make text dark for contrast */
@@ -5355,7 +5355,7 @@ mark,
 	border-radius: 50%;
 	width: 32px;
 	height: 32px;
-	color: #c88b00;
+	color: #ff471d;
 	transition: transform 0.2s;
 	position: absolute;
 	right: 16px;
@@ -5479,7 +5479,7 @@ mark,
 .general-title hr {
   width: 60px;
   height: 3px;
-  background: #f7c221;
+  background: #ff471d;
   border: none;
   margin: 0 auto;
 }
@@ -5544,7 +5544,7 @@ mark,
 }
 
 .nav-arrow:hover {
-  background-color: #f7c221;
+  background-color: #ff471d;
   color: #fff;
 }
 

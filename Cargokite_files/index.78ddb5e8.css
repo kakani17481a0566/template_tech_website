@@ -75,7 +75,8 @@ html {
   -webkit-text-rendering: optimizeSpeed;
   text-rendering: optimizespeed;
   color: #151515;
-  font-family: HelveticaNowDisplay;
+font-family: 'Lato', sans-serif;
+
   font-size: 0.578704vw;
 }
 @media only screen and (min-width: 2160px) {
@@ -2515,7 +2516,9 @@ html.force--consent.show--consent body {
   z-index: 5;
   background-color: #eaeef0;
   position: relative;
+  padding-top: 40px; 
 }
+
 .footer__inner {
   z-index: 3;
   background-color: #eaeef0;
