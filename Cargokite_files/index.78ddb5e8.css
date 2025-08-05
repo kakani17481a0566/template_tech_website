@@ -4545,6 +4545,12 @@ html.force--consent.show--consent body {
     .home-shift__small-txt {
     font-size: 5.2rem;
   }
+  @media (max-width: 767px) {
+  .home-shift__main-part--small-txt {
+    clip-path: none !important;
+  }
+}
+
   .home-ship__bg-img {
     height: 52rem;
   }
