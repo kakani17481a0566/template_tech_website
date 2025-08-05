@@ -397,6 +397,7 @@ section::after {
 .white-wrapper .testimonial h3,
 #header-style-1 .yamm-fw .dropdown-menu li a {
 	color: #1a4255 !important;
+	margin-bottom: 30px;
 }
 
 #header-style-1 .yamm-fw .dropdown-menu li a:before {
@@ -5237,8 +5238,8 @@ mark,
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	width: 18px;
-	height: 18px;
+	width: 10px;
+	height: 10px;
 	font-size: 9px;
 	color: #1A4255;
 	background-color: transparent;
@@ -5653,3 +5654,144 @@ mark,
       height: 40px;
     }
   }
+/* ---------------------leaders------------------- */
+.white-wrapper {
+      background-color: #fff;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .general-title h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .general-title p.lead {
+      text-align: center;
+      font-size: 16px;
+      color: #555;
+      margin-top: 0;
+    }
+
+    .carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+      padding: 1rem 0;
+    }
+
+    .card-container {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 1rem;
+    }
+
+    .team-card {
+      min-width: 280px;
+      flex: 0 0 auto;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .unz-card {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .unz-image-wrapper {
+      position: relative;
+    }
+
+    .unz-image-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .unz-hover-border {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border: 3px solid transparent;
+      transition: border 0.3s;
+    }
+
+    .unz-card:hover .unz-hover-border {
+      border: 3px solid #1a4255;
+    }
+
+    .card-content {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .card-content h4 {
+      margin: 0;
+      font-size: 18px;
+      color: #1a4255;
+    }
+
+    .card-content p {
+      margin: 6px 0 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .arrow-link {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .arrow-icon {
+      width: 24px;
+      height: 24px;
+      color: #1a4255;
+    }
+
+    .scroll-btn {
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      z-index: 10;
+      font-size: 2rem;
+      background: #1a4255;
+      color: white;
+      border: none;
+      padding: 0.3rem 0.8rem;
+      cursor: pointer;
+      display: none;
+    }
+
+    .scroll-btn.left {
+      left: -10px;
+    }
+
+    .scroll-btn.right {
+      right: -10px;
+    }
+
+    @media (min-width: 768px) {
+      .scroll-btn {
+        display: block;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .card-container {
+        flex-direction: column;
+        overflow-x: unset;
+      }
+
+      .team-card {
+        width: 100%;
+      }
+    }
