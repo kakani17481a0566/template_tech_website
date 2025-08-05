@@ -1098,7 +1098,8 @@
         label: "NeuroPi ™  Explores",
         title: "Making Every Mind Meet Its Match",
         subtitle: "Genetics, Neuroscience, and AI Converge To Give Next-Gen Personalized Solutions.",
-        link: "WhatsNeuroPi.html"
+        link: "WhatsNeuroPi.html",
+        // button: <a href="#read-more" class="read-button">Read On ..</a>
       },
       {
         src: "https://res.cloudinary.com/kakani7/video/upload/v1753361016/MSI/VIDEOS/Video_2_qqvipc.mp4",
@@ -1169,6 +1170,14 @@
       readButton.setAttribute('href', videoData.link);
       // Optionally open in new tab:
       // readButton.setAttribute('target', '_blank');
+
+      if (videos.indexOf(videoData) === 0) {
+        readButton.textContent = "What's NeuroPi";
+      } else {
+        readButton.textContent = "Read On ..";
+      }
+
+
     }
 
     // Autoplay next video when current ends
