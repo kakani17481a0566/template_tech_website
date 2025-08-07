@@ -75,8 +75,7 @@ html {
   -webkit-text-rendering: optimizeSpeed;
   text-rendering: optimizespeed;
   color: #151515;
-font-family: 'Lato';
-
+  font-family: HelveticaNowDisplay;
   font-size: 0.578704vw;
 }
 @media only screen and (min-width: 2160px) {
@@ -126,25 +125,30 @@ button {
   html,
   body {
     width: 100%;
-    height: auto; /* allow content to expand */
-    overflow-x: hidden;
-    overflow-y: auto;
+    height: auto;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto; /* ✅ allow vertical scroll */
   }
 
   body {
-    position: static;
-    overscroll-behavior-y: auto;
+    overscroll-behavior-y: auto; /* ✅ allow scroll to behave normally */
     overscroll-behavior-x: none;
+    position: static; /* ✅ prevents layout bugs caused by fixed/absolute */
   }
 
   .wrapper {
-    position: static;
-    height: auto;
-    overflow: visible;
+    -ms-scroll-chaining: none;
+    overscroll-behavior: contain;
+    width: 100%;
+    min-height: 100vh; /* ✅ ensures content fills height */
+    position: relative; /* ✅ safer than absolute */
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 }
+
 .hover-un,
 .priv-hero__main-richtext a {
   --line-spacing: 4rem;
@@ -322,14 +326,13 @@ button {
   font-display: swap;
 }
 @font-face {
-  font-family: lato, sans-serif;
+  font-family: HelveticaNowDisplay;
   font-weight: 700;
   src: url(HelveticaNowDisplayBold.966dafea.otf);
   font-display: swap;
 }
 .txt {
-  font-family: lato, sans-serif;
-  
+  font-family: HelveticaNowDisplay;
 }
 .txt-12 {
   font-size: var(--fs-12);
@@ -342,7 +345,6 @@ button {
 .txt-16 {
   font-size: var(--fs-16);
   line-height: var(--lh-16);
-  
 }
 .txt-18 {
   font-size: var(--fs-18);
@@ -357,7 +359,7 @@ button {
   line-height: var(--lh-24);
 }
 .txt-28 {
-  font-size: var(--fs-24);
+  font-size: var(--fs-28);
   line-height: var(--lh-28);
 }
 .txt-36 {
@@ -642,7 +644,7 @@ img {
 .cc_div {
   font-size: var(--cc-font-size);
   font-weight: 400;
-  font-family: lato, sans-serif;
+  font-family: var(--cc-font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizelegibility;
@@ -1726,7 +1728,7 @@ html.force--consent.show--consent body {
 .trans__logo.active {
   opacity: 1;
 }
-/* .trans__inner {
+.trans__inner {
   z-index: 1;
   width: 100%;
   height: 100%;
@@ -1734,15 +1736,15 @@ html.force--consent.show--consent body {
   position: absolute;
   top: 0;
   left: 0;
-} */
-/* .trans__item {
-  background-color: hsl(174, 63%, 45%);
+}
+.trans__item {
+  background-color: #eb2c00;
   width: calc(100% + 2px);
   height: 100%;
   margin: 0 -1px;
   display: block;
-} */
-/* .trans__home {
+}
+.trans__home {
   z-index: 3;
   opacity: 0;
   width: 100%;
@@ -1750,7 +1752,7 @@ html.force--consent.show--consent body {
   position: absolute;
   top: 0;
   bottom: 0;
-} */
+}
 .trans__home.active {
   opacity: 1;
 }
@@ -2515,9 +2517,7 @@ html.force--consent.show--consent body {
   z-index: 5;
   background-color: #eaeef0;
   position: relative;
-  padding-top: 40px; 
 }
-
 .footer__inner {
   z-index: 3;
   background-color: #eaeef0;
@@ -2525,7 +2525,7 @@ html.force--consent.show--consent body {
   position: relative;
 }
 .footer__form-wrap {
-  background-color: #1A4255;
+  background-color: #212121;
   grid-column: 2/7;
   margin-top: -13.6rem;
   padding: 3.2rem 6rem 6rem;
@@ -2557,7 +2557,7 @@ html.force--consent.show--consent body {
   display: flex;
 }
 .footer__links {
-  border-bottom: 1px solid #1a4255;
+  border-bottom: 1px solid #1515151a;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0;
@@ -2629,7 +2629,7 @@ html.force--consent.show--consent body {
 .footer__marquee {
   z-index: 1;
   color: #ffffff29;
-  background-color: #1a4255;
+  background-color: #000;
   transition: color 0.4s;
   display: block;
   position: sticky;
@@ -2769,7 +2769,6 @@ html.force--consent.show--consent body {
   }
   .footer__form-sub {
     margin-bottom: 3.2rem;
-    
   }
   .footer__form-caption {
     margin-top: 1.6rem;
@@ -3472,7 +3471,7 @@ html.force--consent.show--consent body {
   border-radius: 50%;
   width: 1.4rem;
   padding: 0 0.4rem;
-  font-family: lato, sans-serif;
+  font-family: initial;
   display: inline-block;
 }
 .home-hero__sub-caption-item.anim {
@@ -4545,12 +4544,6 @@ html.force--consent.show--consent body {
     .home-shift__small-txt {
     font-size: 5.2rem;
   }
-  @media (max-width: 767px) {
-  .home-shift__main-part--small-txt {
-    clip-path: none !important;
-  }
-}
-
   .home-ship__bg-img {
     height: 52rem;
   }
@@ -6242,7 +6235,7 @@ html.force--consent.show--consent body {
   border-radius: 50%;
   width: 2.2rem;
   padding: 0 0.4rem;
-  font-family: lato, sans-serif;
+  font-family: initial;
   display: inline-block;
 }
 .tech-vid__label-item.anim {
@@ -7520,7 +7513,7 @@ html.force--consent.show--consent body {
   }
 }
 @font-face {
-  font-family: lato, lato-bold, lato-italic, lato-bold-italic;
+  font-family: swiper-icons;
   src: url("data:application/font-woff;charset=utf-8;base64, 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");
   font-weight: 400;
   font-style: normal;
@@ -8385,7 +8378,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
   border: 2px dotted #38f;
 }
 .leaflet-container {
-  font-family: lato, sans-serif;
+  font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
   line-height: 1.5;
 }
@@ -8718,9 +8711,10 @@ svg.leaflet-image-layer.leaflet-interactive path {
     print-color-adjust: exact;
   }
 }
+/*# sourceMappingURL=index.78ddb5e8.css.map */
 
 
-/* Unique wrapper line style */
+
 .np-line {
   display: block;
   text-align: start;
@@ -8745,37 +8739,4 @@ svg.leaflet-image-layer.leaflet-interactive path {
   font-size: 0.6em;
   vertical-align: super;
   margin-left: 2px;
-}
-
-/*# sourceMappingURL=index.78ddb5e8.css.map */
-
-.founder-message {
-  margin-top: 2rem;
-  line-height: 1.6;
-}
-
-.neuro-title {
-  font-weight: 600;
-  color: #ff471d;
-}
-
-.tm-badge {
-  font-size: 0.6em;
-  vertical-align: super;
-  margin-left: 2px;
-}
-.image-fill-container {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* or any fixed height */
-  overflow: hidden;
-}
-
-.fill-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
