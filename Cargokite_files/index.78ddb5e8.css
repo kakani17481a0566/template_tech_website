@@ -2567,9 +2567,9 @@ html.force--consent.show--consent body {
 }
 .footer__link {
   transition: color 0.4s;
+  color:#1a4255;
 }
-.footer__link:hover,
-.footer__link.active {
+.footer__link:hover {
   color: #ff471d;
 }
 .footer__info {
@@ -2860,6 +2860,7 @@ html.force--consent.show--consent body {
     gap: 3.2rem 2rem;
     padding: 5rem 0 4rem;
     display: grid;
+    color:#1a4255;
   }
   .footer__link {
     width: -moz-fit-content;
@@ -3484,7 +3485,7 @@ html.force--consent.show--consent body {
   position: relative;
 }
 .home-intro__label {
-  color: #9a9a9a;
+  color: #ff471d;
   grid-area: 1/2/2/4;
   align-self: start;
   margin-top: 1.4rem;
@@ -3532,7 +3533,7 @@ html.force--consent.show--consent body {
   overflow: hidden;
 }
 .home-prob__label {
-  color: #9a9a9a;
+  color: #ff471d;
   grid-area: 1/2/2/4;
   align-self: start;
   margin-top: 1.4rem;
@@ -3614,7 +3615,7 @@ html.force--consent.show--consent body {
   width: 100%;
 }
 .home-solu__label {
-  color: #9a9a9a;
+  color: #ff471d;
   margin-bottom: 2rem;
 }
 .home-solu__title {
@@ -4078,7 +4079,7 @@ html.force--consent.show--consent body {
   display: flex;
 }
 .home-why__label {
-  color: #9a9a9a;
+  color: #ff471d;
   margin-bottom: 2rem;
 }
 .home-why__title {
@@ -4167,7 +4168,7 @@ html.force--consent.show--consent body {
   display: flex;
 }
 .home-part__label {
-  color: #9a9a9a;
+  color: #ff471d;
   margin-bottom: 2rem;
 }
 .home-part__btn {
@@ -4234,7 +4235,7 @@ html.force--consent.show--consent body {
   margin-bottom: 1.2rem;
 }
 .home-part__investor-sub {
-  color: #9a9a9a;
+  color: #ff471d;
 }
 .home-faq {
   padding-top: 18.9rem;
@@ -4248,7 +4249,7 @@ html.force--consent.show--consent body {
   display: flex;
 }
 .home-faq__label {
-  color: #9a9a9a;
+  color: #ff471d;
   margin-bottom: 2rem;
 }
 .home-faq__title {
@@ -5097,7 +5098,7 @@ html.force--consent.show--consent body {
   padding-top: 28.2rem;
 }
 .abt-hero__label {
-  color: #9a9a9a;
+  color: #ff471d;
   grid-column: 3/5;
   align-self: start;
   margin-top: 1.8rem;
@@ -5340,7 +5341,7 @@ html.force--consent.show--consent body {
   display: flex;
 }
 .abt-mil__label {
-  color: #9a9a9a;
+  color: #ff471d;
   margin-bottom: 2rem;
 }
 .abt-mil__title {
@@ -5562,7 +5563,7 @@ html.force--consent.show--consent body {
   display: none;
 }
 .abt-job__label {
-  color: #9a9a9a;
+  color: #ff471d;
   grid-column: 2/5;
   align-self: start;
   margin-top: 1.4rem;
@@ -5605,7 +5606,7 @@ html.force--consent.show--consent body {
   color: #151515;
 }
 .abt-job__main-item-type {
-  color: #9a9a9a;
+  color: #ff471d;
   transition: opacity 0.4s;
 }
 .abt-job__main-item-soon {
@@ -6154,7 +6155,7 @@ html.force--consent.show--consent body {
   }
 }
 .tech-hero__label {
-  color: #9a9a9a;
+  color: #ff471d;
   margin-bottom: 2rem;
 }
 @media screen and (max-width: 991px) {
@@ -6920,7 +6921,7 @@ html.force--consent.show--consent body {
 }
 .tech-map__form .input-drop {
   z-index: 2;
-  color: #9a9a9a;
+  color: #ff471d;
   background-color: #212121;
   width: 100%;
   max-height: 27.4rem;
@@ -8739,4 +8740,20 @@ svg.leaflet-image-layer.leaflet-interactive path {
   font-size: 0.6em;
   vertical-align: super;
   margin-left: 2px;
+}
+
+/* DNA image */
+.home-solu__main-img-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;               /* Full container width */
+  padding: 2rem 0;           /* Optional vertical spacing */
+}
+
+.home-solu__main-img-wrap img {
+  max-width: 200%;
+  height: 950px;            /* ⬅️ Adjust height as needed */
+  width: 950px;  
+  margin-right: 35px;           /* ⬅️ Increase image size here */
 }
