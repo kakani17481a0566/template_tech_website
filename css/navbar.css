@@ -1,8 +1,7 @@
-/* Navbar */
+/* ===== Navbar ===== */
 .uix-navbar {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0 0 auto 0; /* top:0; left/right:0 */
   width: 100%;
   background: transparent;
   padding: 1rem 2rem;
@@ -12,6 +11,7 @@
   align-items: center;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
+
 .uix-navbar__container {
   display: flex;
   justify-content: space-between;
@@ -19,70 +19,74 @@
   width: 100%;
 }
 
-.uix-navbar.scrolled {
-  background: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Optional: change logo or text color when scrolled */
-
-.uix-navbar.scrolled .uix-navbar__menu-btn {
-  background: #ff471d;
-  color: white;
-  border-color: #ff471d;
-}
-
 .uix-navbar__brand {
   font-size: 1.5rem;
   font-weight: bold;
-  color: white;
+  color: white; /* visible on transparent over hero */
   text-transform: uppercase;
+}
+
+.uix-navbar__brand img {
+  height: 72px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: filter 0.3s ease;
 }
 
 .uix-navbar__menu-btn {
   background: #ff471d;
-  color: white;
+  color: #fff;
   border: 2px solid #ff471d;
-  padding: 1rem 1.8rem; /* wider horizontal space */
-  font-size: 1.6rem; /* increased font size */
-  /* font-weight: 600; */
+  padding: 0.85rem 1.5rem;
+  font-size: 1rem;
   cursor: pointer;
-  border-radius: 2rem; /* pill shape */
+  border-radius: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: lato, sans-serif;
-  letter-spacing: 1px; /* Adds 2 pixels of space between letters */
+  letter-spacing: 1px;
 }
 
-/* Menu button active state */
-.uix-navbar__menu-btn.active {
+/* Scrolled state: white bg + dark brand/logo + adjusted button */
+.uix-navbar.scrolled {
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.uix-navbar.scrolled .uix-navbar__brand {
+  color: #1a4255;
+}
+/* darken light logo */
+
+.uix-navbar.scrolled .uix-navbar__menu-btn {
   background: #ff471d;
-  color: white;
+  color: #fff;
   border-color: #ff471d;
 }
 
-/* Slide Menu (Right to Left) */
+/* ===== Slide Menu ===== */
 .uix-slide-menu {
   position: fixed;
   top: 0;
-  right: -50%; /* Start hidden off-screen on the right */
-  width: 50%;
+  right: -40%;
+  width: 40%;
   height: 100vh;
   background-color: #ff471d;
-  color: white;
+  color: #fff;
   padding: 2rem;
   z-index: 1100;
   transition: right 0.4s ease-in-out;
 }
 
 .uix-slide-menu.active {
-  right: 0; /* Slide into view */
+  right: 0;
 }
 
 .uix-slide-menu__close {
   background: none;
-  color: white;
+  color: #fff;
   font-size: 2rem;
   border: none;
   cursor: pointer;
@@ -94,64 +98,57 @@
 .uix-slide-menu__list {
   list-style: none;
   padding-top: 5rem;
+  margin: 0;
 }
 
 .uix-slide-menu__list li {
-  margin: 1.5rem 0;
+  margin: 1.25rem 0;
 }
 
 .uix-slide-menu__list li a {
-  color: white;
+  color: #fff;
   text-decoration: none;
-  font-size: 1.5rem;
-}
-
-.uix-navbar__brand img {
-  height: 100px; /* ✅ keep logo height reasonable */
-  width: auto;
-  object-fit: contain;
+  font-size: 1.75rem; /* desktop comfy size */
   display: block;
-}
-
-
-.uix-slide-menu__list li a {
-  color: white;
-  text-decoration: none;
-  font-size: 5rem;              /* bigger text */
-  display: block;               /* ensures border spans full width */
-  padding-bottom: 0.5rem;       /* space above border */
-  border-bottom: 2px solid rgba(255, 255, 255, 0.4); /* bottom line */
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
   transition: border-color 0.3s ease;
 }
 
 .uix-slide-menu__list li a:hover {
-  border-bottom-color: white;   /* brighten on hover */
+  border-bottom-color: #fff;
 }
 
-
-@media screen and (max-width: 767px) {
- .uix-slide-menu {
-  position: fixed;
+/* Sentinel kept out of layout */
+#nav-sentinel {
+  position: absolute;
   top: 0;
-  right: -50%; /* Start hidden off-screen on the right */
-  width: 50%;
-  height: 100vh;
-  background-color: #ff471d;
-  color: white;
-  padding: 2rem;
-  z-index: 1100;
-  transition: right 0.4s ease-in-out;
+  height: 1px;
+  width: 1px;
 }
 
-
-.uix-slide-menu__list li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;              /* bigger text */
-  display: block;               /* ensures border spans full width */
-  padding-bottom: 0.5rem;       /* space above border */
-  border-bottom: 2px solid rgba(255, 255, 255, 0.4); /* bottom line */
-  transition: border-color 0.3s ease;
-}
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .uix-slide-menu {
+    width: 55%;
+    right: -55%;
+  }
 }
 
+@media (max-width: 767px) {
+  .uix-navbar__brand img {
+    height: 56px;
+  }
+
+  .uix-slide-menu {
+    width: 50%;
+    right: -50%;
+    padding: 1.5rem;
+  }
+  .uix-slide-menu__list {
+    padding-top: 4rem;
+  }
+  .uix-slide-menu__list li a {
+    font-size: 1.25rem;
+  } /* bigger than 1rem for tap targets */
+}

@@ -26,31 +26,32 @@
 <body cz-shortcut-listen="true">
 
 
-    <!-- Navbar -->
-    <nav class="uix-navbar">
-        <div class="uix-navbar__container">
-            <div class="uix-navbar__brand">
-                <a href="index.html"><img src="images/Neuropi.png" alt="Logo"></a>
-            </div>
-            <button class="uix-navbar__menu-btn" onclick="toggleMenu()">Menu</button>
-        </div>
-    </nav>
-
-    <!-- Slide Menu (Right to Left) -->
-    <div class="uix-slide-menu" id="uixSlideMenu">
-        <button class="uix-slide-menu__close" onclick="toggleMenu()">×</button>
-        <ul class="uix-slide-menu__list nav-links" id="nav-links">
-            <li><a href="index.html" class="achor-tag">HOME</a></li>
-
-            <li><a href="#" class="achor-tag">WELCOME</a></li>
-            <li><a href="#" class="achor-tag">SOLUTION</a></li>
-            <li><a href="#" class="achor-tag">PROBLEM</a></li>
-            <li><a href="#" class="achor-tag">SOLUTION</a></li>
-            <li><a href="#" class="achor-tag">TECHNOLOGY</a></li>
-            <li><a href="#" class="achor-tag">WHY US? WHY NOW?</a></li>
-
-        </ul>
+<!-- Navbar -->
+<nav class="uix-navbar">
+  <div class="uix-navbar__container">
+    <div class="uix-navbar__brand">
+      <a href="index.html"><img src="images/Neuropi.png" alt="Logo"></a>
     </div>
+    <button class="uix-navbar__menu-btn" onclick="toggleMenu()">Menu</button>
+  </div>
+</nav>
+
+<!-- Sentinel to detect scroll past the top -->
+<div id="nav-sentinel" aria-hidden="true"></div>
+
+<!-- Slide Menu (Right to Left) -->
+<div class="uix-slide-menu" id="uixSlideMenu">
+  <button class="uix-slide-menu__close" onclick="toggleMenu()">×</button>
+  <ul class="uix-slide-menu__list nav-links" id="nav-links">
+    <li><a href="index.html" class="achor-tag">HOME</a></li>
+    <li><a href="#" class="achor-tag">WELCOME</a></li>
+    <li><a href="#" class="achor-tag">SOLUTION</a></li>
+    <li><a href="#" class="achor-tag">PROBLEM</a></li>
+    <li><a href="#" class="achor-tag">SOLUTION</a></li>
+    <li><a href="#" class="achor-tag">TECHNOLOGY</a></li>
+    <li><a href="#" class="achor-tag">WHY US? WHY NOW?</a></li>
+  </ul>
+</div>
 
 
 
@@ -654,268 +655,6 @@
             </section>
 
 
-            <!-- <section class="home-part">
-                <div class="container grid">
-                    <div class="home-part__head">
-                        <div class="home-part__label txt txt-20 txt-med"> Investors &amp; Supporters </div>
-                        <h2 class="h3 heading home-part__title"> Trusted by top<br>Partners &amp; Supporters </h2> <a
-                            href="##" class="btn btn-lg btn-pri home-part__btn"
-                            data-popup="contact">
-                            <div class="txt txt-18 txt-med"> Partner with us today </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="home-part__main home-part__main-supporters">
-                    <div class="home-part__marquee">
-                        <div class="--right home-part__marquee-wrapper">
-                            <div class="home-part__marquee-item">
-                                <div class="home-part__main-item"> <img src="./Cargokite_files/logo-17.svg" alt="HAX"
-                                        loading="lazy" width="229" height="129"> </div>
-                                <div class="home-part__main-item"> <img src="./Cargokite_files/logo-2.svg" alt="ESA"
-                                        loading="lazy" width="229" height="129"> </div>
-                                <div class="home-part__main-item"> <img src="./Cargokite_files/logo-16.svg"
-                                        alt="Federal Ministry of Economic Affairs of Germany" loading="lazy" width="229"
-                                        height="129"> </div>
-                                <div class="home-part__main-item"> <img src="./Cargokite_files/logo-6.svg" alt="TUM"
-                                        loading="lazy" width="229" height="129"> </div>
-                                <div class="home-part__main-item"> <img src="./Cargokite_files/logo-7.svg"
-                                        alt="Fraunhofer CML" loading="lazy" width="229" height="129"> </div>
-                                <div class="home-part__main-item"> <img src="./Cargokite_files/logo-1.svg"
-                                        alt="Microsoft for Startup" loading="lazy" width="229" height="129"> </div>
-                                <div class="home-part__main-item"> <img src="./Cargokite_files/logo-5.svg" alt="KIC"
-                                        loading="lazy" width="229" height="129"> </div>
-                                <div class="home-part__main-item"> <img src="./Cargokite_files/logo.svg"
-                                        alt="Unternehmertum" loading="lazy" width="229" height="129"> </div>
-                                <div class="home-part__main-item"> <img
-                                        src="./Cargokite_files/ZzzZGq8jQArT1C2S_Hauptlogo_schwarz.svg"
-                                        alt="Digital hub Logistics" loading="lazy" width="229" height="129"> </div>
-                                <div class="home-part__main-item"> <img
-                                        src="./Cargokite_files/65cf5a139be9a5b998b5ed8d_IWSA-logo_grey_small.png"
-                                        alt="IWSA" loading="lazy" width="229" height="129"> </div>
-                                <div class="home-part__main-item"> <img
-                                        src="./Cargokite_files/ZhaHrTjCgu4jzueQ_Third_Derivative_Logo.webp"
-                                        alt="Third Derivative" loading="lazy" width="229" height="129"> </div>
-                                <div class="home-part__main-item"> <img
-                                        src="./Cargokite_files/ZqNoSh5LeNNTxhFY_Lomar_logo_BW.png" alt="Lomar Labs"
-                                        loading="lazy" width="229" height="129"> </div>
-                            </div>
-                        </div>
-                        <div class="--left home-part__marquee-wrapper">
-                            <div class="home-part__marquee-item">
-                                <div class="home-part__main-item"> <img src="./Cargokite_files/logo-17.svg" alt="HAX"
-                                        loading="lazy" width="229" height="129"> </div>
-                                <div class="home-part__main-item"> <img src="./Cargokite_files/logo-2.svg" alt="ESA"
-                                        loading="lazy" width="229" height="129"> </div>
-                                <div class="home-part__main-item"> <img src="./Cargokite_files/logo-16.svg"
-                                        alt="Federal Ministry of Economic Affairs of Germany" loading="lazy" width="229"
-                                        height="129"> </div>
-                                <div class="home-part__main-item"> <img src="./Cargokite_files/logo-6.svg" alt="TUM"
-                                        loading="lazy" width="229" height="129"> </div>
-                                <div class="home-part__main-item"> <img src="./Cargokite_files/logo-7.svg"
-                                        alt="Fraunhofer CML" loading="lazy" width="229" height="129"> </div>
-                                <div class="home-part__main-item"> <img src="./Cargokite_files/logo-1.svg"
-                                        alt="Microsoft for Startup" loading="lazy" width="229" height="129"> </div>
-                                <div class="home-part__main-item"> <img src="./Cargokite_files/logo-5.svg" alt="KIC"
-                                        loading="lazy" width="229" height="129"> </div>
-                                <div class="home-part__main-item"> <img src="./Cargokite_files/logo.svg"
-                                        alt="Unternehmertum" loading="lazy" width="229" height="129"> </div>
-                                <div class="home-part__main-item"> <img
-                                        src="./Cargokite_files/ZzzZGq8jQArT1C2S_Hauptlogo_schwarz.svg"
-                                        alt="Digital hub Logistics" loading="lazy" width="229" height="129"> </div>
-                                <div class="home-part__main-item"> <img
-                                        src="./Cargokite_files/65cf5a139be9a5b998b5ed8d_IWSA-logo_grey_small.png"
-                                        alt="IWSA" loading="lazy" width="229" height="129"> </div>
-                                <div class="home-part__main-item"> <img
-                                        src="./Cargokite_files/ZhaHrTjCgu4jzueQ_Third_Derivative_Logo.webp"
-                                        alt="Third Derivative" loading="lazy" width="229" height="129"> </div>
-                                <div class="home-part__main-item"> <img
-                                        src="./Cargokite_files/ZqNoSh5LeNNTxhFY_Lomar_logo_BW.png" alt="Lomar Labs"
-                                        loading="lazy" width="229" height="129"> </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container grid">
-                    <div class="home-part__investor">
-                        <h3 class="h6 heading home-part__investor-title"> Investors </h3>
-                        <p class="home-part__investor-sub txt txt-18 txt-med"> 4 upcoming investors </p>
-                    </div>
-                    <div class="home-part__main home-part__main-investors">
-                        <div class="home-part__main-item"> <img src="./Cargokite_files/logo-sosv.svg" alt="SOSV"
-                                loading="lazy" width="229" height="129"> </div>
-                        <div class="home-part__main-item"> <img src="./Cargokite_files/logo-fttf.svg" alt="FTTF"
-                                loading="lazy" width="229" height="129"> </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="home-faq">
-                <div class="container grid">
-                    <div class="home-faq__head">
-                        <div>
-                            <div class="home-faq__label txt txt-20 txt-med"> FAQ </div>
-                            <h2 class="h3 heading home-faq__title"> Quick answers to questions you may have </h2>
-                        </div>
-                        <div>
-                            <div class="home-faq__sub txt txt-18"> Can't find what you're looking for? <br> Contact us
-                                here: </div> <a href="##"
-                                class="home-faq__link hover-un txt txt-18 txt-link txt-med"> info@cargokite.com </a>
-                        </div>
-                    </div>
-                    <div class="home-faq__main">
-                        <div class="faq-item"> <a href="##" class="faq-item__head">
-                                <div class="faq-item__line">
-                                    <div class="faq-item__line-inner"></div>
-                                </div>
-                                <div class="faq-item__head-txt txt txt-18 txt-med">Do you build the entire ship
-                                    in-house?</div>
-                                <div class="faq-item__icon icon icon-16"> <svg width="16" height="16"
-                                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8 1.5V14.5" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                        <path d="M1.5 8H14.5" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                    </svg> </div>
-                            </a>
-                            <div class="faq-item__body">
-                                <p class="txt txt-16">No. Our ships are built after our own design, but we cooperate
-                                    with ship yards for the manufacturing of the ship. Our core IP is control and
-                                    intelligence software.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item"> <a href="##" class="faq-item__head">
-                                <div class="faq-item__line">
-                                    <div class="faq-item__line-inner"></div>
-                                </div>
-                                <div class="faq-item__head-txt txt txt-18 txt-med">What if there is no wind?</div>
-                                <div class="faq-item__icon icon icon-16"> <svg width="16" height="16"
-                                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8 1.5V14.5" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                        <path d="M1.5 8H14.5" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                    </svg> </div>
-                            </a>
-                            <div class="faq-item__body">
-                                <p class="txt txt-16">The kite operates at ~300m and harvests so-called high-altitude
-                                    winds. High-altitude winds are much stronger and more constant than winds near the
-                                    ground and have a 95% probability of occurrence offshore globally. Additionally, we
-                                    analyze weather data systematically and use our own <a
-                                        href="#tech#route" class="txt-link hover-un">route planning
-                                        tool</a> to calculate the optimal route for our ships and thereby avoid areas
-                                    with no wind. As a backup, there is still a diesel-electric motor.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item"> <a href="##" class="faq-item__head">
-                                <div class="faq-item__line">
-                                    <div class="faq-item__line-inner"></div>
-                                </div>
-                                <div class="faq-item__head-txt txt txt-18 txt-med">Are your ships already in operation?
-                                </div>
-                                <div class="faq-item__icon icon icon-16"> <svg width="16" height="16"
-                                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8 1.5V14.5" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                        <path d="M1.5 8H14.5" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                    </svg> </div>
-                            </a>
-                            <div class="faq-item__body">
-                                <p class="txt txt-16">No, we are still in development. We will start accepting
-                                    pre-orders for ships in Q3/2025.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item"> <a href="##" class="faq-item__head">
-                                <div class="faq-item__line">
-                                    <div class="faq-item__line-inner"></div>
-                                </div>
-                                <div class="faq-item__head-txt txt txt-18 txt-med">Why don't you retrofit Airborne Wind
-                                    Energy Systems/ kites to ships?</div>
-                                <div class="faq-item__icon icon icon-16"> <svg width="16" height="16"
-                                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8 1.5V14.5" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                        <path d="M1.5 8H14.5" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                    </svg> </div>
-                            </a>
-                            <div class="faq-item__body">
-                                <p class="txt txt-16">While we do leverage learnings and technological development that
-                                    companies such as Airseas, Skysails and others have made in the field of Airborne
-                                    Wind Energy systems, we have decided to source kites from existing suppliers and
-                                    integrate them in an entirely new ship concept. This is because the emissions
-                                    savings potential of freight ships retrofitted with kites is only 30%, whereas we
-                                    expect to enable emissions reductions of up to 70% in some cases.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item"> <a href="##" class="faq-item__head">
-                                <div class="faq-item__line">
-                                    <div class="faq-item__line-inner"></div>
-                                </div>
-                                <div class="faq-item__head-txt txt txt-18 txt-med">Where can these ships operate?</div>
-                                <div class="faq-item__icon icon icon-16"> <svg width="16" height="16"
-                                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8 1.5V14.5" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                        <path d="M1.5 8H14.5" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                    </svg> </div>
-                            </a>
-                            <div class="faq-item__body">
-                                <p class="txt txt-16">There is no maximum reach and no geographical limit. Our ships can
-                                    operate on any route at any time. Check out the <a
-                                        href="#tech#route" class="txt-link hover-un">route planner
-                                        demo</a> to try your own example routes.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item"> <a href="##" class="faq-item__head">
-                                <div class="faq-item__line">
-                                    <div class="faq-item__line-inner"></div>
-                                </div>
-                                <div class="faq-item__head-txt txt txt-18 txt-med">What type of freight can I transport
-                                    with your ship?</div>
-                                <div class="faq-item__icon icon icon-16"> <svg width="16" height="16"
-                                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8 1.5V14.5" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                        <path d="M1.5 8H14.5" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                    </svg> </div>
-                            </a>
-                            <div class="faq-item__body">
-                                <p class="txt txt-16">Our main focus is on transporting containers. However, the ship
-                                    design can be easily adapted to break bulk, ro-ro and project cargo. Reach out to us
-                                    to learn more.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item"> <a href="##" class="faq-item__head">
-                                <div class="faq-item__line">
-                                    <div class="faq-item__line-inner"></div>
-                                </div>
-                                <div class="faq-item__head-txt txt txt-18 txt-med">I'm a shipping company. Why would I
-                                    replace my existing vessels with CargoKite vessels?</div>
-                                <div class="faq-item__icon icon icon-16"> <svg width="16" height="16"
-                                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8 1.5V14.5" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                        <path d="M1.5 8H14.5" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                    </svg> </div>
-                            </a>
-                            <div class="faq-item__body">
-                                <p class="txt txt-16">CargoKite vessels can reduce fuel consumption by up to 80%. This
-                                    not only helps shipping companies save costs, but also to become compliant with
-                                    current and future emission regulations. The cost-competitive fleet of smaller
-                                    vessels can also help enable a redesign of the services and unlock unparalleled
-                                    network efficiency gains.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> -->
-
-
 
         </div>
 
@@ -1271,16 +1010,73 @@
         }
     </script>
 
-    <script>
-        window.addEventListener('scroll', function () {
-            const navbar = document.querySelector('.uix-navbar');
-            if (window.scrollY > 50) { // When user scrolls 50px down
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-    </script>
+<script>
+  // Slide menu toggle (kept simple)
+  function toggleMenu() {
+    const menu = document.getElementById('uixSlideMenu');
+    menu.classList.toggle('active');
+    // Lock body scroll when menu is open (mobile friendly)
+    document.documentElement.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+    document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+  }
+
+  // Robust scroll detection: IntersectionObserver + fallback
+  (function () {
+    const navbar = document.querySelector('.uix-navbar');
+    const sentinel = document.getElementById('nav-sentinel');
+    if (!navbar || !sentinel) return;
+
+    const applyScrolled = (on) => navbar.classList.toggle('scrolled', on);
+
+    // If content is short (no scroll), force scrolled if hero isn’t behind
+    function checkInitial() {
+      const needScrolled = (document.documentElement.scrollHeight - window.innerHeight) < 8;
+      // If page barely scrolls, keep navbar transparent; otherwise let IO decide.
+      // We’ll still run IO below for consistency.
+      applyScrolled(window.pageYOffset > 4 || needScrolled === false ? false : true);
+    }
+
+    // IntersectionObserver watches the top of the page relative to navbar height
+    const io = new IntersectionObserver(
+      (entries) => {
+        const e = entries[0];
+        // Not intersecting => page scrolled past navbar top
+        applyScrolled(!e.isIntersecting);
+      },
+      { root: null, rootMargin: `-${navbar.offsetHeight}px 0px 0px 0px`, threshold: 0 }
+    );
+
+    io.observe(sentinel);
+
+    // Fallback for older browsers / edge cases
+    function getScrollTop() {
+      return window.pageYOffset !== undefined
+        ? window.pageYOffset
+        : (document.documentElement || document.body).scrollTop || 0;
+    }
+    function onScrollFallback() {
+      applyScrolled(getScrollTop() > 4);
+    }
+    window.addEventListener('scroll', onScrollFallback, { passive: true });
+    document.addEventListener('scroll', onScrollFallback, { passive: true });
+    window.addEventListener('touchmove', onScrollFallback, { passive: true });
+
+    // Initialize
+    onScrollFallback();
+    checkInitial();
+
+    // Recalculate on resize (navbar height may change)
+    window.addEventListener('resize', () => {
+      io.disconnect();
+      const io2 = new IntersectionObserver(
+        (entries) => applyScrolled(!entries[0].isIntersecting),
+        { root: null, rootMargin: `-${navbar.offsetHeight}px 0px 0px 0px`, threshold: 0 }
+      );
+      io2.observe(sentinel);
+    }, { passive: true });
+  })();
+</script>
+
 
     <script>
         window.addEventListener('load', function () {
