@@ -1,0 +1,31 @@
+/* Glass/blur card */
+.hero-card {
+  background: rgba(255, 255, 255, 0.15); /* semi-transparent */
+  backdrop-filter: blur(10px);           /* blur effect */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
+  border-radius: 1rem;
+  /* padding: 10px; */
+  /* color: red; */
+  /* max-width: 90%; */
+  /* margin: 0 auto; */
+  /* position: relative; */
+  z-index: 1;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Title inside card */
+.hero-card h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 700;
+}
+
+/* Subtitle inside card */
+.hero-card p {
+  margin: 0;
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  line-height: 1.4;
+}
+
+
+

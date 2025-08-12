@@ -1,0 +1,157 @@
+/* Navbar */
+.uix-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.uix-navbar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.uix-navbar.scrolled {
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: change logo or text color when scrolled */
+
+.uix-navbar.scrolled .uix-navbar__menu-btn {
+  background: #ff471d;
+  color: white;
+  border-color: #ff471d;
+}
+
+.uix-navbar__brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+}
+
+.uix-navbar__menu-btn {
+  background: #ff471d;
+  color: white;
+  border: 2px solid #ff471d;
+  padding: 1rem 1.8rem; /* wider horizontal space */
+  font-size: 1.6rem; /* increased font size */
+  /* font-weight: 600; */
+  cursor: pointer;
+  border-radius: 2rem; /* pill shape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: lato, sans-serif;
+  letter-spacing: 1px; /* Adds 2 pixels of space between letters */
+}
+
+/* Menu button active state */
+.uix-navbar__menu-btn.active {
+  background: #ff471d;
+  color: white;
+  border-color: #ff471d;
+}
+
+/* Slide Menu (Right to Left) */
+.uix-slide-menu {
+  position: fixed;
+  top: 0;
+  right: -50%; /* Start hidden off-screen on the right */
+  width: 50%;
+  height: 100vh;
+  background-color: #ff471d;
+  color: white;
+  padding: 2rem;
+  z-index: 1100;
+  transition: right 0.4s ease-in-out;
+}
+
+.uix-slide-menu.active {
+  right: 0; /* Slide into view */
+}
+
+.uix-slide-menu__close {
+  background: none;
+  color: white;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.uix-slide-menu__list {
+  list-style: none;
+  padding-top: 5rem;
+}
+
+.uix-slide-menu__list li {
+  margin: 1.5rem 0;
+}
+
+.uix-slide-menu__list li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.uix-navbar__brand img {
+  height: 100px; /* ✅ keep logo height reasonable */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+
+.uix-slide-menu__list li a {
+  color: white;
+  text-decoration: none;
+  font-size: 5rem;              /* bigger text */
+  display: block;               /* ensures border spans full width */
+  padding-bottom: 0.5rem;       /* space above border */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4); /* bottom line */
+  transition: border-color 0.3s ease;
+}
+
+.uix-slide-menu__list li a:hover {
+  border-bottom-color: white;   /* brighten on hover */
+}
+
+
+@media screen and (max-width: 767px) {
+ .uix-slide-menu {
+  position: fixed;
+  top: 0;
+  right: -50%; /* Start hidden off-screen on the right */
+  width: 50%;
+  height: 100vh;
+  background-color: #ff471d;
+  color: white;
+  padding: 2rem;
+  z-index: 1100;
+  transition: right 0.4s ease-in-out;
+}
+
+
+.uix-slide-menu__list li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;              /* bigger text */
+  display: block;               /* ensures border spans full width */
+  padding-bottom: 0.5rem;       /* space above border */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4); /* bottom line */
+  transition: border-color 0.3s ease;
+}
+}
+
