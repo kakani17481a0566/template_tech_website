@@ -1010,73 +1010,16 @@
         }
     </script>
 
-<script>
-  // Slide menu toggle (kept simple)
-  function toggleMenu() {
-    const menu = document.getElementById('uixSlideMenu');
-    menu.classList.toggle('active');
-    // Lock body scroll when menu is open (mobile friendly)
-    document.documentElement.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
-    document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
-  }
-
-  // Robust scroll detection: IntersectionObserver + fallback
-  (function () {
-    const navbar = document.querySelector('.uix-navbar');
-    const sentinel = document.getElementById('nav-sentinel');
-    if (!navbar || !sentinel) return;
-
-    const applyScrolled = (on) => navbar.classList.toggle('scrolled', on);
-
-    // If content is short (no scroll), force scrolled if hero isn’t behind
-    function checkInitial() {
-      const needScrolled = (document.documentElement.scrollHeight - window.innerHeight) < 8;
-      // If page barely scrolls, keep navbar transparent; otherwise let IO decide.
-      // We’ll still run IO below for consistency.
-      applyScrolled(window.pageYOffset > 4 || needScrolled === false ? false : true);
-    }
-
-    // IntersectionObserver watches the top of the page relative to navbar height
-    const io = new IntersectionObserver(
-      (entries) => {
-        const e = entries[0];
-        // Not intersecting => page scrolled past navbar top
-        applyScrolled(!e.isIntersecting);
-      },
-      { root: null, rootMargin: `-${navbar.offsetHeight}px 0px 0px 0px`, threshold: 0 }
-    );
-
-    io.observe(sentinel);
-
-    // Fallback for older browsers / edge cases
-    function getScrollTop() {
-      return window.pageYOffset !== undefined
-        ? window.pageYOffset
-        : (document.documentElement || document.body).scrollTop || 0;
-    }
-    function onScrollFallback() {
-      applyScrolled(getScrollTop() > 4);
-    }
-    window.addEventListener('scroll', onScrollFallback, { passive: true });
-    document.addEventListener('scroll', onScrollFallback, { passive: true });
-    window.addEventListener('touchmove', onScrollFallback, { passive: true });
-
-    // Initialize
-    onScrollFallback();
-    checkInitial();
-
-    // Recalculate on resize (navbar height may change)
-    window.addEventListener('resize', () => {
-      io.disconnect();
-      const io2 = new IntersectionObserver(
-        (entries) => applyScrolled(!entries[0].isIntersecting),
-        { root: null, rootMargin: `-${navbar.offsetHeight}px 0px 0px 0px`, threshold: 0 }
-      );
-      io2.observe(sentinel);
-    }, { passive: true });
-  })();
-</script>
-
+    <script>
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.uix-navbar');
+            if (window.scrollY > 50) { // When user scrolls 50px down
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
 
     <script>
         window.addEventListener('load', function () {
