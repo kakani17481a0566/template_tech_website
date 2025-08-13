@@ -1,5 +1,5 @@
-/* ===== Navbar ===== */
-.uix-navbar {
+/* ===== Navbar (alias old -> new) ===== */
+.uix-navbar, .neuropi-navbar {
   position: fixed;
   inset: 0 0 auto 0; /* top:0; left/right:0 */
   width: 100%;
@@ -11,30 +11,26 @@
   align-items: center;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-
-.uix-navbar__container {
+.uix-navbar__container, .neuropi-navbar__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
-
-.uix-navbar__brand {
+.uix-navbar__brand, .neuropi-navbar__brand {
   font-size: 1.5rem;
   font-weight: bold;
-  color: white; /* visible on transparent over hero */
+  color: #fff; /* visible on transparent over hero */
   text-transform: uppercase;
 }
-
-.uix-navbar__brand img {
+.uix-navbar__brand img, .neuropi-navbar__brand img {
   height: 72px;
   width: auto;
   object-fit: contain;
   display: block;
   transition: filter 0.3s ease;
 }
-
-.uix-navbar__menu-btn {
+.uix-navbar__menu-btn, .neuropi-navbar__menu-btn {
   background: #ff471d;
   color: #fff;
   border: 2px solid #ff471d;
@@ -48,26 +44,23 @@
   font-family: lato, sans-serif;
   letter-spacing: 1px;
 }
-
-/* Scrolled state: white bg + dark brand/logo + adjusted button */
-.uix-navbar.scrolled {
+.uix-navbar.scrolled, .neuropi-navbar.scrolled {
   background: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,.1);
 }
-
-.uix-navbar.scrolled .uix-navbar__brand {
+.uix-navbar.scrolled .uix-navbar__brand,
+.neuropi-navbar.scrolled .neuropi-navbar__brand {
   color: #1a4255;
 }
-/* darken light logo */
-
-.uix-navbar.scrolled .uix-navbar__menu-btn {
+.uix-navbar.scrolled .uix-navbar__menu-btn,
+.neuropi-navbar.scrolled .neuropi-navbar__menu-btn {
   background: #ff471d;
   color: #fff;
   border-color: #ff471d;
 }
 
-/* ===== Slide Menu ===== */
-.uix-slide-menu {
+/* ===== Slide Menu (alias + flex layout for bottom footer) ===== */
+.uix-slide-menu, .neuropi-slide-menu {
   position: fixed;
   top: 0;
   right: -40%;
@@ -78,13 +71,13 @@
   padding: 2rem;
   z-index: 1100;
   transition: right 0.4s ease-in-out;
+  overflow: hidden;           /* prevent double scroll; list will scroll */
+  display: flex;              /* NEW: flex layout */
+  flex-direction: column;     /* NEW */
 }
+.uix-slide-menu.active, .neuropi-slide-menu.active { right: 0; }
 
-.uix-slide-menu.active {
-  right: 0;
-}
-
-.uix-slide-menu__close {
+.uix-slide-menu__close, .neuropi-slide-menu__close {
   background: none;
   color: #fff;
   font-size: 2rem;
@@ -95,32 +88,71 @@
   left: 1rem;
 }
 
-.uix-slide-menu__list {
+.uix-slide-menu__list, .neuropi-slide-menu__list {
   list-style: none;
-  padding-top: 5rem;
   margin: 0;
+  padding: 5rem 0 1rem 0; /* space under close button */
+  flex: 1;                /* NEW: let the list take available space */
+  overflow-y: auto;       /* NEW: only list scrolls */
 }
-
-.uix-slide-menu__list li {
-  margin: 1.25rem 0;
-}
-
-.uix-slide-menu__list li a {
+.uix-slide-menu__list li, .neuropi-slide-menu__list li { margin: 1.25rem 0; }
+.uix-slide-menu__list li a, .neuropi-slide-menu__list li a {
   color: #fff;
   text-decoration: none;
   font-size: 1.75rem; /* desktop comfy size */
   display: block;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 2px solid rgba(255,255,255,0.4);
   transition: border-color 0.3s ease;
 }
-
-.uix-slide-menu__list li a:hover {
+.uix-slide-menu__list li a:hover, .neuropi-slide-menu__list li a:hover {
   border-bottom-color: #fff;
 }
 
-/* Sentinel kept out of layout */
-#nav-sentinel {
+/* ===== Footer inside menu (new structure you added) ===== */
+.neuropi-slide-menu__footer {
+  margin-top: auto;           /* NEW: push footer to bottom */
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.neuropi-footer-contact { color: #fff; font-family: Arial, sans-serif; }
+.neuropi-footer-contact h4 { font-size: 18px; font-weight: bold; margin: 0 0 10px; }
+.neuropi-footer-contact p  { font-size: 14px; line-height: 1.5; margin: 0; text-align: center; }
+
+.neuropi-footer-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* center vertically within footer space */
+  align-items: center;      /* center horizontally */
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.neuropi-footer-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;  /* center buttons */
+  margin-top: 1rem;
+}
+.neuropi-footer-actions a {
+  display: inline-block;
+  padding: 8px 14px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #ff471d;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.neuropi-footer-actions a:hover {
+  background-color: #e03e1a;
+  border-color: rgba(255,255,255,0.6);
+}
+
+/* ===== Sentinel id fix (use your new id) ===== */
+#neuropi-nav-sentinel {
   position: absolute;
   top: 0;
   height: 1px;
@@ -129,26 +161,15 @@
 
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
-  .uix-slide-menu {
-    width: 55%;
-    right: -55%;
-  }
+  .uix-slide-menu, .neuropi-slide-menu { width: 55%; right: -55%; }
 }
-
 @media (max-width: 767px) {
-  .uix-navbar__brand img {
-    height: 56px;
-  }
-
-  .uix-slide-menu {
-    width: 50%;
-    right: -50%;
+  .uix-navbar__brand img, .neuropi-navbar__brand img { height: 56px; }
+  .uix-slide-menu, .neuropi-slide-menu {
+    width: 80%;
+    right: -80%;
     padding: 1.5rem;
   }
-  .uix-slide-menu__list {
-    padding-top: 4rem;
-  }
-  .uix-slide-menu__list li a {
-    font-size: 1.25rem;
-  } /* bigger than 1rem for tap targets */
+  .uix-slide-menu__list, .neuropi-slide-menu__list { padding-top: 4rem; }
+  .uix-slide-menu__list li a, .neuropi-slide-menu__list li a { font-size: 1.25rem; } /* good tap targets */
 }

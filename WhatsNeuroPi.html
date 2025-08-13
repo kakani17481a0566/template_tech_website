@@ -37,23 +37,48 @@
 </nav>
 
 <!-- Sentinel to detect scroll past the top -->
+<!-- Navbar -->
+<nav class="uix-navbar">
+  <div class="uix-navbar__container">
+    <div class="uix-navbar__brand">
+      <a href="index.html"><img src="images/Neuropi.png" alt="Logo"></a>
+    </div>
+    <button class="uix-navbar__menu-btn" onclick="toggleMenu()">Menu</button>
+  </div>
+</nav>
+
+<!-- Sentinel to detect scroll past the top -->
 <div id="nav-sentinel" aria-hidden="true"></div>
 
 <!-- Slide Menu (Right to Left) -->
-<div class="uix-slide-menu" id="uixSlideMenu">
-  <button class="uix-slide-menu__close" onclick="toggleMenu()">×</button>
+<div class="uix-slide-menu" id="uixSlideMenu" aria-hidden="true">
+  <button class="uix-slide-menu__close" onclick="toggleMenu()" aria-label="Close menu">×</button>
+
   <ul class="uix-slide-menu__list nav-links" id="nav-links">
     <li><a href="index.html" class="achor-tag">HOME</a></li>
     <li><a href="#" class="achor-tag">WELCOME</a></li>
-    <li><a href="#" class="achor-tag">SOLUTION</a></li>
     <li><a href="#" class="achor-tag">PROBLEM</a></li>
+    <li><a href="#" class="achor-tag">TECHNOLOGY SUITE</a></li>
     <li><a href="#" class="achor-tag">SOLUTION</a></li>
-    <li><a href="#" class="achor-tag">TECHNOLOGY</a></li>
     <li><a href="#" class="achor-tag">WHY US? WHY NOW?</a></li>
   </ul>
+
+  <!-- Footer Section inside Slide Menu -->
+  <div class="uix-slide-menu__footer">
+    <div class="footer-contact">
+      <h4>Reach us</h4>
+      <p style="text-align:right; margin:0 0 12px;">
+        1950 rue Roy<br>
+        Sherbrooke, Québec, J1K 1B7<br>
+        Canada
+      </p>
+      <div class="footer-actions">
+        <a href="#">Contact Us</a>
+        <a href="#">Get directions</a>
+      </div>
+    </div>
+  </div>
 </div>
-
-
 
 
     <div class="wrapper" data-barba="wrapper" aria-live="polite">
@@ -318,7 +343,7 @@
                     <div class="home-solu__head">
                         <div class="home-solu__head-txt-wrap">
                             <div class="home-solu__label txt txt-20 txt-med">
-                                Solution </div>
+                                Product </div>
                             <h2 class="h4 heading home-solu__title"> Our answer is
                                 <span class="txt-hl np-orange">NeuroPi <sup style="font-size: 20px;">TM</sup></span>
                             </h2>
@@ -340,7 +365,7 @@
                                 <span style="color: #ff471d;">NeuroPi<sup
                                         style="font-size: 20px; color: #1a4255;">TM</sup></span>, is a
                                 first-of-its-kind
-                                platform that
+                                Technology Suite that
                                 combines genetic data, brain-based
                                 assessments, and AI coaching to help
                                 individuals unlock their best selves.
@@ -474,7 +499,7 @@
                         <div class="grid home-tech__inner">
                             <div class="home-tech__head" data-logo-main="mix">
                                 <div class="home-tech__head-inner">
-                                    <div class="home-tech__label txt txt-20 txt-med"> Technology </div>
+                                    <div class="home-tech__label txt txt-20 txt-med"> Solutions </div>
                                     <h2 class="h4 heading home-tech__title">
                                         Our precision approach positions us uniquely to intersect all segments with
                                         vertical offerings tailored to each.
@@ -485,7 +510,7 @@
                             <div class="home-tech__item">
                                 <div class="home-tech__item-inner">
                                     <h3 class="home-tech__item-title txt txt-24 txt-med">
-                                        EdTech </h3>
+                                        Early Education </h3>
                                     <div class="home-tech__item-icon icon icon-48"> <svg width="48" height="48"
                                             viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -508,8 +533,7 @@
                             </div>
                             <div class="home-tech__item">
                                 <div class="home-tech__item-inner">
-                                    <h3 class="home-tech__item-title txt txt-24 txt-med"> Mental Health and Wellness
-                                        Tech </h3>
+                                    <h3 class="home-tech__item-title txt txt-24 txt-med"> Mental Health and Wellness</h3>
                                     <div class="home-tech__item-icon icon icon-48"> <svg width="48" height="48"
                                             viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -533,7 +557,7 @@
                             </div>
                             <div class="home-tech__item">
                                 <div class="home-tech__item-inner">
-                                    <h3 class="home-tech__item-title txt txt-24 txt-med">Defence and Cognitive Readines
+                                    <h3 class="home-tech__item-title txt txt-24 txt-med">Defence and Aerospace
                                     </h3>
                                     <div class="home-tech__item-icon icon icon-48"> <svg width="48" height="48"
                                             viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -837,7 +861,7 @@
                     <div class="footer__main">
                         <div class="footer__links"> <a href="index.html" class="footer__link txt txt-20 txt-med"
                                 data-link="home">Home</a> <a class="footer__link tag-wrap txt txt-20 txt-med"
-                                data-link="about" href="index.html"> About<span class="tag-link"> we're hiring </span>
+                                data-link="about" href="index.html"> What's NeuroPi?<span class="tag-link"> we're hiring </span>
                             </a> <a class="footer__link txt txt-20 txt-med" data-link="tech"
                                 href="index.html">Technology.</a>
                             <a class="footer__link txt txt-20 txt-med" data-link="news" href="#">Impact</a> <a href="#"
@@ -847,9 +871,9 @@
                         <div class="footer__info footer__info-mid grid">
                             <div class="footer__info-addr grid">
                                 <div class="footer__info-addr-grp">
-                                    <div class="footer__info-addr-label txt txt-16"> Head Office </div>
+                                    <div class="footer__info-addr-label txt txt-16" style="color: #008281;"> Head Office </div>
                                     <div class="footer__info-addr-txt txt txt-16" style="color:#1a4255"> <span
-                                            class="neuro-title">NeuroPi</span> Tech Pvt. Ltd.
+                                            class="neuro-title np-orange">NeuroPi</span> Tech Pvt. Ltd.
                                         Hitex City, Madhapur <br>Hyderabad, Telangana <br>500084 India </div>
 
                                 </div>
@@ -876,11 +900,11 @@
                          <div >
   <a class="footer__info-legal-link txt txt-14" href=""
      style="color:#1a4255; display:inline-block; margin-right:12px;">
-     Legal notice
+     Privacy Policy
   </a>
   <a class="footer__info-legal-link txt txt-14" href=""
      style="color:#1a4255; display:inline-block; margin-right:20px;">
-     Privacy policy
+     Terms Of Service
   </a>
 </div>
 

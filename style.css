@@ -4,7 +4,7 @@
 	Template Name: Jollyany
 	Created By: Filiz OZER
 	http://themeforest.net/user/jollythemes
-	
+
 	1) SKELETON
 	2) TOPBAR & HEADER
 	3) FOOTER STYLES
@@ -18,7 +18,7 @@
 	11) ANIMATIONS
 	12) RESPONSIVENESS
 	13) COLOR SCHEMES
-	
+
 ################################################################# */
 
 /* ----------------------------------------------------
@@ -326,7 +326,7 @@ section::after {
 
 .dark_header .social-icons span a {
 	border-left-color: #313131 !important;
-	
+
 }
 
 .dark_header .navbar-default {
@@ -520,7 +520,7 @@ section::after {
 
 .social-icons {
 	padding: 0;
-	
+
 	display: block;
 	overflow: hidden;
 
@@ -5431,7 +5431,7 @@ mark,
   overflow: hidden;
   background: transparent;
   padding: 10px 0;
-  
+
 }
 
 .neuro-carousel-track {
@@ -5492,94 +5492,94 @@ mark,
 }
 
 /* Horizontal scroll container */
+/* Wrapper: keep arrows on top and prevent horizontal bleed */
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Grid: ensure it actually spans the row and has some height */
 .award-grid {
-  display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  scroll-behavior: smooth;
-  padding: 10px 0;
+  width: 100%;         /* ← important */
+  flex: 1 1 auto;      /* ← allow it to size */
+  min-height: 140px;   /* ← prevents collapse if images load late */
 }
 
-/* Hide scrollbar */
-.award-grid::-webkit-scrollbar {
-  display: none;
-}
-.award-grid {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+/* Mobile: one card per view */
+@media (max-width: 768px) {
+  .award-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding: 0 16px; /* snap comfort near arrows/edges */
+  }
+
+  .award-grid::-webkit-scrollbar { display: none; }
+
+  .award-box {
+    flex: 0 0 100%;
+    max-width: 100%;
+    scroll-snap-align: center;
+    display: flex;
+    align-items: center;   /* centers tall logos vertically */
+    justify-content: center;
+    min-height: 140px;     /* ensures visible area even before image paints */
+  }
+
+  .award-box img {
+    display: block;   /* removes inline whitespace */
+    max-width: 80%;
+    height: auto;
+  }
 }
 
-/* Award cards */
-.award-box {
-  flex: 0 0 250px;
-  height: 180px;
-  border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Desktop: multiple per row */
+@media (min-width: 769px) {
+  .award-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+
+    flex-wrap: wrap;
+    justify-content: center;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .award-grid::-webkit-scrollbar { display: none; }
+
+  .award-box {
+    flex: 0 0 auto;
+    width: 180px;
+  }
 }
 
-.award-box img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-/* Arrows */
+/* Arrows stay visible */
 .nav-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #ffffff;
-  color: #333;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 6px 12px;
-  border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   z-index: 10;
-  transition: background 0.3s;
+  background: rgba(255,255,255,.9);
+  border: 0;
+  border-radius: 50%;
+  font-size: 22px;
+  line-height: 1;
+  padding: 6px 10px;
+  cursor: pointer;
 }
-
-.nav-arrow:hover {
-  background-color: #ff471d;
-  color: #fff;
-}
-
-.nav-arrow.left {
-  left: -10px;
-}
-
-.nav-arrow.right {
-  right: -10px;
-}
-
-/* Responsive behavior */
-@media (max-width: 991px) {
-  .nav-arrow {
-    display: none;
-  }
-
-  .award-grid {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .award-box {
-    flex: 0 1 calc(50% - 20px);
-    margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 576px) {
-  .award-box {
-    flex: 0 1 100%;
-  }
-}
+.nav-arrow.left { left: 8px; }
+.nav-arrow.right { right: 8px; }
 
 
 .social-icons {
@@ -5796,3 +5796,43 @@ mark,
         width: 100%;
       }
     }
+
+
+
+	.home-part__marquee {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* space between rows */
+}
+
+.home-part__marquee-wrapper {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  /* border-right: 2px solid #ccc; right border */
+  padding-right: 10px;          /* space between border and logos */
+}
+
+.home-part__marquee-item {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+    margin-top: 20px;
+}
+
+.home-part__marquee-item img {
+  display: block;
+  height: 64px;
+  margin: 0 24px;
+  object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  .home-part__marquee-item img {
+    height: 48px;
+    margin: 0 16px;
+  }
+}
