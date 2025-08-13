@@ -1,0 +1,121 @@
+/* ===========================
+   EarlyEduCard — Layout & Cards
+   =========================== */
+
+/* Wrapper */
+.earlyeducard-wrapper {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Grid (3 per row on desktop) */
+.earlyeducard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* ---------- Flex fallback for very old browsers (no CSS Grid) ---------- */
+@supports not (display: grid) {
+  .earlyeducard-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -0.75rem;
+  }
+  .earlyeducard-grid > .earlyeducard-card {
+    flex: 1 1 calc(33.333% - 1.5rem);
+    margin: 0.75rem;
+  }
+}
+
+/* ---------- Card ---------- */
+.earlyeducard-card {
+  /* Premium background with subtle depth */
+  background: linear-gradient(145deg, #ff5b30, #ff471d);
+  color: #fff;
+
+  padding: 1.5rem;
+  border-radius: 14px;
+
+  /* Layered elevation for realism */
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.08),
+    0 12px 24px rgba(0, 0, 0, 0.06);
+
+  font-size: clamp(0.95rem, 2.4vw, 1rem);
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease,
+    background 0.25s ease;
+
+  -webkit-tap-highlight-color: transparent; /* mobile webkit */
+  will-change: transform, box-shadow, background-color, background;
+  transform: translateZ(0); /* smoother on mobile GPUs */
+}
+
+/* Hover effects only where hover makes sense (no sticky hover on touch) */
+@media (hover: hover) and (pointer: fine) {
+  .earlyeducard-card:hover {
+    transform: translateY(-8px) scale(1.03); /* lift + slight zoom */
+    background: linear-gradient(145deg, #e84a1c, #cc3e18); /* darker gradient */
+    box-shadow:
+      0 12px 24px rgba(0, 0, 0, 0.12),
+      0 20px 40px rgba(0, 0, 0, 0.10);
+  }
+}
+
+/* Keyboard accessibility */
+.earlyeducard-card:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+  box-shadow:
+    0 0 0 4px rgba(255,71,29,.5),
+    0 6px 12px rgba(0, 0, 0, 0.12),
+    0 12px 24px rgba(0, 0, 0, 0.10);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .earlyeducard-card {
+    transition: none;
+  }
+}
+
+/* High-contrast / forced colors */
+@media (forced-colors: active) {
+  .earlyeducard-card {
+    forced-color-adjust: auto;
+    border: 1px solid CanvasText;
+  }
+}
+
+/* ---------- Responsive columns ---------- */
+/* Tablets (≤1024px): 2 columns */
+@media (max-width: 1024px) {
+  .earlyeducard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @supports not (display: grid) {
+    .earlyeducard-grid > .earlyeducard-card {
+      flex: 1 1 calc(50% - 1.5rem);
+    }
+  }
+}
+
+/* Phones (≤640px): 1 column */
+@media (max-width: 640px) {
+  .earlyeducard-grid {
+    grid-template-columns: 1fr;
+  }
+  @supports not (display: grid) {
+    .earlyeducard-grid > .earlyeducard-card {
+      flex: 1 1 100%;
+    }
+  }
+}
