@@ -3109,7 +3109,7 @@ html.force--consent.show--consent body {
   will-change: transform, width;
   width: max-content;
   padding-right: 3rem;
-  font-size: 18rem;
+  font-size: 8rem;
   line-height: 1.15em;
   animation-name: rtl;
   animation-duration: 20s;
@@ -4867,7 +4867,7 @@ html.force--consent.show--consent body {
 
 .home-part {
   background-color: #eaeef0;
-  padding-top: 14.6rem;
+  padding-top: 5rem;
   padding-bottom: 15rem
 }
 
@@ -10448,3 +10448,5 @@ svg.leaflet-image-layer.leaflet-interactive path {
 .uix-navbar__brand a {
   display: inline-block; /* Ensures full clickable area */
 }
+
+

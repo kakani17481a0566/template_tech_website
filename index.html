@@ -40,6 +40,8 @@
 
 
   <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="/css/nav_hime.css">
+
 
 
   <!-- Google Fonts -->
@@ -83,31 +85,56 @@
 
   <header id="header-style-1" class="header">
     <div class="container">
-      <nav class="nav-bar">
-        <!-- Logo -->
-        <a href="index.html" class="logo">
-          <img src="images/Neuropi.png" alt="MSI Logo" />
-        </a>
-
-        <!-- Hamburger Toggle (Visible below lg only) -->
-        <button class="menu-toggle" id="menu-toggle" aria-label="Menu Toggle">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-
-        <!-- Navigation Links -->
-        <ul class="nav-links" id="nav-links">
-          <li><a href="index.html" class="achor-tag">Home</a></li>
-          <li><a href="#" class="achor-tag">ABOUT US</a></li>
-          <li><a href="#" class="achor-tag">SOLUTIONS</a></li>
-          <li><a href="#" class="achor-tag">NEWS ROOM</a></li>
-          <li><a href="#" class="achor-tag">CAREERS</a></li>
-          <li><a href="#" class="achor-tag">LOG IN</a></li>
-
-        </ul>
+      <nav class="neuropi-navbar">
+        <div class="neuropi-navbar__container">
+          <div class="neuropi-navbar__brand">
+            <a href="index.html"><img src="images/Neuropi.png" alt="Logo"></a>
+          </div>
+          <button class="neuropi-navbar__menu-btn" onclick="neuropiToggleMenu()">Menu</button>
+        </div>
       </nav>
-    </div>
+
+      <div id="neuropi-nav-sentinel" aria-hidden="true"></div>
+
+      <!-- Slide Menu (Right to Left) -->
+      <div class="neuropi-slide-menu" id="neuropiSlideMenu" aria-hidden="true">
+        <button class="neuropi-slide-menu__close" onclick="neuropiToggleMenu()" aria-label="Close menu">×</button>
+
+        <ul class="neuropi-slide-menu__list neuropi-nav-links" id="neuropi-nav-links">
+          <li><a href="index.html" class="neuropi-anchor">HOME</a></li>
+          <li><a href="#" class="neuropi-anchor">WELCOME</a></li>
+          <li><a href="#" class="neuropi-anchor">PROBLEM</a></li>
+          <li><a href="#" class="neuropi-anchor">TECHNOLOGY SUITE</a></li>
+          <li><a href="#" class="neuropi-anchor">SOLUTION</a></li>
+          <li><a href="#" class="neuropi-anchor">WHY US? WHY NOW?</a></li>
+        </ul>
+
+        <!-- Footer Section inside Slide Menu -->
+        <div class="neuropi-slide-menu__footer">
+          <div class="neuropi-footer-contact">
+
+            <!-- Middle section -->
+            <div class="neuropi-footer-middle">
+              <h4>Reach us</h4>
+              <p>
+                1950 rue Roy<br>
+                Sherbrooke, Québec, J1K 1B7<br>
+                Canada
+              </p>
+            </div>
+
+            <!-- Bottom section -->
+            <div class="neuropi-footer-actions">
+              <a href="#">Contact Us</a>
+              <a href="#">Get directions</a>
+            </div>
+
+          </div>
+        </div>
+
+
+
+      </div>
   </header>
 
 
@@ -199,7 +226,7 @@
               represents a cutting-edge,
               personalised, data-driven approach to early education, aiming to align,
             </p>
-            <a href="EarlyEducation.html" class="readmore">Tell Me More...</a>
+            <a href="earlyeducation_main.html" class="readmore">Tell Me More...</a>
           </section>
 
         </div><!-- end service_vertical_box -->
@@ -248,6 +275,8 @@
         </div><!-- end col-lg-4 -->
       </section>
 
+
+
       <section class="service-section" id="teens-section">
         <div class="col-lg-4 first">
           <div class="service_vertical_box" id="video-5">
@@ -279,7 +308,7 @@
           <h3>Mid-Life</h3>
           <p>Aging minds need personalized and actionable insights—starting earlier makes a difference. As individuals
             move through their 40s, 50s, and 60s, they face silent but profound biological </p>
-          <a href="Midage.html" class="readmore">Tell Me More...</a>
+          <a href="Midlife.html" class="readmore">Tell Me More...</a>
         </div><!-- end service_vertical_box -->
       </div><!-- end col-lg-4 -->
       <div class="col-lg-4 last">
@@ -651,15 +680,127 @@
       </div>
     </div>
   </section>
-  <!-- end white-wrapper -->
+
+
+  <!-- WHAT THEY SAY ABOUT testimonials -->
+  <section class="white-wrapper" style="margin-bottom: 50px;">
+    <div class="container">
+      <div class="general-title">
+        <h2>WHAT THEY SAY ABOUT <span class="np-orange">NeuroPi <sup class="tm-badge" style="font-size: 12px;">
+              TM</sup></span> ?</h2>
+        <hr>
+        <p class="lead">Thanks for our awesome clients & testimonials</p>
+      </div><!-- end general title -->
+      <div class="testimonial-widget">
+        <div id="owl-testimonial" class="owl-carousel">
+          <div class="testimonial">
+            <p class="lead"> “We always knew our son was bright, but he struggled to stay focused and would get
+              overwhelmed during schoolwork. <span class="np-orange">NeuroPi</span>
+              helped us understand how his brain is wired to learn—and
+              what wasn’t working for him. Now, his study routine fits him, not the other way around.
+              His confidence has skyrocketed, and we finally feel like we're supporting him in the right way.”</p>
+            <h3 style="font-size: 2.6rem;">Anjali M., parent of 11-year-old</h3>
+          </div><!-- end tweet -->
+          <div class="testimonial">
+            <p class="lead"> “I never realized how much my mental game affected my physical performance.
+              <span class="np-orange">NeuroPi</span> showed me
+              how my brain handles
+              pressure, and helped me train not just my body—but my focus,
+              reaction, and recovery. I’ve shaved time off my runs and feel sharper during competition. It’s like a
+              coach for your brain.”
+            </p>
+            <h3 style="font-size: 2.6rem;">Ravi K., 16, competitive track athlete</h3>
+          </div><!-- end tweet -->
+          <div class="testimonial">
+            <p class="lead">“In my 40s, I started feeling foggy, tired, and emotionally off—but I couldn’t explain it.
+              <span class="np-orange">NeuroPi</span> gave me a
+              clear picture of what was
+              going on inside my brain, and how hormones, stress, and sleep were all connected.
+              With the insights and daily strategies it gave me, I feel like I’ve taken control back—mentally,
+              emotionally, and physically.”
+            </p>
+            <h3 style="font-size: 2.6rem;">Neeta D., 47, working professional & mom of two</h3>
+          </div><!-- end tweet -->
+        </div><!-- end owl-testimonial -->
+      </div><!-- end testimonial widget -->
+    </div><!-- end container -->
+  </section>
 
 
   <section class="post-wrapper-top jt-shadow clearfix">
 
-  </section><!-- end post-wrapper-top -->
+  </section>
+  <!-- test logo -->
 
-  <!-- ------------------------------leadership section--------------------- -->
 
+
+
+
+
+  <!--------------------------clients section Trusted by our Partners & Supporters ---------------------------------------->
+
+  <section id="one-parallax" class="parallax"
+    style="background-image: url('https://res.cloudinary.com/kakani7/image/upload/v1753806070/MSI/VIDEOS/images/smiling-business-people-shaking-hands-while-looking-camera-against-planet-abstract-background_c7hcik.jpg');"
+    data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
+    <div class="overlay">
+      <div class="container">
+        <div class="general-title">
+          <h2>Trusted by our Partners & Supporters </h2>
+          <hr>
+          <p class="lead">Collaborating with Visionaries to Shape the Future of <span class="neuro-title">NeuroPi</span>
+            Explorers.</p>
+        </div><!-- end general title -->
+        <!-- ---------------------------------scroll clients----------------- -->
+        <!-- <div class="clients text-center">
+          <div class="client-wrap">
+            <a href=""><img src="logo/Tech-Mahindra-Logo.jpg.bv.webp" alt="Microsoft Logo" /></a>
+          </div>
+          <div class="client-wrap">
+            <a href="#"><img src="logo/Vodafone-Logo-1.jpg.bv.webp" alt="Deloitte Logo" /></a>
+          </div>
+          <div class="client-wrap">
+            <a href="#"><img src="logo/Amaron-Logo.jpg.bv.webp" alt="Amazon Logo" /></a>
+          </div>
+          <div class="client-wrap">
+            <a href="#"><img src="logo/novvvva.png.bv.webp" alt="Optum Logo" /></a>
+          </div>
+          <div class="client-wrap">
+            <a href="#"><img src="logo/ICICI-Bank-Logo.jpg.bv.webp" alt="Wells Fargo Logo" /></a>
+          </div>
+          <div class="client-wrap">
+            <a href="#"><img src="logo/QCIty.jpg.bv.webp" alt="ValueLabs Logo" /></a>
+          </div>
+          <div class="client-wrap">
+            <a href="#"><img src="logo/Amazon-Logo-1.jpg.bv.webp" alt="TCS Logo" /></a>
+          </div>
+          <div class="client-wrap">
+            <a href="#"><img src="logo/IBM-Logo-1956.jpg" alt="Healthcare Logo" /></a>
+          </div>
+        </div> -->
+        <!-- ---------------------------------scroll clients----------------- -->
+        <div class="home-part__main home-part__main-supporters">
+          <div class="home-part__marquee">
+            <!-- Row 1: moves RIGHT -->
+            <div class="--right home-part__marquee-wrapper" data-speed="0.5">
+              <div class="home-part__marquee-item" id="logoTicker">
+                <!-- JS will inject <img> logos here -->
+              </div>
+            </div>
+
+            <!-- Row 2: moves LEFT -->
+            <div class="--left home-part__marquee-wrapper" data-speed="0.5">
+              <div class="home-part__marquee-item" id="logoTicker2">
+                <!-- JS will inject <img> logos here -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end container -->
+    </div><!-- end overlay -->
+  </section>
+
+  <!-- Leadership -->
   <section class="white-wrapper" id="management-team">
     <div class="container">
       <div class="general-title">
@@ -875,54 +1016,10 @@
       </div>
     </div>
   </section>
-  <!--------------------------clients section---------------------------------------->
 
-  <section id="one-parallax" class="parallax"
-    style="background-image: url('https://res.cloudinary.com/kakani7/image/upload/v1753806070/MSI/VIDEOS/images/smiling-business-people-shaking-hands-while-looking-camera-against-planet-abstract-background_c7hcik.jpg');"
-    data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
-    <div class="overlay">
-      <div class="container">
-        <div class="general-title">
-          <h2>Trusted by our Partners & Supporters </h2>
-          <hr>
-          <p class="lead">Collaborating with Visionaries to Shape the Future of <span class="neuro-title">NeuroPi</span>
-            Explorers.</p>
-        </div><!-- end general title -->
-        <!-- ---------------------------------scroll clients----------------- -->
-        <div class="clients text-center">
-          <div class="client-wrap">
-            <a href=""><img src="logo/Tech-Mahindra-Logo.jpg.bv.webp" alt="Microsoft Logo" /></a>
-          </div>
-          <div class="client-wrap">
-            <a href="#"><img src="logo/Vodafone-Logo-1.jpg.bv.webp" alt="Deloitte Logo" /></a>
-          </div>
-          <div class="client-wrap">
-            <a href="#"><img src="logo/Amaron-Logo.jpg.bv.webp" alt="Amazon Logo" /></a>
-          </div>
-          <div class="client-wrap">
-            <a href="#"><img src="logo/novvvva.png.bv.webp" alt="Optum Logo" /></a>
-          </div>
-          <div class="client-wrap">
-            <a href="#"><img src="logo/ICICI-Bank-Logo.jpg.bv.webp" alt="Wells Fargo Logo" /></a>
-          </div>
-          <div class="client-wrap">
-            <a href="#"><img src="logo/QCIty.jpg.bv.webp" alt="ValueLabs Logo" /></a>
-          </div>
-          <div class="client-wrap">
-            <a href="#"><img src="logo/Amazon-Logo-1.jpg.bv.webp" alt="TCS Logo" /></a>
-          </div>
-          <div class="client-wrap">
-            <a href="#"><img src="logo/IBM-Logo-1956.jpg" alt="Healthcare Logo" /></a>
-          </div>
-        </div>
-        <!-- ---------------------------------scroll clients----------------- -->
-        <div class="neuro-carousel-wrapper">
-          <div class="neuro-carousel-track" id="logoTicker"></div>
-        </div>
 
-      </div><!-- end container -->
-    </div><!-- end overlay -->
-  </section><!-- end transparent-bg -->
+
+  <!-- end transparent-bg -->
 
 
   <!-- <section class="home-part">
@@ -1035,55 +1132,17 @@
             </section> -->
 
   <!--------------------------clients section ends---------------------------------------->
-  <div class="grey-wrapper jt-shadow padding-top">
-    <div class="make-center wow fadeInUp">
+  <div class="grey-wrapper jt-shadow ">
+    <div class="make-center wow fadeInUp" style="margin-bottom: 100px;">
       <img src="images/neuro pi copy.png" alt="" class="img-responsive">
     </div>
   </div><!-- end white-wrapper -->
 
   <!--------------------------------------------------------testimonials section ---------------------------------------------------->
-  <section class="white-wrapper" style="margin-bottom: 50px;">
-    <div class="container">
-      <div class="general-title">
-        <h2>WHAT THEY SAY ABOUT <span class="np-orange">NeuroPi <sup class="tm-badge" style="font-size: 12px;">
-              TM</sup></span> ?</h2>
-        <hr>
-        <p class="lead">Thanks for our awesome clients & testimonials</p>
-      </div><!-- end general title -->
-      <div class="testimonial-widget">
-        <div id="owl-testimonial" class="owl-carousel">
-          <div class="testimonial">
-            <p class="lead"> “We always knew our son was bright, but he struggled to stay focused and would get
-              overwhelmed during schoolwork. <span class="np-orange">NeuroPi</span>
-              helped us understand how his brain is wired to learn—and
-              what wasn’t working for him. Now, his study routine fits him, not the other way around.
-              His confidence has skyrocketed, and we finally feel like we're supporting him in the right way.”</p>
-            <h3 style="font-size: 2.6rem;">Anjali M., parent of 11-year-old</h3>
-          </div><!-- end tweet -->
-          <div class="testimonial">
-            <p class="lead"> “I never realized how much my mental game affected my physical performance.
-              <span class="np-orange">NeuroPi</span> showed me
-              how my brain handles
-              pressure, and helped me train not just my body—but my focus,
-              reaction, and recovery. I’ve shaved time off my runs and feel sharper during competition. It’s like a
-              coach for your brain.”
-            </p>
-            <h3 style="font-size: 2.6rem;">Ravi K., 16, competitive track athlete</h3>
-          </div><!-- end tweet -->
-          <div class="testimonial">
-            <p class="lead">“In my 40s, I started feeling foggy, tired, and emotionally off—but I couldn’t explain it.
-              <span class="np-orange">NeuroPi</span> gave me a
-              clear picture of what was
-              going on inside my brain, and how hormones, stress, and sleep were all connected.
-              With the insights and daily strategies it gave me, I feel like I’ve taken control back—mentally,
-              emotionally, and physically.”
-            </p>
-            <h3 style="font-size: 2.6rem;">Neeta D., 47, working professional & mom of two</h3>
-          </div><!-- end tweet -->
-        </div><!-- end owl-testimonial -->
-      </div><!-- end testimonial widget -->
-    </div><!-- end container -->
-  </section><!-- end transparent-bg -->
+
+
+
+  <!-- end transparent-bg -->
   <!-- ---------------------------mini container---------------- -->
   <!-- <section class="make-bg-full">
     <div class="calloutbox-full-mini nocontainer">
@@ -1096,7 +1155,8 @@
 
   <!---------------------------------------------------testimonials section ends---------------------------------------------------->
 
-  <footer class="footer">
+
+  <footer class="footer" style="margin-top: 90px;">
     <div class="footer__inner">
       <div class="container grid">
         <div class="footer__form-wrap" data-logo-main="mix-mb">
@@ -1136,7 +1196,7 @@
         <div class="footer__main">
           <div class="footer__links"> <a href="index.html" class="footer__link txt txt-20 txt-med"
               data-link="home">Home</a> <a class="footer__link tag-wrap txt txt-20 txt-med" data-link="about"
-              href="index.html"> About<span class="tag-link"> we're hiring </span>
+              href="index.html"> What's NeuroPi?<span class="tag-link"> we're hiring </span>
             </a> <a class="footer__link txt txt-20 txt-med" data-link="tech" href="index.html">Technology.</a>
             <a class="footer__link txt txt-20 txt-med" data-link="news" href="#">Impact</a> <a href="#"
               data-popup="contact" class="footer__link txt txt-20 txt-med" data-link="contact">Get in
@@ -1145,9 +1205,9 @@
           <div class="footer__info footer__info-mid grid">
             <div class="footer__info-addr grid">
               <div class="footer__info-addr-grp">
-                <div class="footer__info-addr-label txt txt-16"> Head Office </div>
+                <div class="footer__info-addr-label txt txt-16" style="color: #008281;"> Head Office </div>
                 <div class="footer__info-addr-txt txt txt-16" style="color:#1a4255"> <span
-                    class="neuro-title">NeuroPi</span> Tech Pvt. Ltd.
+                    class="neuro-title np-orange">NeuroPi</span> Tech Pvt. Ltd.
                   Hitex City, Madhapur <br>Hyderabad, Telangana <br>500084 India </div>
 
               </div>
@@ -1168,12 +1228,25 @@
               </div>
             </div>
           </div>
+
+          <div>
+            <a class="footer__info-legal-link txt txt-14" href="Privacy-Policy.html"
+              style="color:#1a4255; display:inline-block; margin-right:12px;">
+              Privacy Policy
+            </a>
+            <a class="footer__info-legal-link txt txt-14" href="Terms-of-Service.html"
+              style="color:#1a4255; display:inline-block; margin-right:20px;">
+              Terms Of Service
+            </a>
+          </div>
+
+
           <div class="footer__info grid">
             <div class="footer__info-copy txt txt-14" style="color:#1a4255;"> © 2025, NeuroPi<span
                 style="font-size: 10px;"><sup>TM</sup></span>. All Rights Reserved. </div>
-            <div class="footer__info-legal"> <a class="footer__info-legal-link txt txt-14" data-link="legal" href=""
-                style="color:#1a4255;"> Legal notice </a> <a class="footer__info-legal-link txt txt-14"
-                data-link="privacy" href="https://cargokite.com/privacy" style="color:#1a4255;"> Privacy policy </a>
+            <div class="footer__info-legal">
+
+
               <div style="display: flex; gap: 8px; align-items: center;">
                 <!-- LinkedIn -->
                 <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
@@ -1242,9 +1315,11 @@
       </div>
     </div> <a href="RegistrationHome.html" class="footer__marquee" data-popup="contact">
       <div class="footer__marquee-wrap">
-        <div class="footer__marquee-item heading" style="color: #ff471d;"> Are you interested? Let's discuss today!
+        <div class="footer__marquee-item heading" style="color: #ff471d;"> Are you interested? Let's discuss
+          today!
         </div>
-        <div class="footer__marquee-item heading" style="color: #ff471d;"> Are you interested? Let's discuss today!
+        <div class="footer__marquee-item heading" style="color: #ff471d;"> Are you interested? Let's discuss
+          today!
         </div>
       </div>
       <div class="footer__cursor">
@@ -1275,6 +1350,7 @@
       </div>
     </a>
   </footer>
+
   <!-- start copyrights -->
 
 
@@ -1342,7 +1418,7 @@
         label: "NeuroPi ™  Explores",
         title: "Unlocking Every Child’s Potential",
         subtitle: "Personalising the Learning Journey to Optimize Strengths and Address Potential Challenges.",
-        link: "Earlyeducation.html"
+        link: "earlyeducation_main.html"
       },
       {
         src: "https://res.cloudinary.com/kakani7/video/upload/v1753362011/WhatsApp_Video_2025-07-24_at_13.14.45_57f1b5bf_winfru.mp4",
@@ -1370,7 +1446,7 @@
         label: "NeuroPi ™  Explores",
         title: "Your Brain.<br>Your Body.</br>Your Biology. Personalized.",
         subtitle: "A Precision Wellness Platform For Cognitive Health, Stress Resilience & Midlife Longevity ",
-        link: "Midage.html"
+        link: "Midlife.html"
       },
       {
         src: "https://res.cloudinary.com/kakani7/video/upload/v1753366472/MSI/VIDEOS/7_zckdua.mp4",
@@ -1621,6 +1697,17 @@
       document.getElementById('uixSlideMenu').classList.toggle('active');
     }
   </script>
+  <script src="js/navbar.js"></script>
+
+  <script src="js/logo-moving.js"></script>
+  <script>
+    function toggleMenu() {
+      document.getElementById('uixSlideMenu').classList.toggle('active');
+      document.querySelector('.uix-navbar__menu-btn').classList.toggle('active');
+    }
+  </script>
+
+
 
 
 </body>
