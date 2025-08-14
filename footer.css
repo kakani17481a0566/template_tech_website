@@ -80,7 +80,7 @@ html {
   -webkit-text-rendering: optimizeSpeed;
   text-rendering: optimizespeed;
   color: #151515;
-  font-family: HelveticaNowDisplay;
+  font-family: lato, sans-serif;
   font-size: .578704vw
 }
 
@@ -359,27 +359,27 @@ button {
 }
 
 @font-face {
-  font-family: HelveticaNowDisplay;
+  font-family: lato, sans-serif;
   src: url(HelveticaNowDisplay.c3034e01.otf);
   font-display: swap
 }
 
 @font-face {
-  font-family: HelveticaNowDisplay;
+  font-family: lato, sans-serif;
   font-weight: 500;
   src: url(HelveticaNowDisplayMedium.947709e3.otf);
   font-display: swap
 }
 
 @font-face {
-  font-family: HelveticaNowDisplay;
+  font-family: lato, sans-serif;
   font-weight: 700;
   src: url(HelveticaNowDisplayBold.966dafea.otf);
   font-display: swap
 }
 
 .txt {
-  font-family: HelveticaNowDisplay;
+  font-family: lato, sans-serif;
   color: #1a4255;
 }
 
@@ -2948,7 +2948,7 @@ html.force--consent.show--consent body {
 .footer__inner {
   z-index: 3;
   background-color: #eaeef0;
-  padding-bottom: 6rem;
+  padding-bottom: 0rem;
   position: relative
 }
 
@@ -2987,7 +2987,7 @@ html.force--consent.show--consent body {
 .footer__main {
   flex-direction: column;
   grid-column: 8/16;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   display: flex
 }
 
@@ -3025,7 +3025,8 @@ html.force--consent.show--consent body {
 }
 
 .footer__info-addr-label {
-  margin-bottom: 1.6rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   font-weight: 700
 }
 

@@ -1,7 +1,17 @@
-/* ===== Navbar ===== */
-.neuropi-navbar {
+/* =====================================================
+   Neuropi Namespaced Navbar Styles
+   -----------------------------------------------------
+   Features:
+   1. Fixed transparent navbar at top of page
+   2. Turns white with shadow when user scrolls
+   3. Responsive slide menu panel for mobile/tablet
+   4. Smooth transitions for background, text, and logo
+   ===================================================== */
+
+/* ===== Top Navbar (default: transparent) ===== */
+.neuropi-nav-bar {
   position: fixed;
-  inset: 0 0 auto 0; /* top:0; left/right:0 */
+  inset: 0 0 auto 0;
   width: 100%;
   background: transparent;
   padding: 1rem 2rem;
@@ -12,21 +22,22 @@
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.neuropi-navbar__container {
+.neuropi-nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 
-.neuropi-navbar__brand {
+/* Brand text + logo */
+.neuropi-nav-brand {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #fff; /* visible on transparent over hero */
+  color: #fff;
   text-transform: uppercase;
 }
 
-.neuropi-navbar__brand img {
+.neuropi-nav-brand img {
   height: 72px;
   width: auto;
   object-fit: contain;
@@ -34,7 +45,8 @@
   transition: filter 0.3s ease;
 }
 
-.neuropi-navbar__menu-btn {
+/* Menu button */
+.neuropi-nav-menu-btn {
   background: #ff471d;
   color: #fff;
   border: 2px solid #ff471d;
@@ -45,28 +57,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: lato, sans-serif;
+  font-family: Lato, sans-serif;
   letter-spacing: 1px;
 }
 
-/* Scrolled state: white bg + dark brand/logo + adjusted button */
-.neuropi-navbar.scrolled {
+/* ===== Scroll State (navbar after scrolling) ===== */
+.neuropi-nav-bar.scrolled {
   background: #fff;
   box-shadow: 0 4px 6px rgba(0,0,0,.1);
 }
 
-.neuropi-navbar.scrolled .neuropi-navbar__brand {
+.neuropi-nav-bar.scrolled .neuropi-nav-brand {
   color: #1a4255;
 }
 
-.neuropi-navbar.scrolled .neuropi-navbar__menu-btn {
+.neuropi-nav-bar.scrolled .neuropi-nav-menu-btn {
   background: #ff471d;
   color: #fff;
   border-color: #ff471d;
 }
 
-/* ===== Slide Menu ===== */
-.neuropi-slide-menu {
+/* ===== Slide Menu Panel ===== */
+.neuropi-menu-panel {
   position: fixed;
   top: 0;
   right: -40%;
@@ -77,14 +89,17 @@
   padding: 2rem;
   z-index: 1100;
   transition: right 0.4s ease-in-out;
-  overflow-y: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.neuropi-slide-menu.active {
+/* Active slide menu (visible) */
+.neuropi-menu-panel.active {
   right: 0;
 }
 
-.neuropi-slide-menu__close {
+.neuropi-menu-close {
   background: none;
   color: #fff;
   font-size: 2rem;
@@ -95,73 +110,35 @@
   left: 1rem;
 }
 
-.neuropi-slide-menu__list {
+.neuropi-menu-list {
   list-style: none;
   margin: 0;
-  padding: 5rem 0 1rem 0; /* space under close button */
+  padding: 5rem 0 1rem 0;
+  flex: 1;
+  overflow-y: auto;
 }
 
-.neuropi-slide-menu__list li {
-  margin: 1.25rem 0;
+.neuropi-menu-list li {
+  margin: 1.75rem 0; /* ⬅ Increased spacing between items */
 }
 
-.neuropi-slide-menu__list li a {
+/* ===== Bigger & bolder links ===== */
+.neuropi-menu-list li a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.75rem; /* desktop comfy size */
+  font-size: 2.25rem; /* ⬅ Bigger than before (was 1.75rem) */
+  font-weight: bold;
   display: block;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.75rem; /* ⬅ Slightly more padding under text */
   border-bottom: 2px solid rgba(255,255,255,0.4);
   transition: border-color 0.3s ease;
 }
 
-.neuropi-slide-menu__list li a:hover {
+.neuropi-menu-list li a:hover {
   border-bottom-color: #fff;
 }
 
-/* “Reach us” block that sits after the last link */
-.neuropi-footer-contact {
-  color: #fff;
-  font-family: Arial, sans-serif;
-}
-
-.neuropi-footer-contact h4 {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0 0 10px;
-}
-
-.neuropi-footer-contact p {
-  font-size: 14px;
-  line-height: 1.5;
-  margin: 0 0 12px;
-  text-align: right;
-}
-
-.neuropi-footer-actions {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.neuropi-footer-actions a {
-  display: inline-block;
-  padding: 8px 14px;
-  font-size: 14px;
-  color: #fff;
-  background-color: #ff471d;
-  border: 1px solid rgba(255,255,255,0.35);
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.neuropi-footer-actions a:hover {
-  background-color: #e03e1a;
-  border-color: rgba(255,255,255,0.6);
-}
-
-/* Sentinel kept out of layout */
+/* ===== Scroll Sentinel ===== */
 #neuropi-nav-sentinel {
   position: absolute;
   top: 0;
@@ -169,27 +146,56 @@
   width: 1px;
 }
 
-/* ===== Responsive ===== */
+/* ===== Responsive Adjustments ===== */
 @media (max-width: 1024px) {
-  .neuropi-slide-menu {
+  .neuropi-menu-panel {
     width: 55%;
     right: -55%;
   }
 }
 
 @media (max-width: 767px) {
-  .neuropi-navbar__brand img {
+  .neuropi-nav-brand img {
     height: 56px;
   }
-  .neuropi-slide-menu {
-    width: 80%;
-    right: -80%;
+
+  .neuropi-menu-panel {
+    width: 50%;
+    right: -50%;
     padding: 1.5rem;
   }
-  .neuropi-slide-menu__list {
+
+  .neuropi-menu-list {
     padding-top: 4rem;
   }
-  .neuropi-slide-menu__list li a {
-    font-size: 1.25rem; /* good tap targets */
+
+  .neuropi-menu-list li {
+    margin: 1.5rem 0; /* Slightly tighter on small screens */
+  }
+
+  .neuropi-menu-list li a {
+    font-size: 1.75rem; /* Bigger on mobile than before */
   }
 }
+
+
+@media (max-width: 767px) {
+  /* Target the inner flex container */
+  .neuropi-footer-contact[style*="display: flex"] {
+    flex-direction: column !important;
+    align-items: center !important; /* centers children horizontally */
+    justify-content: center !important;
+    text-align: center !important; /* centers text inside p */
+    gap: 1rem;
+    padding: 1rem; /* ⬅ added padding all around */
+  }
+
+  /* Make sure all text inside is centered and spaced */
+  .neuropi-footer-contact p {
+    text-align: center !important;
+    margin: 0;
+    padding: 0 0.5rem; /* ⬅ small left/right padding for breathing space */
+  }
+}
+
+

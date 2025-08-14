@@ -75,7 +75,7 @@ html {
   -webkit-text-rendering: optimizeSpeed;
   text-rendering: optimizespeed;
   color: #151515;
-  font-family: HelveticaNowDisplay;
+  font-family: lato, sans-serif;
   font-size: 0.578704vw;
 }
 @media only screen and (min-width: 2160px) {
@@ -110,7 +110,7 @@ textarea {
   appearance: none;
   border: none;
   outline: none;
-  font-family: HelveticaNowDisplay;
+  font-family: lato, sans-serif;
 }
 button {
   cursor: pointer;
@@ -313,24 +313,24 @@ button {
   display: none !important;
 }
 @font-face {
-  font-family: HelveticaNowDisplay;
+  font-family: lato, sans-serif;
   src: url(HelveticaNowDisplay.c3034e01.otf);
   font-display: swap;
 }
 @font-face {
-  font-family: HelveticaNowDisplay;
+  font-family: lato, sans-serif;
   font-weight: 500;
   src: url(HelveticaNowDisplayMedium.947709e3.otf);
   font-display: swap;
 }
 @font-face {
-  font-family: HelveticaNowDisplay;
+  font-family: lato, sans-serif;
   font-weight: 700;
   src: url(HelveticaNowDisplayBold.966dafea.otf);
   font-display: swap;
 }
 .txt {
-  font-family: HelveticaNowDisplay;
+  font-family: lato, sans-serif;
 }
 .txt-12 {
   font-size: var(--fs-12);
@@ -2519,7 +2519,7 @@ html.force--consent.show--consent body {
 .footer__inner {
   z-index: 3;
   background-color: #eaeef0;
-  padding-bottom: 6rem;
+  /* padding-bottom: 6rem; */
   position: relative;
 }
 .footer__form-wrap {
@@ -2582,7 +2582,7 @@ html.force--consent.show--consent body {
   grid-template-columns: repeat(2, 1fr);
 }
 .footer__info-addr-label {
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.rem;
   font-weight: 700;
 }
 .footer__info-addr-txt {

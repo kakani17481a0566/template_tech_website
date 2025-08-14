@@ -1,7 +1,7 @@
 /* ===== Navbar (alias old -> new) ===== */
 .uix-navbar, .neuropi-navbar {
   position: fixed;
-  inset: 0 0 auto 0; /* top:0; left/right:0 */
+  inset: 0 0 auto 0;
   width: 100%;
   background: transparent;
   padding: 1rem 2rem;
@@ -20,7 +20,7 @@
 .uix-navbar__brand, .neuropi-navbar__brand {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #fff; /* visible on transparent over hero */
+  color: #fff;
   text-transform: uppercase;
 }
 .uix-navbar__brand img, .neuropi-navbar__brand img {
@@ -41,7 +41,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: lato, sans-serif;
+  font-family: Lato, sans-serif; /* capitalize font name */
   letter-spacing: 1px;
 }
 .uix-navbar.scrolled, .neuropi-navbar.scrolled {
@@ -59,7 +59,7 @@
   border-color: #ff471d;
 }
 
-/* ===== Slide Menu (alias + flex layout for bottom footer) ===== */
+/* ===== Slide Menu ===== */
 .uix-slide-menu, .neuropi-slide-menu {
   position: fixed;
   top: 0;
@@ -71,9 +71,9 @@
   padding: 2rem;
   z-index: 1100;
   transition: right 0.4s ease-in-out;
-  overflow: hidden;           /* prevent double scroll; list will scroll */
-  display: flex;              /* NEW: flex layout */
-  flex-direction: column;     /* NEW */
+  overflow: hidden;      /* list will scroll */
+  display: flex;
+  flex-direction: column;
 }
 .uix-slide-menu.active, .neuropi-slide-menu.active { right: 0; }
 
@@ -91,67 +91,77 @@
 .uix-slide-menu__list, .neuropi-slide-menu__list {
   list-style: none;
   margin: 0;
-  padding: 5rem 0 1rem 0; /* space under close button */
-  flex: 1;                /* NEW: let the list take available space */
-  overflow-y: auto;       /* NEW: only list scrolls */
+  padding: 5rem 0 1rem 0;
+  flex: 1;
+  overflow-y: auto;
 }
 .uix-slide-menu__list li, .neuropi-slide-menu__list li { margin: 1.25rem 0; }
 .uix-slide-menu__list li a, .neuropi-slide-menu__list li a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.75rem; /* desktop comfy size */
+  font-size: 1.75rem;
   display: block;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid rgba(255,255,255,0.4);
   transition: border-color 0.3s ease;
 }
-.uix-slide-menu__list li a:hover, .neuropi-slide-menu__list li a:hover {
-  border-bottom-color: #fff;
-}
+.uix-slide-menu__list li a:hover, .neuropi-slide-menu__list li a:hover { border-bottom-color: #fff; }
 
-/* ===== Footer inside menu (new structure you added) ===== */
+/* ===== Unified Footer inside slide menu ===== */
+.uix-slide-menu__footer,
 .neuropi-slide-menu__footer {
-  margin-top: auto;           /* NEW: push footer to bottom */
+  margin-top: auto;
   padding-top: 1.5rem;
   display: flex;
   flex-direction: column;
-}
-.neuropi-footer-contact { color: #fff; font-family: Arial, sans-serif; }
-.neuropi-footer-contact h4 { font-size: 18px; font-weight: bold; margin: 0 0 10px; }
-.neuropi-footer-contact p  { font-size: 14px; line-height: 1.5; margin: 0; text-align: center; }
-
-.neuropi-footer-middle {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;  /* center vertically within footer space */
-  align-items: center;      /* center horizontally */
+  align-items: center;
   text-align: center;
-  padding: 0.5rem 0;
+  gap: 1rem;
 }
-
+.footer-contact,
+.neuropi-footer-contact {
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+.footer-contact h4,
+.neuropi-footer-contact h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+.footer-contact p,
+.neuropi-footer-contact p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0 0.5rem;
+}
+.footer-actions,
 .neuropi-footer-actions {
   display: flex;
   gap: 8px;
-  justify-content: center;  /* center buttons */
-  margin-top: 1rem;
+  justify-content: center;
+  margin-top: 0.5rem;
 }
+.footer-actions a,
 .neuropi-footer-actions a {
   display: inline-block;
   padding: 8px 14px;
   font-size: 14px;
   color: #fff;
   background-color: #ff471d;
-  border: 1px solid rgba(255,255,255,0.35);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 4px;
   text-decoration: none;
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
+.footer-actions a:hover,
 .neuropi-footer-actions a:hover {
   background-color: #e03e1a;
-  border-color: rgba(255,255,255,0.6);
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
-/* ===== Sentinel id fix (use your new id) ===== */
+/* ===== Sentinel ===== */
 #neuropi-nav-sentinel {
   position: absolute;
   top: 0;
@@ -161,15 +171,87 @@
 
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
-  .uix-slide-menu, .neuropi-slide-menu { width: 55%; right: -55%; }
+  .uix-slide-menu, .neuropi-slide-menu { width: 55%; right: -55%; } /* match offset to width */
 }
 @media (max-width: 767px) {
   .uix-navbar__brand img, .neuropi-navbar__brand img { height: 56px; }
   .uix-slide-menu, .neuropi-slide-menu {
-    width: 80%;
-    right: -80%;
+    width: 50%;
+    right: -50%;
     padding: 1.5rem;
   }
   .uix-slide-menu__list, .neuropi-slide-menu__list { padding-top: 4rem; }
-  .uix-slide-menu__list li a, .neuropi-slide-menu__list li a { font-size: 1.25rem; } /* good tap targets */
+  .uix-slide-menu__list li a, .neuropi-slide-menu__list li a { font-size: 1.25rem; }
+  .uix-slide-menu__footer, .neuropi-slide-menu__footer { padding: 1rem; }
+}
+
+
+
+
+
+
+/* Desktop: two columns, left/right aligned */
+.np-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 20px; /* left padding 20px */
+}
+
+.np-footer-left h4 {
+  color: #1a4255;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.np-footer-right {
+  text-align: right;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.np-footer-right p {
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+/* Buttons */
+.np-footer-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.np-footer-actions a {
+  display: inline-block;
+  padding: 8px 14px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #ff471d;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.np-footer-actions a:hover {
+  background-color: #e03e1a;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Mobile/Tablet: stack & center */
+@media (max-width: 768px) {
+  .np-footer-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .np-footer-right {
+    text-align: center;
+  }
+  .np-footer-actions {
+    justify-content: center;
+  }
 }

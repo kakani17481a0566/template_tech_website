@@ -1,0 +1,113 @@
+/* ----------------------------------
+   ⬇️ Footer Base & Structure
+---------------------------------- */
+.footer {}
+.footer__inner {}
+.footer__main {}
+.footer__form-wrap {}
+.footer__form-icon {}
+.footer__form-title {}
+.footer__form-sub {}
+.footer__form-main {}
+.footer__form-caption {}
+.footer__links {}
+.footer__link {}
+.footer__info {}
+.footer__info-mid {}
+.footer__info-addr {}
+.footer__info-addr-grp {}
+.footer__info-addr-label {}
+.footer__info-addr-txt {}
+.footer__info-contact {}
+.footer__info-contact-grp {}
+.footer__info-contact-label {}
+.footer__info-contact-link {}
+.footer__cursor {}
+.footer__cursor-main {}
+.footer__cursor-txt {}
+.footer__marquee {}
+.footer__marquee-wrap {}
+.footer__marquee-item {}
+
+/* ----------------------------------
+   ⬇️ Typography / Sizing
+---------------------------------- */
+.txt {}
+.txt-16 { font-size: 16px; }
+.txt-18 { font-size: 18px; }
+.txt-20 { font-size: 20px; }
+.txt-med { font-weight: 500; }
+.txt-bold { font-weight: 700; }
+.heading {}
+.h4 { font-size: 1.25rem; font-weight: bold; }
+
+/* ----------------------------------
+   ⬇️ Icons
+---------------------------------- */
+.icon {}
+.icon-20 { width: 20px; height: 20px; }
+.icon-24 { width: 24px; height: 24px; }
+.icon-80 { width: 80px; height: 80px; }
+
+/* ----------------------------------
+   ⬇️ Tags / Badges
+---------------------------------- */
+.tag-wrap {}
+.tag-link {}
+.tm-badge {
+  font-size: 12px;
+  vertical-align: super;
+}
+
+/* ----------------------------------
+   ⬇️ Buttons / Input Fields
+---------------------------------- */
+.btn {}
+.btn-lg {}
+.btn-pri {}
+.input-wrap {}
+.input-field {}
+.input-submit {}
+.input-submit-icon {}
+.input-submit-txt {}
+.input-submit-txt-tail {}
+.honey-input {}
+
+/* ----------------------------------
+   ⬇️ Arrows (Animation?)
+---------------------------------- */
+.arr-hover {}
+.arr-wrap {}
+.arr-wrap-24 {}
+.arr-ic-main {}
+.arr-ic-clone {}
+
+/* ----------------------------------
+   ⬇️ Branding Colors
+---------------------------------- */
+.neuro-title {}
+.np-orange {
+  color: #ff471d;
+}
+
+/* ----------------------------------
+   ⬇️ Layout Helpers / Flex / Grid
+---------------------------------- */
+.grid { display: grid; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+
+.flex { display: flex; }
+.flex-wrap { flex-wrap: wrap; }
+.gap-15px { gap: 15px; }
+.gap-24px { gap: 24px; }
+.justify-between { justify-content: space-between; }
+.align-items-center { align-items: center; }
+.overflow-x-auto { overflow-x: auto; }
+.white-space-nowrap { white-space: nowrap; }
+
+/* ----------------------------------
+   ⬇️ Bootstrap Icons (if needed)
+---------------------------------- */
+.bi {
+  font-family: 'Bootstrap Icons';
+}
