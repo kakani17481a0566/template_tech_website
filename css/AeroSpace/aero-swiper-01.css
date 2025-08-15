@@ -1,0 +1,112 @@
+/* ==============================
+   Aero Swiper (#aero-swiper-01)
+   - Fully scoped, no collisions
+   - Shows slides even without Swiper JS
+   - Responsive slide height via CSS var
+   ============================== */
+
+#aero-swiper-01 {
+  --slide-h: 248px;            /* base height */
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  opacity: 1 !important;       /* avoid templates setting opacity:0 */
+}
+
+#aero-swiper-01 .swiper-wrapper {
+  display: flex;               /* fallback when Swiper CSS not loaded */
+  width: 100%;
+  gap: 0;
+  will-change: transform;
+  transform: translate3d(0,0,0);
+}
+
+#aero-swiper-01 .swiper-slide {
+  flex: 0 0 100%;              /* one slide per view (fallback) */
+  box-sizing: border-box;
+  height: var(--slide-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Make images fill the slide area neatly */
+#aero-swiper-01 .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);     /* reduce flicker on some GPUs */
+}
+
+/* If a global stylesheet tries to hide slides before init */
+#aero-swiper-01 .swiper-slide { opacity: 1 !important; }
+
+/* If Swiper isn't initialized, avoid accidental transforms from global CSS */
+#aero-swiper-01:not(.swiper-initialized) .swiper-wrapper {
+  transform: none !important;
+}
+
+/* ------------------------------
+   Responsive heights
+   ------------------------------ */
+@media (max-width: 480px) {
+  #aero-swiper-01 { --slide-h: 200px; }
+}
+@media (min-width: 768px) {
+  #aero-swiper-01 { --slide-h: 300px; }
+}
+@media (min-width: 1200px) {
+  #aero-swiper-01 { --slide-h: 360px; }
+}
+
+/* ------------------------------
+   Optional: basic pagination dots
+   (use if you add a <div class="swiper-pagination"></div>)
+   ------------------------------ */
+#aero-swiper-01 .swiper-pagination {
+  position: absolute;
+  inset: auto 0 8px 0;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  z-index: 5;
+}
+#aero-swiper-01 .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.6);
+}
+#aero-swiper-01 .swiper-pagination-bullet-active {
+  background: rgba(255,255,255,1);
+}
+
+/* ------------------------------
+   Optional: next/prev arrows
+   (use if you add buttons with these classes)
+   ------------------------------ */
+#aero-swiper-01 .swiper-button-next,
+#aero-swiper-01 .swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.35);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 6;
+  user-select: none;
+}
+#aero-swiper-01 .swiper-button-next { right: 10px; }
+#aero-swiper-01 .swiper-button-prev { left: 10px; }
+#aero-swiper-01 .swiper-button-next:hover,
+#aero-swiper-01 .swiper-button-prev:hover {
+  background: rgba(0,0,0,.55);
+}

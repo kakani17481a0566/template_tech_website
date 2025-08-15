@@ -10379,7 +10379,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
   width: 100%;
 }
 
-.uix-navbar__brand {
+/* .uix-navbar__brand {
   font-size: 1.5rem;
   font-weight: bold;
   color: white;
@@ -10393,13 +10393,13 @@ svg.leaflet-image-layer.leaflet-interactive path {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
-}
+} */
 
 /* Slide Menu (Right to Left) */
-.uix-slide-menu {
+/* .uix-slide-menu {
   position: fixed;
   top: 0;
-  right: -50%; /* Start hidden off-screen on the right */
+  right: -50%;
   width: 50%;
   height: 100vh;
   background-color: #1a4255;
@@ -10407,13 +10407,13 @@ svg.leaflet-image-layer.leaflet-interactive path {
   padding: 2rem;
   z-index: 1100;
   transition: right 0.4s ease-in-out;
-}
+} */
 
-.uix-slide-menu.active {
-  right: 0; /* Slide into view */
-}
+/* .uix-slide-menu.active {
+  right: 0;
+} */
 
-.uix-slide-menu__close {
+/* .uix-slide-menu__close {
   background: none;
   color: white;
   font-size: 2rem;
@@ -10422,9 +10422,9 @@ svg.leaflet-image-layer.leaflet-interactive path {
   position: absolute;
   top: 1rem;
   left: 1rem;
-}
+} */
 
-.uix-slide-menu__list {
+/* .uix-slide-menu__list {
   list-style: none;
   padding-top: 5rem;
 }
@@ -10437,17 +10437,16 @@ svg.leaflet-image-layer.leaflet-interactive path {
   color: white;
   text-decoration: none;
   font-size: 1.5rem;
-}
+} */
 
 
-.uix-navbar__brand img {
-  height: 100px;         /* ✅ keep logo height reasonable */
-  width: auto;
+/* .uix-navbar__brand img {
+  height: 100px;
   object-fit: contain;
   display: block;
 }
 .uix-navbar__brand a {
-  display: inline-block; /* Ensures full clickable area */
-}
+  display: inline-block; /
+} */
 
 

@@ -1,0 +1,42 @@
+/* Wrapper layout */
+.testimonial-subscribe-wrap {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+/* Left side - testimonials */
+.testimonial-section {
+  flex: 0 0 60%;
+}
+
+/* Right side - subscribe box */
+.subscribe-section {
+  flex: 0 0 40%;
+}
+
+/* Make text sizes responsive */
+.testimonial-section h2 {
+  font-size: 50px;
+}
+
+.testimonial-section h3 {
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .testimonial-subscribe-wrap {
+    flex-direction: column;
+  }
+  .testimonial-section,
+  .subscribe-section {
+    flex: 0 0 100%;
+  }
+  .testimonial-section h2 {
+    font-size: 32px;
+  }
+}

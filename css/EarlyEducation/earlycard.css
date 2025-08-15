@@ -8,6 +8,7 @@
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+  font-family: Lato, sans-serif;
 }
 
 /* Responsive Grid Layout */
@@ -15,13 +16,13 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  justify-items: center;
+  justify-items: center; /* Center cards horizontally in grid */
 }
-/* Grid Fallback (older browsers) */
 @supports not (display: grid) {
   .earlyeducard-grid {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center; /* Center cards in flex fallback */
     margin: -0.75rem;
   }
   .earlyeducard-grid > .earlyeducard-card {
@@ -98,6 +99,7 @@
 @media (max-width: 1024px) {
   .earlyeducard-grid {
     grid-template-columns: repeat(2, 1fr);
+    justify-items: center; /* Keep centered on medium */
   }
   @supports not (display: grid) {
     .earlyeducard-grid > .earlyeducard-card {
@@ -106,124 +108,120 @@
   }
 }
 
-/* Phone (≤640px) — 1 column + wrapper padding fix */
+/* Phone (≤640px) — 1 column */
 @media (max-width: 640px) {
   .earlyeducard-grid {
     grid-template-columns: 1fr;
+    justify-items: center; /* Center single column */
   }
   .earlyeducard-wrapper {
     padding: 1rem;
+    text-align: center;
   }
   @supports not (display: grid) {
     .earlyeducard-grid > .earlyeducard-card {
       flex: 1 1 100%;
+      margin: 0 auto;
     }
   }
 }
-.earlyeducard-wrapper {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-    font-family: Lato, sans-serif;
-  }
 
-  /* Grid layout */
-  .earlyeducard-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-    overflow: visible;
-  }
-  @media (max-width: 1024px) {
-    .earlyeducard-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 640px) {
-    .earlyeducard-grid { grid-template-columns: 1fr; }
-  }
+/* ===========================
+   Modal
+   =========================== */
+.ecard-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+.ecard-modal.is-open { display: block; }
 
-  /* Card (no hover animation) */
-  .earlyeducard-card {
-    position: relative;
-    border: 0;
-    cursor: pointer;
-    padding: 1.25rem 1rem;
-    background: linear-gradient(145deg, #ff5b30, #ff471d);
-    color: #fff;
-    border-radius: 14px;
-    box-shadow: 0 6px 16px rgba(0,0,0,.12);
-    transform: translateZ(0);
-  }
+.ecard-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  backdrop-filter: blur(2px);
+}
 
-  /* Modal */
-  .ecard-modal {
-    position: fixed;
-    inset: 0;
-    display: none;
-    z-index: 9999;
+.ecard-modal__dialog {
+  position: relative;
+  max-width: 720px;
+  margin: 6vh auto 0;
+  margin-top: 280px;
+  background: #fff;
+  color: #1a4255;
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 30px 80px rgba(0,0,0,.35);
+  transform: scale(.96) translateY(10px);
+  opacity: 0;
+  transition: transform .18s ease, opacity .18s ease;
+}
+.ecard-modal.is-open .ecard-modal__dialog {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
 
-    
-  }
-  .ecard-modal.is-open { display: block; }
+.ecard-modal__title {
+  font-size: 28px;
+  margin: 0 2rem 0.75rem 0;
+}
+.ecard-modal__body {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+}
 
-  .ecard-modal__backdrop {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,.5);
-    backdrop-filter: blur(2px);
-  }
+.ecard-modal__close {
+  position: absolute;
+  top: 10px; right: 12px;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #ff471d;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
 
-  .ecard-modal__dialog {
-    position: relative;
-    max-width: 720px;
-    margin: 6vh auto 0;
-    margin-top: 280px;
-    background: #fff;
-    color: #1a4255;
-    border-radius: 18px;
-    padding: 2rem;
-    box-shadow: 0 30px 80px rgba(0,0,0,.35);
-    transform: scale(.96) translateY(10px);
-    opacity: 0;
-    transition: transform .18s ease, opacity .18s ease;
+@media (max-width: 768px) {
+  .ecard-modal__dialog { margin: 10vh 16px 0; padding: 1.5rem; }
+  .ecard-modal__title { font-size: 24px; }
+  .ecard-modal__body  { font-size: 16px; }
+}
+@media (max-width: 640px) {
+  .earlyeducard-wrapper h1 {
+    font-size: 28px !important;
+    margin-bottom: 2rem !important;
   }
-  .ecard-modal.is-open .ecard-modal__dialog {
-    transform: scale(1) translateY(0);
-    opacity: 1;
-  }
+  .earlyeducard-card { font-size: 22px !important; }
+}
 
-  .ecard-modal__title {
-    font-size: 28px;
-    margin: 0 2rem 0.75rem 0;
-  }
-  .ecard-modal__body {
-    font-size: 18px;
-    line-height: 1.6;
-    margin: 0;
-  }
 
-  .ecard-modal__close {
-    position: absolute;
-    top: 10px; right: 12px;
-    width: 40px; height: 40px;
-    border-radius: 50%;
-    border: none;
-    background: #ff471d;
-    color: #fff;
-    font-size: 24px;
-    cursor: pointer;
-  }
 
-  @media (max-width: 768px) {
-    .ecard-modal__dialog { margin: 10vh 16px 0; padding: 1.5rem; }
-    .ecard-modal__title { font-size: 24px; }
-    .ecard-modal__body  { font-size: 16px; }
+/* If a global button style is forcing width:100%, neutralize it here */
+.earlyeducard-grid .earlyeducard-card {
+  /* width already set by your clamp rule */
+  white-space: normal !important;   /* defeat any global nowrap on buttons */
+  overflow-wrap: anywhere;          /* wrap long words if needed */
+  word-break: normal;               /* prefer natural breaks */
+  line-height: 1.3;                 /* breathing room for 2–3 lines */
+  text-align: center;
+  padding-inline: 1.25rem;          /* ensure lateral padding on wrap */
+  overflow: hidden;                 /* prevent text from painting outside radius */
+}
+
+/* Optional: make the gap look even on mobile so the yellow stripes don’t feel huge */
+/* Optional: slightly smaller font on the narrowest phones to avoid overflow */
+@media (max-width: 380px) {
+  .earlyeducard-grid .earlyeducard-card {
+    font-size: 20px !important;     /* was 22–25px; tiny nudge down */
   }
-  @media (max-width: 640px) {
-    .earlyeducard-wrapper h1 {
-      font-size: 28px !important;
-      margin-bottom: 2rem !important;
-    }
-    .earlyeducard-card { font-size: 22px !important; }
-  }
- 
+}
+
+/* If a theme sets button text-transform or letter-spacing too wide, normalize */
+.earlyeducard-grid .earlyeducard-card {
+  text-transform: none;
+  letter-spacing: 0;
+}

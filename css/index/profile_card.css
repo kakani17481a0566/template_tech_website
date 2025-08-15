@@ -1,0 +1,236 @@
+/* =========================
+   UNZ Card — v2 (arrow fixed & visible)
+   - Grayscale→color hover
+   - White frame→thin border hover
+   - Focus-visible
+   - Arrow button pinned bottom-right
+   ========================= */
+
+:root {
+  --unz-radius: 10px;
+  --unz-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --unz-shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.15);
+  --unz-border-pad: 40px;
+  --unz-thin-border: 1px;
+  --unz-primary: #1a4255;
+}
+
+/* Card container (can be <a>) */
+.unz-card {
+  display: block;
+  position: relative; /* anchor for absolute children */
+  width: 280px; /* set 100% if you want fluid cards */
+  height: 100%;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+  border-radius: var(--unz-radius);
+  overflow: hidden;
+  box-shadow: var(--unz-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 10px;
+  will-change: transform, box-shadow;
+}
+.unz-card:hover {
+  box-shadow: var(--unz-shadow-hover);
+  transform: translateY(-2px);
+}
+.unz-card:focus-visible {
+  outline: 2px solid var(--unz-primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(26, 66, 85, 0.15), var(--unz-shadow);
+}
+
+/* Image */
+.unz-image-wrapper {
+  position: relative;
+  line-height: 0;
+  isolation: isolate;
+}
+.unz-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(100%) contrast(1.1);
+  transition: filter 0.5s ease;
+}
+.unz-card:hover .unz-image-wrapper img {
+  filter: none;
+}
+
+/* Outer white frame → fades out on hover */
+.unz-image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: var(--unz-border-pad) solid #fff;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+.unz-card:hover .unz-image-wrapper::after {
+  opacity: 0;
+}
+
+/* Inner thin border → fades in on hover */
+.unz-hover-border {
+  position: absolute;
+  inset: var(--unz-border-pad);
+  border: var(--unz-thin-border) solid rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+  transition: opacity 0.3s ease;
+}
+.unz-card:hover .unz-hover-border {
+  opacity: 1;
+}
+
+/* Content area */
+.unz-card-bottom {
+  position: relative; /* local anchor if needed */
+  padding: 16px;
+  padding-bottom: 64px; /* reserve space for the arrow button */
+}
+.card-content h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--unz-primary);
+}
+.card-content p {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: var(--unz-primary);
+}
+
+/* Arrow button pinned bottom-right (always visible) */
+.arrow-link {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 5; /* above frames/borders */
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--unz-primary);
+  color: #fff; /* SVG uses currentColor */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease;
+  pointer-events: auto;
+}
+.arrow-link:hover {
+  transform: translateY(-2px);
+}
+.arrow-link svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  stroke: #fff;
+  fill: none;
+  stroke-width: 1.5;
+}
+
+/* Utility */
+.np-teal {
+  color: var(--unz-primary) !important;
+  font-family: Lato, lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  :root {
+    --unz-border-pad: 24px;
+  }
+  .unz-card {
+    width: 100%;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --unz-border-pad: 32px;
+  }
+}
+
+/* Motion-safe */
+@media (prefers-reduced-motion: reduce) {
+  .unz-card,
+  .unz-image-wrapper img,
+  .unz-hover-border,
+  .unz-image-wrapper::after,
+  .arrow-link {
+    transition: none;
+  }
+}
+
+.card-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: var(--unz-primary, #1a4255);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+  transition: background-color .25s ease, transform .08s ease;
+}
+.card-btn:hover { background-color: #143140; }
+.card-btn:active { transform: translateY(1px); }
+.card-btn:hover {
+  background-color: #143140; /* Slightly darker on hover */
+}
+
+
+/* Role stays on one line; ellipsis if too long */
+.unz-card .card-content .role {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Inline button (non-overlay) */
+.card-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: var(--unz-primary, #1a4255);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+  transition: background-color .25s ease, transform .08s ease;
+}
+.card-btn:hover { background-color: #143140; }
+.card-btn:active { transform: translateY(1px); }
+
+
+.small-arrow {
+  position: static; /* No absolute positioning */
+  display: inline-flex;
+  margin-top: 8px;
+  width: 28px;
+  height: 28px;
+  background: var(--unz-primary);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.small-arrow svg {
+  width: 14px;
+  height: 14px;
+  stroke: #fff;
+}
