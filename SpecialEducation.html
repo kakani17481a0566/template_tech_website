@@ -8,6 +8,20 @@
     <link href="style.css" rel="stylesheet" />
     <link href="css/owl-carousel.css" rel="stylesheet" />
     <link href="css/animate.min.css" rel="stylesheet" />
+
+
+
+
+
+ <link rel="stylesheet" href="./css/nav_home.css">
+
+ <link rel="stylesheet" href="./footer.css">
+
+
+
+
+
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
@@ -382,35 +396,94 @@
   </head>
 
   <body>
-    <div class="animationload">
+    <!-- <div class="animationload">W
       <div class="loader">Loading...</div>
-    </div>
+    </div> -->
 
-    <header id="header-style-1" class="header">
-      <div class="container">
-        <nav class="nav-bar">
-          <a href="index.html" class="logo">
-            <img
-              src="https://res.cloudinary.com/kakani7/image/upload/v1753414605/MSI/LOGO/newlogo_ai_g_nrcusl.png"
-              alt="MSI Logo"
-            />
-          </a>
-          <button class="menu-toggle" id="menu-toggle" aria-label="Menu Toggle">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+  <header id="header-style-1" class="header">
+    <div class="container">
+      <!-- Top Navigation Bar -->
+      <nav class="neuropi-nav-bar">
+        <div class="neuropi-nav-container">
+          <div class="neuropi-nav-brand">
+            <a href="index.html"><img src="images/Neuropi.png" alt="Logo"></a>
+          </div>
+          <button onclick="neuropiToggleMenu()" style="
+    background: #ff471d !important;
+    color: #fff !important;
+    border: 2px solid #ff471d !important;
+    padding: 0.2rem 1.5rem !important;
+    font-size: 1rem !important;
+    cursor: pointer !important;
+    border-radius: 2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-family: Lato, sans-serif !important;
+    letter-spacing: 1px !important;
+    font-weight: 700;
+  ">
+            Menu
           </button>
-          <ul class="nav-links" id="nav-links">
-            <li><a href="index.html" class="achor-tag">Home</a></li>
-            <li><a href="#" class="achor-tag">ABOUT US</a></li>
-            <li><a href="#" class="achor-tag">SOLUTIONS</a></li>
-            <li><a href="#" class="achor-tag">NEWS ROOM</a></li>
-            <li><a href="#" class="achor-tag">CAREERS</a></li>
-            <li><a href="#" class="achor-tag">LOG IN</a></li>
-          </ul>
-        </nav>
+
+
+        </div>
+      </nav>
+
+      <!-- Scroll Sentinel -->
+      <div id="neuropi-nav-sentinel" aria-hidden="true"></div>
+
+      <!-- Slide Menu -->
+      <div class="neuropi-menu-panel" id="neuropiSlideMenu" aria-hidden="true">
+        <button class="neuropi-menu-close" onclick="neuropiToggleMenu()" aria-label="Close menu">×</button>
+
+        <ul class="neuropi-menu-list" id="neuropi-nav-links">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="WhatsNeuroPi.html#early-edu-section-welcome">WELCOME</a></li>
+          <li><a href="WhatsNeuroPi.html#early-edu-section-problem">PROBLEM</a></li>
+          <li><a href="WhatsNeuroPi.html#early-edu-section-solutions">TECHNOLOGY SUITE</a></li>
+          <li><a href="index.html#Home-solutions">SOLUTION</a></li>
+          <li><a href="WhatsNeuroPi.html#early-edu-section-why">WHY US? WHY NOW?</a></li>
+        </ul>
+
+        <!-- Optional Footer inside Slide Menu -->
+        <div class="neuropi-footer-contact" style="text-align: left; margin-top: auto; padding-top: 1.5rem;">
+
+          <div class="neuropi-footer-contact"
+            style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: auto; padding-top: 1.5rem;">
+
+            <!-- Left side: Reach us -->
+            <div>
+              <h4>Reach us</h4>
+            </div>
+
+            <!-- Right side: Address + Actions -->
+            <div style="text-align: center;">
+              <p>
+                NeuroPi Tech Pvt. Ltd.<br />
+                Hitex City, Madhapur<br />
+                Hyderabad, Telangana<br />
+                500084 India
+              </p>
+              <div class="neuropi-footer-actions"
+                style="justify-content: center; display: flex; gap: 1rem; margin-top: 0.5rem;">
+                <a href="#">Contact Us</a>
+                <a href="https://www.google.com/maps/dir//Hitex+Road,+next+to+Hitex+Exhibition+Centre+Gate,+Shilpa+Layout,+Izzathnagar,+Hyderabad,+Telangana+500084/@17.4681182,78.2939471,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb93c69d117a9d:0xcb96668338dda37c!2m2!1d78.3763488!2d17.4681215?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D"
+						target="_blank" rel="noopener noreferrer">
+						Get directions
+					</a>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
       </div>
-    </header>
+
+  </header>
+
+
 
  <section class="section-card reverse" id="infoCard" style="position: relative; transition: opacity 0.3s ease;">
   <button class="form_closebutton" onclick="goBack()" aria-label="Close">×</button>
@@ -459,7 +532,7 @@
       <li>⏲️ Supporting frequent progress checks to adjust interventions quickly</li>
     </ul>
 
-    <a href="#register" class="cta-button" onclick="openModal()">Register to Learn More</a>
+    <a href="RegistrationForm.html" style="background-color: #ff471d;" class="cta-button" onclick="openModal()">Register to Learn More</a>
   </div>
 
   <div class="image-content">
@@ -474,7 +547,7 @@
     <div class="video-section">
       <video autoplay muted loop playsinline>
         <source
-          src="https://res.cloudinary.com/kakani7/video/upload/v1753361019/MSI/VIDEOS/Video_4_ch8gih.mp4"
+          src="./images/Videos/verticles/My Movie 4.mp4"
           type="video/mp4"
         />
         Your browser does not support the video tag.
@@ -482,212 +555,339 @@
     </div>
 
     <!-- ✅ Footer Section -->
-    <footer id="footer-style-1">
-      <div class="container">
-        <!-- Column 1 -->
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <div class="widget">
-            <img
-              class="padding-top"
-              src="https://res.cloudinary.com/kakani7/image/upload/v1753414605/MSI/LOGO/newlogo_ai_g_nrcusl.png"
-              alt="NeuroPi"
-              style="height: 150px"
-            />
-            <p style="font-size: 20px">
-              <span class="neuro-title"
-                >NeuroPi<sup style="color: aliceblue" class="tm-badge"
-                  >TM</sup
-                ></span
-              >
-              unlocks an individual’s full cognitive, emotional, and performance
-              potential—rooted in one’s unique brain and biology. It’s designed
-              for all age groups across all fields.
-            </p>
-            <div class="social-icons">
-              <span
-                ><a data-toggle="tooltip" title="Facebook" href="#"
-                  ><i class="fa fa-facebook"></i></a
-              ></span>
-              <span
-                ><a data-toggle="tooltip" title="Google Plus" href="#"
-                  ><i class="fa fa-google-plus"></i></a
-              ></span>
-              <span
-                ><a data-toggle="tooltip" title="Twitter" href="#"
-                  ><i class="fa fa-twitter"></i></a
-              ></span>
-              <span
-                ><a data-toggle="tooltip" title="Youtube" href="#"
-                  ><i class="fa fa-youtube"></i></a
-              ></span>
-              <span
-                ><a data-toggle="tooltip" title="Linkedin" href="#"
-                  ><i class="fa fa-linkedin"></i></a
-              ></span>
-              <span
-                ><a data-toggle="tooltip" title="Dribbble" href="#"
-                  ><i class="fa fa-dribbble"></i></a
-              ></span>
-            </div>
-          </div>
-        </div>
 
-        <!-- Column 2: Twitter Feed -->
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <div class="widget">
-            <div class="title">
-              <h3>Twitter Feeds</h3>
-            </div>
-            <ul class="twitter_feed">
-              <li>
-                <span></span>
-                <p>
-                  Jolly Themes wishes you and your family a merry Christmas and
-                  a happy new! <a href="#">about 2 days ago</a>
-                </p>
-              </li>
-              <li>
-                <span></span>
-                <p>
-                  Jolly Themes wishes you and your family a merry Christmas and
-                  a happy new! <a href="#">about 9 days ago</a>
-                </p>
-              </li>
-            </ul>
+  <footer class="footer" style="margin-top: 90px;">
+    <div class="footer__inner">
+      <div class="container grid">
+        <div class="footer__form-wrap" data-logo-main="mix-mb">
+          <div class="footer__form-icon icon icon-80">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M65 21.667L40 46.667L15 21.667" stroke="white" stroke-width="2" stroke-miterlimit="10"
+                stroke-linecap="round"></path>
+              <path
+                d="M70 10H9.99998C6.31808 10 3.33331 12.9848 3.33331 16.6667V63.3333C3.33331 67.0152 6.31808 70 9.99998 70H70C73.6819 70 76.6666 67.0152 76.6666 63.3333V16.6667C76.6666 12.9848 73.6819 10 70 10Z"
+                stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path>
+              <path d="M26.6667 46.667L15 58.3337" stroke="white" stroke-width="2" stroke-miterlimit="10"
+                stroke-linecap="round"></path>
+              <path d="M53.3333 46.667L65 58.3337" stroke="white" stroke-width="2" stroke-miterlimit="10"
+                stroke-linecap="round"></path>
+            </svg>
           </div>
-        </div>
+          <div class="footer__form-title h4 heading heading-f-lh"> Subscribe to Newsletters </div>
+          <div class="footer__form-sub "> Want to stay up to date? <br>Sign up for <span class="neuro-title">NeuroPi<sup
+                class="tm-badge" style="font-size: 12px;color:aliceblue;">TM</sup></span>'s bimonthly update. </div>
+         <form action="https://formspree.io/f/xanbzwng" method="POST" class="footer__form-main">
+  <div class="input-wrap">
+    <input type="email" name="email" class="input-field txt txt-16" style="font-family:lato"
+      placeholder="Enter your email" required>
+  </div>
 
-        <!-- Column 3: Recent Posts -->
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <div class="widget">
-            <div class="title">
-              <h3>Recent Post</h3>
-            </div>
-            <ul class="footer_post">
-              <li>
-                <a href="#"
-                  ><img
-                    class="img-rounded"
-                    src="https://res.cloudinary.com/kakani7/image/upload/v1753795872/MSI/VIDEOS/images/active-woman-improving-her-resistance_uq7vwj.jpg"
-                    alt=""
-                /></a>
-              </li>
-              <li>
-                <a href="#"
-                  ><img
-                    class="img-rounded"
-                    src="https://res.cloudinary.com/kakani7/image/upload/v1753795878/MSI/VIDEOS/images/Mental_health_isn_t_one-size-fits-all_drj8u3.jpg"
-                    alt=""
-                /></a>
-              </li>
-              <li>
-                <a href="#"
-                  ><img
-                    class="img-rounded"
-                    src="https://res.cloudinary.com/kakani7/image/upload/v1753795877/MSI/VIDEOS/images/Decodes_Learning_Mood_Focus_qznuhe.jpg"
-                    alt=""
-                /></a>
-              </li>
-              <li>
-                <a href="#"
-                  ><img
-                    class="img-rounded"
-                    src="https://res.cloudinary.com/kakani7/image/upload/v1753795886/MSI/VIDEOS/images/Your_Brain_s_Blue_Print-01_lsxind.jpg"
-                    alt=""
-                /></a>
-              </li>
-              <li>
-                <a href="#"
-                  ><img
-                    class="img-rounded"
-                    src="https://res.cloudinary.com/kakani7/image/upload/v1753806547/MSI/VIDEOS/images/WhatsApp_Image_2025-07-29_at_21.58.10_61c3f154_qwuq16.jpg"
-                    alt=""
-                /></a>
-              </li>
-              <li>
-                <a href="#"
-                  ><img
-                    class="img-rounded"
-                    src="https://res.cloudinary.com/kakani7/image/upload/v1753806716/MSI/VIDEOS/images/WhatsApp_Image_2025-07-29_at_22.01.30_20f45ac8_esvmql.jpg"
-                    alt=""
-                /></a>
-              </li>
-            </ul>
-          </div>
-        </div>
+  <!-- Honeypot (hidden) -->
+  <input type="text" class="honey-input" name="blablabla"
+         tabindex="-1" autocomplete="off" aria-hidden="true"
+         style="position:absolute; left:-5000px; height:1px; width:1px; opacity:0;">
 
-        <!-- Column 4: Newsletter -->
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <div class="widget">
-            <div class="title">
-              <h3>Newsletter</h3>
-            </div>
-            <div class="newsletter_widget">
-              <p>
-                Subscribe to our newsletter to receive news, updates, free stuff
-                by email. We don't do spam.
-              </p>
-              <form class="newsletter_form">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Enter your email address"
-                />
-                <a href="#" class="btn btn-primary pull-right">Subscribe</a>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+  <!-- Optional: custom subject / redirect -->
+  <!-- <input type="hidden" name="_subject" value="New Newsletter Subscription"> -->
+  <!-- <input type="hidden" name="_next" value="https://cargokite.com/thank-you.html"> -->
 
-    <!-- Copyright Bar -->
-    <div id="copyrights">
-      <div class="container">
-        <div class="col-lg-5 col-md-6 col-sm-12">
-          <div class="copyright-text">
-            <p>
-              Copyright © 2025 -
-              <span class="neuro-title"
-                >NeuroPi<sup style="color: aliceblue" class="tm-badge"
-                  >TM</sup
-                ></span
-              >
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-7 col-md-6 col-sm-12 clearfix">
-          <div class="footer-menu">
-            <ul class="menu">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Headers</a></li>
-              <li><a href="#">Portfolio</a></li>
-              <li><a href="#">Features</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-        </div>
+  <button class="btn btn-lg btn-pri input-submit" id="subscribeBtn" type="submit">
+    <div class="input-submit-icon">
+      <div class="icon icon-20">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.59961 9.40169L8.39974 13.2018L16 5.60156" stroke="currentColor" stroke-width="1.5"
+            stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
       </div>
     </div>
+    <span class="input-submit-txt txt-med"> Subscribe </span>
 
-    <div class="dmtop">Scroll to Top</div>
+  </button>
+</form>
 
-    <!-- Registration Modal -->
-    <div id="registrationModal" class="modal">
-      <div class="modal-overlay"></div>
-      <!-- Blur effect -->
-      <div class="modal-content">
-        <span class="close-button" onclick="closeModal()">&times;</span>
-        <iframe
-          src="RegistrationForm.html"
-          width="100%"
-          height="100%"
-          frameborder="0"
-          style="border-radius: 8px"
-        ></iframe>
+          <div class="footer__form-caption "> Don't worry about spam. We hate it too! </div>
+        </div>
+
+        <div class="footer__main">
+          <div class="footer__links">
+            <a href="About_us_maiin.html" class="footer__link txt txt-20 txt-med" data-link="home">About Us</a>
+            <a class="footer__link tag-wrap txt txt-20 txt-med" href="WhatsNeuroPi.html"> What's
+              NeuroPi?<span class="tag-link"> we're hiring </span></a>
+                 <a class="footer__link txt txt-20 txt-med" href="WhatsNeuroPi.html#Tech-neu">Technology</a>
+            <a class="footer__link txt txt-20 txt-med" data href="index.html#Home-solutions">Solutions</a>
+            <a href="RegistrationHome.html" data-popup="contact" class="footer__link txt txt-20 txt-med" data-link="contact">Get in
+              touch</a>
+          </div>
+
+          <div class="footer__info footer__info-mid grid" style="font-family:'Lato', sans-serif;">
+
+            <!-- ✅ Useful Links (single row, no wrap) -->
+            <div>
+              <!-- Responsive heading -->
+              <div class="txt txt-16"
+                style="color:#008281; font-weight:bold; margin-bottom:5px; font-size: clamp(14px, 2vw, 16px); line-height: 1.2;">
+                Useful Links
+              </div>
+
+              <!-- Responsive links row -->
+              <style>
+                .link-row {
+                  display: flex;
+                  flex-wrap: wrap;
+                  /* allow items to go to next line */
+                  column-gap: 24px;
+                  row-gap: 12px;
+                  align-items: center;
+                  margin-bottom: 8px;
+                  width: 100%;
+                }
+
+                .link-row a {
+                  flex: 0 0 auto;
+                  /* size to content */
+                  white-space: nowrap;
+                  /* DO NOT break inside a link */
+                  word-break: keep-all;
+                  /* avoid mid-word breaks */
+                  font-size: 16px;
+                  color: #1a4255;
+                  text-decoration: none;
+                  display: inline-block;
+                }
+
+                /* Desktop: try to keep one row; wrap only if truly needed */
+                @media (min-width:1024px) {
+                  .link-row {
+                    flex-wrap: nowrap;
+                  }
+                }
+
+                /* Phones: exactly 2 per row */
+                @media (max-width:767px) {
+                  .link-row a {
+                    flex: 1 1 calc(50% - 24px);
+                  }
+
+                  /* two per row */
+                }
+              </style>
+
+              <div class="link-row">
+                <a href="earlyeducation_main.html">Early Education</a>
+                <a href="Sports_main.html">Sports</a>
+                <a href="teens_main.html">Teens</a>
+
+                <a href="Midlife.html">Longevity</a>
+                <a href="#management-team">Leadership</a>
+              </div>
+
+
+            </div>
+
+
+            <!-- Head Office -->
+            <div class="footer__info-addr grid">
+              <div class="footer__info-addr-grp">
+                <div class="footer__info-addr-label txt txt-16"
+                  style="color: #008281; font-weight: bold; font-size: clamp(16px, 2vw, 16px); line-height: 1.2; margin-bottom: 0;">
+                  Head Office
+                </div>
+
+                <div class="footer__info-addr-txt txt txt-16" style="color:#1a4255">
+                  <span class="neuro-title np-orange">NeuroPi</span> Tech Pvt. Ltd.<br>
+                  Hitex City, Madhapur <br>
+                  Hyderabad, Telangana <br>
+                  500084 India
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer__info-contact">
+              <div class="footer__info-contact-grp">
+                <div class="footer__info-contact-label txt txt-16" style="color:#008281; font-weight: bold;"> Email
+                </div>
+                <a href="mailto:info@neuropi.ai" class="footer__info-contact-link txt txt-16"
+                  style="font-size: 16px; color: #1a4255;"> info@neuropi.ai </a>
+              </div>
+              <div class="footer__info-contact-grp">
+                <div class="footer__info-contact-label txt txt-16" style="color:#008281; font-weight: bold;"> Phone
+                </div>
+                <a href="tel:+917799772881"   class="footer__info-contact-link" style="font-size: 16px; color: #1a4255;">
+                  +91 7799 77 2881 </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
+
+      <!-- ✅ Paste this <style> block anywhere once (e.g., in <head> or above the section) -->
+      <style>
+        /* Responsive bottom bar padding + wrapping */
+        .footer-bottom {
+          /* replace fixed 200px padding with fluid spacing for all screens */
+          padding-left: clamp(16px, 5vw, 200px) !important;
+          padding-right: clamp(16px, 5vw, 200px) !important;
+          display: flex !important;
+          justify-content: space-between !important;
+          align-items: center !important;
+          gap: 12px 20px !important;
+          flex-wrap: wrap !important;
+          /* allow wrapping on small screens */
+          margin-top: 15px !important;
+          font-family: 'Lato', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+        }
+
+        /* Left group can wrap items to next line if tight */
+        .footer-bottom .footer-left {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          white-space: nowrap;
+          /* keep items intact, but allow the group to wrap */
+          flex-wrap: wrap;
+          /* wrap within the group on small screens */
+          row-gap: 8px;
+          color: #1a4255;
+        }
+
+        .footer-bottom .footer-left a,
+        .footer-bottom .footer-left div {
+          color: #1a4255;
+          text-decoration: none;
+          font-size: 16px;
+          font-family: Lato, sans-serif;
+        }
+
+        /* Right social icons row */
+        .footer-bottom .footer-social {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        /* Scale the SVG icons fluidly */
+        .footer-bottom .footer-social svg {
+          width: clamp(24px, 4vw, 40px) !important;
+          height: clamp(24px, 4vw, 40px) !important;
+        }
+
+        /* Optional: slightly smaller text on very small screens */
+        @media (max-width: 480px) {
+
+          .footer-bottom .footer-left a,
+          .footer-bottom .footer-left div {
+            font-size: 14px !important;
+          }
+        }
+      </style>
+
+      <!-- ✅ Drop-in responsive bottom bar (only this section) -->
+      <div class="footer-bottom">
+        <!-- Left Section -->
+        <div class="footer-left">
+          <a href="Privacy-Policy.html">Privacy Policy</a>
+          <a href="Terms-of-Service.html">Terms Of Service</a>
+          <div>
+            © 2025, NeuroPi<span><sup>TM</sup></span><span>.  </span>All Rights Reserved.
+          </div>
+        </div>
+
+        <!-- Right Section (Social Icons) -->
+        <div class="footer-social">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <rect width="24" height="24" fill="#0A66C2" rx="4" />
+              <path fill="#FFFFFF"
+                d="M7.059 20.452H3.546V9h3.513v11.452zM5.303 7.433a2.037 2.037 0 1 1 0-4.074 2.037 2.037 0 0 1 0 4.074zM20.452 20.452h-3.514v-5.569c0-1.327-.027-3.036-1.85-3.036-1.852 0-2.137 1.445-2.137 2.939v5.666h-3.513V9h3.374v1.561h.048c.47-.889 1.618-1.828 3.332-1.828 3.562 0 4.219 2.344 4.219 5.391v6.328z" />
+            </svg>
+          </a>
+
+          <!-- X (Twitter) -->
+          <a href="https://twitter.com" target="_blank" aria-label="X">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <rect width="24" height="24" fill="#000000" rx="4" />
+              <path fill="#FFFFFF"
+                d="M17.21 3h3.27l-7.15 8.18L21 21h-6.42l-4.22-5.53L6.14 21H2.86l7.63-8.75L3 3h6.58l3.8 5.04L17.21 3z" />
+            </svg>
+          </a>
+
+          <!-- Facebook -->
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <rect width="24" height="24" fill="#1877F2" rx="4" />
+              <path fill="#FFFFFF"
+                d="M16.828 15.563l.532-3.49h-3.328v-2.25c0-.949.463-1.874 1.953-1.874h1.513V5.996s-1.374-.235-2.686-.235c-2.74 0-4.533 1.661-4.533 4.668v2.25H7.078v3.49h3.047V24h3.905v-8.437h2.798z" />
+            </svg>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <defs>
+                <linearGradient id="IGgradient" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#F58529" />
+                  <stop offset="30%" stop-color="#DD2A7B" />
+                  <stop offset="60%" stop-color="#8134AF" />
+                  <stop offset="100%" stop-color="#515BD4" />
+                </linearGradient>
+              </defs>
+              <rect width="24" height="24" rx="4" fill="url(#IGgradient)" />
+              <path fill="#FFFFFF"
+                d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 1 0 12 7.2zm0 7.9a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 1 1 0 6.2zm5.1-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0z" />
+            </svg>
+          </a>
+
+          <!-- YouTube -->
+          <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <rect width="24" height="24" fill="#FF0000" rx="4" />
+              <path fill="#FFFFFF" d="M9.75 15.02V8.98l6.27 3.02-6.27 3.02z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+
+      <a href="RegistrationHome.html" class="footer__marquee" data-popup="contact">
+        <div class="footer__marquee-wrap">
+          <div class="footer__marquee-item heading" style="color: #ff471d;"> Are you interested? Let's discuss today!
+          </div>
+          <div class="footer__marquee-item heading" style="color: #ff471d;"> Are you interested? Let's discuss today!
+          </div>
+        </div>
+        <div class="footer__cursor">
+          <div class="arr-hover footer__cursor-main"
+            style="translate: none; rotate: none; scale: none; transform: translate(-50%, -50%) translate(1270px, -11648.2px);">
+            <div class="footer__cursor-txt txt-20 txt-bold"> Say Hi! </div>
+            <div class="arr-wrap arr-wrap-24">
+              <div class="arr-ic-main icon icon-24">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M22.8301 2.76091L2.25005 23.341L0.659058 21.75L21.2392 1.16992L22.8301 2.76091Z"
+                    fill="currentColor"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3.375 1.125H22.875V20.625H20.625V3.375H3.375V1.125Z"
+                    fill="currentColor"></path>
+                </svg>
+              </div>
+              <div class="arr-ic-clone icon icon-24">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M22.8301 2.76091L2.25005 23.341L0.659058 21.75L21.2392 1.16992L22.8301 2.76091Z"
+                    fill="currentColor"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3.375 1.125H22.875V20.625H20.625V3.375H3.375V1.125Z"
+                    fill="currentColor"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
     </div>
+  </footer>
+
 
     <!-- ✅ All Scripts -->
     <script src="js/jquery.js"></script>
@@ -724,7 +924,7 @@
         }, 300); // 300ms delay for fade effect
       }
     </script>
-	
+
 
     <script src="js/libs/swfobject.js"></script>
     <script src="js/libs/modernizr.video.js"></script>
@@ -774,5 +974,117 @@
         }
       };
     </script>
+
+
+  <script src="js/navbar.js"></script>
+
+
+
+
+<!-- Subscribe  -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const form   = document.querySelector('form.footer__form-main[action="https://formspree.io/f/xanbzwng"]');
+  if (!form) return;
+  const endpoint = form.action;
+  const email    = form.querySelector('input[name="email"]');
+  const honey    = form.querySelector('input[name="blablabla"]');
+
+  // Find the button and its label span even without an id
+  const btn      = form.querySelector('button.input-submit') || form.querySelector('button[type="submit"]');
+  const btnTxt   = form.querySelector('.input-submit-txt');
+  const origTxt  = btnTxt?.textContent;
+
+  // Make sure the button won't submit the form via submit events
+  if (btn) btn.setAttribute('type', 'button');
+
+  const status = document.createElement('div');
+  status.className = 'form-status';
+  status.setAttribute('role','status');
+  status.setAttribute('aria-live','polite');
+  status.style.marginTop = '10px';
+  status.style.fontSize  = '14px';
+  form.appendChild(status);
+  const setStatus = (m, ok) => { status.textContent = m; status.style.color = ok ? '#0a7c4a' : '#b00020'; };
+
+  let inFlight = false; // ✅ prevents double send
+
+  async function send() {
+    // ✅ 0) Honeypot
+    if (honey && honey.value.trim() !== '') return;
+
+    // ✅ 1) Run native HTML5 validation (type=email, required, etc.)
+    if (typeof form.reportValidity === 'function') {
+      if (!form.reportValidity()) return; // browser shows built-in messages
+    } else {
+      // fallback: at least ensure non-empty
+      const val = (email?.value || '').trim();
+      if (!val) { setStatus('Please enter your email.', false); email?.focus(); return; }
+    }
+
+    if (inFlight) return; // already sending
+    inFlight = true;
+
+    // UI loading state
+    if (btn) btn.disabled = true;
+    if (btnTxt && origTxt) btnTxt.textContent = 'Subscribing…';
+    setStatus('', true);
+    form.setAttribute('aria-busy','true');
+
+    const fd = new FormData(form);
+    // keep your extras
+    const emailVal = (email?.value || '').trim();
+    fd.append('_subject', 'New Newsletter Subscription');
+    fd.append('_replyto', emailVal);
+
+    // ✅ 2) Timeout guard
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort('timeout'), 12000);
+
+    try {
+      const res = await fetch(endpoint, {
+        method:'POST',
+        body: fd,
+        headers:{ Accept:'application/json' },
+        signal: controller.signal
+      });
+      clearTimeout(timer);
+
+      if (res.ok) {
+        form.reset();
+        setStatus('Thanks! You’re subscribed. Please check your inbox for confirmation.', true);
+      } else {
+        let data = null; try { data = await res.json(); } catch {}
+        setStatus(data?.errors?.[0]?.message || `Something went wrong (HTTP ${res.status}).`, false);
+      }
+    } catch (err) {
+      setStatus(err?.name === 'AbortError' ? 'Request timed out. Please try again.' : 'Network error. Please try again.', false);
+      console.error('[Formspree] fetch error', err);
+    } finally {
+      if (btn) btn.disabled = false;
+      if (btnTxt && origTxt) btnTxt.textContent = origTxt;
+      form.removeAttribute('aria-busy');
+      inFlight = false;
+    }
+  }
+
+  // Bind to the button
+  btn?.addEventListener('click', send);
+
+  // Also bind to the span label explicitly (your “strictly hit this” target)
+  btnTxt?.addEventListener('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    send();
+  });
+
+  // Submit on Enter key inside the email field
+  email?.addEventListener('keydown', e => {
+    if (e.key === 'Enter') { e.preventDefault(); send(); }
+  });
+});
+</script>
+
+
   </body>
 </html>

@@ -561,7 +561,7 @@ function(e, t, i, r, n) {
                             (0,
                             a.default)(".footer").find(".footer__form-title").text("Subscribe to Newsletters"),
                             (0,
-                            a.default)(".footer").find(".footer__form-sub").text("Want to stay up to date? Sign up for CargoKite's biannual update."),
+                            a.default)(".footer").find(".footer__form-sub").text("Want to stay up to date? Sign up for CargoKite's bimonthly update."),
                             (0,
                             a.default)(".footer__form-main").css("pointer-events", "auto"),
                             (0,
@@ -8877,7 +8877,7 @@ function(e, t, i, r, n) {
  * GSAP 3.12.2
  * https://greensock.com
  *
- * @license Copyright 2008-2023, GreenSock. All rights reserved.
+ * @license Copyright 2008-2023, GreenSock.  All Rights Reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -11509,7 +11509,7 @@ _totalTimeToTime = (clampedTotalTime, duration, repeat, repeatDelay, yoyo) => {
  * CSSPlugin 3.12.2
  * https://greensock.com
  *
- * Copyright 2008-2023, GreenSock. All rights reserved.
+ * Copyright 2008-2023, GreenSock.  All Rights Reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -12306,7 +12306,7 @@ _totalTimeToTime = (clampedTotalTime, duration, repeat, repeatDelay, yoyo) => {
  * ScrollTrigger 3.12.2
  * https://greensock.com
  *
- * @license Copyright 2008-2023, GreenSock. All rights reserved.
+ * @license Copyright 2008-2023, GreenSock.  All Rights Reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -13942,7 +13942,7 @@ _totalTimeToTime = (clampedTotalTime, duration, repeat, repeatDelay, yoyo) => {
  * Observer 3.12.2
  * https://greensock.com
  *
- * @license Copyright 2008-2023, GreenSock. All rights reserved.
+ * @license Copyright 2008-2023, GreenSock.  All Rights Reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -14404,7 +14404,7 @@ _totalTimeToTime = (clampedTotalTime, duration, repeat, repeatDelay, yoyo) => {
  * SplitText: 3.10.4
  * https://greensock.com
  *
- * @license Copyright 2008-2022, GreenSock. All rights reserved.
+ * @license Copyright 2008-2022, GreenSock.  All Rights Reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -14687,7 +14687,7 @@ _totalTimeToTime = (clampedTotalTime, duration, repeat, repeatDelay, yoyo) => {
  * strings: 3.10.4
  * https://greensock.com
  *
- * Copyright 2008-2022, GreenSock. All rights reserved.
+ * Copyright 2008-2022, GreenSock.  All Rights Reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -14759,7 +14759,7 @@ let _emoji = "[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u269
  * CustomEase 3.12.2
  * https://greensock.com
  *
- * @license Copyright 2008-2023, GreenSock. All rights reserved.
+ * @license Copyright 2008-2023, GreenSock.  All Rights Reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -14953,7 +14953,7 @@ let _emoji = "[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u269
  * paths 3.12.2
  * https://greensock.com
  *
- * Copyright 2008-2023, GreenSock. All rights reserved.
+ * Copyright 2008-2023, GreenSock.  All Rights Reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -69078,7 +69078,7 @@ which can be placed in CurveUtils.
  * Flip 3.10.4
  * https://greensock.com
  *
- * @license Copyright 2008-2022, GreenSock. All rights reserved.
+ * @license Copyright 2008-2022, GreenSock.  All Rights Reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -70046,7 +70046,7 @@ which can be placed in CurveUtils.
  * matrix 3.10.4
  * https://greensock.com
  *
- * Copyright 2008-2022, GreenSock. All rights reserved.
+ * Copyright 2008-2022, GreenSock.  All Rights Reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com

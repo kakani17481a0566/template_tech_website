@@ -1,0 +1,28 @@
+/* Make the entry act like an image-sized tile */
+.entry {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px; /* optional */
+}
+
+/* Solid color tile instead of <img> */
+.entry--color {
+  background: var(--card-color, #e3e3e3);
+  /* Choose one: keep aspect ratio OR fixed height */
+  aspect-ratio: 16 / 9;   /* responsive ratio (modern browsers) */
+  height: auto;           /* works with aspect-ratio */
+  min-height: 220px;      /* fallback if aspect-ratio not supported */
+  display: block;
+}
+
+/* If your old CSS expects an <img>, this hides it safely when present */
+.entry .img-responsive { display: none; }
+
+/* (Optional) hover overlay behavior, if you need it */
+.magnifier {
+  position: absolute;
+  inset: 0;
+  /* keep your existing styles; example: */
+  /* background: rgba(0,0,0,.25); opacity: 0; transition: .3s; */
+}
+.entry:hover .magnifier { /* opacity: 1; */ }

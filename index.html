@@ -165,9 +165,9 @@
                 style="justify-content: center; display: flex; gap: 1rem; margin-top: 0.5rem;">
                 <a href="#">Contact Us</a>
                 <a href="https://www.google.com/maps/dir//Hitex+Road,+next+to+Hitex+Exhibition+Centre+Gate,+Shilpa+Layout,+Izzathnagar,+Hyderabad,+Telangana+500084/@17.4681182,78.2939471,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb93c69d117a9d:0xcb96668338dda37c!2m2!1d78.3763488!2d17.4681215?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D"
-						target="_blank" rel="noopener noreferrer">
-						Get directions
-					</a>
+                  target="_blank" rel="noopener noreferrer">
+                  Get directions
+                </a>
 
               </div>
             </div>
@@ -264,7 +264,7 @@
       <!-- end general title -->
     </div><!-- end container -->
   </div><!-- end white-wrapper -->
-  <div id="Home-solutions"  class="container">
+  <div id="Home-solutions" class="container">
     <div class="services_vertical">
       <h2 style="text-align: center; font-size: 50px; font-weight: bold !important;">
 
@@ -912,9 +912,7 @@
           <div class="team-card">
             <div class="unz-card">
               <div class="unz-image-wrapper">
-                <img
-                  src="./images/PEOP/Aperna_1080_1080.jpg"
-                  alt="Dr. Aperna Volluru" />
+                <img src="./images/PEOP/Aperna_1080_1080.jpg" alt="Dr. Aperna Volluru" />
                 <div class="unz-hover-border"></div>
               </div>
               <div class="card-content">
@@ -1219,14 +1217,22 @@
           </div>
           <div class="footer__form-title h4 heading heading-f-lh"> Subscribe to Newsletters </div>
           <div class="footer__form-sub "> Want to stay up to date? <br>Sign up for <span class="neuro-title">NeuroPi<sup
-                class="tm-badge" style="font-size: 12px;color:aliceblue;">TM</sup></span>'s biannual update. </div>
-          <form action="https://cargokite.com/#" class="footer__form-main">
+                class="tm-badge" style="font-size: 12px;color:aliceblue;">TM</sup></span>'s bimonthly update. </div>
+          <form action="https://formspree.io/f/xanbzwng" method="POST" class="footer__form-main">
             <div class="input-wrap">
               <input type="email" name="email" class="input-field txt txt-16" style="font-family:lato"
-                placeholder="Enter your email" required="">
+                placeholder="Enter your email" required>
             </div>
-            <input type="text" class="honey-input" name="blablabla">
-            <button class="btn btn-lg btn-pri input-submit" type="submit">
+
+            <!-- Honeypot (hidden) -->
+            <input type="text" class="honey-input" name="blablabla" tabindex="-1" autocomplete="off" aria-hidden="true"
+              style="position:absolute; left:-5000px; height:1px; width:1px; opacity:0;">
+
+            <!-- Optional: custom subject / redirect -->
+            <!-- <input type="hidden" name="_subject" value="New Newsletter Subscription"> -->
+            <!-- <input type="hidden" name="_next" value="https://cargokite.com/thank-you.html"> -->
+
+            <button class="btn btn-lg btn-pri input-submit" id="subscribeBtn" type="submit">
               <div class="input-submit-icon">
                 <div class="icon icon-20">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1236,20 +1242,22 @@
                 </div>
               </div>
               <span class="input-submit-txt txt-med"> Subscribe </span>
-              <span class="input-submit-txt-tail txt txt-18 txt-med"> d</span>
+
             </button>
           </form>
+
           <div class="footer__form-caption "> Don't worry about spam. We hate it too! </div>
         </div>
 
         <div class="footer__main">
           <div class="footer__links">
-            <a href="index.html" class="footer__link txt txt-20 txt-med" data-link="home">AboutUs</a>
+            <a href="About_us_maiin.html" class="footer__link txt txt-20 txt-med" data-link="home">About Us</a>
             <a class="footer__link tag-wrap txt txt-20 txt-med" href="WhatsNeuroPi.html"> What's
               NeuroPi?<span class="tag-link"> we're hiring </span></a>
-            <a class="footer__link txt txt-20 txt-med" href="index.html">Technology.</a>
-            <a class="footer__link txt txt-20 txt-med" data href="#">Impact</a>
-            <a href="#" data-popup="contact" class="footer__link txt txt-20 txt-med" data-link="contact">Get in
+            <a class="footer__link txt txt-20 txt-med" href="WhatsNeuroPi.html#Tech-neu">Technology</a>
+            <a class="footer__link txt txt-20 txt-med" data href="index.html#Home-solutions">Solutions</a>
+            <a href="RegistrationHome.html" data-popup="contact" class="footer__link txt txt-20 txt-med"
+              data-link="contact">Get in
               touch</a>
           </div>
 
@@ -1308,7 +1316,7 @@
 
               <div class="link-row">
                 <a href="earlyeducation_main.html">Early Education</a>
-                <a href="Sports_main.html">Sport</a>
+                <a href="Sports_main.html">Sports</a>
                 <a href="teens_main.html">Teens</a>
 
                 <a href="Midlife.html">Longevity</a>
@@ -1347,8 +1355,8 @@
               <div class="footer__info-contact-grp">
                 <div class="footer__info-contact-label txt txt-16" style="color:#008281; font-weight: bold;"> Phone
                 </div>
-                <a href="tel:+917093904680"   class="footer__info-contact-link" style="font-size: 16px; color: #1a4255;">
-                  +91 70939 04680 </a>
+                <a href="tel:+917799772881" class="footer__info-contact-link" style="font-size: 16px; color: #1a4255;">
+                  +91 7799 77 2881 </a>
               </div>
             </div>
 
@@ -1424,7 +1432,7 @@
           <a href="Privacy-Policy.html">Privacy Policy</a>
           <a href="Terms-of-Service.html">Terms Of Service</a>
           <div>
-            © 2025, NeuroPi<span><sup>TM</sup></span>. All Rights Reserved.
+            © 2025, NeuroPi<span><sup>TM</sup></span><span>. </span>All Rights Reserved.
           </div>
         </div>
 
@@ -1566,6 +1574,9 @@
   <script type="text/javascript" src="js/libs/swfobject.js"></script>
   <script type="text/javascript" src="js/libs/modernizr.video.js"></script>
   <script type="text/javascript" src="js/video_background.js"></script>
+
+
+
 
 
 
@@ -1714,191 +1725,191 @@
 
 
 
-<script>
-  const videoElement = document.getElementById("carouselVideo");
-  const readButton = document.querySelector('.read-button');
+  <script>
+    const videoElement = document.getElementById("carouselVideo");
+    const readButton = document.querySelector('.read-button');
 
-const videos = [
-  {
-    src: "images/Neuro pi.mp4",
-    srcMobile: "./images/Videos/verticles/whatsNeuroPIMobile.mp4",
-    label: "NeuroPi ™  Explores",
-    title: "Making Every Mind Meet Its Match",
-    subtitle: "Genetics, Neuroscience, and AI Converge To Give Next-Gen Personalized Solutions.",
-    link: "WhatsNeuroPi.html"
-  },
-  {
-    src: "https://res.cloudinary.com/kakani7/video/upload/v1753361016/MSI/VIDEOS/Video_2_qqvipc.mp4",
-    srcMobile: "https://res.cloudinary.com/kakani7/video/upload/v1753361016/MSI/VIDEOS/Video_2_qqvipc.mp4",
-    label: "NeuroPi ™  Explores",
-    title: "Unlocking Every Child’s Potential",
-    subtitle: "Personalising the Learning Journey to Optimize Strengths and Address Potential Challenges.",
-    link: "earlyeducation_main.html"
-  },
-  {
-    src: "https://res.cloudinary.com/kakani7/video/upload/v1753362011/WhatsApp_Video_2025-07-24_at_13.14.45_57f1b5bf_winfru.mp4",
-    srcMobile: "./images/Videos/verticles/kid_study_mobile.mp4",
-    label: "NeuroPi ™  Explores",
-    title: "Informed, Individualised & Timely Decisions",
-    subtitle: "Helping Educators With IEP And RTI Planning Through Generic Insights And Continuous Cognitive Tracking.",
-    link: "SpecialEducation.html"
-  },
-  {
-    src: "https://res.cloudinary.com/kakani7/video/upload/v1753361019/MSI/VIDEOS/Video_4_ch8gih.mp4",
-    srcMobile: "https://res.cloudinary.com/kakani7/video/upload/v1753361019/MSI/VIDEOS/Video_4_ch8gih.mp4",
-    label: "NeuroPi ™  Explores",
-    title: "Discovering Athletic Potential Before It’s Lost ",
-    subtitle: "Young Athletes Often Miss Opportunities Due To Late Development Or Wrong-Fit Training.",
-    link: "Sports_main.html"
-  },
-  {
-    src: "https://res.cloudinary.com/kakani7/video/upload/v1753362011/WhatsApp_Video_2025-07-24_at_13.19.08_d98eabd5_kunjbn.mp4",
-    srcMobile: "https://res.cloudinary.com/kakani7/video/upload/v1753362011/WhatsApp_Video_2025-07-24_at_13.19.08_d98eabd5_kunjbn.mp4",
-    label: "NeuroPi ™  Explores",
-    title: "A Storm Of Expectations, Identity Crisis & Mental Overload",
-    subtitle: "Helping Teens Understand how they’re wired, To Unlocks Their Full Potential Academically, Socially, And Emotionally ",
-    link: "Teens.html"
-  },
-  {
-    src: "https://res.cloudinary.com/kakani7/video/upload/v1753361192/MSI/VIDEOS/WhatsApp_Video_2025-07-24_at_13.20.29_b4d1cfbb_ydbsno.mp4",
-    srcMobile: "https://res.cloudinary.com/kakani7/video/upload/v1753361192/MSI/VIDEOS/WhatsApp_Video_2025-07-24_at_13.20.29_b4d1cfbb_ydbsno.mp4",
-    label: "NeuroPi ™  Explores",
-    title: "Your Brain.<br>Your Body.<br>Your Biology. Personalized.",
-    subtitle: "A Precision Wellness Platform For Cognitive Health, Stress Resilience & Midlife Longevity ",
-    link: "Midlife.html"
-  },
-  {
-    src: "https://res.cloudinary.com/kakani7/video/upload/v1753366472/MSI/VIDEOS/7_zckdua.mp4",
-    srcMobile: "https://res.cloudinary.com/kakani7/video/upload/v1753366472/MSI/VIDEOS/7_zckdua.mp4",
-    label: "NeuroPi ™  Explores",
-    title: "Precision Cognitive Readiness. Enhanced Human Performance.",
-    subtitle: "Enhancing Readiness, Decision-Making, And Long-Term Health In High-Stress Operational Environments.",
-    link: "Defence.html"
-  },
-  {
-    src: "https://res.cloudinary.com/kakani7/video/upload/v1753361055/MSI/VIDEOS/Video_8_g0ie6a.mp4",
-    srcMobile: "https://res.cloudinary.com/kakani7/video/upload/v1753361055/MSI/VIDEOS/Video_8_g0ie6a.mp4",
-    label: "NeuroPi ™  Explores",
-    title: "Human Adaptation in Extreme Environments",
-    subtitle: "Next-Gen Tools for Bio-Adaptive Resilience, Neurogenetic Optimization, and Personalized Human Performance.",
-    link: "Aerospace.html"
-  }
-];
-
-
+    const videos = [
+      {
+        src: "images/Neuro pi.mp4",
+        srcMobile: "./images/Videos/verticles/whatsNeuroPIMobile.mp4",
+        label: "NeuroPi ™  Explores",
+        title: "Making Every Mind Meet Its Match",
+        subtitle: "Genetics, Neuroscience, and AI Converge To Give Next-Gen Personalized Solutions.",
+        link: "WhatsNeuroPi.html"
+      },
+      {
+        src: "https://res.cloudinary.com/kakani7/video/upload/v1753361016/MSI/VIDEOS/Video_2_qqvipc.mp4",
+        srcMobile: "https://res.cloudinary.com/kakani7/video/upload/v1753361016/MSI/VIDEOS/Video_2_qqvipc.mp4",
+        label: "NeuroPi ™  Explores",
+        title: "Unlocking Every Child’s Potential",
+        subtitle: "Personalising the Learning Journey to Optimize Strengths and Address Potential Challenges.",
+        link: "earlyeducation_main.html"
+      },
+      {
+        src: "https://res.cloudinary.com/kakani7/video/upload/v1753362011/WhatsApp_Video_2025-07-24_at_13.14.45_57f1b5bf_winfru.mp4",
+        srcMobile: "./images/Videos/verticles/kid_study_mobile.mp4",
+        label: "NeuroPi ™  Explores",
+        title: "Informed, Individualised & Timely Decisions",
+        subtitle: "Helping Educators With IEP And RTI Planning Through Generic Insights And Continuous Cognitive Tracking.",
+        link: "SpecialEducation.html"
+      },
+      {
+        src: "https://res.cloudinary.com/kakani7/video/upload/v1753361019/MSI/VIDEOS/Video_4_ch8gih.mp4",
+        srcMobile: "https://res.cloudinary.com/kakani7/video/upload/v1753361019/MSI/VIDEOS/Video_4_ch8gih.mp4",
+        label: "NeuroPi ™  Explores",
+        title: "Discovering Athletic Potential Before It’s Lost ",
+        subtitle: "Young Athletes Often Miss Opportunities Due To Late Development Or Wrong-Fit Training.",
+        link: "Sports_main.html"
+      },
+      {
+        src: "https://res.cloudinary.com/kakani7/video/upload/v1753362011/WhatsApp_Video_2025-07-24_at_13.19.08_d98eabd5_kunjbn.mp4",
+        srcMobile: "https://res.cloudinary.com/kakani7/video/upload/v1753362011/WhatsApp_Video_2025-07-24_at_13.19.08_d98eabd5_kunjbn.mp4",
+        label: "NeuroPi ™  Explores",
+        title: "A Storm Of Expectations, Identity Crisis & Mental Overload",
+        subtitle: "Helping Teens Understand how they’re wired, To Unlocks Their Full Potential Academically, Socially, And Emotionally ",
+        link: "Teens.html"
+      },
+      {
+        src: "https://res.cloudinary.com/kakani7/video/upload/v1753361192/MSI/VIDEOS/WhatsApp_Video_2025-07-24_at_13.20.29_b4d1cfbb_ydbsno.mp4",
+        srcMobile: "https://res.cloudinary.com/kakani7/video/upload/v1753361192/MSI/VIDEOS/WhatsApp_Video_2025-07-24_at_13.20.29_b4d1cfbb_ydbsno.mp4",
+        label: "NeuroPi ™  Explores",
+        title: "Your Brain.<br>Your Body.<br>Your Biology. Personalized.",
+        subtitle: "A Precision Wellness Platform For Cognitive Health, Stress Resilience & Midlife Longevity ",
+        link: "Midlife.html"
+      },
+      {
+        src: "https://res.cloudinary.com/kakani7/video/upload/v1753366472/MSI/VIDEOS/7_zckdua.mp4",
+        srcMobile: "https://res.cloudinary.com/kakani7/video/upload/v1753366472/MSI/VIDEOS/7_zckdua.mp4",
+        label: "NeuroPi ™  Explores",
+        title: "Precision Cognitive Readiness. Enhanced Human Performance.",
+        subtitle: "Enhancing Readiness, Decision-Making, And Long-Term Health In High-Stress Operational Environments.",
+        link: "Defence.html"
+      },
+      {
+        src: "https://res.cloudinary.com/kakani7/video/upload/v1753361055/MSI/VIDEOS/Video_8_g0ie6a.mp4",
+        srcMobile: "https://res.cloudinary.com/kakani7/video/upload/v1753361055/MSI/VIDEOS/Video_8_g0ie6a.mp4",
+        label: "NeuroPi ™  Explores",
+        title: "Human Adaptation in Extreme Environments",
+        subtitle: "Next-Gen Tools for Bio-Adaptive Resilience, Neurogenetic Optimization, and Personalized Human Performance.",
+        link: "Aerospace.html"
+      }
+    ];
 
 
-  let currentIndex = 0;
 
-  function loadVideo(index) {
-    const video = videos[index];
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    const chosenSrc = (isMobile && video.srcMobile) ? video.srcMobile : video.src;
 
-    videoElement.muted = true;
-    videoElement.setAttribute('playsinline', '');
+    let currentIndex = 0;
 
-    if (videoElement.src !== chosenSrc) {
-      videoElement.src = chosenSrc;
-      videoElement.load();
+    function loadVideo(index) {
+      const video = videos[index];
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      const chosenSrc = (isMobile && video.srcMobile) ? video.srcMobile : video.src;
+
+      videoElement.muted = true;
+      videoElement.setAttribute('playsinline', '');
+
+      if (videoElement.src !== chosenSrc) {
+        videoElement.src = chosenSrc;
+        videoElement.load();
+      }
+      videoElement.play().catch(() => { });
+
+      updateOverlay(video);
     }
-    videoElement.play().catch(() => {});
 
-    updateOverlay(video);
-  }
+    function updateOverlay(videoData) {
+      document.querySelector('.video-label').textContent = videoData.label;
+      document.querySelector('.video-title').innerHTML = videoData.title;
+      document.querySelector('.video-subtitle').textContent = videoData.subtitle;
+      readButton.setAttribute('href', videoData.link);
 
-  function updateOverlay(videoData) {
-    document.querySelector('.video-label').textContent = videoData.label;
-    document.querySelector('.video-title').innerHTML = videoData.title;
-    document.querySelector('.video-subtitle').textContent = videoData.subtitle;
-    readButton.setAttribute('href', videoData.link);
-
-    if (videos.indexOf(videoData) === 0) {
-      readButton.textContent = "What's NeuroPi";
-    } else {
-      readButton.textContent = "Read On ..";
+      if (videos.indexOf(videoData) === 0) {
+        readButton.textContent = "What's NeuroPi";
+      } else {
+        readButton.textContent = "Read On ..";
+      }
     }
-  }
 
-  // autoplay next
-  videoElement.addEventListener("ended", () => {
-    currentIndex = (currentIndex + 1) % videos.length;
-    loadVideo(currentIndex);
-  });
-
-  // arrows
-  document.getElementById("prevVideo").addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + videos.length) % videos.length;
-    loadVideo(currentIndex);
-  });
-  document.getElementById("nextVideo").addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % videos.length;
-    loadVideo(currentIndex);
-  });
-
-  // swipe
-  let touchStartX = 0, touchEndX = 0;
-  const swipeTarget = document.querySelector(".video-carousel-wrapper");
-
-  swipeTarget.addEventListener("touchstart", (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  });
-  swipeTarget.addEventListener("touchend", (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  });
-
-  function handleSwipe() {
-    const swipeThreshold = 50;
-    if (touchEndX < touchStartX - swipeThreshold) {
+    // autoplay next
+    videoElement.addEventListener("ended", () => {
       currentIndex = (currentIndex + 1) % videos.length;
       loadVideo(currentIndex);
-    } else if (touchEndX > touchStartX + swipeThreshold) {
+    });
+
+    // arrows
+    document.getElementById("prevVideo").addEventListener("click", () => {
       currentIndex = (currentIndex - 1 + videos.length) % videos.length;
       loadVideo(currentIndex);
-    }
-  }
-
-  // fullscreen helper
-  function setFullscreen() {
-    const container = document.querySelector('.video-carousel-container');
-    const overlay = document.getElementById('videoOverlay');
-
-    container.style.position = 'relative';
-    container.style.width = '100%';
-    container.style.height = window.innerHeight + 'px';
-    container.style.overflow = 'hidden';
-
-    videoElement.style.width = '100%';
-    videoElement.style.height = '100%';
-    videoElement.style.objectFit = 'cover';
-    videoElement.style.display = 'block';
-
-    overlay.style.position = 'absolute';
-    overlay.style.top = '0';
-    overlay.style.left = '0';
-    overlay.style.right = '0';
-    overlay.style.bottom = '0';
-  }
-
-  window.addEventListener('resize', setFullscreen);
-  window.addEventListener('orientationchange', setFullscreen);
-
-  // reload video when crossing breakpoint
-  const mq = window.matchMedia('(max-width: 768px)');
-  let mobileState = mq.matches;
-  mq.addEventListener('change', (e) => {
-    if (e.matches !== mobileState) {
-      mobileState = e.matches;
+    });
+    document.getElementById("nextVideo").addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % videos.length;
       loadVideo(currentIndex);
-    }
-  });
+    });
 
-  document.addEventListener("DOMContentLoaded", () => {
-    setFullscreen();
-    loadVideo(currentIndex);
-  });
-</script>
+    // swipe
+    let touchStartX = 0, touchEndX = 0;
+    const swipeTarget = document.querySelector(".video-carousel-wrapper");
+
+    swipeTarget.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+    swipeTarget.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      if (touchEndX < touchStartX - swipeThreshold) {
+        currentIndex = (currentIndex + 1) % videos.length;
+        loadVideo(currentIndex);
+      } else if (touchEndX > touchStartX + swipeThreshold) {
+        currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+        loadVideo(currentIndex);
+      }
+    }
+
+    // fullscreen helper
+    function setFullscreen() {
+      const container = document.querySelector('.video-carousel-container');
+      const overlay = document.getElementById('videoOverlay');
+
+      container.style.position = 'relative';
+      container.style.width = '100%';
+      container.style.height = window.innerHeight + 'px';
+      container.style.overflow = 'hidden';
+
+      videoElement.style.width = '100%';
+      videoElement.style.height = '100%';
+      videoElement.style.objectFit = 'cover';
+      videoElement.style.display = 'block';
+
+      overlay.style.position = 'absolute';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+      overlay.style.right = '0';
+      overlay.style.bottom = '0';
+    }
+
+    window.addEventListener('resize', setFullscreen);
+    window.addEventListener('orientationchange', setFullscreen);
+
+    // reload video when crossing breakpoint
+    const mq = window.matchMedia('(max-width: 768px)');
+    let mobileState = mq.matches;
+    mq.addEventListener('change', (e) => {
+      if (e.matches !== mobileState) {
+        mobileState = e.matches;
+        loadVideo(currentIndex);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setFullscreen();
+      loadVideo(currentIndex);
+    });
+  </script>
 
 
 
@@ -2059,6 +2070,8 @@ const videos = [
   </script>
   <script src="js/navbar.js"></script>
 
+
+
   <script src="js/logo-moving.js"></script>
   <script>
     function toggleMenu() {
@@ -2068,7 +2081,7 @@ const videos = [
   </script>
 
 
-
+<!-- nav bar scripy -->
 
   <script>
     function neuropiToggleMenu() {
@@ -2095,6 +2108,9 @@ const videos = [
 
     observer.observe(sentinel);
   </script>
+
+
+  <!-- awards -->
 
   <script>
     (function () {
@@ -2147,6 +2163,113 @@ const videos = [
         animate();
       });
     })();
+  </script>
+
+
+
+
+  <!-- Subscribe  -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.querySelector('form.footer__form-main[action="https://formspree.io/f/xanbzwng"]');
+      if (!form) return;
+      const endpoint = form.action;
+      const email = form.querySelector('input[name="email"]');
+      const honey = form.querySelector('input[name="blablabla"]');
+
+      // Find the button and its label span even without an id
+      const btn = form.querySelector('button.input-submit') || form.querySelector('button[type="submit"]');
+      const btnTxt = form.querySelector('.input-submit-txt');
+      const origTxt = btnTxt?.textContent;
+
+      // Make sure the button won't submit the form via submit events
+      if (btn) btn.setAttribute('type', 'button');
+
+      const status = document.createElement('div');
+      status.className = 'form-status';
+      status.setAttribute('role', 'status');
+      status.setAttribute('aria-live', 'polite');
+      status.style.marginTop = '10px';
+      status.style.fontSize = '14px';
+      form.appendChild(status);
+      const setStatus = (m, ok) => { status.textContent = m; status.style.color = ok ? '#0a7c4a' : '#b00020'; };
+
+      let inFlight = false; // ✅ prevents double send
+
+      async function send() {
+        // ✅ 0) Honeypot
+        if (honey && honey.value.trim() !== '') return;
+
+        // ✅ 1) Run native HTML5 validation (type=email, required, etc.)
+        if (typeof form.reportValidity === 'function') {
+          if (!form.reportValidity()) return; // browser shows built-in messages
+        } else {
+          // fallback: at least ensure non-empty
+          const val = (email?.value || '').trim();
+          if (!val) { setStatus('Please enter your email.', false); email?.focus(); return; }
+        }
+
+        if (inFlight) return; // already sending
+        inFlight = true;
+
+        // UI loading state
+        if (btn) btn.disabled = true;
+        if (btnTxt && origTxt) btnTxt.textContent = 'Subscribing…';
+        setStatus('', true);
+        form.setAttribute('aria-busy', 'true');
+
+        const fd = new FormData(form);
+        // keep your extras
+        const emailVal = (email?.value || '').trim();
+        fd.append('_subject', 'New Newsletter Subscription');
+        fd.append('_replyto', emailVal);
+
+        // ✅ 2) Timeout guard
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort('timeout'), 12000);
+
+        try {
+          const res = await fetch(endpoint, {
+            method: 'POST',
+            body: fd,
+            headers: { Accept: 'application/json' },
+            signal: controller.signal
+          });
+          clearTimeout(timer);
+
+          if (res.ok) {
+            form.reset();
+            setStatus('Thanks! You’re subscribed. Please check your inbox for confirmation.', true);
+          } else {
+            let data = null; try { data = await res.json(); } catch { }
+            setStatus(data?.errors?.[0]?.message || `Something went wrong (HTTP ${res.status}).`, false);
+          }
+        } catch (err) {
+          setStatus(err?.name === 'AbortError' ? 'Request timed out. Please try again.' : 'Network error. Please try again.', false);
+          console.error('[Formspree] fetch error', err);
+        } finally {
+          if (btn) btn.disabled = false;
+          if (btnTxt && origTxt) btnTxt.textContent = origTxt;
+          form.removeAttribute('aria-busy');
+          inFlight = false;
+        }
+      }
+
+      // Bind to the button
+      btn?.addEventListener('click', send);
+
+      // Also bind to the span label explicitly (your “strictly hit this” target)
+      btnTxt?.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        send();
+      });
+
+      // Submit on Enter key inside the email field
+      email?.addEventListener('keydown', e => {
+        if (e.key === 'Enter') { e.preventDefault(); send(); }
+      });
+    });
   </script>
 
 

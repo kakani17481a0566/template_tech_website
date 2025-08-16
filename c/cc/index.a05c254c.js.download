@@ -34,7 +34,7 @@ s.addBG(t),s.toggleHide(t),l();let i=e-(0,a.default)(".wrapper").scrollTop(),r=(
 //$('.input-field').on('change keyup blur input', hanldeInput);
 (0,a.default)(".popup__main-form .popup__main-submit").on("click",function(e){e.preventDefault(),console.log("submiitttttttt"),(0,a.default)(".popup__main-form").trigger("submit")}),e(".popup__main-form",{onSuccess:e=>{// success form callback
 (0,a.default)(".popup__main-form").find(".popup__main-form-success-txt [data-form-name]").text(e.name),(0,a.default)(".popup__main-form").find(".popup__main-submit").addClass("on-complete"),(0,a.default)(".popup__main-form").find(".popup__main-submit").attr("disabled",!0),(0,a.default)(".popup__main-form").find(".popup__main-form-inner").addClass("hidden"),(0,a.default)(".popup__main-form").find(".popup__main-form-success").removeClass("hidden")},hubspot:{portalId:"143433917",formId:"82503ac7-13c9-43df-9f9b-64ac8d19368f"},submitEle:{ele:".popup__main-submit",textEle:".popup__main-submit-inner-default .popup__main-submit-inner-txt"},pageName:document.title,prepareMap:e=>{},fields:[{name:"firstname",value:e=>e.name},{name:"email",value:e=>e.email},{name:"message",value:e=>e.message}]}),(0,a.default)(".footer__form-main .input-submit").on("click",function(e){e.preventDefault(),(0,a.default)(".footer__form-main").trigger("submit")}),e(".footer__form-main",{onSuccess:e=>{// success form callback
-(0,a.default)(".footer").find(".footer__form-title").text("Thanks for subscribing"),(0,a.default)(".footer").find(".footer__form-sub").text("Congratulations! You're now on our list to stay informed about the latest news."),(0,a.default)(".footer__form-main").find(".input-submit").addClass("on-complete"),(0,a.default)(".footer__form-main").find("footer__form-title"),(0,a.default)(".footer__form-main").css("pointer-events","none"),setTimeout(()=>{(0,a.default)(".footer").find(".footer__form-title").text("Subscribe to Newsletters"),(0,a.default)(".footer").find(".footer__form-sub").text("Want to stay up to date? Sign up for CargoKite's biannual update."),(0,a.default)(".footer__form-main").css("pointer-events","auto"),(0,a.default)(".footer__form-main").trigger("reset"),(0,a.default)(".footer__form-main").find(".input-submit").removeClass("on-complete")},4e3)},hubspot:{portalId:"143433917",formId:"20556b7f-85c2-4b55-9bdc-7b681d3a2285"},submitEle:{ele:".input-submit",textEle:".input-submit-txt"},pageName:document.title,prepareMap:e=>{},fields:[{name:"email",value:e=>e.email}]})}(),(0,a.default)(window).width()>767&&function(){let e=".footer__cursor-main";requestAnimationFrame(function t(){if((0,a.default)(e).length){let t=(0,T.xGetter)(e),i=(0,T.yGetter)(e);(0,T.xSetter)(e)((0,T.lerp)(t,(0,T.pointerCurr)().x),.01),(0,T.ySetter)(e)((0,T.lerp)(i,(0,T.pointerCurr)().y-(0,a.default)(".footer__cursor").get(0).getBoundingClientRect().top),.01)}requestAnimationFrame(t)})}();let S=[M.default,A.default,R.default,I.default,D.default];(0,u.default).init({preventRunning:!0,transitions:[{name:"opacity-transition",sync:!0,once(e){d(e),g(),l(),function(e){let t;if(f(),(0,p.default).set(".trans__item",{transformOrigin:"bottom",scaleY:1}),"home"==e.next.namespace){let e,i;//Setup css
+(0,a.default)(".footer").find(".footer__form-title").text("Thanks for subscribing"),(0,a.default)(".footer").find(".footer__form-sub").text("Congratulations! You're now on our list to stay informed about the latest news."),(0,a.default)(".footer__form-main").find(".input-submit").addClass("on-complete"),(0,a.default)(".footer__form-main").find("footer__form-title"),(0,a.default)(".footer__form-main").css("pointer-events","none"),setTimeout(()=>{(0,a.default)(".footer").find(".footer__form-title").text("Subscribe to Newsletters"),(0,a.default)(".footer").find(".footer__form-sub").text("Want to stay up to date? Sign up for CargoKite's bimonthly update."),(0,a.default)(".footer__form-main").css("pointer-events","auto"),(0,a.default)(".footer__form-main").trigger("reset"),(0,a.default)(".footer__form-main").find(".input-submit").removeClass("on-complete")},4e3)},hubspot:{portalId:"143433917",formId:"20556b7f-85c2-4b55-9bdc-7b681d3a2285"},submitEle:{ele:".input-submit",textEle:".input-submit-txt"},pageName:document.title,prepareMap:e=>{},fields:[{name:"email",value:e=>e.email}]})}(),(0,a.default)(window).width()>767&&function(){let e=".footer__cursor-main";requestAnimationFrame(function t(){if((0,a.default)(e).length){let t=(0,T.xGetter)(e),i=(0,T.yGetter)(e);(0,T.xSetter)(e)((0,T.lerp)(t,(0,T.pointerCurr)().x),.01),(0,T.ySetter)(e)((0,T.lerp)(i,(0,T.pointerCurr)().y-(0,a.default)(".footer__cursor").get(0).getBoundingClientRect().top),.01)}requestAnimationFrame(t)})}();let S=[M.default,A.default,R.default,I.default,D.default];(0,u.default).init({preventRunning:!0,transitions:[{name:"opacity-transition",sync:!0,once(e){d(e),g(),l(),function(e){let t;if(f(),(0,p.default).set(".trans__item",{transformOrigin:"bottom",scaleY:1}),"home"==e.next.namespace){let e,i;//Setup css
 (0,a.default)(".trans__count").addClass("active"),(0,a.default)(".trans__home").addClass("active"),(0,a.default)(".home-hero .home-hero__title, .home-hero .home-hero__backer").addClass("force-hidden");// //Debug area
 // $('.trans__wrapper').remove()
 // $('.home-hero .home-hero__title, .home-hero .home-hero__backer').removeClass('force-hidden')
@@ -1336,7 +1336,7 @@ t.exports=r.document?n(r,!0):function(e){if(!e.document)throw Error("jQuery requ
  * GSAP 3.12.2
  * https://greensock.com
  *
- * @license Copyright 2008-2023, GreenSock. All rights reserved.
+ * @license Copyright 2008-2023, GreenSock.  All Rights Reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -1489,7 +1489,7 @@ io.version=tJ.version=ik.version="3.12.2",C=1,X()&&tk();var iF=tF.Power0,iU=tF.P
  * CSSPlugin 3.12.2
  * https://greensock.com
  *
- * Copyright 2008-2023, GreenSock. All rights reserved.
+ * Copyright 2008-2023, GreenSock.  All Rights Reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -1532,7 +1532,7 @@ var r=w[t];return r&&0>r.indexOf(",")&&(t=r),t in m&&t!==F&&(e._gsap.x||ei(e,"x"
  * ScrollTrigger 3.12.2
  * https://greensock.com
  *
- * @license Copyright 2008-2023, GreenSock. All rights reserved.
+ * @license Copyright 2008-2023, GreenSock.  All Rights Reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -1597,7 +1597,7 @@ ref:function(){return g}}},ee()&&n.registerPlugin(tm)},{"./Observer.js":"bKYmI",
  * Observer 3.12.2
  * https://greensock.com
  *
- * @license Copyright 2008-2023, GreenSock. All rights reserved.
+ * @license Copyright 2008-2023, GreenSock.  All Rights Reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -1609,7 +1609,7 @@ x.filter(function(e){return e!==eS&&A(e.target)}).length||D(eR?eN:n,"scroll",N),
  * SplitText: 3.10.4
  * https://greensock.com
  *
- * @license Copyright 2008-2022, GreenSock. All rights reserved.
+ * @license Copyright 2008-2022, GreenSock.  All Rights Reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -1629,7 +1629,7 @@ s.style.display="inline-block",s.style.position="relative"),s._isSplit=!0,e(s,i,
  * strings: 3.10.4
  * https://greensock.com
  *
- * Copyright 2008-2022, GreenSock. All rights reserved.
+ * Copyright 2008-2022, GreenSock.  All Rights Reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -1650,7 +1650,7 @@ s=((e.substr(h,12).split(a)||[])[1]||"").length||2,o=e.substr(h,s),l.emoji=1,h+=
  * CustomEase 3.12.2
  * https://greensock.com
  *
- * @license Copyright 2008-2023, GreenSock. All rights reserved.
+ * @license Copyright 2008-2023, GreenSock.  All Rights Reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -1664,7 +1664,7 @@ r.push(f,m),a=(c-m)/(h-f)),f=h,m=c;r="M"+r.join(",")}return x&&x.setAttribute("d
  * paths 3.12.2
  * https://greensock.com
  *
- * Copyright 2008-2023, GreenSock. All rights reserved.
+ * Copyright 2008-2023, GreenSock.  All Rights Reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -7567,7 +7567,7 @@ window.L=e}(i)},{}],"5jBHf":[function(e,t,i){t.exports=JSON.parse('{"ports":[{"i
  * Flip 3.10.4
  * https://greensock.com
  *
- * @license Copyright 2008-2022, GreenSock. All rights reserved.
+ * @license Copyright 2008-2022, GreenSock.  All Rights Reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -7613,7 +7613,7 @@ e.forEach(function(e){return e()}),p(i,"onComplete"))}),s=r;a--;)this.actions[a]
  * matrix 3.10.4
  * https://greensock.com
  *
- * Copyright 2008-2022, GreenSock. All rights reserved.
+ * Copyright 2008-2022, GreenSock.  All Rights Reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com

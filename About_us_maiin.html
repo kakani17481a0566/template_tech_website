@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Jollyany - Multi-Purpose Business Website Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap Styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="style.css" rel="stylesheet">
+
+    <!-- Carousel Slider -->
+    <link href="css/owl-carousel.css" rel="stylesheet">
+
+    <!-- CSS Animations -->
+    <link href="css/animate.min.css" rel="stylesheet">
+
+    <!-- Lightbox -->
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="./css/nav_home.css">
+    <link rel="stylesheet" href="./footer.css">
+    <link rel="stylesheet" href="./css/AboutUs/bullet.css">
+
+    <!-- Royal/Rev sliders (unchanged) -->
+    <link href="royalslider/royalslider.css" rel="stylesheet">
+    <link href="royalslider/skins/default-inverted/rs-default-inverted.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
+</head>
+
+<style>
+    /* Default desktop layout */
+    #milestone-track {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding: 10px;
+        max-width: 90%;
+
+        /* Hide scrollbar */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    #milestone-track::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Responsive: stack vertically and fit full width on small screens */
+    @media (max-width: 767px) {
+        #milestone-track {
+            flex-direction: column;
+            overflow-x: hidden;
+            overflow-y: auto;
+            max-width: 100%;
+            padding: 0;
+        }
+
+        #milestone-track .portfolio_item {
+            min-width: 100% !important;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .entry {
+            height: auto !important;
+        }
+
+        /* Hide left/right arrows on mobile */
+        #milestone-prev,
+        #milestone-next {
+            display: none;
+        }
+    }
+</style>
+
+<body>
+    <header id="header-style-1" class="header">
+        <div class="container">
+            <!-- Top Navigation Bar -->
+            <nav class="neuropi-nav-bar">
+                <div class="neuropi-nav-container">
+                    <div class="neuropi-nav-brand">
+                        <a href="index.html"><img src="images/Neuropi.png" alt="Logo"></a>
+                    </div>
+                    <button onclick="neuropiToggleMenu()"
+                        style="
+            background:#ff471d!important;color:#fff!important;border:2px solid #ff471d!important;
+            padding:0.2rem 1.5rem!important;font-size:1rem!important;cursor:pointer!important;
+            border-radius:2rem!important;display:flex!important;align-items:center!important;
+            justify-content:center!important;font-family:Lato,sans-serif!important;letter-spacing:1px!important;font-weight:700;">
+                        Menu
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Scroll Sentinel -->
+            <div id="neuropi-nav-sentinel" aria-hidden="true"></div>
+
+            <!-- Slide Menu -->
+            <div class="neuropi-menu-panel" id="neuropiSlideMenu" aria-hidden="true">
+                <button class="neuropi-menu-close" onclick="neuropiToggleMenu()" aria-label="Close menu">×</button>
+                <ul class="neuropi-menu-list" id="neuropi-nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="WhatsNeuroPi.html#early-edu-section-welcome">WELCOME</a></li>
+                    <li><a href="WhatsNeuroPi.html#early-edu-section-problem">PROBLEM</a></li>
+                    <li><a href="WhatsNeuroPi.html#early-edu-section-solutions">TECHNOLOGY
+                            SUITE</a></li>
+                    <li><a href="index.html#Home-solutions">SOLUTION</a></li>
+                    <li><a href="WhatsNeuroPi.html#early-edu-section-why">WHY
+                            US? WHY NOW?</a></li>
+                </ul>
+
+                <!-- Menu footer -->
+                <div class="neuropi-footer-contact" style="text-align:left;margin-top:auto;padding-top:1.5rem;">
+                    <div class="neuropi-footer-contact"
+                        style="display:flex;justify-content:space-between;align-items:flex-start;margin-top:auto;padding-top:1.5rem;">
+                        <div>
+                            <h4>Reach us</h4>
+                        </div>
+                        <div style="text-align:center;">
+                            <p>
+                                NeuroPi Tech Pvt. Ltd.<br />Hitex City,
+                                Madhapur<br />Hyderabad,
+                                Telangana<br />500084
+                                India
+                            </p>
+                            <div class="neuropi-footer-actions"
+                                style="justify-content:center;display:flex;gap:1rem;margin-top:0.5rem;">
+                                <a href="#">Contact Us</a>
+                                <a href="https://www.google.com/maps/dir//Hitex+Road,+next+to+Hitex+Exhibition+Centre+Gate,+Shilpa+Layout,+Izzathnagar,+Hyderabad,+Telangana+500084/@17.4681182,78.2939471,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb93c69d117a9d:0xcb96668338dda37c!2m2!1d78.3763488!2d17.4681215?entry=ttu"
+                                    target="_blank" rel="noopener noreferrer">Get
+                                    directions</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- =========================================================
+       VISIBLE LIVE SECTION (default content shown on page load)
+       ========================================================= -->
+    <section id="milestone-live" class="white-wrapper" style="padding-top:110px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 single-portfolio">
+                    <div class="col-sm-7">
+                        <div class="portfolio_item">
+                            <div class="entry">
+                                <img src="./images/ABOUT_US/2018.jpg" alt class="img-responsive">
+
+                            </div><!-- entry -->
+                        </div><!-- end portfolio_item -->
+                    </div><!-- end col-sm-7 -->
+
+                    <div class="col-sm-5">
+                        <div class="title">
+                            <h2>June 2018 — Humble Beginning</h2>
+                        </div>
+                        <p>At NeuroPi, our story began with 40 children and
+                            a bold vision—to bridge the human potential
+                            gap through neuroscience, genetics, and AI. Our
+                            journey unfolded with our first school in
+                            India, introducing personalized, neurocognitive
+                            education to 40 young minds. This laid the
+                            foundation for our human-centered learning
+                            model. From day one, we focused on:</p>
+                        <ul class="orange-bullets-inline">
+                            <li>Individual learning journeys</li>
+                            <li>Hands-on cognitive stimulation</li>
+                            <li>Emotional and social development through
+                                brain-based frameworks</li>
+                        </ul>
+                        <div class="product_details" style="margin-top:15px;">
+                            <p>This first classroom wasn't just a school—it
+                                was a living experiment in how neuroscience,
+                                compassion, and creativity could reshape the
+                                future of early education. That small
+                                beginning laid the foundation for what would
+                                become NeuroPi’s multi-vertical platform,
+                                expanding into wellness, sports,
+                                compatibility, and beyond.</p>
+                        </div>
+                    </div><!-- end col-sm-5 -->
+
+                    <div class="clearfix"></div>
+                    <div class="next_prev text-center">
+                        <ul class="pager">
+                            <li class="previous"><a href="#">←
+                                    Older</a></li>
+                            <li class="next"><a href="#">Newer →</a></li>
+                        </ul>
+                    </div><!-- next_prev -->
+                </div><!-- end single-portfolio -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </section>
+
+    <!-- =========================================================
+       HIDDEN TEMPLATES (not visible; swapped into #milestone-live)
+       ========================================================= -->
+    <div id="milestone-templates" style="display:none;">
+        <!-- 2020–2022: Rapid Pivot During the Pandemic -->
+        <!-- NOTE: ID uses normal hyphens only -->
+        <section id="milestone-live-2020-2022" class="white-wrapper" style="padding-top:110px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 single-portfolio">
+                        <div class="col-sm-7">
+                            <div class="portfolio_item">
+                                <div class="entry">
+                                    <img src="./images/ABOUT_US/2020-22.jpg" alt class="img-responsive">
+
+                                </div><!-- entry -->
+                            </div><!-- end portfolio_item -->
+                        </div><!-- end col-sm-7 -->
+
+                        <div class="col-sm-5">
+                            <div class="title">
+                                <h2>2020–2022: Rapid Pivot During the
+                                    Pandemic</h2>
+                            </div>
+                            <p>With COVID-19 disrupting classrooms
+                                worldwide, we rapidly transitioned into a
+                                fully
+                                online schooling model, expanding our
+                                curriculum from Kindergarten to K-10,
+                                despite
+                                global lockdowns and uncertainty.
+                                This shift allowed us to transcend
+                                geographical barriers—educating students
+                                across
+                                Qatar, urban centers in India, and remote
+                                villages where digital access is often
+                                scarce.
+                                Our adaptive learning platform became a
+                                vital lifeline, connecting teachers,
+                                students,
+                                and families through resilient virtual
+                                classrooms.
+                                Our network of educators spanned far beyond
+                                India: classes were led by teachers
+                                stationed in the Himachal mountains,
+                                alongside trainers and department heads from
+                                Columbia and other parts of South
+                                America—all seamlessly connected on one
+                                platform.
+                                This phase was not just about continuity—it
+                                was about inclusive expansion, bridging
+                                access gaps and redefining what a global,
+                                personalized education system could look
+                                like.
+                            </p>
+                            <ul class="orange-bullets-inline">
+                                <li>Online personalized learning</li>
+
+                                <li>Parent and teacher collaboration
+                                    tools</li>
+                            </ul>
+                            <div class="product_details" style="margin-top:15px;">
+                                <p>We built continuity through remote
+                                    cognitive routines, assessments, and
+                                    coaching
+                                    while maintaining student engagement and
+                                    well-being.</p>
+                            </div>
+                        </div><!-- end col-sm-5 -->
+
+                        <div class="clearfix"></div>
+                        <div class="next_prev text-center">
+                            <ul class="pager">
+                                <li class="previous"><a href="#">←
+                                        Older</a></li>
+                                <li class="next"><a href="#">Newer
+                                        →</a></li>
+                            </ul>
+                        </div><!-- next_prev -->
+                    </div><!-- end single-portfolio -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section>
+
+        <!-- milestone-live-2022-2023 -->
+
+        <section id="milestone-live-2022-2023" class="white-wrapper" style="padding-top:110px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 single-portfolio">
+                        <div class="col-sm-7">
+                            <div class="portfolio_item">
+                                <div class="entry">
+                                    <img src="./images/ABOUT_US/2022-23.jpg" alt class="img-responsive">
+
+                                </div><!-- entry -->
+                            </div><!-- end portfolio_item -->
+                        </div><!-- end col-sm-7 -->
+
+                        <div class="col-sm-5">
+                            <div class="title">
+                                <h2>2022–2023 – Expanding Horizons Through
+                                    Corporate Engagement</h2>
+                            </div>
+                            <p>During this period, NeuroPi began partnering
+                                with corporate parents and enterprises,
+                                integrating our early learning and
+                                neurocognitive programs into broader family
+                                wellness
+                                initiatives. These collaborations marked a
+                                strategic move from B2C to structured B2B
+                                ecosystems, enabling Scalable Partnerships,
+                                Brand Trust & Social Proof, and Foundation
+                                for Platform Growth encompassing not just
+                                education—but wellness, performance, and
+                                compatibility.</p>
+
+                        </div><!-- end col-sm-5 -->
+
+                        <div class="clearfix"></div>
+                        <div class="next_prev text-center">
+                            <ul class="pager">
+                                <li class="previous"><a href="#">←
+                                        Older</a></li>
+                                <li class="next"><a href="#">Newer
+                                        →</a></li>
+                            </ul>
+                        </div><!-- next_prev -->
+                    </div><!-- end single-portfolio -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section>
+
+        <!-- milestone-live-2025-03 -->
+
+        <section id="milestone-live-2025-03" class="white-wrapper" style="padding-top:110px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 single-portfolio">
+                        <div class="col-sm-7">
+                            <div class="portfolio_item">
+                                <div class="entry">
+                                    <img src="./images/ABOUT_US/March 2025.jpg" alt class="img-responsive">
+
+                                </div><!-- entry -->
+                            </div><!-- end portfolio_item -->
+                        </div><!-- end col-sm-7 -->
+
+                        <div class="col-sm-5">
+                            <div class="title">
+                                <h2>2025 March – Launch of NeuroPi
+                                    Platform</h2>
+                            </div>
+                            <p> All data—academic progress, neurocognitive
+                                assessments, student-teacher
+                                interactions—collected since 2018, was
+                                consolidated into one unified platform:
+                                NeuroPi.
+                                NeuroPi integrates genetic, neurocognitive,
+                                and educational insights, delivering a truly
+                                personalized learning experience across
+                                verticals.
+                            </p>
+
+                        </div><!-- end col-sm-5 -->
+
+                        <div class="clearfix"></div>
+                        <div class="next_prev text-center">
+                            <ul class="pager">
+                                <li class="previous"><a href="#">←
+                                        Older</a></li>
+                                <li class="next"><a href="#">Newer
+                                        →</a></li>
+                            </ul>
+                        </div><!-- next_prev -->
+                    </div><!-- end single-portfolio -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section>
+
+        <!-- milestone-live-2025-08 -->
+
+        <section id="milestone-live-2025-08" class="white-wrapper" style="padding-top:110px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 single-portfolio">
+                        <div class="col-sm-7">
+                            <div class="portfolio_item">
+                                <div class="entry">
+                                    <img src="./images/ABOUT_US/Aug 2025.jpg" alt class="img-responsive">
+
+                                </div><!-- entry -->
+                            </div><!-- end portfolio_item -->
+                        </div><!-- end col-sm-7 -->
+
+                        <div class="col-sm-5">
+                            <div class="title">
+                                <h2>August 2025 — A Bold Leap Forward: From
+                                    Early Learning to Human Potential at
+                                    Scale
+                                </h2>
+                            </div>
+                            <p>In August 2025, NeuroPi took a
+                                transformational step by integrating genetic
+                                insights into
+                                our cognitive platform—elevating our
+                                offerings beyond early learning. This
+                                unlocked the
+                                suite across five new domains: Wellness,
+                                Sports, Compatibility, Defence, and
+                                Aerospace.
+                                This evolution reflects our core mission: to
+                                help humans thrive—at school, in life, in
+                                relationships, and in service to society—by
+                                using the most powerful tools available:
+                                genetics, neuroscience, and AI.
+
+                            </p>
+
+                        </div><!-- end col-sm-5 -->
+
+                        <div class="clearfix"></div>
+                        <div class="next_prev text-center">
+                            <ul class="pager">
+                                <li class="previous"><a href="#">←
+                                        Older</a></li>
+                                <li class="next"><a href="#">Newer
+                                        →</a></li>
+                            </ul>
+                        </div><!-- next_prev -->
+                    </div><!-- end single-portfolio -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section>
+
+        <!-- milestone-live-future -->
+
+        <section id="milestone-live-future" class="white-wrapper" style="padding-top:110px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 single-portfolio">
+                        <div class="col-sm-7">
+                            <div class="portfolio_item">
+                                <div class="entry">
+                                    <img src="./images/ABOUT_US/The Future.jpg" alt class="img-responsive">
+                                    <div class="magnifier">
+                                        <div class="buttons">
+                                            <a href="demos/single-portfolio.png" class="sf" title
+                                                data-gal="prettyPhoto[product-gallery]"><span
+                                                    class="fa fa-search"></span></a>
+                                            <a class="st" rel="bookmark" href="#"><span class="fa fa-heart"></span></a>
+                                            <a class="sg" rel="bookmark"
+                                                href="http://themeforest.net/user/jollythemes/portfolio?ref=jollythemes"><span
+                                                    class="fa fa-eye"></span></a>
+                                        </div>
+                                    </div><!-- end magnifier -->
+                                </div><!-- entry -->
+                            </div><!-- end portfolio_item -->
+                        </div><!-- end col-sm-7 -->
+
+                        <div class="col-sm-5">
+                            <div class="title">
+                                <h2>The Future</h2>
+                            </div>
+                            <p>We are building the world's most personalized
+                                cognitive and genetic intelligence
+                                platform—designed to help individuals thrive
+                                in every area of life.
+
+                            </p>
+                            <div class="title">
+                                <h2>Join Us on the Journey</h2>
+                            </div>
+
+                            <p>Whether you are a parent, partner, educator,
+                                or researcher—NeuroPi is for you.</p>
+
+                        </div><!-- end col-sm-5 -->
+
+                        <div class="clearfix"></div>
+                        <div class="next_prev text-center">
+                            <ul class="pager">
+                                <li class="previous"><a href="#">←
+                                        Older</a></li>
+                                <li class="next"><a href="#">Newer
+                                        →</a></li>
+                            </ul>
+                        </div><!-- next_prev -->
+                    </div><!-- end single-portfolio -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section>
+
+        <!-- Add more templates below in the same structure:
+    <section id="milestone-live-2022-2023" class="white-wrapper" style="padding-top:110px;"> ... </section>
+    <section id="milestone-live-2025-03" class="white-wrapper" style="padding-top:110px;"> ... </section>
+    <section id=" All data—academic progress, neurocognitive assessments, student-teacher interactions—collected since 2018, was consolidated into one unified platform: NeuroPi.
+ NeuroPi integrates genetic, neurocognitive, and educational insights, delivering a truly personalized learning experience across verticals.
+" class="white-wrapper" style="padding-top:110px;"> ... </section>
+    <section id="milestone-live-future" class="white-wrapper" style="padding-top:110px;"> ... </section>
+    -->
+    </div>
+
+    <!-- =========================================================
+       TIMELINE CARDS (click a card to swap the live section)
+       ========================================================= -->
+    <section class="grey-wrapper jt-shadow">
+        <div class="container">
+            <div class="general-title">
+                <h2>Our Journey: From a Classroom to a Cognitive
+                    Movement</h2>
+                <!-- <hr> removed -->
+            </div>
+        </div>
+
+        <!-- Milestone navigation with arrows on the sides -->
+        <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 30px;">
+
+            <!-- Left Arrow -->
+            <button id="milestone-prev" class="btn btn-default">←</button>
+
+            <!-- Horizontal scroll wrapper -->
+            <div id="milestone-track">
+
+                <!-- Item 1 -->
+                <div class="portfolio_item" data-target="#milestone-live" style="min-width:300px; flex:0 0 auto;">
+                    <div class="entry"
+                        style="background-color:#ff5b30;height:250px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:20px;">
+                        <div>
+                            <div class="buttons">
+                                <a class="st btn btn-default" rel="bookmark" href="#">View Milestone</a>
+                                <h3 style="font-weight:normal;font-size:30px;">June
+                                    2018 — Humble Beginning</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="portfolio_item" data-target="#milestone-live-2020-2022"
+                    style="min-width:300px; flex:0 0 auto;">
+                    <div class="entry"
+                        style="background-color:#008080;height:250px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:20px;">
+                        <div>
+                            <div class="buttons">
+                                <a class="st btn btn-default" rel="bookmark" href="#">View Milestone</a>
+                                <h3 style="font-weight:normal;font-size:30px;">2020–2022:
+                                    Rapid Pivot During the
+                                    Pandemic</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="portfolio_item" data-target="#milestone-live-2022-2023"
+                    style="min-width:300px; flex:0 0 auto;">
+                    <div class="entry"
+                        style="background-color:#ff5b30;height:250px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:20px;">
+                        <div>
+                            <div class="buttons">
+                                <a class="st btn btn-default" rel="bookmark" href="#">View Milestone</a>
+                                <h3 style="font-weight:normal;font-size:30px;">2022–2023
+                                    – Expanding Horizons Through
+                                    Corporate Engagement</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="portfolio_item" data-target="#milestone-live-2025-03"
+                    style="min-width:300px; flex:0 0 auto;">
+                    <div class="entry"
+                        style="background-color:#008080;height:250px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:20px;">
+                        <div>
+                            <div class="buttons">
+                                <a class="st btn btn-default" rel="bookmark" href="#">View Milestone</a>
+                                <h3 style="font-weight:normal;font-size:30px;">2025
+                                    March – Launch of NeuroPi Platform
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="portfolio_item" data-target="#milestone-live-2025-08"
+                    style="min-width:300px; flex:0 0 auto;">
+                    <div class="entry"
+                        style="background-color:#ff5b30;height:250px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:20px;">
+                        <div class="">
+                            <div class="buttons">
+                                <a class="st btn btn-default" rel="bookmark" href="#">View Milestone</a>
+                                <h3 style="font-weight:normal;font-size:30px;">August
+                                    2025 — A Bold Leap Forward</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="portfolio_item" data-target="#milestone-live-future"
+                    style="min-width:300px; flex:0 0 auto;">
+                    <div class="entry"
+                        style="background-color:#008080;height:250px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:20px;">
+                        <div class="">
+                            <div class="buttons">
+                                <a class="st btn btn-default" rel="bookmark" href="#">View Milestone</a>
+                                <h3 style="font-weight:normal;font-size:30px;">The
+                                    Future</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Arrow -->
+            <button id="milestone-next" class="btn btn-default">→</button>
+        </div>
+
+        <div class="clearfix"></div>
+
+    </section>
+
+
+
+
+  <footer class="footer" style="margin-top: 90px;">
+    <div class="footer__inner">
+      <div class="container grid">
+        <div class="footer__form-wrap" data-logo-main="mix-mb">
+          <div class="footer__form-icon icon icon-80">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M65 21.667L40 46.667L15 21.667" stroke="white" stroke-width="2" stroke-miterlimit="10"
+                stroke-linecap="round"></path>
+              <path
+                d="M70 10H9.99998C6.31808 10 3.33331 12.9848 3.33331 16.6667V63.3333C3.33331 67.0152 6.31808 70 9.99998 70H70C73.6819 70 76.6666 67.0152 76.6666 63.3333V16.6667C76.6666 12.9848 73.6819 10 70 10Z"
+                stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path>
+              <path d="M26.6667 46.667L15 58.3337" stroke="white" stroke-width="2" stroke-miterlimit="10"
+                stroke-linecap="round"></path>
+              <path d="M53.3333 46.667L65 58.3337" stroke="white" stroke-width="2" stroke-miterlimit="10"
+                stroke-linecap="round"></path>
+            </svg>
+          </div>
+          <div class="footer__form-title h4 heading heading-f-lh"> Subscribe to Newsletters </div>
+          <div class="footer__form-sub "> Want to stay up to date? <br>Sign up for <span class="neuro-title">NeuroPi<sup
+                class="tm-badge" style="font-size: 12px;color:aliceblue;">TM</sup></span>'s bimonthly update. </div>
+          <form action="https://formspree.io/f/xanbzwng" method="POST" class="footer__form-main">
+            <div class="input-wrap">
+              <input type="email" name="email" class="input-field txt txt-16" style="font-family:lato"
+                placeholder="Enter your email" required>
+            </div>
+
+            <!-- Honeypot (hidden) -->
+            <input type="text" class="honey-input" name="blablabla" tabindex="-1" autocomplete="off" aria-hidden="true"
+              style="position:absolute; left:-5000px; height:1px; width:1px; opacity:0;">
+
+            <!-- Optional: custom subject / redirect -->
+            <!-- <input type="hidden" name="_subject" value="New Newsletter Subscription"> -->
+            <!-- <input type="hidden" name="_next" value="https://cargokite.com/thank-you.html"> -->
+
+            <button class="btn btn-lg btn-pri input-submit" id="subscribeBtn" type="submit">
+              <div class="input-submit-icon">
+                <div class="icon icon-20">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.59961 9.40169L8.39974 13.2018L16 5.60156" stroke="currentColor" stroke-width="1.5"
+                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
+              </div>
+              <span class="input-submit-txt txt-med"> Subscribe </span>
+
+            </button>
+          </form>
+
+          <div class="footer__form-caption "> Don't worry about spam. We hate it too! </div>
+        </div>
+
+        <div class="footer__main">
+          <div class="footer__links">
+            <a href="About_us_maiin.html" class="footer__link txt txt-20 txt-med" data-link="home">About Us</a>
+            <a class="footer__link tag-wrap txt txt-20 txt-med" href="WhatsNeuroPi.html"> What's
+              NeuroPi?<span class="tag-link"> we're hiring </span></a>
+            <a class="footer__link txt txt-20 txt-med" href="WhatsNeuroPi.html#Tech-neu">Technology</a>
+            <a class="footer__link txt txt-20 txt-med" data href="index.html#Home-solutions">Solutions</a>
+            <a href="RegistrationHome.html" data-popup="contact" class="footer__link txt txt-20 txt-med"
+              data-link="contact">Get in
+              touch</a>
+          </div>
+
+          <div class="footer__info footer__info-mid grid" style="font-family:'Lato', sans-serif;">
+
+            <!-- ✅ Useful Links (single row, no wrap) -->
+            <div>
+              <!-- Responsive heading -->
+              <div class="txt txt-16"
+                style="color:#008281; font-weight:bold; margin-bottom:5px; font-size: clamp(14px, 2vw, 16px); line-height: 1.2;">
+                Useful Links
+              </div>
+
+              <!-- Responsive links row -->
+              <style>
+                .link-row {
+                  display: flex;
+                  flex-wrap: wrap;
+                  /* allow items to go to next line */
+                  column-gap: 24px;
+                  row-gap: 12px;
+                  align-items: center;
+                  margin-bottom: 8px;
+                  width: 100%;
+                }
+
+                .link-row a {
+                  flex: 0 0 auto;
+                  /* size to content */
+                  white-space: nowrap;
+                  /* DO NOT break inside a link */
+                  word-break: keep-all;
+                  /* avoid mid-word breaks */
+                  font-size: 16px;
+                  color: #1a4255;
+                  text-decoration: none;
+                  display: inline-block;
+                }
+
+                /* Desktop: try to keep one row; wrap only if truly needed */
+                @media (min-width:1024px) {
+                  .link-row {
+                    flex-wrap: nowrap;
+                  }
+                }
+
+                /* Phones: exactly 2 per row */
+                @media (max-width:767px) {
+                  .link-row a {
+                    flex: 1 1 calc(50% - 24px);
+                  }
+
+                  /* two per row */
+                }
+              </style>
+
+              <div class="link-row">
+                <a href="earlyeducation_main.html">Early Education</a>
+                <a href="Sports_main.html">Sports</a>
+                <a href="teens_main.html">Teens</a>
+
+                <a href="Midlife.html">Longevity</a>
+                <a href="#management-team">Leadership</a>
+              </div>
+
+
+            </div>
+
+
+            <!-- Head Office -->
+            <div class="footer__info-addr grid">
+              <div class="footer__info-addr-grp">
+                <div class="footer__info-addr-label txt txt-16"
+                  style="color: #008281; font-weight: bold; font-size: clamp(16px, 2vw, 16px); line-height: 1.2; margin-bottom: 0;">
+                  Head Office
+                </div>
+
+                <div class="footer__info-addr-txt txt txt-16" style="color:#1a4255">
+                  <span class="neuro-title np-orange">NeuroPi</span> Tech Pvt. Ltd.<br>
+                  Hitex City, Madhapur <br>
+                  Hyderabad, Telangana <br>
+                  500084 India
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer__info-contact">
+              <div class="footer__info-contact-grp">
+                <div class="footer__info-contact-label txt txt-16" style="color:#008281; font-weight: bold;"> Email
+                </div>
+                <a href="mailto:info@neuropi.ai" class="footer__info-contact-link txt txt-16"
+                  style="font-size: 16px; color: #1a4255;"> info@neuropi.ai </a>
+              </div>
+              <div class="footer__info-contact-grp">
+                <div class="footer__info-contact-label txt txt-16" style="color:#008281; font-weight: bold;"> Phone
+                </div>
+                <a href="tel:+917799772881" class="footer__info-contact-link" style="font-size: 16px; color: #1a4255;">
+                  +91 7799 77 2881 </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ✅ Paste this <style> block anywhere once (e.g., in <head> or above the section) -->
+      <style>
+        /* Responsive bottom bar padding + wrapping */
+        .footer-bottom {
+          /* replace fixed 200px padding with fluid spacing for all screens */
+          padding-left: clamp(16px, 5vw, 200px) !important;
+          padding-right: clamp(16px, 5vw, 200px) !important;
+          display: flex !important;
+          justify-content: space-between !important;
+          align-items: center !important;
+          gap: 12px 20px !important;
+          flex-wrap: wrap !important;
+          /* allow wrapping on small screens */
+          margin-top: 15px !important;
+          font-family: 'Lato', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+        }
+
+        /* Left group can wrap items to next line if tight */
+        .footer-bottom .footer-left {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          white-space: nowrap;
+          /* keep items intact, but allow the group to wrap */
+          flex-wrap: wrap;
+          /* wrap within the group on small screens */
+          row-gap: 8px;
+          color: #1a4255;
+        }
+
+        .footer-bottom .footer-left a,
+        .footer-bottom .footer-left div {
+          color: #1a4255;
+          text-decoration: none;
+          font-size: 16px;
+          font-family: Lato, sans-serif;
+        }
+
+        /* Right social icons row */
+        .footer-bottom .footer-social {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        /* Scale the SVG icons fluidly */
+        .footer-bottom .footer-social svg {
+          width: clamp(24px, 4vw, 40px) !important;
+          height: clamp(24px, 4vw, 40px) !important;
+        }
+
+        /* Optional: slightly smaller text on very small screens */
+        @media (max-width: 480px) {
+
+          .footer-bottom .footer-left a,
+          .footer-bottom .footer-left div {
+            font-size: 14px !important;
+          }
+        }
+      </style>
+
+      <!-- ✅ Drop-in responsive bottom bar (only this section) -->
+      <div class="footer-bottom">
+        <!-- Left Section -->
+        <div class="footer-left">
+          <a href="Privacy-Policy.html">Privacy Policy</a>
+          <a href="Terms-of-Service.html">Terms Of Service</a>
+          <div>
+            © 2025, NeuroPi<span><sup>TM</sup></span><span>. </span>All Rights Reserved.
+          </div>
+        </div>
+
+        <!-- Right Section (Social Icons) -->
+        <div class="footer-social">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <rect width="24" height="24" fill="#0A66C2" rx="4" />
+              <path fill="#FFFFFF"
+                d="M7.059 20.452H3.546V9h3.513v11.452zM5.303 7.433a2.037 2.037 0 1 1 0-4.074 2.037 2.037 0 0 1 0 4.074zM20.452 20.452h-3.514v-5.569c0-1.327-.027-3.036-1.85-3.036-1.852 0-2.137 1.445-2.137 2.939v5.666h-3.513V9h3.374v1.561h.048c.47-.889 1.618-1.828 3.332-1.828 3.562 0 4.219 2.344 4.219 5.391v6.328z" />
+            </svg>
+          </a>
+
+          <!-- X (Twitter) -->
+          <a href="https://twitter.com" target="_blank" aria-label="X">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <rect width="24" height="24" fill="#000000" rx="4" />
+              <path fill="#FFFFFF"
+                d="M17.21 3h3.27l-7.15 8.18L21 21h-6.42l-4.22-5.53L6.14 21H2.86l7.63-8.75L3 3h6.58l3.8 5.04L17.21 3z" />
+            </svg>
+          </a>
+
+          <!-- Facebook -->
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <rect width="24" height="24" fill="#1877F2" rx="4" />
+              <path fill="#FFFFFF"
+                d="M16.828 15.563l.532-3.49h-3.328v-2.25c0-.949.463-1.874 1.953-1.874h1.513V5.996s-1.374-.235-2.686-.235c-2.74 0-4.533 1.661-4.533 4.668v2.25H7.078v3.49h3.047V24h3.905v-8.437h2.798z" />
+            </svg>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <defs>
+                <linearGradient id="IGgradient" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#F58529" />
+                  <stop offset="30%" stop-color="#DD2A7B" />
+                  <stop offset="60%" stop-color="#8134AF" />
+                  <stop offset="100%" stop-color="#515BD4" />
+                </linearGradient>
+              </defs>
+              <rect width="24" height="24" rx="4" fill="url(#IGgradient)" />
+              <path fill="#FFFFFF"
+                d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 1 0 12 7.2zm0 7.9a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 1 1 0 6.2zm5.1-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0z" />
+            </svg>
+          </a>
+
+          <!-- YouTube -->
+          <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <rect width="24" height="24" fill="#FF0000" rx="4" />
+              <path fill="#FFFFFF" d="M9.75 15.02V8.98l6.27 3.02-6.27 3.02z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+
+      <a href="RegistrationHome.html" class="footer__marquee" data-popup="contact">
+        <div class="footer__marquee-wrap">
+          <div class="footer__marquee-item heading" style="color: #ff471d;"> Are you interested? Let's discuss today!
+          </div>
+          <div class="footer__marquee-item heading" style="color: #ff471d;"> Are you interested? Let's discuss today!
+          </div>
+        </div>
+        <div class="footer__cursor">
+          <div class="arr-hover footer__cursor-main"
+            style="translate: none; rotate: none; scale: none; transform: translate(-50%, -50%) translate(1270px, -11648.2px);">
+            <div class="footer__cursor-txt txt-20 txt-bold"> Say Hi! </div>
+            <div class="arr-wrap arr-wrap-24">
+              <div class="arr-ic-main icon icon-24">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M22.8301 2.76091L2.25005 23.341L0.659058 21.75L21.2392 1.16992L22.8301 2.76091Z"
+                    fill="currentColor"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3.375 1.125H22.875V20.625H20.625V3.375H3.375V1.125Z"
+                    fill="currentColor"></path>
+                </svg>
+              </div>
+              <div class="arr-ic-clone icon icon-24">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M22.8301 2.76091L2.25005 23.341L0.659058 21.75L21.2392 1.16992L22.8301 2.76091Z"
+                    fill="currentColor"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3.375 1.125H22.875V20.625H20.625V3.375H3.375V1.125Z"
+                    fill="currentColor"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </footer>
+
+
+    <!-- ======================
+       Footer (unchanged)
+       ====================== -->
+    <!-- ... keep your existing footer HTML here exactly as-is ... -->
+
+    <!-- Scripts -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.parallax-1.1.3.js"></script>
+    <script src="js/jquery.simple-text-rotator.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/custom-portfolio.js"></script>
+
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script>
+        (function ($) {
+            "use strict";
+            jQuery('a[data-gal]').each(function () {
+                jQuery(this).attr('rel', jQuery(this).data('gal'));
+            });
+            jQuery("a[data-gal^='prettyPhoto']").prettyPhoto({
+                animationSpeed: 'slow',
+                slideshow: false,
+                overlay_gallery: false,
+                theme: 'light_square',
+                social_tools: false,
+                deeplinking: false
+            });
+        })(jQuery);
+    </script>
+
+    <script>
+        function neuropiToggleMenu() {
+            const menu = document.getElementById('neuropiSlideMenu');
+            const isActive = menu.classList.contains('active');
+            menu.classList.toggle('active');
+            menu.setAttribute('aria-hidden', isActive ? 'true' : 'false');
+        }
+
+        // Scroll detection for adding 'scrolled' class
+        const sentinel = document.getElementById('neuropi-nav-sentinel');
+        const navbar = document.querySelector('.neuropi-nav-bar');
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (!entry.isIntersecting) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            },
+            { rootMargin: '0px', threshold: 0.01 }
+        );
+
+        if (sentinel) observer.observe(sentinel);
+    </script>
+
+    <!-- =========================================================
+       SWAP SCRIPT (single source of truth; no scroll-by-title script)
+       ========================================================= -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const live = document.getElementById("milestone-live");
+            if (!live) return;
+
+            // Keep a copy of the original live content (default)
+            const originalHTML = live.innerHTML;
+
+            function loadIntoLive(targetSelector) {
+                if (!targetSelector) return;
+
+                // Restore original if pointing back to #milestone-live
+                if (targetSelector === "#milestone-live") {
+                    live.innerHTML = originalHTML;
+                    afterSwap();
+                    return;
+                }
+
+                // Find the template section and inject its HTML
+                const tpl = document.querySelector(targetSelector);
+                if (tpl) {
+                    live.innerHTML = tpl.innerHTML;
+                    afterSwap();
+                }
+            }
+
+            function afterSwap() {
+                // Smooth scroll back to the top of the live section
+                live.scrollIntoView({ behavior: "smooth", block: "start" });
+
+                // Re-init prettyPhoto if needed
+                if (window.jQuery && jQuery.prettyPhoto) {
+                    jQuery("a[rel^='prettyPhoto'], a[data-gal^='prettyPhoto']").prettyPhoto({
+                        animationSpeed: 'slow',
+                        slideshow: false,
+                        overlay_gallery: false,
+                        theme: 'light_square',
+                        social_tools: false,
+                        deeplinking: false
+                    });
+                }
+            }
+
+            // Attach to all cards that have data-target
+            document.querySelectorAll(".portfolio_item[data-target]").forEach(card => {
+                card.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const targetSelector = this.getAttribute("data-target");
+                    loadIntoLive(targetSelector);
+                });
+            });
+        });
+    </script>
+
+    <!-- Arrors left and right in achivments -->
+
+    <style>
+        /* ——— Milestone tiles (compact + tunable) ——— */
+        #milestone-track {
+            --tile-min: 300px;
+            --tile-ideal: 34vw;
+            --tile-max: 520px;
+            --tile-ratio: 4/3;
+            /* shorter than square */
+            --tile-radius: 14px;
+            --tile-pad: 16px;
+            --tile-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+        }
+
+        #milestone-track .portfolio_item {
+            flex: 0 0 clamp(var(--tile-min), var(--tile-ideal), var(--tile-max));
+            width: clamp(var(--tile-min), var(--tile-ideal), var(--tile-max));
+            aspect-ratio: var(--tile-ratio);
+            border-radius: var(--tile-radius);
+            overflow: hidden;
+            display: flex;
+            transition: transform .2s ease, box-shadow .2s ease;
+            will-change: transform;
+        }
+
+        #milestone-track .entry {
+            flex: 1 1 auto;
+            height: 100% !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--tile-pad);
+            overflow: hidden;
+        }
+
+        #milestone-track .entry img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Hover lift (pointer devices only) */
+        @media (hover:hover) {
+            #milestone-track .portfolio_item:hover {
+                transform: translateY(-2px);
+                box-shadow: var(--tile-shadow);
+            }
+        }
+
+        /* Accessible focus */
+        #milestone-track .portfolio_item:focus-visible {
+            outline: 3px solid #1a4255;
+            /* adjust to brand */
+            outline-offset: 2px;
+        }
+
+        /* Tablet: wider + slightly flatter */
+        @media (max-width: 991px) {
+            #milestone-track {
+                --tile-ideal: 48vw;
+                --tile-max: 560px;
+                --tile-ratio: 6/5;
+            }
+        }
+
+        /* Phone: one big centered tile */
+        @media (max-width: 767px) {
+            #milestone-track .portfolio_item {
+                flex: 0 0 92vw;
+                width: 92vw;
+                max-width: 520px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const track = document.getElementById("milestone-track");
+            const prevBtn = document.getElementById("milestone-prev");
+            const nextBtn = document.getElementById("milestone-next");
+            if (!track || !prevBtn || !nextBtn) return;
+
+            // Scroll almost a “page” each click, but never less than 240px
+            const pageScroll = () => Math.max(240, Math.floor(track.clientWidth * 0.9));
+
+            const scrollLeft = () => track.scrollBy({ left: -pageScroll(), behavior: "smooth" });
+            const scrollRight = () => track.scrollBy({ left: pageScroll(), behavior: "smooth" });
+
+            prevBtn.addEventListener("click", scrollLeft);
+            nextBtn.addEventListener("click", scrollRight);
+
+            // Make milestone cards keyboard-accessible (optional but recommended)
+            document.querySelectorAll(".portfolio_item[data-target]").forEach(card => {
+                card.setAttribute("role", "button");
+                card.setAttribute("tabindex", "0");
+                card.addEventListener("keydown", (e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        card.click();
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

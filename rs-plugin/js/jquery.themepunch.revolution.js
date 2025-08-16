@@ -38,7 +38,7 @@
 
 					navigationType:"bullet",				// bullet, thumb, none
 					navigationArrows:"solo",				// nextto, solo, none
-					navigationInGrid:"off",					// on/off  
+					navigationInGrid:"off",					// on/off
 
 					hideThumbsOnMobile:"off",
 					hideBulletsOnMobile:"off",
@@ -1226,10 +1226,10 @@
 			var loff=0;
 			if (opt.forceFullWidth=="on")
 						loff = 0-opt.container.parent().offset().left;
-			
+
 			var gridposX = 0,
 				gridposY = 0;
-				
+
 			if (opt.navigationInGrid=="on") {
 				gridposX = container.width()>opt.startwidth ? (container.width() - opt.startwidth)/2 : 0,
 				gridposY = container.height()>opt.startheight ? (container.height() - opt.startheight)/2 : 0;
@@ -1540,7 +1540,7 @@
 					if (!visible) var off=0-opt.slotw;
 
 					for (var i=0;i<opt.slots;i++) {
-			
+
 							sh.append('<div class="slot" style="position:absolute;'+
 															'top:'+(0+fullyoff)+'px;'+
 															'left:'+(fulloff+i*opt.slotw)+'px;'+
@@ -2071,19 +2071,19 @@
 
 			var comingtransition = transtext[curtransid];
 			var specials = 0;
-			
+
 			if (opt.parallax=="scroll" && opt.parallaxFirstGo==undefined) {
 				opt.parallaxFirstGo = true;
 				scrollParallax(container,opt);
-				setTimeout(function() { 
+				setTimeout(function() {
 					scrollParallax(container,opt);
 				},210);
-				setTimeout(function() { 
+				setTimeout(function() {
 					scrollParallax(container,opt);
 				},420);
-				
+
 			}
-			
+
 			/*if (opt.ffnn == undefined) opt.ffnn=0;
 			comingtransition=opt.ffnn;
 			opt.ffnn=opt.ffnn+1;
@@ -3369,9 +3369,9 @@
 
 
 			if (opt.parallax=="mouse" || opt.parallax=="scroll+mouse" || opt.parallax=="mouse+scroll") {
-				
+
 						container.on('mousemove.hoverdir, mouseleave.hoverdir',function(event) {
-		
+
 							switch (event.type) {
 								case "mousemove":
 										var t = container.offset().top,
@@ -3380,16 +3380,16 @@
 											mh = l + container.width() / 2,
 											diffh = (mh - event.pageX),
 											diffv =  (mv - event.pageY);
-		
+
 										jQuery(".tp-parallax-container").each(function() {
 											var pc = jQuery(this),
 												pl = parseInt(pc.data('parallaxlevel'),0)/100,
 												offsh =	diffh * pl,
 												offsv =	diffv * pl;
-		
+
 											TweenLite.to(pc,0.2,{x:offsh,y:offsv,ease:Power3.easeOut});
 										})
-		
+
 								break;
 								case "mouseleave":
 										jQuery(".tp-parallax-container").each(function() {
@@ -3399,12 +3399,12 @@
 								break;
 							}
 						});
-		
+
 						if (is_mobile())
 							window.ondeviceorientation = function(event) {
 							  var 	y = Math.round(event.beta  || 0),
 							  		x = Math.round(event.gamma || 0);
-							 		
+
 							  jQuery('.logo-container').html("Portrait");
 							  if (jQuery(window).width() > jQuery(window).height()){
 							  		var xx = x;
@@ -3417,8 +3417,8 @@
 							  		curv = 180/container.height() * y;
 
 
-							  
-		
+
+
 							  jQuery(".tp-parallax-container").each(function() {
 												var pc = jQuery(this),
 													pl = parseInt(pc.data('parallaxlevel'),0)/100,
@@ -3426,33 +3426,33 @@
 													offsv =	curv * pl;
 												TweenLite.to(pc,0.2,{x:offsh,y:offsv,ease:Power3.easeOut});
 											})
-		
+
 							  // y: -90 -> +90,  x:-180 -> +180
-		
+
 							  //jQuery('.logo-container').html("h:"+curh+"  v:"+curv);
 							  }
-			} 
+			}
 			if (opt.parallax=="scroll" || opt.parallax=="scroll+mouse" || opt.parallax=="mouse+scroll") {
 
 						jQuery(window).on('scroll',function(event) {
 							scrollParallax(container,opt);
 						});
-			} 
+			}
 		}
-		
+
 		/***************************************
 			-	SET POST OF SCROLL PARALLAX	-
 		***************************************/
 		function scrollParallax(container,opt) {
 			var t = container.offset().top,
-					st = jQuery(window).scrollTop(),							
+					st = jQuery(window).scrollTop(),
 					dist = t+container.height()/2,
 					mv = t+container.height()/2 - st,
 					wh = jQuery(window).height()/2,
-					diffv= wh - mv;						
+					diffv= wh - mv;
 
 			if (dist<wh) diffv = diffv - (wh-dist);
-			
+
 			jQuery(".tp-parallax-container").each(function() {
 				var pc = jQuery(this),
 					pl = parseInt(pc.data('parallaxlevel'),0)/100,
@@ -3460,7 +3460,7 @@
 
 				TweenLite.to(pc,0.2,{y:offsv,ease:Power3.easeOut});
 			})
-			
+
 			if (opt.parallaxBgFreeze!="on") {
 				var pl = opt.parallaxLevels[0]/100,
 					offsv =	diffv * pl;
@@ -3580,13 +3580,13 @@
 
 
 					var kbimg = nextsh.find('.kenburnimg img');
-					
-					
+
+
 
 					var imgs = calculateKenBurnImgPos(opt,bgps,bgfs,kbimg),
 						imge = calculateKenBurnImgPos(opt,bgpe,bgfe,kbimg);
 
-	
+
 					defimg.data('kenburn',TweenLite.fromTo(kbimg,dur,{autoAlpha:1,transformPerspective:1200, transformOrigin:"0% 0%", top:0,left:0, scale:imgs.w, x:imgs.x, y:imgs.y},{autoAlpha:1,rotationZ:roe,ease:easeme, x:imge.x, y:imge.y,scale:imge.w,onUpdate:function() {
 
 							var sx = kbimg[0]._gsTransform.scaleX;
@@ -4002,19 +4002,19 @@
 
 						var offsetx=0;
 						var offsety=0;
-						
+
 						var allcaptions = nextli.find('.tp-caption'),
 							allstaticcaptions = opt.container.find('.tp-static-layers').find('.tp-caption');
-						
+
 						if (allstaticcaptions.length>0)
 							allcaptions.push(allstaticcaptions);
 
 						allcaptions.each(function(i) {
-							
+
 							    var staticdirection = -1;	// 1 -> In,  2-> Out  0-> Ignore  -1-> Not Static
 								var nextcaption=jQuery(this);
 								if (nextcaption.hasClass("tp-static-layer")) {
-									
+
 									// IF STATIC ITEM CURRENTLY NOT VISIBLE
 									if (!nextcaption.hasClass("tp-is-shown")) {
 										// IF ITEM SHOULD BECOME VISIBLE
@@ -4038,14 +4038,14 @@
 											staticdirection = 2;
 											nextcaption.removeClass("tp-is-shown");
 										} else {
-											staticdirection = 0; 
+											staticdirection = 0;
 										}
-											
-									}	
+
+									}
 
 								}
-								
-								
+
+
 								offsetx = opt.width/2 - (opt.startwidth*opt.bw)/2;
 
 
@@ -4760,7 +4760,7 @@
 							TweenLite.set(nextcaption,{top:calcy,left:calcx,overwrite:"auto"});
 
 							if (staticdirection == 0) recalled = true;
-							
+
 							if (!recalled) {
 
 
@@ -4899,22 +4899,22 @@
 											  endfrm.opacity = 1;
 											  endfrm.onComplete = animcompleted();
 											  endfrm.delay = mdelay;
-	
+
 											  tl.add(newtl.staggerFromTo(animobject,mspeed,frm,endfrm,elemdelay),"frame0");
-	
+
 										} else {
-	
+
 												frm.visibility = "visible";
 												frm.transformPerspective = 600;
 												if (animobject != nextcaption)
 												  tl.add(TweenLite.set(nextcaption, { opacity:1,scaleX:1,scaleY:1,rotationX:0,rotationY:0,rotationZ:0,skewX:0,skewY:0,z:0,x:0,y:0,visibility:'visible',opacity:1,delay:0,overwrite:"all"}));
-	
+
 												endfrm.visibility = "visible";
 												endfrm.delay = mdelay;
 												endfrm.onComplete = animcompleted();
 												endfrm.opacity = 1;
 												if (nextcaption.hasClass("randomrotate") && animobject != nextcaption) {
-	
+
 													for (var i=0;i<animobject.length;i++) {
 														var obj =new Object();
 														var endobj = new Object();
@@ -4924,15 +4924,15 @@
 														frm.rotation = Math.round(Math.random()*200-100);
 														frm.x = Math.round(Math.random()*200-100);
 														frm.y = Math.round(Math.random()*200-100);
-	
+
 														if (i!=0) endobj.delay = mdelay + (i*elemdelay);
-	
-	
+
+
 														tl.append(TweenLite.fromTo(animobject[i],mspeed,obj,endobj),"frame0");
 													}
-	
-	
-	
+
+
+
 												}	else
 												tl.add(newtl.staggerFromTo(animobject,mspeed,frm,endfrm,elemdelay),"frame0");
 												//tl.add(TweenLite.fromTo(nextcaption,mspeed,frm,endfrm),"frame0");
@@ -4964,7 +4964,7 @@
 									// IF THERE IS ANY EXIT ANIM DEFINED
 
 									if ((nextcaption.data('end')!=undefined) && (staticdirection==-1 || staticdirection==2)) {
-										
+
 										endMoveCaption(nextcaption,opt,nextcaption.data('end')/1000,frm,"frame99",xbw);
 									} else {
 										endMoveCaption(nextcaption,opt,999999,frm,"frame99",xbw);
@@ -5001,7 +5001,7 @@
 												ys = el.data('ys')==undefined ? 0 : el.data('ys');
 												xe = el.data('xe')==undefined ? 0 : el.data('xe'),
 												ye = el.data('ye')==undefined ? 0 : el.data('ye'),
-												speed = el.data('speed')==undefined ? 2 : el.data('speed'),												
+												speed = el.data('speed')==undefined ? 2 : el.data('speed'),
 												easing = el.data('ease')==undefined ? Power2.easeInOut : el.data('ease');
 											el.data('timeline').append(new TweenLite.fromTo(el,speed,{x:xs,y:ys},{x:xe,y:ye,ease:easing}));
 											el.data('timeline').append(new TweenLite.fromTo(el,speed,{x:xe,y:ye},{x:xs,y:ys,onComplete:function() {
@@ -5010,7 +5010,7 @@
 										}
 
 									})
-									
+
 									// SOME LOOPING ANIMATION ON INTERNAL ELEMENTS
 									nextcaption.find('.rs-pulse').each(function() {
 										var el = jQuery(this);
@@ -5018,7 +5018,7 @@
 											el.data('timeline',new TimelineLite);
 											var zoomstart = el.data('zoomstart')==undefined ? 0 : el.data('zoomstart'),
 												zoomend = el.data('zoomend')==undefined ? 0 : el.data('zoomend');
-												speed = el.data('speed')==undefined ? 2 : el.data('speed'),												
+												speed = el.data('speed')==undefined ? 2 : el.data('speed'),
 												easing = el.data('ease')==undefined ? Power2.easeInOut : el.data('ease');
 											el.data('timeline').append(new TweenLite.fromTo(el,speed,{scale:zoomstart},{scale:zoomend,ease:easing}));
 											el.data('timeline').append(new TweenLite.fromTo(el,speed,{scale:zoomend},{scale:zoomstart,onComplete:function() {
@@ -5027,30 +5027,30 @@
 										}
 
 									})
-									
+
 									nextcaption.find('.rs-wave').each(function() {
 										var el = jQuery(this);
 										if (el.data('timeline')==undefined) {
 											el.data('timeline',new TimelineLite);
-												
+
 											var angle= el.data('angle')==undefined ? 10 : el.data('angle'),
 												radius = el.data('radius')==undefined ? 10 : el.data('radius'),
 												speed = el.data('speed')==undefined ? -20 : el.data('speed'),
 												origin = el.data('origin')==undefined ? -20 : el.data('origin'),
-												angobj = {a:0, ang : angle, element:el, unit:radius}; 
-												
+												angobj = {a:0, ang : angle, element:el, unit:radius};
+
 												el.data('timeline').append(new TweenLite.fromTo(angobj,speed,
 																			{	a:360	},
 																			{	a:0,
 																				ease:Linear.easeNone,
 																				onUpdate:function() {
-																					
+
 																					var rad = angobj.a * (Math.PI / 180);
 																		            TweenLite.to(angobj.element,0.1,{x:Math.cos(rad) * angobj.unit, y:angobj.unit * (1 - Math.sin(rad))});
 
 																				},
 																				onComplete:function() {
-																					el.data('timeline').restart();																				
+																					el.data('timeline').restart();
 																				}
 																			}
 																			));
@@ -5085,12 +5085,12 @@
 								  		})
 								  	}
 						  }
-						  
+
 					})
 
 						var bt=jQuery('body').find('#'+opt.container.attr('id')).find('.tp-bannertimer');
 						bt.data('opt',opt);
-						
+
 
 
 				}
@@ -5605,7 +5605,7 @@ function revslider_showDoubleJqueryError(sliderID) {
  * DATE: 2013-07-10
  * UPDATES AND DOCS AT: http://www.greensock.com
  *
- * @license Copyright (c) 2008-2013, GreenSock. All rights reserved.
+ * @license Copyright (c) 2008-2013, GreenSock.  All Rights Reserved.
  * SplitText is a Club GreenSock membership benefit; You must have a valid membership to use
  * this code without violating the terms of use. Visit http://www.greensock.com/club/ to sign up or get more details.
  * This work is subject to the software agreement that was issued with your membership.

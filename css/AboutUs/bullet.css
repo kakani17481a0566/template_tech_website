@@ -1,0 +1,41 @@
+.orange-bullets-inline {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+  display: flex;       /* default inline row */
+  gap: 30px;
+  flex-wrap: wrap;     /* allows wrapping if needed */
+}
+
+.orange-bullets-inline li {
+  display: list-item;
+}
+
+.orange-bullets-inline li::marker {
+  color: #ff471d;      /* 🔸 orange bullets */
+  font-size: 1.2em;
+}
+
+/* 📱 Small screens (mobile) */
+@media (max-width: 767px) {
+  .orange-bullets-inline {
+    display: block;    /* stack vertically */
+    gap: 10px;         /* smaller spacing */
+  }
+
+  .orange-bullets-inline li {
+    margin-bottom: 8px;
+  }
+}
+
+/* 💻 Medium screens (tablet) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .orange-bullets-inline {
+    display: block;    /* also stack in rows */
+    gap: 12px;
+  }
+
+  .orange-bullets-inline li {
+    margin-bottom: 10px;
+  }
+}
