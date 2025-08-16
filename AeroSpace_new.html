@@ -42,18 +42,62 @@
   <div id="nav-sentinel" aria-hidden="true"></div>
 
   <!-- Slide Menu (Right to Left) -->
-  <div class="uix-slide-menu" id="uixSlideMenu">
-    <button class="uix-slide-menu__close" onclick="toggleMenu()">×</button>
+  <div class="uix-slide-menu" id="uixSlideMenu" aria-hidden="true">
+    <button class="uix-slide-menu__close" onclick="toggleMenu()" aria-label="Close menu">×</button>
+
     <ul class="uix-slide-menu__list nav-links" id="nav-links">
-      <li><a href="index.html" class="achor-tag">HOME</a></li>
-      <li><a href="#" class="achor-tag">WELCOME</a></li>
-      <li><a href="#" class="achor-tag">SOLUTION</a></li>
-      <li><a href="#" class="achor-tag">PROBLEM</a></li>
-      <li><a href="#" class="achor-tag">SOLUTION</a></li>
-      <li><a href="#" class="achor-tag">TECHNOLOGY</a></li>
-      <li><a href="#" class="achor-tag">WHY US? WHY NOW?</a></li>
+      <li><a href="index.html" class="achor-tag" style="color:inherit;" onmouseover="this.style.color='white'"
+          onmouseout="this.style.color='inherit'">HOME</a></li>
+
+      <li><a href="WhatsNeuroPi.html#early-edu-section-welcome" class="achor-tag" style="color:inherit;"
+          onmouseover="this.style.color='white'" onmouseout="this.style.color='inherit'">WELCOME</a></li>
+
+      <li><a href="WhatsNeuroPi.html#early-edu-section-problem" class="achor-tag" style="color:inherit;"
+          onmouseover="this.style.color='white'" onmouseout="this.style.color='inherit'">PROBLEM</a></li>
+
+      <li><a href="WhatsNeuroPi.html#early-edu-section-solutions" class="achor-tag" style="color:inherit;"
+          onmouseover="this.style.color='white'" onmouseout="this.style.color='inherit'">TECHNOLOGY SUITE</a>
+      </li>
+
+      <li><a href="index.html#Home-solutions" class="achor-tag" style="color:inherit;"
+          onmouseover="this.style.color='white'" onmouseout="this.style.color='inherit'">SOLUTION</a></li>
+
+      <li><a href="WhatsNeuroPi.html#early-edu-section-why" class="achor-tag" style="color:inherit;"
+          onmouseover="this.style.color='white'" onmouseout="this.style.color='inherit'">WHY US? WHY NOW?</a>
+      </li>
     </ul>
+
+
+
+    <!-- Footer Section inside Slide Menu -->
+    <!-- Put this inside your slide menu footer or page footer -->
+    <div class="np-footer-row">
+      <div class="np-footer-left">
+        <h4>Reach us</h4>
+      </div>
+
+      <div class="np-footer-right">
+        <p>
+          NeuroPi Tech Pvt. Ltd.<br />
+          Hitex City, Madhapur<br />
+          Hyderabad, Telangana<br />
+          500084 India
+        </p>
+        <div class="np-footer-actions">
+          <a href="#">Contact Us</a>
+          <a href="https://www.google.com/maps/dir//Hitex+Road,+next+to+Hitex+Exhibition+Centre+Gate,+Shilpa+Layout,+Izzathnagar,+Hyderabad,+Telangana+500084/@17.4681182,78.2939471,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb93c69d117a9d:0xcb96668338dda37c!2m2!1d78.3763488!2d17.4681215?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank" rel="noopener noreferrer">
+            Get directions
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+
+
   </div>
+
 
 
 
