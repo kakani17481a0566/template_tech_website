@@ -1,84 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="81517910-26d9-4db7-b2b3-bf8f93b6ec38" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/c/index.a05c254c.js.download" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cargokite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/65cf5a139be9a5b998b5ed8d_IWSA-logo_grey_small.png" beforeDir="false" afterPath="$PROJECT_DIR$/c/65cf5a139be9a5b998b5ed8d_IWSA-logo_grey_small.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite.html" beforeDir="false" afterPath="$PROJECT_DIR$/c/Cargokite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/65cf5a139be9a5b998b5ed8d_IWSA-logo_grey_small.png" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/65cf5a139be9a5b998b5ed8d_IWSA-logo_grey_small.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/ZhaHrTjCgu4jzueQ_Third_Derivative_Logo.webp" beforeDir="false" afterPath="$PROJECT_DIR$/c/ZhaHrTjCgu4jzueQ_Third_Derivative_Logo.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/ZqNoSh5LeNNTxhFY_Lomar_logo_BW.png" beforeDir="false" afterPath="$PROJECT_DIR$/c/ZqNoSh5LeNNTxhFY_Lomar_logo_BW.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/ZzzZGq8jQArT1C2S_Hauptlogo_schwarz.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/ZzzZGq8jQArT1C2S_Hauptlogo_schwarz.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/backer-fttf.07405581.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/backer-fttf.07405581.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/backer-sosv.09ab27a2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/backer-sosv.09ab27a2.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/home-abt-new.b4674cc5.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/home-abt-new.b4674cc5.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/home-hero-ship.a12dcffd.png" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/home-hero-ship.a12dcffd.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/home-hero-video-ph.72136e9e.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/home-hero-video-ph.72136e9e.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/home-intro-2.3b94665f.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/home-intro-2.3b94665f.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/home-prob-1.37a6670e.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/home-prob-1.37a6670e.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/home-prob-2.019f548e.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/home-prob-2.019f548e.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/home-prob-3.12efd66e.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/home-prob-3.12efd66e.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/home-prob-4.d447bad7.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/home-prob-4.d447bad7.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/home-prob-5.12b0d44b.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/home-prob-5.12b0d44b.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/home-shift-big-ship.f7495267.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/home-shift-big-ship.f7495267.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/home-shift-small-ship.56ce8f57.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/home-shift-small-ship.56ce8f57.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/home-solu-bg.27888d0a.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/home-solu-bg.27888d0a.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/home-solu-head.95f4de3a.png" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/home-solu-head.95f4de3a.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/home-solu-ship.4648c305.png" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/home-solu-ship.4648c305.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/index.78ddb5e8.css" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/index.78ddb5e8.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/index.a05c254c.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/index.a05c254c.js.download" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/index.d13a8d90.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/index.d13a8d90.js.download" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/js" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/logo-1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/logo-1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/logo-16.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/logo-16.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/logo-17.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/logo-17.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/logo-2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/logo-2.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/logo-5.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/logo-5.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/logo-6.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/logo-6.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/logo-7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/logo-7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/logo-fttf.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/logo-fttf.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/logo-icon.0188e3e5.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/logo-icon.0188e3e5.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/logo-sosv.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/logo-sosv.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/Cargokite_files/ship.0f92d998.png" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/ship.0f92d998.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/ZhaHrTjCgu4jzueQ_Third_Derivative_Logo.webp" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/ZhaHrTjCgu4jzueQ_Third_Derivative_Logo.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/ZqNoSh5LeNNTxhFY_Lomar_logo_BW.png" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/ZqNoSh5LeNNTxhFY_Lomar_logo_BW.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/ZzzZGq8jQArT1C2S_Hauptlogo_schwarz.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/ZzzZGq8jQArT1C2S_Hauptlogo_schwarz.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/backer-fttf.07405581.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/backer-fttf.07405581.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/backer-sosv.09ab27a2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/cc/backer-sosv.09ab27a2.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/home-abt-new.b4674cc5.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/c/home-abt-new.b4674cc5.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/home-hero-ship.a12dcffd.png" beforeDir="false" afterPath="$PROJECT_DIR$/c/home-hero-ship.a12dcffd.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/home-hero-video-ph.72136e9e.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/c/home-hero-video-ph.72136e9e.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/home-intro-2.3b94665f.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/c/home-intro-2.3b94665f.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/home-prob-1.37a6670e.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/c/home-prob-1.37a6670e.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/home-prob-2.019f548e.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/c/home-prob-2.019f548e.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/home-prob-3.12efd66e.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/c/home-prob-3.12efd66e.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/home-prob-4.d447bad7.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/c/home-prob-4.d447bad7.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/home-prob-5.12b0d44b.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/c/home-prob-5.12b0d44b.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/home-shift-big-ship.f7495267.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/home-shift-big-ship.f7495267.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/home-shift-small-ship.56ce8f57.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/home-shift-small-ship.56ce8f57.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/home-solu-bg.27888d0a.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/c/home-solu-bg.27888d0a.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/home-solu-head.95f4de3a.png" beforeDir="false" afterPath="$PROJECT_DIR$/c/home-solu-head.95f4de3a.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/home-solu-ship.4648c305.png" beforeDir="false" afterPath="$PROJECT_DIR$/c/home-solu-ship.4648c305.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/index.78ddb5e8.css" beforeDir="false" afterPath="$PROJECT_DIR$/c/index.78ddb5e8.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/index.a05c254c.js.download" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/index.d13a8d90.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/c/index.d13a8d90.js.download" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/js" beforeDir="false" afterPath="$PROJECT_DIR$/c/js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/logo-1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/logo-1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/logo-16.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/logo-16.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/logo-17.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/logo-17.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/logo-2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/logo-2.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/logo-5.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/logo-5.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/logo-6.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/logo-6.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/logo-7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/logo-7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/logo-fttf.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/logo-fttf.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/logo-icon.0188e3e5.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/logo-icon.0188e3e5.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/logo-sosv.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/logo-sosv.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/c/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargokite_files/ship.0f92d998.png" beforeDir="false" afterPath="$PROJECT_DIR$/c/ship.0f92d998.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WhatsNeuroPi.html" beforeDir="false" afterPath="$PROJECT_DIR$/WhatsNeuroPi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/A-propos-20-secondes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/A-propos-20-secondes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/A-propos-de-lauteure-eglise-romane.png" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/A-propos-de-lauteure-eglise-romane.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/Logo-NB-Transparent-Petit.png" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/Logo-NB-Transparent-Petit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/a-propos-de-lauteure-regarde-catherine.png" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/a-propos-de-lauteure-regarde-catherine.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/all.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/all.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/banner.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/banner.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/button-line.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/button-line.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/close.svg" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/close.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/core.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/core.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/custom-frontend.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/custom-frontend.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/custom-lightbox.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/custom-lightbox.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/custom-pro-widget-nav-menu.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/custom-pro-widget-nav-menu.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/dialog.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/dialog.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/dialog.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/dialog.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/e-202532.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/e-202532.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/earlylearning.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/earlylearning.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/elementor-icons.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/elementor-icons.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/elements-handlers.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/elements-handlers.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/fontawesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/fontawesome.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/frontend-modules.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/frontend-modules.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/frontend.min(1).js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/frontend.min(1).js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/frontend.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/frontend.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/g.gif" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/g.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/header-footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/header-footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/hello-frontend.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/hello-frontend.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/hooks.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/hooks.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/i18n.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/i18n.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/jquery-migrate.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/jquery-migrate.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/jquery.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/jquery.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/jquery.smartmenus.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/jquery.smartmenus.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/jquery.sticky.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/jquery.sticky.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/jquery.zoom.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/jquery.zoom.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/js" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/lazyload.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/lazyload.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/liquid-glass.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/liquid-glass.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/liquid-glass.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/liquid-glass.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/mediaelementplayer-legacy.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/mediaelementplayer-legacy.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/montserrat.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/montserrat.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/motion-fx.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/motion-fx.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/pa-frontend-0cff96b34.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/pa-frontend-0cff96b34.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/pa-frontend-0cff96b34.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/pa-frontend-0cff96b34.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/permanentmarker.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/permanentmarker.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/popup.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/popup.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-28835.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-28835.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-28909.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-28909.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-28925.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-28925.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-28943.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-28943.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-29608.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-29608.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-29615.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-29615.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-29706.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-29706.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-29717.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-29717.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-29723.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-29723.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-29760.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-29760.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-29777.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-29777.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-29783.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-29783.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-29816.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-29816.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-29818.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-29818.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-29819.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-29819.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-29820.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-29820.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-29824.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-29824.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-29825.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-29825.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-29826.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-29826.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-29827.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-29827.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-29844.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-29844.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-29845.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-29845.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/post-29996.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/post-29996.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/poweredbtcky.svg" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/poweredbtcky.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/revisit.svg" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/revisit.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/roboto.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/roboto.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/robotoslab.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/robotoslab.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/script.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/script.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/share-link.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/share-link.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/slick.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/slick.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/slick.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/slick.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/slideInDown.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/slideInDown.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/slideInUp.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/slideInUp.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/solid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/solid.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/spacemono.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/spacemono.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/sticky.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/sticky.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/swiper.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/swiper.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/view.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/view.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/webpack-pro.runtime.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/webpack-pro.runtime.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/webpack.runtime.min.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/webpack.runtime.min.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/widget-heading.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/widget-heading.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/widget-image.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/widget-image.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/widget-menu-anchor.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/widget-menu-anchor.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/widget-search-form.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/widget-search-form.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/wp-mediaelement.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/wp-mediaelement.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/wpa.css" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/wpa.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Découvrir l’auteure Catherine Hahn - Art-Toi_files/wpa.js.download" beforeDir="false" afterPath="$PROJECT_DIR$/Second_template/wpa.js.download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sports_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sports_main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/earlyeducation_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/earlyeducation_main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teens_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/teens_main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,9 +109,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="31AX7hVefIwLCriMkjJQbBhMFmP" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -105,6 +126,11 @@
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/KAKANI/Documents/GitHub/template_tech_website",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -112,6 +138,7 @@
     <attachedChunks>
       <set>
         <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
       </set>
     </attachedChunks>
   </component>
@@ -123,6 +150,7 @@
       <option name="presentableId" value="Default" />
       <updated>1754967687261</updated>
       <workItem from="1754967704243" duration="296000" />
+      <workItem from="1755495261297" duration="729000" />
     </task>
     <servers />
   </component>
