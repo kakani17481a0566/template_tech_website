@@ -2969,6 +2969,7 @@ html.force--consent.show--consent body {
 }
 
 .footer__form-sub {
+font-size: 2rem !important;
   color: #ffffff80;
   margin-bottom: 2.4rem
 }
