@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We'll Be Right Back</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(-45deg, #008080, #2c3e50, #008080);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            perspective: 1000px; /* For 3D effects */
+        }
+
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(44, 62, 80, 0.9);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+            opacity: 0;
+            transform: translateY(20px) rotateX(0deg) rotateY(0deg); /* Initial 3D state */
+            animation: fade-in 1s ease-in-out forwards;
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; /* Smooth transitions for tilt */
+        }
+
+        @keyframes fade-in {
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0deg) rotateY(0deg);
+            }
+        }
+
+        .brand-name {
+            font-size: 2em;
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .cta {
+            margin-top: 30px;
+        }
+
+        .cta a {
+            color: #fff;
+            background-color: #e74c3c;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .cta a:hover {
+            background-color: #c0392b;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(231, 76, 60, 0.5);
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #bdc3c7;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="maintenanceCard">
+
+        <h1>We're Currently Down for Maintenance</h1>
+        <p>We are making some important updates to improve your experience. We apologize for the inconvenience and appreciate your patience.</p>
+
+    </div>
+
+    <script>
+        const card = document.getElementById('maintenanceCard');
+
+        document.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.clientX) / 25;
+            const yAxis = (window.innerHeight / 2 - e.clientY) / 25;
+            card.style.transform = `translateY(0) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        document.addEventListener('mouseleave', () => {
+            card.style.transform = `translateY(0) rotateY(0deg) rotateX(0deg)`;
+        });
+    </script>
+</body>
+</html>
