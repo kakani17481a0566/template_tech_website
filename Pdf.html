@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline CSS Flip Book PDF Viewer</title>
+</head>
+<body>
+
+<div id="flipbook-container" style="
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+">
+
+    <div style="
+        text-align: center;
+        margin-bottom: 25px;
+        padding: 15px 0;
+        background-color: #007bff; /* Primary color for resources */
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    ">
+        <h2 style="
+            color: white;
+            margin: 0 0 10px 0;
+            font-size: 1.6em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        ">📚 Resources & Downloads</h2>
+
+        <a href="#" style="
+            color: #d1e7ff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1em;
+            display: inline-block;
+            padding: 5px 10px;
+        ">Download PDF</a>
+
+        <span style="color: white; font-size: 1.2em;">&bull;</span>
+
+        <a href="#" style="
+            color: #d1e7ff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1em;
+            display: inline-block;
+            padding: 5px 10px;
+        ">Print Page</a>
+
+        <span style="color: white; font-size: 1.2em;">&bull;</span>
+
+        <a href="#" style="
+            color: #d1e7ff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1em;
+            display: inline-block;
+            padding: 5px 10px;
+        ">Table of Contents</a>
+    </div>
+
+    <div style="
+        display: flex;
+        justify-content: center;
+        perspective: 1500px;
+        min-height: 500px;
+    ">
+
+        <div style="
+            width: 45%;
+            height: 500px;
+            border: 1px solid #aaa;
+            box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.15);
+            background-color: white;
+            padding: 30px;
+            margin-right: 5px;
+            overflow: hidden;
+            position: relative;
+        ">
+            <h3 style="margin-top: 0; color: #333; border-bottom: 1px dashed #ddd; padding-bottom: 10px;">
+                Page 12: Content Section
+            </h3>
+            <p style="font-size: 0.95em; line-height: 1.6;">
+                This represents the visible content of your PDF document. The white background mimics a clean reading surface.
+            </p>
+            <ul style="list-style-type: circle; font-size: 0.9em; color: #555; margin-top: 15px;">
+                <li>Inline style rule 1</li>
+                <li>Inline style rule 2</li>
+            </ul>
+            <p style="font-size: 0.8em; color: #666; position: absolute; bottom: 10px; right: 30px; font-style: italic;">
+                Document Page 12
+            </p>
+        </div>
+
+        <div style="
+            width: 45%;
+            height: 500px;
+            border: 1px solid #aaa;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: #fffaf0; /* Slight color difference for book effect */
+            padding: 30px;
+            margin-left: 5px;
+            overflow: hidden;
+            position: relative;
+        ">
+            <h3 style="margin-top: 0; color: #333; border-bottom: 1px dashed #ddd; padding-bottom: 10px;">
+                Page 13: Next Section
+            </h3>
+            <p style="font-size: 0.95em; line-height: 1.6;">
+                This page is styled to look like the facing page of an open book.
+            </p>
+            <p style="font-size: 0.95em; line-height: 1.6;">
+                In a full implementation, JavaScript would handle the interactive flipping animation.
+            </p>
+            <p style="font-size: 0.8em; color: #666; position: absolute; bottom: 10px; left: 30px; font-style: italic;">
+                Document Page 13
+            </p>
+        </div>
+
+    </div>
+
+    <div style="
+        text-align: center;
+        margin-top: 25px;
+    ">
+        <button style="
+            padding: 10px 25px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1.1em;
+            margin: 0 15px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        "> &larr; Previous Spread</button>
+
+        <button style="
+            padding: 10px 25px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1.1em;
+            margin: 0 15px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        ">Next Spread &rarr; </button>
+    </div>
+
+</div>
+
+</body>
+</html>
