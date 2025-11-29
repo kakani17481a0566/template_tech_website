@@ -1,3 +1,4 @@
+/* ===== RESET & BASE STYLES ===== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,208 +6,591 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #008281, #1A4255);
+  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 20px;
+  position: relative;
+  overflow-x: hidden;
 }
 
-.container {
-  position: relative; /* for close button */
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  padding: 30px;
-  max-width: 600px;
+/* Animated background particles */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  animation: fadeIn 0.6s ease;
+  height: 100%;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
 }
 
+/* ===== CONTAINER ===== */
+.container {
+  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  padding: 40px;
+  max-width: 650px;
+  width: 100%;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+/* ===== CLOSE BUTTON ===== */
 .close-button {
   position: absolute;
   top: 20px;
-  right: 30px;
-  background: transparent;
-  border: none;
-  font-size: 28px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 20px;
   font-weight: bold;
-  color: #fff;
+  color: #667eea;
   cursor: pointer;
   z-index: 100;
-  transition: color 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .close-button:hover {
-  color: #1A4255;
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg) scale(1.1);
+  color: #764ba2;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* ===== HEADING ===== */
 h2 {
   text-align: center;
-  color: #fff;
-  margin-bottom: 25px;
-  font-size: 28px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
+/* ===== FORM GROUPS ===== */
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode: both;
 }
 
-/* first definition from your inline CSS */
+.form-group:nth-child(1) { animation-delay: 0.05s; }
+.form-group:nth-child(2) { animation-delay: 0.1s; }
+.form-group:nth-child(3) { animation-delay: 0.15s; }
+.form-group:nth-child(4) { animation-delay: 0.2s; }
+.form-group:nth-child(5) { animation-delay: 0.25s; }
+.form-group:nth-child(6) { animation-delay: 0.3s; }
+.form-group:nth-child(7) { animation-delay: 0.35s; }
+.form-group:nth-child(8) { animation-delay: 0.4s; }
+.form-group:nth-child(9) { animation-delay: 0.45s; }
+.form-group:nth-child(10) { animation-delay: 0.5s; }
+
+/* Extra margin for interests dropdown to prevent overlap */
+.form-group:has(.dropdown-checkbox) {
+  margin-bottom: 280px;
+}
+
+/* When dropdown is closed, reduce margin */
+.form-group:has(.dropdown-checkbox:not(.open)) {
+  margin-bottom: 24px;
+  transition: margin-bottom 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* When dropdown is open, add margin */
+.form-group:has(.dropdown-checkbox.open) {
+  margin-bottom: 280px;
+  transition: margin-bottom 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .form-group label {
   display: block;
   margin-bottom: 8px;
-  color: #000000;
+  color: #1e293b;
   font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.2px;
 }
 
-/* inputs */
-.form-group input {
+/* ===== INPUTS ===== */
+.form-group input,
+.dropdown-checkbox-button {
   width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
-  font-size: 14px;
-  background: rgba(255, 255, 255, 0.85);
-  color: #333;
-  transition: box-shadow 0.3s ease;
+  padding: 14px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 15px;
+  background: #ffffff;
+  color: #1e293b;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: inherit;
+}
+
+.form-group input:hover {
+  border-color: #cbd5e1;
 }
 
 .form-group input:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #66a6ff;
+  border-color: #667eea;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+  transform: translateY(-1px);
 }
 
+.form-group input::placeholder {
+  color: #94a3b8;
+}
+
+/* ===== ROW LAYOUT ===== */
 .row {
   display: flex;
-  gap: 15px;
+  gap: 16px;
 }
 
 .row input {
   flex: 1;
 }
 
+/* ===== GENDER OPTIONS ===== */
 .gender-options {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 5px;
+  gap: 16px;
+  margin-top: 8px;
 }
 
 .gender-options label {
-  color: #fff;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  padding: 10px 18px;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  color: #475569;
   font-weight: 500;
-}
-
-.checkbox-group {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #fff;
-}
-
-.submit-button {
-  width: 100%;
-  padding: 14px;
-  background: linear-gradient(135deg,  #ff471d);
-  color: #fff;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-size: 14px;
 }
 
-.submit-button:hover {
-  background: linear-gradient(135deg, #1A4255);
-  transform: scale(1.02);
+.gender-options label:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
 }
 
-@media (max-width: 600px) {
-  .row { flex-direction: column; }
+.gender-options input[type="radio"]:checked + label,
+.gender-options label:has(input[type="radio"]:checked) {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #667eea;
+  color: #ffffff;
 }
 
-/* Dropdown with Checkboxes */
+.gender-options input[type="radio"] {
+  accent-color: #667eea;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* ===== DROPDOWN WITH CHECKBOXES ===== */
 .dropdown-checkbox {
   position: relative;
-  z-index: 10;
+  z-index: 100;
 }
 
 .dropdown-checkbox-button {
-  width: 100%;
-  padding: 12px 14px;
-  background: #fff;
-  border-radius: 6px;
-  border: 1px solid #ccc;
   cursor: pointer;
   text-align: left;
-  color: #333;
-  font-size: 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #ffffff;
+  font-weight: 500;
+}
+
+.dropdown-checkbox-button:hover {
+  border-color: #cbd5e1;
 }
 
 .dropdown-checkbox-button::after {
   content: "▾";
-  font-size: 16px;
-  color: #666;
+  font-size: 18px;
+  color: #667eea;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dropdown-checkbox.open .dropdown-checkbox-button::after {
+  transform: rotate(180deg);
+}
+
+.dropdown-checkbox.open .dropdown-checkbox-button {
+  border-color: #667eea;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
 }
 
 .dropdown-checkbox-content {
   display: none;
   position: absolute;
-  top: calc(100% + 5px);
+  top: calc(100% + 8px);
   left: 0;
   width: 100%;
-  background: #fff;
-  border-radius: 6px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  border: 1px solid #ddd;
-  padding: 10px 12px;
-  max-height: 180px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border: 2px solid #e2e8f0;
+  padding: 8px;
+  max-height: 240px;
   overflow-y: auto;
+  animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dropdown-checkbox-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dropdown-checkbox-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+.dropdown-checkbox-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.dropdown-checkbox-content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
 .dropdown-checkbox-content label {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 0;
-  font-weight: normal;
+  gap: 12px;
+  padding: 12px;
+  font-weight: 500;
   font-size: 14px;
-  color: #333;
+  color: #475569;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 0;
+}
+
+.dropdown-checkbox-content label:hover {
+  background: #f8fafc;
 }
 
 .dropdown-checkbox-content input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  accent-color: #66a6ff;
+  width: 20px;
+  height: 20px;
+  accent-color: #667eea;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
 .dropdown-checkbox.open .dropdown-checkbox-content {
   display: block;
 }
 
-/* second label definition from your inline CSS (overrides the first) */
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  color: #1A4255;
+/* ===== SUBMIT BUTTON ===== */
+.submit-button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
   font-weight: 600;
-  line-height: 1.4;
-  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== TOAST NOTIFICATIONS ===== */
+.form-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  max-width: 400px;
+  animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.form-message > div {
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-weight: 500;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 300px;
+}
+
+.success-message > div {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+}
+
+.success-message > div::before {
+  content: "✓";
+  font-size: 24px;
+  font-weight: bold;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.error-message > div {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+}
+
+.error-message > div::before {
+  content: "✗";
+  font-size: 24px;
+  font-weight: bold;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .container {
+    padding: 32px 24px;
+    border-radius: 20px;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 600px) {
+  body {
+    padding: 16px;
+  }
+
+  .container {
+    padding: 28px 20px;
+    border-radius: 16px;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .close-button {
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .row input {
+    margin-bottom: 16px;
+  }
+
+  .row input:last-child {
+    margin-bottom: 0;
+  }
+
+  .gender-options {
+    gap: 12px;
+  }
+
+  .gender-options label {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .form-group input,
+  .dropdown-checkbox-button {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .submit-button {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .dropdown-checkbox-content {
+    max-height: 200px;
+  }
+}
+
+/* Small Mobile Phones */
+@media (max-width: 400px) {
+  .container {
+    padding: 24px 16px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .gender-options {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .gender-options label {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
 }
