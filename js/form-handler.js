@@ -63,6 +63,7 @@ async function handleFormSubmit(e) {
     }
 
     console.log('FormData interests:', formData.getAll('interests[]'));
+    console.log('Country Code:', formData.get('countryCode'));
 
     // Submit to Google Sheets
     const response = await fetch(GOOGLE_SCRIPT_URL, {
@@ -97,7 +98,7 @@ function showSuccessMessage() {
   message.className = 'form-message success-message';
   message.innerHTML = `
     <div>
-      <span><strong>Success!</strong> Your registration has been submitted.</span>
+      <span><strong>Thank You for Registering with NeuroPi!</strong></span>
     </div>
   `;
 
