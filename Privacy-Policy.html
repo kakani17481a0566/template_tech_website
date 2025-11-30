@@ -104,7 +104,8 @@
                                                 <h2>🛡️ NeuroPi Privacy Policy</h2>
 
 
-                                                <h3>NeuroPi<span class="tm-badge"  style="font-variant: all-small-caps;">TM</span> Index
+                                                <h3>NeuroPi<span class="tm-badge"
+                                                        style="font-variant: all-small-caps;">TM</span> Index
                                                 </h3>
                                                 <ul>
                                                     <li><a href="#overview">Overview</a></li>
@@ -242,8 +243,7 @@
                                                     practices, contact us at:</p>
                                                 <address>
                                                     <strong>NeuroPi Tech Pvt. Ltd.</strong><br>
-                                                    Email: <a
-                                                        href="mailto:support@neuropi.ai">support@neuropi.ai</a><br>
+                                                    Email: <a href="mailto:info@neuropi.ai">info@neuropi.ai</a><br>
                                                     Address: NeuroPi Tech Pvt. Ltd.<br>
                                                     HITEX <br>
                                                     Hyderabad, Telangana<br>
@@ -321,7 +321,7 @@
                                 </div>
                                 <div class="footer__info-addr-txt txt txt-16" style="color:#1a4255"> <span
                                         class="neuro-title np-orange">NeuroPi</span> Tech Pvt. Ltd.
-                                    HITEX  <br>Hyderabad, Telangana <br>India </div>
+                                    HITEX <br>Hyderabad, Telangana <br>India </div>
 
                             </div>
                         </div>
@@ -358,13 +358,14 @@
 
                     <div class="footer__info grid">
                         <div class="footer__info-copy txt txt-14" style="color:#1a4255;"> © 2025, NeuroPi<span
-                                style="font-size: 10px;"><sup>TM</sup></span>.  All Rights Reserved. </div>
+                                style="font-size: 10px;"><sup>TM</sup></span>. All Rights Reserved. </div>
                         <div class="footer__info-legal">
 
 
                             <div style="display: flex; gap: 8px; align-items: center;">
                                 <!-- LinkedIn -->
-                                <a href="https://www.linkedin.com/company/neuropi/" target="_blank" aria-label="LinkedIn">
+                                <a href="https://www.linkedin.com/company/neuropi/" target="_blank"
+                                    aria-label="LinkedIn">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
                                         <rect width="24" height="24" fill="#0A66C2" rx="4" />
                                         <path fill="#FFFFFF" d="M7.059 20.452H3.546V9h3.513v11.452zM5.303
@@ -386,7 +387,8 @@
                                 </a>
 
                                 <!-- Facebook -->
-                                <a href="https://www.facebook.com/profile.php?id=61579701418277" target="_blank" aria-label="Facebook">
+                                <a href="https://www.facebook.com/profile.php?id=61579701418277" target="_blank"
+                                    aria-label="Facebook">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
                                         <rect width="24" height="24" fill="#1877F2" rx="4" />
                                         <path fill="#FFFFFF" d="M16.828 15.563l.532-3.49h-3.328v-2.25c0-.949.463-1.874
@@ -396,7 +398,8 @@
                                 </a>
 
                                 <!-- Instagram -->
-                                <a href="https://www.instagram.com/neuropi.india/" target="_blank" aria-label="Instagram">
+                                <a href="https://www.instagram.com/neuropi.india/" target="_blank"
+                                    aria-label="Instagram">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
                                         <rect width="24" height="24" rx="4" fill="url(#IGgradient)" />
                                         <path fill="#FFFFFF" d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8
@@ -485,50 +488,50 @@
 
 
     <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const root = document.querySelector('.policy--neuropi');
-  if (!root) return;
+        document.addEventListener('DOMContentLoaded', () => {
+            const root = document.querySelector('.policy--neuropi');
+            if (!root) return;
 
-  // Style once
-  if (!document.querySelector('#neuropi-orange-style')) {
-    const style = document.createElement('style');
-    style.id = 'neuropi-orange-style';
-    style.textContent = `.neuropi-orange{color:#ff471d}`;
-    document.head.appendChild(style);
-  }
+            // Style once
+            if (!document.querySelector('#neuropi-orange-style')) {
+                const style = document.createElement('style');
+                style.id = 'neuropi-orange-style';
+                style.textContent = `.neuropi-orange{color:#ff471d}`;
+                document.head.appendChild(style);
+            }
 
-  // Walk text nodes and wrap plain "NeuroPi" (no double-wrapping)
-  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
-    acceptNode(node){
-      if (!node.nodeValue || !/\bNeuroPi\b/i.test(node.nodeValue)) return NodeFilter.FILTER_SKIP;
-      if (node.parentElement && node.parentElement.closest('.neuropi-orange')) return NodeFilter.FILTER_REJECT;
-      return NodeFilter.FILTER_ACCEPT;
-    }
-  });
+            // Walk text nodes and wrap plain "NeuroPi" (no double-wrapping)
+            const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+                acceptNode(node) {
+                    if (!node.nodeValue || !/\bNeuroPi\b/i.test(node.nodeValue)) return NodeFilter.FILTER_SKIP;
+                    if (node.parentElement && node.parentElement.closest('.neuropi-orange')) return NodeFilter.FILTER_REJECT;
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            });
 
-  const targets = [];
-  while (walker.nextNode()) targets.push(walker.currentNode);
+            const targets = [];
+            while (walker.nextNode()) targets.push(walker.currentNode);
 
-  targets.forEach(textNode => {
-    const re = /\bNeuroPi\b/gi; // change to /NeuroPi/gi if you also want "NeuroPiTM"
-    let current = textNode, match;
-    while ((match = re.exec(current.nodeValue)) !== null) {
-      const before = current;
-      const after = before.splitText(match.index);               // [before][matched+rest]
-      const rest = after.nodeValue.slice(match[0].length);       // strip matched text
+            targets.forEach(textNode => {
+                const re = /\bNeuroPi\b/gi; // change to /NeuroPi/gi if you also want "NeuroPiTM"
+                let current = textNode, match;
+                while ((match = re.exec(current.nodeValue)) !== null) {
+                    const before = current;
+                    const after = before.splitText(match.index);               // [before][matched+rest]
+                    const rest = after.nodeValue.slice(match[0].length);       // strip matched text
 
-      const span = document.createElement('span');
-      span.className = 'neuropi-orange';
-      span.textContent = match[0];
+                    const span = document.createElement('span');
+                    span.className = 'neuropi-orange';
+                    span.textContent = match[0];
 
-      before.parentNode.insertBefore(span, after);
-      after.nodeValue = rest;                                    // keep scanning the remainder
-      current = after;
-      re.lastIndex = 0;
-    }
-  });
-});
-</script>
+                    before.parentNode.insertBefore(span, after);
+                    after.nodeValue = rest;                                    // keep scanning the remainder
+                    current = after;
+                    re.lastIndex = 0;
+                }
+            });
+        });
+    </script>
 
 
 </body>
