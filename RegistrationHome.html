@@ -44,8 +44,8 @@
 
       <div class="form-group">
         <label for="mobile">Phone Number</label>
-        <div class="row">
-          <select id="countryCode" name="countryCode" required style="flex: 0 0 120px;">
+        <div class="row phone-row">
+          <select id="countryCode" name="countryCode" required class="country-code-select">
             <option value="+91" selected>🇮🇳 +91</option>
             <option value="+1">🇺🇸 +1</option>
             <option value="+44">🇬🇧 +44</option>
@@ -74,7 +74,7 @@
             <option value="+977">🇳🇵 +977</option>
           </select>
           <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="e.g., 9876543210" required
-            style="flex: 1;" />
+            class="phone-input" />
         </div>
       </div>
 

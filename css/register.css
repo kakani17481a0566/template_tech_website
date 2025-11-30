@@ -211,6 +211,24 @@ h2 {
   flex: 1;
 }
 
+/* ===== PHONE NUMBER ROW ===== */
+.phone-row {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.country-code-select {
+  flex: 0 0 110px;
+  min-width: 110px;
+  max-width: 110px;
+}
+
+.phone-input {
+  flex: 1;
+  min-width: 0;
+}
+
 /* ===== SELECT DROPDOWN (Country Code) ===== */
 .form-group select {
   padding: 14px 16px;
@@ -525,6 +543,14 @@ h2 {
   .form-group {
     margin-bottom: 20px;
   }
+
+  /* Tablet phone row optimization */
+  .country-code-select {
+    flex: 0 0 100px;
+    min-width: 100px;
+    max-width: 100px;
+    font-size: 14px;
+  }
 }
 
 /* Mobile Phones */
@@ -561,6 +587,26 @@ h2 {
   }
 
   .row input:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Professional stacked layout for phone inputs on small screens */
+  .phone-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .country-code-select {
+    width: 100%;
+    flex: none;
+    min-width: auto;
+    max-width: none;
+    font-size: 14px;
+  }
+
+  .phone-input {
+    width: 100%;
+    flex: none;
     margin-bottom: 0;
   }
 
