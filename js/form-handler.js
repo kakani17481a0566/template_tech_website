@@ -31,6 +31,9 @@ async function handleFormSubmit(e) {
   const submitButton = form.querySelector('.submit-button');
   const originalButtonText = submitButton.textContent;
 
+  // Show loading spinner
+  showLoadingSpinner();
+
   // Disable submit button and show loading state
   submitButton.disabled = true;
   submitButton.textContent = 'Submitting...';
@@ -39,6 +42,19 @@ async function handleFormSubmit(e) {
   try {
     // Collect form data
     const formData = new FormData(form);
+
+    // Concatenate country code with mobile number using hyphen
+    const countryCode = formData.get('countryCode');
+    const mobileNumber = formData.get('mobile');
+    const fullPhoneNumber = `${countryCode}-${mobileNumber}`;
+
+    // Replace mobile field with full phone number
+    formData.set('mobile', fullPhoneNumber);
+
+    // Remove separate country code field since it's now part of mobile
+    formData.delete('countryCode');
+
+    console.log('Full Phone Number:', fullPhoneNumber);
 
     // Handle checkbox array for interests
     const interests = [];
@@ -63,7 +79,6 @@ async function handleFormSubmit(e) {
     }
 
     console.log('FormData interests:', formData.getAll('interests[]'));
-    console.log('Country Code:', formData.get('countryCode'));
 
     // Submit to Google Sheets
     const response = await fetch(GOOGLE_SCRIPT_URL, {
@@ -82,6 +97,9 @@ async function handleFormSubmit(e) {
     console.error('Form submission error:', error);
     showErrorMessage(error.message);
   } finally {
+    // Hide loading spinner
+    hideLoadingSpinner();
+
     // Re-enable submit button
     submitButton.disabled = false;
     submitButton.textContent = originalButtonText;
@@ -154,6 +172,87 @@ function updateInterestsButton() {
     btn.textContent = selected[0];
   } else {
     btn.textContent = `${selected.length} Selected: ${selected.join(', ')}`;
+  }
+}
+
+/**
+ * Show loading spinner overlay
+ */
+function showLoadingSpinner() {
+  // Create spinner overlay
+  const overlay = document.createElement('div');
+  overlay.id = 'loadingSpinnerOverlay';
+  overlay.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(4px);
+  `;
+
+  // Create spinner container
+  const spinnerContainer = document.createElement('div');
+  spinnerContainer.style.cssText = `
+    text-align: center;
+  `;
+
+  // Create spinner
+  const spinner = document.createElement('div');
+  spinner.style.cssText = `
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #008281;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+  `;
+
+  // Create loading text
+  const loadingText = document.createElement('div');
+  loadingText.style.cssText = `
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+  `;
+  loadingText.textContent = 'Submitting your registration...';
+
+  // Add CSS animation
+  if (!document.getElementById('spinnerAnimation')) {
+    const style = document.createElement('style');
+    style.id = 'spinnerAnimation';
+    style.textContent = `
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  spinnerContainer.appendChild(spinner);
+  spinnerContainer.appendChild(loadingText);
+  overlay.appendChild(spinnerContainer);
+  document.body.appendChild(overlay);
+}
+
+/**
+ * Hide loading spinner overlay
+ */
+function hideLoadingSpinner() {
+  const overlay = document.getElementById('loadingSpinnerOverlay');
+  if (overlay) {
+    overlay.style.opacity = '0';
+    overlay.style.transition = 'opacity 0.3s ease';
+    setTimeout(() => overlay.remove(), 300);
   }
 }
 
