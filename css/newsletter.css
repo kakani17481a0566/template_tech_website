@@ -1,0 +1,19 @@
+/*
+ * Restored Footer Form Styles
+ * Renamed from .footer__form-main to .footer__form-newsletter to avoid HubSpot conflict
+ */
+
+.footer__form-newsletter {
+  flex-direction: column;
+  row-gap: 0.8rem;
+  display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  .footer__form-newsletter .input-field {
+    padding: 1.2rem 2.4rem;
+  }
+  .footer__form-newsletter .input-submit {
+    padding: 1.6rem 2rem;
+  }
+}
