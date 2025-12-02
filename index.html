@@ -1289,7 +1289,7 @@
           <div class="footer__form-title h4 heading heading-f-lh"> Subscribe to Newsletters </div>
           <div class="footer__form-sub "> Want to stay up to date? <br>Sign up for <span class="neuro-title">NeuroPi<sup
                 class="tm-badge" style="font-size: 12px;color:aliceblue;">TM</sup></span>'s bimonthly update. </div>
-          <form action="https://formspree.io/f/xanbzwng" method="POST" class="footer__form-main">
+          <form method="POST" class="">
             <div class="input-wrap">
               <input type="email" name="email" class="input-field txt txt-16" style="font-family:lato"
                 placeholder="Enter your email" required>
@@ -2236,113 +2236,14 @@
 
 
 
-  <!-- Subscribe  -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const form = document.querySelector('form.footer__form-main[action="https://formspree.io/f/xanbzwng"]');
-      if (!form) return;
-      const endpoint = form.action;
-      const email = form.querySelector('input[name="email"]');
-      const honey = form.querySelector('input[name="blablabla"]');
-
-      // Find the button and its label span even without an id
-      const btn = form.querySelector('button.input-submit') || form.querySelector('button[type="submit"]');
-      const btnTxt = form.querySelector('.input-submit-txt');
-      const origTxt = btnTxt?.textContent;
-
-      // Make sure the button won't submit the form via submit events
-      if (btn) btn.setAttribute('type', 'button');
-
-      const status = document.createElement('div');
-      status.className = 'form-status';
-      status.setAttribute('role', 'status');
-      status.setAttribute('aria-live', 'polite');
-      status.style.marginTop = '10px';
-      status.style.fontSize = '14px';
-      form.appendChild(status);
-      const setStatus = (m, ok) => { status.textContent = m; status.style.color = ok ? '#0a7c4a' : '#b00020'; };
-
-      let inFlight = false; // ✅ prevents double send
-
-      async function send() {
-        // ✅ 0) Honeypot
-        if (honey && honey.value.trim() !== '') return;
-
-        // ✅ 1) Run native HTML5 validation (type=email, required, etc.)
-        if (typeof form.reportValidity === 'function') {
-          if (!form.reportValidity()) return; // browser shows built-in messages
-        } else {
-          // fallback: at least ensure non-empty
-          const val = (email?.value || '').trim();
-          if (!val) { setStatus('Please enter your email.', false); email?.focus(); return; }
-        }
-
-        if (inFlight) return; // already sending
-        inFlight = true;
-
-        // UI loading state
-        if (btn) btn.disabled = true;
-        if (btnTxt && origTxt) btnTxt.textContent = 'Subscribing…';
-        setStatus('', true);
-        form.setAttribute('aria-busy', 'true');
-
-        const fd = new FormData(form);
-        // keep your extras
-        const emailVal = (email?.value || '').trim();
-        fd.append('_subject', 'New Newsletter Subscription');
-        fd.append('_replyto', emailVal);
-
-        // ✅ 2) Timeout guard
-        const controller = new AbortController();
-        const timer = setTimeout(() => controller.abort('timeout'), 12000);
-
-        try {
-          const res = await fetch(endpoint, {
-            method: 'POST',
-            body: fd,
-            headers: { Accept: 'application/json' },
-            signal: controller.signal
-          });
-          clearTimeout(timer);
-
-          if (res.ok) {
-            form.reset();
-            setStatus('Thanks! You’re subscribed. Please check your inbox for confirmation.', true);
-          } else {
-            let data = null; try { data = await res.json(); } catch { }
-            setStatus(data?.errors?.[0]?.message || `Something went wrong (HTTP ${res.status}).`, false);
-          }
-        } catch (err) {
-          setStatus(err?.name === 'AbortError' ? 'Request timed out. Please try again.' : 'Network error. Please try again.', false);
-          console.error('[Formspree] fetch error', err);
-        } finally {
-          if (btn) btn.disabled = false;
-          if (btnTxt && origTxt) btnTxt.textContent = origTxt;
-          form.removeAttribute('aria-busy');
-          inFlight = false;
-        }
-      }
-
-      // Bind to the button
-      btn?.addEventListener('click', send);
-
-      // Also bind to the span label explicitly (your “strictly hit this” target)
-      btnTxt?.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        send();
-      });
-
-      // Submit on Enter key inside the email field
-      email?.addEventListener('keydown', e => {
-        if (e.key === 'Enter') { e.preventDefault(); send(); }
-      });
-    });
-  </script>
+  
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MN3LPKJQ" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Newsletter Subscription Handler -->
+  <script src="js/neuropi-newsletter.js"></script>
 
 
 </body>

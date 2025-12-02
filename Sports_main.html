@@ -3707,7 +3707,7 @@ EVOLVE TRAINING AS THE ATHLETE’S BODY AND GOALS CHANGE">
 						<div class="footer__form-sub "> Want to stay up to date? <br>Sign up for <span
 								class="neuro-title">NeuroPi<sup class="tm-badge"
 									style="font-size: 12px;color:aliceblue;">TM</sup></span>'s bimonthly update. </div>
-						<form action="https://formspree.io/f/xanbzwng" method="POST" class="footer__form-main">
+						<form  method="POST" class="">
 							<div class="input-wrap">
 								<input type="email" name="email" class="input-field txt txt-16" style="font-family:lato"
 									placeholder="Enter your email" required>
@@ -4566,6 +4566,9 @@ EVOLVE TRAINING AS THE ATHLETE’S BODY AND GOALS CHANGE">
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MN3LPKJQ" height="0" width="0"
 				style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- End Google Tag Manager (noscript) -->
+
+  <!-- Newsletter Subscription Handler -->
+  <script src="js/neuropi-newsletter.js"></script>
 </body>
 <grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open">
 		<style>
@@ -4646,7 +4649,7 @@ EVOLVE TRAINING AS THE ATHLETE’S BODY AND GOALS CHANGE">
 <!-- Subscribe  -->
 <script>
 	document.addEventListener('DOMContentLoaded', function () {
-		const form = document.querySelector('form.footer__form-main[action="https://formspree.io/f/xanbzwng"]');
+		const form = document.querySelector('form.footer__form-main[]');
 		if (!form) return;
 		const endpoint = form.action;
 		const email = form.querySelector('input[name="email"]');
