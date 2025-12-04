@@ -251,7 +251,28 @@
 
 
       <!-- 🎥 Video element -->
-      <video id="carouselVideo" autoplay muted playsinline preload="auto"></video>
+      <!-- 🎥 Video elements for double buffering -->
+      <video id="video1" class="carousel-video active" autoplay muted playsinline preload="auto"></video>
+      <video id="video2" class="carousel-video inactive" muted playsinline preload="auto"></video>
+
+      <style>
+        .carousel-video {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: opacity 0.5s ease-in-out;
+          opacity: 0;
+          z-index: 0;
+        }
+
+        .carousel-video.active {
+          opacity: 1;
+          z-index: 1;
+        }
+      </style>
 
       <!-- 🧠 Overlay Content -->
       <div class="video-overlay-content" id="videoOverlay">
@@ -1646,157 +1667,17 @@
 
 
 
-
-
-
-
-  <!-- videos and navigation buttons -->
-  <!-- <script>
-    const videoElement = document.getElementById("carouselVideo");
-    const readButton = document.querySelector('.read-button');
-
-    const videos = [
-      {
-        src: "images/Neuro pi.mp4",
-        label: "NeuroPi ™  Explores",
-        title: "Making Every Mind Meet Its Match",
-        subtitle: "Genetics, Neuroscience, and AI Converge To Give Next-Gen Personalized Solutions.",
-        link: "WhatsNeuroPi.html",
-        // button: <a href="#read-more" class="read-button">Read On ..</a>
-      },
-      {
-        src: "https://res.cloudinary.com/kakani7/video/upload/v1753361016/MSI/VIDEOS/Video_2_qqvipc.mp4",
-        label: "NeuroPi ™  Explores",
-        title: "Unlocking Every Child’s Potential",
-        subtitle: "Personalising the Learning Journey to Optimize Strengths and Address Potential Challenges.",
-        link: "earlyeducation_main.html"
-      },
-      {
-        src: "https://res.cloudinary.com/kakani7/video/upload/v1753362011/WhatsApp_Video_2025-07-24_at_13.14.45_57f1b5bf_winfru.mp4",
-        label: "NeuroPi ™  Explores",
-        title: "Informed, Individualised & Timely Decisions",
-        subtitle: "Helping Educators With IEP And RTI Planning Through Generic Insights And Continuous Cognitive Tracking.",
-        link: "SpecialEducation.html"
-      },
-      {
-        src: "https://res.cloudinary.com/kakani7/video/upload/v1753361019/MSI/VIDEOS/Video_4_ch8gih.mp4",
-        label: "NeuroPi ™  Explores",
-        title: "Discovering Athletic Potential Before It’s Lost ",
-        subtitle: "Young Athletes Often Miss Opportunities Due To Late Development Or Wrong-Fit Training.",
-        link: "Sports_main.html"
-      },
-      {
-        src: "https://res.cloudinary.com/kakani7/video/upload/v1753362011/WhatsApp_Video_2025-07-24_at_13.19.08_d98eabd5_kunjbn.mp4",
-        label: "NeuroPi ™  Explores",
-        title: "A Storm Of Expectations, Identity Crisis & Mental Overload",
-        subtitle: "Helping Teens Understand how they’re wired, To Unlocks Their Full Potential Academically, Socially, And Emotionally ",
-        link: "Teens.html"
-      },
-      {
-        src: "https://res.cloudinary.com/kakani7/video/upload/v1753361192/MSI/VIDEOS/WhatsApp_Video_2025-07-24_at_13.20.29_b4d1cfbb_ydbsno.mp4",
-        label: "NeuroPi ™  Explores",
-        title: "Your Brain.<br>Your Body.</br>Your Biology. Personalized.",
-        subtitle: "A Precision Wellness Platform For Cognitive Health, Stress Resilience & Midlife Longevity ",
-        link: "Midlife.html"
-      },
-      {
-        src: "https://res.cloudinary.com/kakani7/video/upload/v1753366472/MSI/VIDEOS/7_zckdua.mp4",
-        label: "NeuroPi ™  Explores",
-        title: "Precision Cognitive Readiness. Enhanced Human Performance.",
-        subtitle: "Enhancing Readiness, Decision-Making, And Long-Term Health In High-Stress Operational Environments.",
-        link: "Defence.html"
-      },
-      {
-        src: "https://res.cloudinary.com/kakani7/video/upload/v1753361055/MSI/VIDEOS/Video_8_g0ie6a.mp4",
-        label: "NeuroPi ™  Explores",
-        title: "Human Adaptation in Extreme Environments",
-        subtitle: "Next-Gen Tools for Bio-Adaptive Resilience, Neurogenetic Optimization, and Personalized Human Performance.",
-        link: "Aerospace.html"
-      }
-    ];
-
-    let currentIndex = 0;
-
-    function loadVideo(index) {
-      const video = videos[index];
-      videoElement.src = video.src;
-      videoElement.load();
-      videoElement.play();
-
-      updateOverlay(video); // ✅ Ensure overlay + button updates
-    }
-
-    function updateOverlay(videoData) {
-      document.querySelector('.video-label').textContent = videoData.label;
-      document.querySelector('.video-title').innerHTML = videoData.title;
-      document.querySelector('.video-subtitle').textContent = videoData.subtitle;
-      readButton.setAttribute('href', videoData.link);
-      // Optionally open in new tab:
-      // readButton.setAttribute('target', '_blank');
-
-      if (videos.indexOf(videoData) === 0) {
-        readButton.textContent = "What's NeuroPi";
-      } else {
-        readButton.textContent = "Read On ..";
-      }
-
-
-    }
-
-    // Autoplay next video when current ends
-    videoElement.addEventListener("ended", () => {
-      currentIndex = (currentIndex + 1) % videos.length;
-      loadVideo(currentIndex);
-    });
-
-    // Arrows
-    document.getElementById("prevVideo").addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + videos.length) % videos.length;
-      loadVideo(currentIndex);
-    });
-
-    document.getElementById("nextVideo").addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % videos.length;
-      loadVideo(currentIndex);
-    });
-
-    // Swipe (mobile support)
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    const swipeTarget = document.querySelector(".video-carousel-wrapper");
-
-    swipeTarget.addEventListener("touchstart", (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    });
-
-    swipeTarget.addEventListener("touchend", (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    });
-
-    function handleSwipe() {
-      const swipeThreshold = 50;
-      if (touchEndX < touchStartX - swipeThreshold) {
-        currentIndex = (currentIndex + 1) % videos.length;
-        loadVideo(currentIndex);
-      } else if (touchEndX > touchStartX + swipeThreshold) {
-        currentIndex = (currentIndex - 1 + videos.length) % videos.length;
-        loadVideo(currentIndex);
-      }
-    }
-
-    // Load first video on page ready
-    document.addEventListener("DOMContentLoaded", () => {
-      loadVideo(currentIndex);
-    });
-  </script> -->
-
-
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
   <script>
-    const videoElement = document.getElementById("carouselVideo");
+    const video1 = document.getElementById("video1");
+    const video2 = document.getElementById("video2");
     const readButton = document.querySelector('.read-button');
+
+    // Active/Inactive state
+    let activeVideo = video1;
+    let inactiveVideo = video2;
+    let pendingSwitchHandler = null;
 
     const videos = [
       {
@@ -1865,26 +1746,54 @@
       }
     ];
 
-
-
-
     let currentIndex = 0;
 
     function loadVideo(index) {
-      const video = videos[index];
+      const videoData = videos[index];
       const isMobile = window.matchMedia('(max-width: 768px)').matches;
-      const chosenSrc = (isMobile && video.srcMobile) ? video.srcMobile : video.src;
+      const chosenSrc = (isMobile && videoData.srcMobile) ? videoData.srcMobile : videoData.src;
 
-      videoElement.muted = true;
-      videoElement.setAttribute('playsinline', '');
-
-      if (videoElement.src !== chosenSrc) {
-        videoElement.src = chosenSrc;
-        videoElement.load();
+      // Clean up any pending switch to avoid race conditions
+      if (pendingSwitchHandler) {
+        inactiveVideo.removeEventListener('loadeddata', pendingSwitchHandler);
+        pendingSwitchHandler = null;
       }
-      videoElement.play().catch(() => { });
 
-      updateOverlay(video);
+      // Prepare inactive video
+      inactiveVideo.src = chosenSrc;
+      inactiveVideo.load();
+
+      // Define what happens when it's ready
+      pendingSwitchHandler = () => {
+        // Remove listener
+        inactiveVideo.removeEventListener('loadeddata', pendingSwitchHandler);
+        pendingSwitchHandler = null;
+
+        // 1. Start playing the new video
+        inactiveVideo.play().catch(() => { });
+
+        // 2. Swap classes for crossfade
+        inactiveVideo.classList.add('active');
+        inactiveVideo.classList.remove('inactive');
+        activeVideo.classList.remove('active');
+        activeVideo.classList.add('inactive');
+
+        // 3. Update text overlay
+        updateOverlay(videoData);
+
+        // 4. Pause old video after transition completes
+        const oldActive = activeVideo;
+        setTimeout(() => {
+          oldActive.pause();
+          oldActive.currentTime = 0;
+        }, 600); // Wait for 0.5s transition
+
+        // 5. Swap references
+        [activeVideo, inactiveVideo] = [inactiveVideo, activeVideo];
+      };
+
+      // Wait for data to load
+      inactiveVideo.addEventListener('loadeddata', pendingSwitchHandler);
     }
 
     function updateOverlay(videoData) {
@@ -1900,13 +1809,18 @@
       }
     }
 
-    // autoplay next
-    videoElement.addEventListener("ended", () => {
-      currentIndex = (currentIndex + 1) % videos.length;
-      loadVideo(currentIndex);
-    });
+    // Autoplay next
+    function onVideoEnded(e) {
+      // Only advance if the ending video is the currently active one
+      if (e.target.classList.contains('active')) {
+        currentIndex = (currentIndex + 1) % videos.length;
+        loadVideo(currentIndex);
+      }
+    }
+    video1.addEventListener("ended", onVideoEnded);
+    video2.addEventListener("ended", onVideoEnded);
 
-    // arrows
+    // Arrows
     document.getElementById("prevVideo").addEventListener("click", () => {
       currentIndex = (currentIndex - 1 + videos.length) % videos.length;
       loadVideo(currentIndex);
@@ -1916,7 +1830,7 @@
       loadVideo(currentIndex);
     });
 
-    // swipe
+    // Swipe
     let touchStartX = 0, touchEndX = 0;
     const swipeTarget = document.querySelector(".video-carousel-wrapper");
 
@@ -1939,7 +1853,7 @@
       }
     }
 
-    // fullscreen helper
+    // Fullscreen helper
     function setFullscreen() {
       const container = document.querySelector('.video-carousel-container');
       const overlay = document.getElementById('videoOverlay');
@@ -1949,10 +1863,13 @@
       container.style.height = window.innerHeight + 'px';
       container.style.overflow = 'hidden';
 
-      videoElement.style.width = '100%';
-      videoElement.style.height = '100%';
-      videoElement.style.objectFit = 'cover';
-      videoElement.style.display = 'block';
+      // Ensure both videos fill the container
+      [video1, video2].forEach(v => {
+        v.style.width = '100%';
+        v.style.height = '100%';
+        v.style.objectFit = 'cover';
+        v.style.display = 'block';
+      });
 
       overlay.style.position = 'absolute';
       overlay.style.top = '0';
@@ -1964,7 +1881,7 @@
     window.addEventListener('resize', setFullscreen);
     window.addEventListener('orientationchange', setFullscreen);
 
-    // reload video when crossing breakpoint
+    // Reload video when crossing breakpoint
     const mq = window.matchMedia('(max-width: 768px)');
     let mobileState = mq.matches;
     mq.addEventListener('change', (e) => {
@@ -1974,16 +1891,18 @@
       }
     });
 
+    // Initial load
     document.addEventListener("DOMContentLoaded", () => {
-      setFullscreen();
-      loadVideo(currentIndex);
+      // Initialize the first video manually so it plays immediately
+      const firstVideo = videos[0];
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      activeVideo.src = (isMobile && firstVideo.srcMobile) ? firstVideo.srcMobile : firstVideo.src;
+      updateOverlay(firstVideo);
+      // We don't call loadVideo(0) here because we want to start playing activeVideo immediately
+      // without fading in from inactive.
+      activeVideo.play().catch(() => { });
     });
   </script>
-
-
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script>
     $(document).ready(function () {
       $('.accordion-toggle').on('click', function (e) {
@@ -2237,7 +2156,7 @@
 
 
 
-  
+
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MN3LPKJQ" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
