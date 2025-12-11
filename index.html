@@ -67,11 +67,11 @@
 
 
   <!-- Google Fonts -->
-  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic' rel='stylesheet'
+  <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic' rel='stylesheet'
     type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,300,400italic,300italic,700,700italic,900'
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,400italic,300italic,700,700italic,900'
     rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Exo:400,300,600,500,400italic,700italic,800,900' rel='stylesheet'
+  <link href='https://fonts.googleapis.com/css?family=Exo:400,300,600,500,400italic,700italic,800,900' rel='stylesheet'
     type='text/css'>
 
   <!-- SLIDER ROYAL CSS SETTINGS -->
@@ -1892,15 +1892,35 @@
     });
 
     // Initial load
+    // Initial load with Silent Blob Preloading
     document.addEventListener("DOMContentLoaded", () => {
-      // Initialize the first video manually so it plays immediately
       const firstVideo = videos[0];
       const isMobile = window.matchMedia('(max-width: 768px)').matches;
-      activeVideo.src = (isMobile && firstVideo.srcMobile) ? firstVideo.srcMobile : firstVideo.src;
-      updateOverlay(firstVideo);
-      // We don't call loadVideo(0) here because we want to start playing activeVideo immediately
-      // without fading in from inactive.
-      activeVideo.play().catch(() => { });
+      const videoUrl = (isMobile && firstVideo.srcMobile) ? firstVideo.srcMobile : firstVideo.src;
+
+      // 1. Silent load from backend (Fetch Blob) to avoid blank frames
+      fetch(videoUrl)
+        .then(response => {
+          if (!response.ok) throw new Error("Video fetch failed");
+          return response.blob();
+        })
+        .then(blob => {
+          // 2. Load from "storage" (Blob Object URL)
+          const objectUrl = URL.createObjectURL(blob);
+          activeVideo.src = objectUrl;
+          updateOverlay(firstVideo);
+
+          // 3. Call/Play when ready
+          activeVideo.oncanplaythrough = () => {
+            activeVideo.play().catch(e => console.log("Autoplay prevented:", e));
+          };
+        })
+        .catch(err => {
+          console.warn("Silent load failed, reverting to stream:", err);
+          activeVideo.src = videoUrl;
+          updateOverlay(firstVideo);
+          activeVideo.play().catch(() => { });
+        });
     });
   </script>
   <script>
