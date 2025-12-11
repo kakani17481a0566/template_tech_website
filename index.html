@@ -252,8 +252,10 @@
 
       <!-- 🎥 Video element -->
       <!-- 🎥 Video elements for double buffering -->
-      <video id="video1" class="carousel-video active" autoplay muted playsinline preload="auto"></video>
-      <video id="video2" class="carousel-video inactive" muted playsinline preload="auto"></video>
+      <video id="video1" class="carousel-video active" autoplay muted playsinline preload="auto"
+        poster="images/brain in ocean.jpeg"></video>
+      <video id="video2" class="carousel-video inactive" muted playsinline preload="auto"
+        poster="images/brain in ocean.jpeg"></video>
 
       <style>
         .carousel-video {
@@ -1898,6 +1900,13 @@
       const isMobile = window.matchMedia('(max-width: 768px)').matches;
       const videoUrl = (isMobile && firstVideo.srcMobile) ? firstVideo.srcMobile : firstVideo.src;
 
+      // Fix: Use direct stream + poster. 
+      activeVideo.src = videoUrl;
+      updateOverlay(firstVideo);
+      activeVideo.play().catch(e => console.log("Autoplay:", e));
+      setTimeout(() => { (new Image()).src = videoUrl; }, 3000); // Silent cache
+
+      /*
       // 1. Silent load from backend (Fetch Blob) to avoid blank frames
       fetch(videoUrl)
         .then(response => {
@@ -1920,7 +1929,7 @@
           activeVideo.src = videoUrl;
           updateOverlay(firstVideo);
           activeVideo.play().catch(() => { });
-        });
+        }); */
     });
   </script>
   <script>
