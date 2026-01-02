@@ -116,14 +116,7 @@
      <ror:sortOrder>2</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
-<item>
-     <link>https://neuropi.ai/RegistrationForm.html</link>
-     <title>Registration Form</title>
-     <description>Registration Form</description>
-     <ror:updatePeriod></ror:updatePeriod>
-     <ror:sortOrder>2</ror:sortOrder>
-     <ror:resourceOf>sitemap</ror:resourceOf>
-</item>
+
 </channel>
 </rss>
   
