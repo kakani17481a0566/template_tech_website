@@ -87,7 +87,7 @@ html {
 @media only screen and (min-width:2160px) {
   html {
     font-size: 12.5px;
-      font-family: lato, sans-serif;
+    font-family: lato, sans-serif;
   }
 }
 
@@ -361,20 +361,20 @@ button {
 }
 
 @font-face {
-    font-family: lato, sans-serif;
+  font-family: lato, sans-serif;
   src: url(HelveticaNowDisplay.c3034e01.otf);
   font-display: swap
 }
 
 @font-face {
-    font-family: lato, sans-serif;
+  font-family: lato, sans-serif;
   font-weight: 500;
   src: url(HelveticaNowDisplayMedium.947709e3.otf);
   font-display: swap
 }
 
 @font-face {
-    font-family: lato, sans-serif;
+  font-family: lato, sans-serif;
   font-weight: 700;
   src: url(HelveticaNowDisplayBold.966dafea.otf);
   font-display: swap
@@ -624,7 +624,8 @@ img {
 }
 
 img.dna {
-  height: 1000px !important; /* forcefully apply height */
+  height: 1000px !important;
+  /* forcefully apply height */
   width: auto;
   display: block;
 }
@@ -4005,12 +4006,15 @@ html.force--consent.show--consent body {
 
 .home-hero__title {
   color: #fff;
-  grid-column: 1 / 5;  /* left side */
+  grid-column: 1 / 5;
+  /* left side */
   place-self: start;
-  max-width: 34rem;    /* narrower so sub fits */
+  max-width: 34rem;
+  /* narrower so sub fits */
   margin-top: 20vh;
   padding-bottom: 7vh;
 }
+
 /* .home-hero__title.force-hidden {
   opacity: 0
 } */
@@ -4061,22 +4065,28 @@ html.force--consent.show--consent body {
 /* Default (desktop) */
 .home-hero__sub {
   color: #fff;
-  grid-column: 5 / 8;  /* right next to title */
+  grid-column: 5 / 8;
+  /* right next to title */
   place-self: start;
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
-  margin-top: 20vh;    /* desktop position */
+  margin-top: 20vh;
+  /* desktop position */
   padding-bottom: 5rem;
 }
 
 /* Mobile adjustments */
 @media screen and (max-width: 767px) {
   .home-hero__sub {
-    margin-top: 2vh;  /* move up */
-    grid-column: 1 / -1; /* span full width if needed */
-    align-items: center; /* optional: center align */
-    text-align: center;  /* optional for nice look */
+    margin-top: 2vh;
+    /* move up */
+    grid-column: 1 / -1;
+    /* span full width if needed */
+    align-items: center;
+    /* optional: center align */
+    text-align: center;
+    /* optional for nice look */
   }
 }
 
@@ -4092,13 +4102,13 @@ html.force--consent.show--consent body {
   height: 5.56rem;
   display: flex;
   overflow: hidden;
-    font-family: lato, sans-serif;
+  font-family: lato, sans-serif;
 }
 
 .home-hero__sub-caption-item {
   white-space: nowrap;
-    padding-top: 15px;
-        font-family: lato, sans-serif;
+  padding-top: 15px;
+  font-family: lato, sans-serif;
 }
 
 .home-hero__sub-caption-item .txt-hl {
@@ -4186,7 +4196,7 @@ html.force--consent.show--consent body {
   grid-area: 1/2/2/4;
   align-self: start;
   margin-top: 1.4rem;
-    font-size: 4.0rem;
+  font-size: 4.0rem;
   font-family: lato, sans-serif;
 }
 
@@ -4291,7 +4301,7 @@ html.force--consent.show--consent body {
 .home-solu__label {
   color: #ff471d;
   margin-bottom: 2rem;
-    font-family: lato, sans-serif;
+  font-family: lato, sans-serif;
 
 }
 
@@ -4606,13 +4616,13 @@ html.force--consent.show--consent body {
 .home-tech__top {
   pointer-events: auto;
   z-index: 2;
-  background: #111112;
+  background: #008281;
   position: relative
 }
 
 @media only screen and (min-width:1817px) {
   .home-tech__top {
-    background: linear-gradient(#111112, #111112 calc(100% - 9.3rem), #0000 calc(100% - 9.3rem))
+    background: linear-gradient(#008281, #008281 calc(100% - 9.3rem), #0000 calc(100% - 9.3rem))
   }
 }
 
@@ -10344,26 +10354,26 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
 }
 
-.np-orange{
+.np-orange {
   color: #ff471d;
 }
 
-.np-teal{
+.np-teal {
   color: #1a4255;
-    font-family: lato, sans-serif;
+  font-family: lato, sans-serif;
 }
 
 
-.np-lteal{
+.np-lteal {
   color: #008281;
-    font-family: lato, sans-serif;
+  font-family: lato, sans-serif;
 }
 
 .tm-badge {
   font-size: 0.6em;
   vertical-align: super;
   margin-left: 2px;
-    color: #1a4255;
+  color: #1a4255;
 }
 
 /* dna image*/
@@ -10375,7 +10385,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1; /* Or adjust as needed */
+  z-index: 1;
+  /* Or adjust as needed */
 }
 
 
@@ -10390,7 +10401,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
 .home-solu__main-img-wrap img {
   width: 900px;
-  max-width: 200%;  /* ⬅️ Max size on large screens */
+  max-width: 200%;
+  /* ⬅️ Max size on large screens */
   height: 1000px;
   display: block;
   padding-right: 50px;
@@ -10402,5 +10414,3 @@ svg.leaflet-image-layer.leaflet-interactive path {
     display: none;
   }
 }
-
-

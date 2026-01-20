@@ -16,7 +16,7 @@
     <meta name="keywords" content=" NeuroPi,NeuroPi AI, neurosciencem,AI-driven growth,brain science and biology,">
     <meta name="robots" content="index, follow" />
     <!-- <meta name="robots" content="index, follow"/> -->
-    <link rel="canonical" href="https://neuropi.ai/WhatsNeuroPi.html" />
+    <link rel="canonical" href="https://neuropi.ai/what-is-neuropi.html" />
     <link rel="stylesheet" href="c/index.78ddb5e8.css">
     <link rel="stylesheet" href="./css/BlurCard.css">
     <link rel="stylesheet" href="./css/WhatsNeuroPI/test.css">
@@ -65,7 +65,7 @@
   "sameAs": "https://neuropi.ai/"
 }
 </script>
-  <link href="css/newsletter.css" rel="stylesheet">
+    <link href="css/newsletter.css" rel="stylesheet">
 </head>
 
 <body cz-shortcut-listen="true">
@@ -106,7 +106,7 @@
             <li><a href="#early-edu-section-solutions" class="achor-tag">TECHNOLOGY SUITE</a></li>
             <li><a href="index.html#Home-solutions" class="achor-tag">SOLUTION</a></li>
             <li><a href="#early-edu-section-why" class="achor-tag">WHY US? WHY NOW?</a></li>
-            <li><a href="Blower-Policy.html" class="achor-tag">Whistle Blower Policy</a></li>
+            <li><a href="Blower-Policy.html" class="achor-tag">WHISTLE BLOWER POLICY</a></li>
         </ul>
 
         <!-- Footer Section inside Slide Menu -->
@@ -600,7 +600,7 @@
                                 <div class="home-tech__item-inner">
                                     <h3 class="home-tech__item-title txt txt-24 txt-med">Teens</h3>
                                     <a class="footer__link txt txt-20 txt-med"
-                                        href="WhatsNeuroPi.html#Tech-neu">Technology</a>
+                                        href="what-is-neuropi.html#Tech-neu">Technology</a>
 
                                     <div class="home-tech__item-icon icon icon-48">
                                         <!-- Backpack icon -->
@@ -694,7 +694,7 @@
                             and that shows in our design, our ethics, and our outcomes
                         </h2>
 
-                        <a href="RegistrationHome.html" class="btn btn-lg btn-pri home-why__btn" data-popup="contact">
+                        <a href="registration.html" class="btn btn-lg btn-pri home-why__btn" data-popup="contact">
                             <div class="txt txt-18 txt-med">Let's discuss
                                 today!</div>
                         </a>
@@ -840,12 +840,13 @@
                         <div class="footer__links">
                             <a href="About_us_maiin.html" class="footer__link txt txt-20 txt-med" data-link="home">About
                                 Us</a>
-                            <a class="footer__link tag-wrap txt txt-20 txt-med" href="WhatsNeuroPi.html"> What's
+                            <a class="footer__link tag-wrap txt txt-20 txt-med" href="what-is-neuropi.html"> What's
                                 NeuroPi?<span class="tag-link"> we're hiring </span></a>
-                            <a class="footer__link txt txt-20 txt-med" href="WhatsNeuroPi.html#Tech-neu">Technology</a>
+                            <a class="footer__link txt txt-20 txt-med"
+                                href="what-is-neuropi.html#Tech-neu">Technology</a>
                             <a class="footer__link txt txt-20 txt-med" data
                                 href="index.html#Home-solutions">Solutions</a>
-                            <a href="RegistrationHome.html" data-popup="contact" class="footer__link txt txt-20 txt-med"
+                            <a href="registration.html" data-popup="contact" class="footer__link txt txt-20 txt-med"
                                 data-link="contact">Get in
                                 touch</a>
                         </div>
@@ -904,11 +905,11 @@
                                 </style>
 
                                 <div class="link-row">
-                                    <a href="earlyeducation_main.html">Early Education</a>
-                                    <a href="Sports_main.html">Sports</a>
-                                    <a href="teens_main.html">Teens</a>
+                                    <a href="early-education.html">Early Education</a>
+                                    <a href="sports.html">Sports</a>
+                                    <a href="teens.html">Teens</a>
 
-                                    <a href="Midlife.html">Longevity</a>
+                                    <a href="longevity.html">Longevity</a>
                                     <a href="#management-team">Leadership</a>
                                 </div>
 
@@ -1059,7 +1060,7 @@
                         </a>
 
                         <!-- Instagram -->
-                        <a href="https://www.instagram.com/neuropi.india/" target="_blank" aria-label="Instagram">
+                        <a href="https://www.instagram.com/neuropi.ai/" target="_blank" aria-label="Instagram">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <defs>
                                     <linearGradient id="IGgradient" x1="0" y1="0" x2="1" y2="1">
@@ -1086,7 +1087,7 @@
                 </div>
 
 
-                <a href="RegistrationHome.html" class="footer__marquee" aria-label="Go to Registration">
+                <a href="registration.html" class="footer__marquee" aria-label="Go to Registration">
                     <div class="footer__marquee-wrap">
                         <div class="footer__marquee-item heading" style="color:#ff471d;">
                             Are you interested? Let's discuss today!
@@ -1336,7 +1337,7 @@
                     let targetURL = resolved;
 
                     // If the resolved URL equals the current page (causing "scroll to top" effect),
-                    // try forcing a root-level resolution: https://domain.tld/RegistrationHome.html
+                    // try forcing a root-level resolution: https://domain.tld/registration.html
                     if (targetURL === currentNoHash && rawHref && !/^https?:/i.test(rawHref)) {
                         targetURL = window.location.origin + '/' + rawHref.replace(/^\/+/, '');
                     }
@@ -1396,7 +1397,7 @@
                         //    Avoid <base> tag and preventDefault()-hijacks by resolving & assigning.
                         if (!/^https?:\/\//i.test(href) && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
                             e.preventDefault();
-                            // Build an absolute URL from origin (works for "earlyeducation_main.html", "Sports_main.html", etc.)
+                            // Build an absolute URL from origin (works for "early-education.html", "sports.html", etc.)
                             const target = href.startsWith('/')
                                 ? (window.location.origin + href.replace(/^\/+/, ''))
                                 : new URL(href, window.location.origin).href;
@@ -1489,7 +1490,7 @@
             document.addEventListener('DOMContentLoaded', () => {
                 // Grab the "Get in touch" link (match by href OR by data-link="contact")
                 const link =
-                    document.querySelector('.footer__links a[href*="RegistrationHome.html"]') ||
+                    document.querySelector('.footer__links a[href*="registration.html"]') ||
                     document.querySelector('.footer__links a[data-link="contact"]');
 
                 if (!link) return;
@@ -1498,7 +1499,7 @@
                 link.removeAttribute('data-popup');
                 link.setAttribute('target', '_self');
 
-                const targetUrl = new URL('/RegistrationHome.html', location.origin).href; // root-relative
+                const targetUrl = new URL('/registration.html', location.origin).href; // root-relative
 
                 const go = (e) => {
                     e.preventDefault();
@@ -1639,8 +1640,8 @@
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-  <!-- Newsletter Subscription Handler -->
-  <script src="js/neuropi-newsletter.js"></script>
+    <!-- Newsletter Subscription Handler -->
+    <script src="js/neuropi-newsletter.js"></script>
 </body>
 
 

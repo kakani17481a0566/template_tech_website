@@ -137,6 +137,7 @@ button {
 }
 
 @media screen and (max-width:767px) {
+
   html,
   body {
     width: 100%;
@@ -144,21 +145,26 @@ button {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    overflow-y: auto; /* ✅ allow vertical scroll */
+    overflow-y: auto;
+    /* ✅ allow vertical scroll */
   }
 
   body {
-    overscroll-behavior-y: auto; /* ✅ allow scroll to behave normally */
+    overscroll-behavior-y: auto;
+    /* ✅ allow scroll to behave normally */
     overscroll-behavior-x: none;
-    position: static; /* ✅ prevents layout bugs caused by fixed/absolute */
+    position: static;
+    /* ✅ prevents layout bugs caused by fixed/absolute */
   }
 
   .wrapper {
     -ms-scroll-chaining: none;
     overscroll-behavior: contain;
     width: 100%;
-    min-height: 100vh; /* ✅ ensures content fills height */
-    position: relative; /* ✅ safer than absolute */
+    min-height: 100vh;
+    /* ✅ ensures content fills height */
+    position: relative;
+    /* ✅ safer than absolute */
     overflow-x: hidden;
     overflow-y: auto;
   }
@@ -621,7 +627,8 @@ img {
 }
 
 img.dna {
-  height: 1000px !important; /* forcefully apply height */
+  height: 1000px !important;
+  /* forcefully apply height */
   width: auto;
   display: block;
 }
@@ -2969,7 +2976,7 @@ html.force--consent.show--consent body {
 }
 
 .footer__form-sub {
-font-size: 2rem !important;
+  font-size: 2rem !important;
   color: #ffffff80;
   margin-bottom: 2.4rem
 }
@@ -4578,13 +4585,13 @@ font-size: 2rem !important;
 .home-tech__top {
   pointer-events: auto;
   z-index: 2;
-  background: #111112;
+  background: #008281;
   position: relative
 }
 
 @media only screen and (min-width:1817px) {
   .home-tech__top {
-    background: linear-gradient(#111112, #111112 calc(100% - 9.3rem), #0000 calc(100% - 9.3rem))
+    background: linear-gradient(#008281, #008281 calc(100% - 9.3rem), #0000 calc(100% - 9.3rem))
   }
 }
 
@@ -10310,14 +10317,16 @@ svg.leaflet-image-layer.leaflet-interactive path {
   font-weight: 600;
   font-size: 1.5rem;
 }
-.np-orange{
+
+.np-orange {
   color: #ff471d;
 }
+
 .tm-badge {
   font-size: 0.6em;
   vertical-align: super;
   margin-left: 2px;
-    color: #1a4255;
+  color: #1a4255;
 }
 
 /* dna image*/
@@ -10329,7 +10338,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1; /* Or adjust as needed */
+  z-index: 1;
+  /* Or adjust as needed */
 }
 
 
@@ -10344,7 +10354,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
 .home-solu__main-img-wrap img {
   width: 900px;
-  max-width: 200%;  /* ⬅️ Max size on large screens */
+  max-width: 200%;
+  /* ⬅️ Max size on large screens */
   height: 1000px;
   display: block;
   padding-right: 50px;
@@ -10449,5 +10460,3 @@ svg.leaflet-image-layer.leaflet-interactive path {
 .uix-navbar__brand a {
   display: inline-block; /
 } */
-
-
