@@ -1027,7 +1027,7 @@
               </div>
               <div class="card-content">
                 <h4>Dr. Dr. Peter Gseller</h4>
-                <p class="role">The Founding Investor</p>
+                <p class="role"> Founding Investor</p>
                 <div class="arrow-link small-arrow" onclick="goToProfile('Peter.html')">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -1927,7 +1927,7 @@
       const isMobile = window.matchMedia('(max-width: 768px)').matches;
       const videoUrl = (isMobile && firstVideo.srcMobile) ? firstVideo.srcMobile : firstVideo.src;
 
-      // Fix: Use direct stream + poster. 
+      // Fix: Use direct stream + poster.
       activeVideo.src = videoUrl;
       updateOverlay(firstVideo);
       activeVideo.play().catch(e => console.log("Autoplay:", e));
