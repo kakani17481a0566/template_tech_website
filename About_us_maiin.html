@@ -90,6 +90,7 @@
                     <div class="neuropi-nav-brand">
                         <a href="index.html"><img src="images/N.png" alt="Logo"></a>
                     </div>
+                    <div style="display:flex; align-items:center; gap:10px;">
                     <button onclick="neuropiToggleMenu()"
                         style="
             background:#ff471d!important;color:#fff!important;border:2px solid #ff471d!important;
@@ -98,6 +99,16 @@
             justify-content:center!important;font-family:Lato,sans-serif!important;letter-spacing:1px!important;font-weight:700;">
                         Menu
                     </button>
+
+                    <button onclick="window.open('https://flic.kr/s/aHBqjCLCZM','_blank')"
+                        style="
+            background:#1a4255!important;color:#fff!important;border:2px solid #1a4255!important;
+            padding:0.2rem 1.5rem!important;font-size:1rem!important;cursor:pointer!important;
+            border-radius:2rem!important;display:flex!important;align-items:center!important;
+            justify-content:center!important;font-family:Lato,sans-serif!important;letter-spacing:1px!important;font-weight:700;">
+                        CarpeDiem 2026
+                    </button>
+                    </div>
                 </div>
             </nav>
 
@@ -108,7 +119,19 @@
             <div class="neuropi-menu-panel" id="neuropiSlideMenu" aria-hidden="true">
                 <button class="neuropi-menu-close" onclick="neuropiToggleMenu()" aria-label="Close menu">×</button>
                 <ul class="neuropi-menu-list" id="neuropi-nav-links">
-                    style="display:flex;justify-content:space-between;align-items:flex-start;margin-top:auto;padding-top:1.5rem;">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="what-is-neuropi.html#early-edu-section-welcome">WELCOME</a></li>
+                    <li><a href="what-is-neuropi.html#early-edu-section-problem">PROBLEM</a></li>
+                    <li><a href="what-is-neuropi.html#early-edu-section-solutions">TECHNOLOGY SUITE</a></li>
+                    <li><a href="index.html#Home-solutions">SOLUTION</a></li>
+                    <li><a href="what-is-neuropi.html#early-edu-section-why">WHY US? WHY NOW?</a></li>
+                    <li><a href="Blower-Policy.html">WHISTLE BLOWER POLICY</a></li>
+                    <li><a href="https://flic.kr/s/aHBqjCLCZM" target="_blank" rel="noopener noreferrer">CARPEDIEM 2026</a></li>
+                </ul>
+
+                <!-- Optional Footer inside Slide Menu -->
+                <div class="neuropi-footer-contact"
+                    style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: auto; padding-top: 1.5rem;">
                     <div>
                         <h4>Reach us</h4>
                     </div>
@@ -123,15 +146,14 @@
                             style="justify-content:center;display:flex;gap:1rem;margin-top:0.5rem;">
                             <a href="#">Contact Us</a>
                             <a href="https://www.google.com/maps/dir//Hitex+Road,+next+to+Hitex+Exhibition+Centre+Gate,+Shilpa+Layout,+Izzathnagar,+Hyderabad,+Telangana+500084/@17.4681182,78.2939471,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb93c69d117a9d:0xcb96668338dda37c!2m2!1d78.3763488!2d17.4681215?entry=ttu"
-                                target="_blank" rel="noopener noreferrer">Get
-                                directions</a>
+                                target="_blank" rel="noopener noreferrer">Get directions</a>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
-        </div>
-        </div>
     </header>
+
 
     <!-- =========================================================
        VISIBLE LIVE SECTION (default content shown on page load)
