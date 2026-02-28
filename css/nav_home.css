@@ -154,6 +154,46 @@
   }
 }
 
+/* ===== Nav action buttons – all 3 (Menu / CarpeDiem / Log In) ===== */
+/* zoom scales buttons visually without fighting inline !important styles   */
+
+/* Base: all buttons single-line */
+.neuropi-nav-actions button {
+  white-space: nowrap !important;
+}
+
+/* Mid-range mobile (≤ 767px): tighten gap */
+@media (max-width: 767px) {
+  .neuropi-nav-actions {
+    gap: 6px !important;
+  }
+}
+
+/* Small phones (≤ 600px): zoom all buttons to 85% */
+@media (max-width: 600px) {
+  .neuropi-nav-actions {
+    gap: 4px !important;
+    zoom: 0.85;
+  }
+}
+
+/* Very small phones (≤ 400px): zoom to 70% + shrink logo */
+@media (max-width: 400px) {
+  .neuropi-nav-actions {
+    gap: 3px !important;
+    zoom: 0.70;
+  }
+  .neuropi-nav-brand img {
+    height: 42px !important;
+  }
+}
+
+/* CarpeDiem span wrapper – keep it inline so it fits in flex row */
+.neuropi-carpe-btn {
+  display: inline-flex !important;
+  align-items: center;
+}
+
 @media (max-width: 767px) {
   .neuropi-nav-brand img {
     height: 56px;
