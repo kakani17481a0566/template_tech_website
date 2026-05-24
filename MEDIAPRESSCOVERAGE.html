@@ -45,6 +45,7 @@
   <link rel="stylesheet" href="./css/index/box_flip.css">
   <link rel="stylesheet" href="./css/index/profile_card.css">
   <link rel="stylesheet" href="./css/index/awards.css">
+  <link rel="stylesheet" href="./css/media-tabs.css">
 
   <!-- Google Fonts -->
   <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -199,73 +200,16 @@
         <p class="lead np-teal">Featured videos and moments from NeuroPi in the news</p>
       </div>
 
-      <!-- Video Gallery -->
-      <div class="video-gallery-wrapper" style="margin-bottom: 60px;">
-        <h3 style="font-size: 30px; margin-bottom: 20px; color: #1a4255;">Video Gallery</h3>
-        <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000;">
-          <video id="pressVideo" controls preload="auto" poster="media/images/neuropi-edge-economic-times-industry-achievers-2026.jpeg"
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-            <source src="media/video/neuropi-edge-economic-times-industry-achievers-2026-awrds annsment.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+      <div class="media-tabs-layout">
+        <!-- Sidebar: Year / Month tabs -->
+        <div class="media-tabs-sidebar" id="mediaTabsSidebar">
+          <!-- populated by JS -->
         </div>
-        <p style="margin-top: 15px; color: #555; font-size: 16px;">
-          <strong>NeuroPi Edge</strong> - Economic Times Industry Achievers 2026 Awards Announcement
-        </p>
-      </div>
 
-      <!-- Image Gallery -->
-      <div class="image-gallery-wrapper">
-        <h3 style="font-size: 30px; margin-bottom: 30px; color: #1a4255;">Press Photos</h3>
-        <div class="row" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-          <div class="col-lg-4 col-md-6 col-sm-12" style="flex: 1 1 calc(33.333% - 20px); min-width: 280px; max-width: 400px;">
-            <div class="press-image-card" style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background: #fff;">
-              <img src="media/images/neuropi-edge-economic-times-industry-achievers-2026.jpeg" alt="NeuroPi Edge Economic Times Industry Achievers 2026"
-                style="width: 100%; height: auto; display: block;">
-              <div style="padding: 15px;">
-                <p style="margin: 0; font-size: 14px; color: #555;">NeuroPi Edge - Economic Times Industry Achievers 2026</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12" style="flex: 1 1 calc(33.333% - 20px); min-width: 280px; max-width: 400px;">
-            <div class="press-image-card" style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background: #fff;">
-              <img src="media/images/prof-aperna-volluru-et-industry-achievers-2026.jpeg" alt="Prof. Aperna Volluru - ET Industry Achievers 2026"
-                style="width: 100%; height: auto; display: block;">
-              <div style="padding: 15px;">
-                <p style="margin: 0; font-size: 14px; color: #555;">Prof. Aperna Volluru - ET Industry Achievers 2026</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12" style="flex: 1 1 calc(33.333% - 20px); min-width: 280px; max-width: 400px;">
-            <div class="press-image-card" style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background: #fff;">
-              <img src="media/images/prof-aperna-volluru.jpeg" alt="Prof. Aperna Volluru"
-                style="width: 100%; height: auto; display: block;">
-              <div style="padding: 15px;">
-                <p style="margin: 0; font-size: 14px; color: #555;">Prof. Aperna Volluru - Profile</p>
-              </div>
-            </div>
-          </div>
+        <!-- Content area -->
+        <div class="media-tabs-content" id="mediaTabsContent">
+          <!-- populated by JS -->
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Media Partners Section -->
-  <section class="grey-wrapper jt-shadow" style="margin-top: 50px;">
-    <div class="container">
-      <div class="general-title">
-        <h2 style="font-size: 50px; font-weight: bold !important;">MEDIA PARTNERS</h2>
-        <hr>
-        <p class="lead np-teal">Featured across leading publications and media outlets</p>
-      </div>
-      <div id="mediaPartnersContainer" class="media-partners-grid" style="
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        margin-top: 30px;
-        justify-content: center;
-      ">
-        <!-- Dynamically loaded from media.csv -->
       </div>
     </div>
   </section>
@@ -544,52 +488,192 @@
 
   <script src="js/navbar.js"></script>
   <script>
-    // Load Media Partners from JSON
-    function loadMediaPartners() {
-      fetch('media/partners/imagehyperlinkmapjson.json')
-        .then(function(response) { return response.json(); })
-        .then(function(partnersData) {
-          var container = document.getElementById('mediaPartnersContainer');
-          container.innerHTML = '';
+    var mediaData = null;
+    var activeYear = null;
+    var activeMonth = null;
 
-          partnersData.forEach(function(partner) {
-            var card = document.createElement('a');
-            card.className = 'media-partner-card';
-            card.href = partner.Website_URL;
-            card.target = '_blank';
-            card.rel = 'noopener noreferrer';
-            card.style.cssText = 'background: #fff; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.3s; display: flex; align-items: center; justify-content: center; min-height: 80px; text-decoration: none;';
+    function buildSidebar(data) {
+      var sidebar = document.getElementById('mediaTabsSidebar');
+      sidebar.innerHTML = '';
 
-            var imgName = partner.Image_Name;
-            var displayName = imgName.split('_').join(' ');
+      data.years.forEach(function(y, yi) {
+        var yearDiv = document.createElement('div');
 
-            var img = document.createElement('img');
-            img.src = 'media/partners/' + imgName + '.jpg';
-            img.alt = displayName;
-            img.style.cssText = 'max-width: 180px; max-height: 60px; width: auto; height: auto; object-fit: contain;';
-            img.onerror = function() {
-              this.onerror = null;
-              this.src = 'media/partners/' + imgName + '.png';
-              this.onerror = function() { this.style.display = 'none'; };
-            };
+        var yearTab = document.createElement('div');
+        yearTab.className = 'year-tab' + (yi === 0 ? ' active' : '');
+        yearTab.dataset.yearIndex = yi;
+        yearTab.innerHTML = y.year + ' <span class="arrow">&#9654;</span>';
+        yearTab.addEventListener('click', function() {
+          toggleYear(yi);
+        });
+        yearDiv.appendChild(yearTab);
 
-            card.appendChild(img);
-            card.onmouseover = function() { card.style.transform = 'translateY(-5px)'; };
-            card.onmouseout = function() { card.style.transform = 'translateY(0)'; };
-            container.appendChild(card);
+        var monthList = document.createElement('div');
+        monthList.className = 'month-list' + (yi === 0 ? ' open' : '');
+
+        y.months.forEach(function(m, mi) {
+          var monthTab = document.createElement('div');
+          monthTab.className = 'month-tab' + (yi === 0 && mi === 0 ? ' active' : '');
+          monthTab.dataset.yearIndex = yi;
+          monthTab.dataset.monthIndex = mi;
+          monthTab.textContent = m.monthName + ' ' + y.year;
+          monthTab.addEventListener('click', function(e) {
+            e.stopPropagation();
+            setActiveTab(yi, mi);
           });
+          monthList.appendChild(monthTab);
+        });
+
+        yearDiv.appendChild(monthList);
+        sidebar.appendChild(yearDiv);
+      });
+    }
+
+    function toggleYear(yi) {
+      var yearTabs = document.querySelectorAll('.year-tab');
+      var monthLists = document.querySelectorAll('.month-list');
+
+      yearTabs.forEach(function(t, i) {
+        t.classList.toggle('active', i === yi);
+        t.querySelector('.arrow').classList.toggle('open', i === yi);
+      });
+      monthLists.forEach(function(ml, i) {
+        ml.classList.toggle('open', i === yi);
+      });
+
+      // If the clicked year has no active month, activate its first month
+      var activeMonthTab = document.querySelector('.month-tab.active');
+      if (!activeMonthTab || activeMonthTab.dataset.yearIndex != yi) {
+        var firstMonth = document.querySelector('.month-list.open .month-tab');
+        if (firstMonth) {
+          setActiveTab(parseInt(firstMonth.dataset.yearIndex), parseInt(firstMonth.dataset.monthIndex));
+        }
+      }
+    }
+
+    function setActiveTab(yi, mi) {
+      var allMonthTabs = document.querySelectorAll('.month-tab');
+      allMonthTabs.forEach(function(t) {
+        t.classList.toggle('active', parseInt(t.dataset.yearIndex) === yi && parseInt(t.dataset.monthIndex) === mi);
+      });
+
+      activeYear = yi;
+      activeMonth = mi;
+      renderContent();
+    }
+
+    function renderContent() {
+      var container = document.getElementById('mediaTabsContent');
+      if (activeYear === null || activeMonth === null) {
+        container.innerHTML = '<p style="color:#666;text-align:center;">Select a year and month to view coverage.</p>';
+        return;
+      }
+
+      var yearData = mediaData.years[activeYear];
+      var monthData = yearData.months[activeMonth];
+      var html = '';
+
+      // Videos
+      html += '<div class="tab-content-section active">';
+      html += '<div class="tab-section-title">Video Gallery</div>';
+      if (monthData.videos && monthData.videos.length > 0) {
+        monthData.videos.forEach(function(v) {
+          html += '<div style="margin-bottom:30px;">';
+          html += '<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;background:#000;border-radius:8px;">';
+          if (v.type === 'youtube') {
+            html += '<iframe src="https://www.youtube.com/embed/' + v.youtubeId + '" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:8px;"></iframe>';
+          } else {
+            html += '<video controls preload="auto" poster="' + (v.poster || '') + '" style="position:absolute;top:0;left:0;width:100%;height:100%;">';
+            html += '<source src="' + v.src + '" type="video/mp4">';
+            html += 'Your browser does not support the video tag.';
+            html += '</video>';
+          }
+          html += '</div>';
+          html += '<p style="margin-top:12px;color:#1a4255;font-size:16px;font-weight:700;">' + v.title + '</p>';
+          html += '</div>';
+        });
+      } else {
+        html += '<div class="tab-section-empty">No videos available for this period.</div>';
+      }
+      html += '</div>';
+
+      // Articles
+      html += '<div class="tab-content-section active" style="margin-top:50px;">';
+      html += '<div class="tab-section-title">Articles</div>';
+      if (monthData.articles && monthData.articles.length > 0) {
+        monthData.articles.forEach(function(a) {
+          html += '<div style="background:#f8f9fa;padding:20px;border-radius:8px;margin-bottom:16px;border-left:4px solid #ff471d;">';
+          html += '<p style="margin:0;color:#1a4255;font-size:15px;line-height:1.7;text-align:justify;">' + a + '</p>';
+          html += '</div>';
+        });
+      } else {
+        html += '<div class="tab-section-empty">No articles available for this period.</div>';
+      }
+      html += '</div>';
+
+      // Images
+      html += '<div class="tab-content-section active" style="margin-top:50px;">';
+      html += '<div class="tab-section-title">Press Photos</div>';
+      if (monthData.images && monthData.images.length > 0) {
+        html += '<div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">';
+        monthData.images.forEach(function(img) {
+          html += '<div style="flex:1 1 calc(33.333% - 20px);min-width:280px;max-width:400px;">';
+          html += '<div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,0.1);background:#fff;">';
+          html += '<img src="' + img.src + '" alt="' + img.caption + '" style="width:100%;height:auto;display:block;">';
+          html += '<div style="padding:15px;"><p style="margin:0;font-size:14px;color:#1a4255;">' + img.caption + '</p></div>';
+          html += '</div></div>';
+        });
+        html += '</div>';
+      } else {
+        html += '<div class="tab-section-empty">No press photos available for this period.</div>';
+      }
+      html += '</div>';
+
+      // Media Partners
+      html += '<div class="tab-content-section active" style="margin-top:50px;">';
+      html += '<div class="tab-section-title">Media Partners</div>';
+      if (monthData.partners && monthData.partners.length > 0) {
+        html += '<div style="display:flex;flex-wrap:wrap;gap:15px;justify-content:center;">';
+        monthData.partners.forEach(function(p) {
+          var displayName = p.Image_Name.split('_').join(' ');
+          html += '<a href="' + p.Website_URL + '" target="_blank" rel="noopener noreferrer" ';
+          html += 'style="background:#fff;padding:15px;border-radius:8px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,0.1);display:flex;align-items:center;justify-content:center;min-height:80px;text-decoration:none;transition:transform 0.3s;"';
+          html += ' onmouseover="this.style.transform=\'translateY(-5px)\'" onmouseout="this.style.transform=\'translateY(0)\'">';
+          html += '<img src="media/partners/' + p.Image_Name + '.jpg" alt="' + displayName + '" style="max-width:180px;max-height:60px;width:auto;height:auto;object-fit:contain;"';
+          html += ' onerror="var s=this; s.onerror=null; s.src=\'media/partners/' + p.Image_Name + '.png\'; s.onerror=function(){s.style.display=\'none\';}">';
+          html += '</a>';
+        });
+        html += '</div>';
+      } else {
+        html += '<div class="tab-section-empty">No media partners listed for this period.</div>';
+      }
+      html += '</div>';
+
+      container.innerHTML = html;
+    }
+
+    function loadMediaPressData() {
+      fetch('media/mediapress.json')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          mediaData = data;
+          buildSidebar(data);
+          // Activate first year, first month
+          if (data.years.length > 0 && data.years[0].months.length > 0) {
+            setActiveTab(0, 0);
+          }
         })
-        .catch(function(error) {
-          console.error('Error loading media partners:', error);
-          document.getElementById('mediaPartnersContainer').innerHTML =
-            '<p style="color: #666; text-align: center;">Unable to load media partners at this time.</p>';
+        .catch(function(err) {
+          console.error('Error loading media press data:', err);
+          document.getElementById('mediaTabsContent').innerHTML =
+            '<p style="color:#666;text-align:center;padding:40px;">Unable to load media data at this time.</p>';
         });
     }
 
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', loadMediaPartners);
+      document.addEventListener('DOMContentLoaded', loadMediaPressData);
     } else {
-      loadMediaPartners();
+      loadMediaPressData();
     }
   </script>
   <script>

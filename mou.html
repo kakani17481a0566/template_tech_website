@@ -120,6 +120,149 @@
 }
 </script>
   <link href="css/newsletter.css" rel="stylesheet">
+
+  <style>
+    .mou-tab {
+      background: transparent;
+      border: 2px solid #ff471d;
+      color: #1a4255;
+      padding: 10px 28px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 30px;
+      margin: 0 8px 10px;
+      transition: all 0.3s;
+      font-family: 'Lato', sans-serif;
+    }
+    .mou-tab.active {
+      background: #ff471d;
+      color: #fff;
+    }
+    .mou-nav-btn {
+      background: #1a4255;
+      color: #fff;
+      border: none;
+      padding: 10px 24px;
+      font-size: 15px;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: all 0.3s;
+      font-family: 'Lato', sans-serif;
+    }
+    .mou-nav-btn:hover {
+      background: #ff471d;
+    }
+    .flipbook-container {
+      position: relative;
+      margin: 0 auto;
+      min-height: 400px;
+    }
+    .flipbook-container .page {
+      background: #fff;
+      box-shadow: 0 0 8px rgba(0,0,0,0.12);
+    }
+    .flipbook-container .page img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .flipbook-container .st-page {
+      background: #fff;
+    }
+    .flipbook-container canvas {
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* ===== Vertical Tab Layout ===== */
+    .mou-layout {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+    }
+    .mou-tabs-vertical {
+      flex: 0 0 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: sticky;
+      top: 100px;
+    }
+    .mou-tab-v {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      padding: 16px 18px;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      background: #fff;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-align: left;
+      font-family: 'Lato', sans-serif;
+    }
+    .mou-tab-v:hover {
+      border-color: #ff471d;
+      background: #fff5f0;
+    }
+    .mou-tab-v.active {
+      border-color: #ff471d;
+      background: #ff471d;
+      color: #fff;
+    }
+    .mou-tab-v.active .mou-tab-icon {
+      color: #fff;
+    }
+    .mou-tab-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      width: 22px;
+      text-align: center;
+    }
+    .mou-tab-v.active .mou-tab-icon {
+      color: #fff;
+    }
+    .mou-tab-v .mou-tab-icon {
+      color: #ff471d;
+    }
+    .mou-tab-label {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    .mou-content {
+      flex: 1;
+      min-width: 0;
+    }
+    @media (max-width: 768px) {
+      .mou-layout {
+        flex-direction: column;
+      }
+      .mou-tabs-vertical {
+        flex: none;
+        width: 100%;
+        flex-direction: row;
+        position: static;
+        top: auto;
+        overflow-x: auto;
+        padding-bottom: 8px;
+      }
+      .mou-tab-v {
+        flex: 0 0 auto;
+        white-space: nowrap;
+        padding: 12px 18px;
+      }
+      .mou-tab-label {
+        font-size: 13px;
+      }
+      .mou-tab-icon {
+        font-size: 16px;
+        width: 20px;
+      }
+    }
+  </style>
 </head>
 
 
@@ -238,7 +381,7 @@
 
   </header>
 
-  <!-- ========== MEMORANDUM SECTION ========== -->
+  <!-- ========== FLIPBOOK MOU SECTION ========== -->
   <section id="memorandum-section" style="padding:60px 0; background:#f9f9f9;">
     <div class="container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
       <div style="text-align:center; margin-bottom:40px;">
@@ -247,13 +390,65 @@
         </h2>
         <hr style="width:80px; border:2px solid #ff471d; margin:0 auto;">
       </div>
-      <div style="text-align:center;">
-        <img src="images/memo/Memorandum of Understanding (MoU) between Acharya Nagarjuna University and NeuroPi Tech Private Limited.png"
-          alt="MoU between Acharya Nagarjuna University and NeuroPi Tech Private Limited"
-          style="max-width:100%; height:auto; border:1px solid #ddd; border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
-        <p style="margin-top:30px; font-size:20px; font-weight:600; color:#1a4255; font-family:Lato, sans-serif;">
-          Acharya Nagarjuna University &amp; NeuroPi Tech Pvt. Ltd.
-        </p>
+
+      <div class="mou-layout">
+        <!-- Vertical Tabs (Left) -->
+        <div class="mou-tabs-vertical">
+          <button class="mou-tab-v active" data-target="anu">
+            <i class="fas fa-star mou-tab-icon"></i>
+            <span class="mou-tab-label">Acharya Nagarjuna University</span>
+          </button>
+          <button class="mou-tab-v" data-target="army">
+            <i class="far fa-star mou-tab-icon"></i>
+            <span class="mou-tab-label">Army Public School</span>
+          </button>
+          <button class="mou-tab-v" data-target="purva">
+            <i class="far fa-star mou-tab-icon"></i>
+            <span class="mou-tab-label">Purva UP &amp; MP Sub Area</span>
+          </button>
+        </div>
+
+        <!-- Content (Right) -->
+        <div class="mou-content">
+          <!-- ANU Flipbook -->
+          <div id="flipbook-anu" class="flipbook-container">
+            <div id="anu-flipbook">
+              <div class="page"><img src="images/mou/anu/IMG_0001.jpg" alt="ANU MoU Page 1" /></div>
+              <div class="page"><img src="images/mou/anu/IMG_0002.jpg" alt="ANU MoU Page 2" /></div>
+              <div class="page"><img src="images/mou/anu/IMG_0003.jpg" alt="ANU MoU Page 3" /></div>
+              <div class="page"><img src="images/mou/anu/IMG_0004.jpg" alt="ANU MoU Page 4" /></div>
+              <div class="page"><img src="images/mou/anu/IMG_0005.jpg" alt="ANU MoU Page 5" /></div>
+            </div>
+          </div>
+
+          <!-- Army Flipbook -->
+          <div id="flipbook-army" class="flipbook-container" style="display:none;">
+            <div id="army-flipbook">
+              <div class="page"><img src="images/mou/army/IMG_0001.jpg" alt="Army MoU Page 1" /></div>
+              <div class="page"><img src="images/mou/army/IMG_0002.jpg" alt="Army MoU Page 2" /></div>
+              <div class="page"><img src="images/mou/army/IMG_0003.jpg" alt="Army MoU Page 3" /></div>
+            </div>
+          </div>
+
+          <!-- Purva Flipbook -->
+          <div id="flipbook-purva" class="flipbook-container" style="display:none;">
+            <div id="purva-flipbook">
+              <div class="page"><img src="images/mou/purva/IMG_0001.jpg" alt="Purva MoU Page 1" /></div>
+              <div class="page"><img src="images/mou/purva/IMG_0002.jpg" alt="Purva MoU Page 2" /></div>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div style="text-align:center; margin-top:20px;">
+            <button class="mou-nav-btn" onclick="prevPage()"><i class="fas fa-chevron-left"></i> Prev</button>
+            <span id="page-num" style="margin:0 20px; font-size:18px; font-weight:600; color:#1a4255; font-family:'Lato',sans-serif;">1 / 5</span>
+            <button class="mou-nav-btn" onclick="nextPage()">Next <i class="fas fa-chevron-right"></i></button>
+          </div>
+
+          <p style="text-align:center; margin-top:15px; color:#888; font-size:14px; font-family:'Lato',sans-serif;">
+            <i class="fas fa-hand-pointer"></i> Click or drag corners to flip pages
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -598,6 +793,7 @@
 
   <!-- Main Scripts-->
   <script src="js/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/page-flip/2.0.7/js/page-flip.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/menu.js"></script>
   <script src="js/owl.carousel.min.js"></script>
@@ -1159,6 +1355,110 @@
   <!-- Newsletter Subscription Handler -->
   <script src="js/neuropi-newsletter.js"></script>
 
+  <!-- Flipbook Init -->
+  <script>
+    var currentFlipbook = 'anu';
+    var flipbookInstances = {};
+    var imgSets = {
+      anu: [
+        'images/mou/anu/IMG_0001.jpg',
+        'images/mou/anu/IMG_0002.jpg',
+        'images/mou/anu/IMG_0003.jpg',
+        'images/mou/anu/IMG_0004.jpg',
+        'images/mou/anu/IMG_0005.jpg'
+      ],
+      army: [
+        'images/mou/army/IMG_0001.jpg',
+        'images/mou/army/IMG_0002.jpg',
+        'images/mou/army/IMG_0003.jpg'
+      ],
+      purva: [
+        'images/mou/purva/IMG_0001.jpg',
+        'images/mou/purva/IMG_0002.jpg'
+      ]
+    };
+
+    function initFlipbook(name) {
+      if (flipbookInstances[name]) return;
+
+      var $container = $('#flipbook-' + name);
+      var el = $container[0];
+      var w = Math.min(860, $container.width() - 10);
+      var pageW = w / 2;
+      var pageH = pageW / 0.707;
+
+      var fb = new St.PageFlip(el, {
+        width: pageW,
+        height: pageH,
+        size: 'strict',
+        drawShadow: true,
+        flippingTime: 600,
+        startPage: 0,
+        usePortrait: true,
+        showCover: false,
+        minWidth: 150,
+        maxWidth: 800,
+        minHeight: 200,
+        maxHeight: 1200,
+        mobileScrollSupport: false
+      });
+
+      fb.loadFromImages(imgSets[name]);
+
+      fb.on('flip', function (e) {
+        updatePageCounter();
+      });
+
+      flipbookInstances[name] = fb;
+    }
+
+    function updatePageCounter() {
+      var fb = flipbookInstances[currentFlipbook];
+      if (!fb) return;
+      var page = fb.getCurrentPageIndex() + 1;
+      var total = fb.getPageCount();
+      $('#page-num').text(page + ' / ' + total);
+    }
+
+    function prevPage() {
+      var fb = flipbookInstances[currentFlipbook];
+      if (fb) {
+        fb.flipPrev();
+        updatePageCounter();
+      }
+    }
+
+    function nextPage() {
+      var fb = flipbookInstances[currentFlipbook];
+      if (fb) {
+        fb.flipNext();
+        updatePageCounter();
+      }
+    }
+
+    $(document).ready(function () {
+      initFlipbook('anu');
+      updatePageCounter();
+
+      // Tab switching
+      $('.mou-tab-v').on('click', function () {
+        var target = $(this).data('target');
+        if (target === currentFlipbook) return;
+        currentFlipbook = target;
+        $('.flipbook-container').hide();
+        $('#flipbook-' + target).show();
+        $('.mou-tab-v').removeClass('active');
+        $(this).addClass('active');
+        initFlipbook(target);
+        setTimeout(updatePageCounter, 50);
+      });
+
+      // Re-center/refresh on window resize
+      $(window).on('resize', function () {
+        // Page-flip handles resize internally via size:'strict'
+      });
+    });
+  </script>
 
 </body>
 

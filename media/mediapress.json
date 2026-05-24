@@ -1,0 +1,122 @@
+{
+  "years": [
+    {
+      "year": "2026",
+      "months": [
+        {
+          "month": "05",
+          "monthName": "May",
+          "videos": [
+            {
+              "src": "media/video/neuropi-edge-economic-times-industry-achievers-2026-awrds annsment.mp4",
+              "poster": "media/images/neuropi-edge-economic-times-industry-achievers-2026.jpeg",
+              "title": "NeuroPi Edge - Economic Times Industry Achievers 2026 Awards Announcement"
+            }
+          ],
+          "images": [
+            {
+              "src": "media/images/neuropi-edge-economic-times-industry-achievers-2026.jpeg",
+              "caption": "NeuroPi Edge - Economic Times Industry Achievers 2026"
+            },
+            {
+              "src": "media/images/prof-aperna-volluru-et-industry-achievers-2026.jpeg",
+              "caption": "Prof. Aperna Volluru - ET Industry Achievers 2026"
+            },
+            {
+              "src": "media/images/prof-aperna-volluru.jpeg",
+              "caption": "Prof. Aperna Volluru - Profile"
+            }
+          ],
+          "partners": [
+            { "Image_Name": "BusinessWire_India", "Website_URL": "https://www.businesswireindia.com/" },
+            { "Image_Name": "The_CEO_Magazine", "Website_URL": "https://www.theceo.in/business-express?for=N&Value=Xsi8ygvPY0TubqUcPB0JKgglADzBuoC6kgjvzaam3qmSqQiJyHTuKhUZsAI%3d" },
+            { "Image_Name": "TimesTech", "Website_URL": "https://timestech.in/businesswire/?for=N&Value=pixdUaQn7PFpBa7k5O7bSwhPeqZoFRIPqQhyNhBAhARdjwi2LUVg90wvgwI%3d" },
+            { "Image_Name": "SME_Street", "Website_URL": "https://smestreet.in/infocus/business-wire-india-news-1518393?for=N&Value=vkA6azsagitx2bBIJjE7CQj9RH%2bxsL7pVAjlcyoJKoaJRwg9rjHYGPkBEgI%3d" },
+            { "Image_Name": "Education_Times", "Website_URL": "https://theeducationtimes.in/" },
+            { "Image_Name": "India_Shorts", "Website_URL": "https://indiashorts.com/" },
+            { "Image_Name": "Business_Upturn", "Website_URL": "https://www.businessupturn.com/" },
+            { "Image_Name": "New_Delhi_Times", "Website_URL": "https://www.newdelhitimes.com/" },
+            { "Image_Name": "Consumer_Infoline", "Website_URL": "https://consumerinfoline.com/" },
+            { "Image_Name": "MediCircle", "Website_URL": "https://medicircle.in/" },
+            { "Image_Name": "The_Startup_Post", "Website_URL": "https://thestartuppost.com/" },
+            { "Image_Name": "USA_News_Hour", "Website_URL": "https://usanewshour.com/" },
+            { "Image_Name": "UK_News_Hour", "Website_URL": "https://uknewshour.com/" },
+            { "Image_Name": "NYNewsly", "Website_URL": "https://nynewsly.com/" },
+            { "Image_Name": "News_In_Asia", "Website_URL": "https://newsinasia.com/" },
+            { "Image_Name": "Punjab_News_Express", "Website_URL": "http://punjabnewsexpress.com/" },
+            { "Image_Name": "Afternoon_Voice", "Website_URL": "https://www.afternoonvoice.com/" },
+            { "Image_Name": "Marketing_News_Online", "Website_URL": "https://marketingnewsonline.com/" },
+            { "Image_Name": "First_News", "Website_URL": "https://firstnewswallet.com/" },
+            { "Image_Name": "Business_News_Matrix", "Website_URL": "https://businessnewsmatrix.com/" },
+            { "Image_Name": "Business_News_Matters", "Website_URL": "https://businessnewsmatters.com/" },
+            { "Image_Name": "The_9th_Estate", "Website_URL": "https://the9thestate.com/" },
+            { "Image_Name": "Right_Column_Media", "Website_URL": "https://rightcolumnmedia.com/" },
+            { "Image_Name": "News_Files", "Website_URL": "https://newsfiles.in/" },
+            { "Image_Name": "OdishaRay", "Website_URL": "https://odisharay.com/" },
+            { "Image_Name": "Business_Micro", "Website_URL": "https://businessmicro.in/" },
+            { "Image_Name": "News_Keeda", "Website_URL": "https://newskeeda.com/" },
+            { "Image_Name": "Report365", "Website_URL": "https://report365.in/" },
+            { "Image_Name": "Quick_Biz_News", "Website_URL": "https://quickbiznews.com/" },
+            { "Image_Name": "5_Dariya_News", "Website_URL": "https://5dariyanews.com/" },
+            { "Image_Name": "Smart_Business_News", "Website_URL": "https://smartbusinessnews.com/" },
+            { "Image_Name": "Nasheman", "Website_URL": "https://nasheman.in/" },
+            { "Image_Name": "News_Crazy", "Website_URL": "https://newscrazy.com/" },
+            { "Image_Name": "MTI_News", "Website_URL": "https://mtinews.in/" },
+            { "Image_Name": "Biz_RapidX", "Website_URL": "https://bizrapidx.com/" },
+            { "Image_Name": "News_Drinker", "Website_URL": "https://newsdrinker.com/" },
+            { "Image_Name": "Cine_Buzz_News", "Website_URL": "https://cinebuzznews.com/" },
+            { "Image_Name": "Online_News_9", "Website_URL": "https://onlinenews9.in/" },
+            { "Image_Name": "Media_Express24", "Website_URL": "https://mediaexpress24.com/" },
+            { "Image_Name": "Biz_News_Daily", "Website_URL": "https://biznewsdaily.com/" }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "2025",
+      "months": [
+        {
+          "month": "12",
+          "monthName": "December",
+          "videos": [
+            {
+              "type": "youtube",
+              "youtubeId": "5OaJUbJyge0",
+              "title": "NeuroPi Presentation @ Capital HQ"
+            }
+          ],
+          "articles": [
+            "In December 2025, NeuroPi was invited to present at Capital HQ, Bengaluru, where it was recognized as one of three global companies selected to showcase for a Series-A funding round. The event brought together leading investors, venture capital firms, and innovation leaders to explore breakthrough technologies shaping the future. During the presentation, Dr. Aperna Volluru, Founder & CEO of NeuroPi, introduced NeuroPi as a deep-technology platform integrating neuroscience, genetics, epigenetics, and artificial intelligence to enhance human development across education, sports performance, wellness, and human alignment. The session highlighted NeuroPi\u2019s vision of building a human-performance intelligence ecosystem capable of helping individuals, institutions, and societies understand biological predispositions and design environments that unlock human potential. This presentation marked an important milestone in NeuroPi\u2019s journey toward global partnerships and Series-A investment, positioning the platform as an emerging leader at the intersection of science, technology, and human development."
+          ],
+          "images": [
+            {
+              "src": "media/images/capital-hq-presentation-1.jpg",
+              "caption": "NeuroPi Presentation at Capital HQ - Bengaluru (1)"
+            },
+            {
+              "src": "media/images/capital-hq-presentation-2.jpg",
+              "caption": "NeuroPi Presentation at Capital HQ - Bengaluru (2)"
+            },
+            {
+              "src": "media/images/capital-hq-presentation-3.jpg",
+              "caption": "NeuroPi Presentation at Capital HQ - Bengaluru (3)"
+            },
+            {
+              "src": "media/images/capital-hq-presentation-4.jpg",
+              "caption": "NeuroPi Presentation at Capital HQ - Bengaluru (4)"
+            },
+            {
+              "src": "media/images/capital-hq-presentation-5.jpg",
+              "caption": "NeuroPi Presentation at Capital HQ - Bengaluru (5)"
+            },
+            {
+              "src": "media/images/capital-hq-presentation-6.jpg",
+              "caption": "NeuroPi Presentation at Capital HQ - Bengaluru (6)"
+            }
+          ],
+          "partners": []
+        }
+      ]
+    }
+  ]
+}

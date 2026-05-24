@@ -1,0 +1,157 @@
+.media-tabs-layout {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+  align-items: flex-start;
+}
+
+.media-tabs-sidebar {
+  flex: 0 0 200px;
+  min-width: 160px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 20px;
+}
+
+.media-tabs-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.year-tab {
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a4255;
+  border-left: 4px solid transparent;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.year-tab:hover {
+  background: #e9ecef;
+  border-left-color: #c0c8cc;
+}
+
+.year-tab.active {
+  background: #fff;
+  border-left-color: #ff471d;
+  color: #ff471d;
+}
+
+.year-tab .arrow {
+  font-size: 12px;
+  transition: transform 0.25s ease;
+  display: inline-block;
+}
+
+.year-tab .arrow.open {
+  transform: rotate(90deg);
+}
+
+.month-list {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.month-list.open {
+  max-height: 500px;
+}
+
+.month-tab {
+  padding: 8px 20px 8px 36px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.month-tab:hover {
+  background: #e9ecef;
+  color: #1a4255;
+}
+
+.month-tab.active {
+  background: #fff;
+  border-left-color: #ff471d;
+  color: #1a4255;
+  font-weight: 700;
+}
+
+/* Content sections */
+.tab-content-section {
+  display: none;
+  animation: fadeIn 0.35s ease;
+}
+
+.tab-content-section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tab-section-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a4255;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.tab-section-empty {
+  padding: 40px 20px;
+  text-align: center;
+  color: #999;
+  font-size: 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .media-tabs-layout {
+    flex-direction: column;
+  }
+  .media-tabs-sidebar {
+    flex: none;
+    width: 100%;
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 5px;
+  }
+  .year-tab {
+    flex: 1 1 auto;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+  .year-tab.active {
+    border-left: none;
+    border-bottom-color: #ff471d;
+  }
+  .month-list {
+    width: 100%;
+  }
+  .month-tab {
+    padding: 6px 15px;
+    font-size: 13px;
+  }
+}
