@@ -209,19 +209,21 @@
 
   // Toggle Button
   const btn = document.createElement('button');
-  btn.className = 'np-translate-btn';
+  btn.className = 'np-translate-btn notranslate';
+  btn.setAttribute('translate', 'no');
   btn.innerHTML = `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="10"></circle>
-      <line x1="2" y1="12" x2="22" y2="12"></line>
-      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="notranslate" translate="no">
+      <circle cx="12" cy="12" r="10" class="notranslate" translate="no"></circle>
+      <line x1="2" y1="12" x2="22" y2="12" class="notranslate" translate="no"></line>
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" class="notranslate" translate="no"></path>
     </svg>
-    <span class="np-translate-btn-label">Translate</span>
+    <span class="np-translate-btn-label notranslate" translate="no">Translate</span>
   `;
 
   // Dropdown Menu
   const dropdown = document.createElement('div');
-  dropdown.className = 'np-translate-dropdown';
+  dropdown.className = 'np-translate-dropdown notranslate';
+  dropdown.setAttribute('translate', 'no');
 
   // Render options inside Dropdown
   function renderOptions() {
@@ -234,17 +236,18 @@
 
     languages.forEach(lang => {
       const option = document.createElement('div');
-      option.className = `np-translate-option ${lang.code === activeLang ? 'active' : ''}`;
+      option.className = `np-translate-option notranslate ${lang.code === activeLang ? 'active' : ''}`;
+      option.setAttribute('translate', 'no');
       option.innerHTML = `
-        <div class="np-translate-option-left">
-          <img class="np-translate-flag" src="https://flagcdn.com/w40/${lang.flagCode}.png" alt="${lang.name} flag">
-          <div class="np-translate-names">
-            <span class="np-translate-native">${lang.nativeName}</span>
-            ${lang.code !== 'en' ? `<span class="np-translate-english">${lang.name}</span>` : ''}
+        <div class="np-translate-option-left notranslate" translate="no">
+          <img class="np-translate-flag notranslate" src="https://flagcdn.com/w40/${lang.flagCode}.png" alt="${lang.name} flag" translate="no">
+          <div class="np-translate-names notranslate" translate="no">
+            <span class="np-translate-native notranslate" translate="no">${lang.nativeName}</span>
+            ${lang.code !== 'en' ? `<span class="np-translate-english notranslate" translate="no">${lang.name}</span>` : ''}
           </div>
         </div>
-        <svg class="np-translate-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="20 6 9 17 4 12"></polyline>
+        <svg class="np-translate-check notranslate" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" translate="no">
+          <polyline points="20 6 9 17 4 12" class="notranslate" translate="no"></polyline>
         </svg>
       `;
 
@@ -269,9 +272,21 @@
     } else {
       // If widget not loaded yet, write cookie manually and refresh page
       const domain = window.location.hostname;
+      const secureFlag = window.location.protocol === 'https:' ? '; Secure' : '';
+      
+      // Clear any conflicting cookie first
+      document.cookie = `googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
+      if (domain.includes('.')) {
+        document.cookie = `googtrans=; path=/; domain=.${domain}; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
+        document.cookie = `googtrans=; path=/; domain=${domain}; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
+      }
+      
       // Set cookies for both the current hostname and root domain
-      document.cookie = `googtrans=/en/${langCode}; path=/;`;
-      document.cookie = `googtrans=/en/${langCode}; path=/; domain=.${domain};`;
+      document.cookie = `googtrans=/en/${langCode}; path=/; SameSite=Lax${secureFlag}`;
+      if (domain.includes('.')) {
+        document.cookie = `googtrans=/en/${langCode}; path=/; domain=.${domain}; SameSite=Lax${secureFlag}`;
+        document.cookie = `googtrans=/en/${langCode}; path=/; domain=${domain}; SameSite=Lax${secureFlag}`;
+      }
       window.location.reload();
     }
   }
