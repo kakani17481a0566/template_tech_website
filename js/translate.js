@@ -204,6 +204,8 @@
   // Create UI Structure
   const widget = document.createElement('div');
   widget.id = 'np-translate-widget';
+  widget.className = 'notranslate';
+  widget.setAttribute('translate', 'no');
 
   // Toggle Button
   const btn = document.createElement('button');
