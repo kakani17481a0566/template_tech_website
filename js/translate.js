@@ -13,7 +13,8 @@
     { code: 'es', name: 'Spanish', nativeName: 'Español', flagCode: 'es' },
     { code: 'fr', name: 'French', nativeName: 'Français', flagCode: 'fr' },
     { code: 'de', name: 'German', nativeName: 'Deutsch', flagCode: 'de' },
-    { code: 'it', name: 'Italian', nativeName: 'Italiano', flagCode: 'it' }
+    { code: 'it', name: 'Italian', nativeName: 'Italiano', flagCode: 'it' },
+    { code: 'ja', name: 'Japanese', nativeName: '日本語', flagCode: 'jp' }
   ];
 
   // Inject CSS Styles
