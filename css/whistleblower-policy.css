@@ -1,0 +1,221 @@
+/* ===== Whistle Blower Policy - Complete Styles ===== */
+
+/* ── Page Header ── */
+.policy-page-header {
+  background: #f8f9fa;
+  border-bottom: 3px solid #008281;
+  padding: 28px 0 24px;
+}
+.policy-page-header h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a4255;
+}
+
+/* ── Article Container ── */
+.policy-container {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 120px 20px 60px;
+}
+
+/* ── Article ── */
+.policy--neuropi {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* ── Title ── */
+.policy--neuropi > h2:first-child {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a4255;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 8px;
+}
+.policy--neuropi h2 svg {
+  stroke: #008281;
+  flex-shrink: 0;
+}
+.policy__icon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+}
+
+/* ── Meta ── */
+.policy__meta {
+  margin: 0 0 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* ── Index ── */
+.policy-index {
+  background: #f4f8f9;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.policy-index h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a4255;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 12px;
+}
+.policy-index ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+}
+.policy-index li {
+  margin: 0;
+}
+.policy-index a {
+  color: #008281;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+.policy-index a:hover {
+  text-decoration: underline;
+}
+
+/* ── Section Headings ── */
+.policy--neuropi h3 {
+  font-size: 19px;
+  font-weight: 700;
+  color: #1a4255;
+  margin: 32px 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.policy--neuropi h3 svg {
+  width: 22px;
+  height: 22px;
+  stroke: #008281;
+  flex-shrink: 0;
+}
+.policy--neuropi h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #008281;
+  margin: 20px 0 8px;
+}
+
+/* ── Body Text ── */
+.policy--neuropi p {
+  font-size: 16px;
+  margin: 0 0 12px;
+  color: #333;
+}
+.policy--neuropi ul,
+.policy--neuropi ol {
+  margin: 0 0 16px;
+  padding-left: 24px;
+}
+.policy--neuropi li {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+/* ── Channels Box ── */
+.policy__channels-box {
+  background: #f4f8f9;
+  border-left: 4px solid #008281;
+  border-radius: 0 10px 10px 0;
+  padding: 20px 24px;
+  margin: 16px 0 20px;
+}
+.policy__channel {
+  margin: 10px 0;
+}
+.policy__channel-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #1a4255;
+  min-width: 140px;
+}
+.policy__channel-label svg {
+  width: 18px;
+  height: 18px;
+  stroke: #008281;
+  flex-shrink: 0;
+}
+.policy__channels-box a {
+  color: #008281;
+  font-weight: 600;
+}
+.policy__channels-box a:hover {
+  color: #ff471d;
+}
+
+/* ── Stance Box ── */
+.policy__stance {
+  margin: 40px 0 0;
+  padding: 28px 30px;
+  background: linear-gradient(135deg, #008281 0%, #1a4255 100%);
+  border-radius: 12px;
+  color: #fff;
+}
+.policy__stance h3 {
+  margin: 0 0 10px !important;
+  color: #fff !important;
+}
+.policy__stance p {
+  margin: 0 !important;
+  color: #fff !important;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ── NeuroPi Brand Color ── */
+.neuropi-orange {
+  color: #ff471d;
+}
+
+/* ── Responsive ── */
+@media (max-width: 767px) {
+  .policy-container {
+    padding: 100px 16px 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .policy-container {
+    padding: 90px 16px 40px;
+  }
+  .policy--neuropi > h2:first-child {
+    font-size: 20px;
+  }
+  .policy--neuropi h3 {
+    font-size: 17px;
+  }
+  .policy-index ul {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .policy__channel-label {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .policy-container {
+    padding-top: 76px;
+  }
+}
