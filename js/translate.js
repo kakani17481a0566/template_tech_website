@@ -329,9 +329,16 @@
   gtDiv.style.display = 'none';
   document.body.appendChild(gtDiv);
 
-  // Load Google Translate API Script
-  const gtScript = document.createElement('script');
-  gtScript.type = 'text/javascript';
-  gtScript.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-  document.body.appendChild(gtScript);
+  // Load Google Translate API Script on first interaction (lazy load to reduce cookie impact)
+  var _gtLoaded = false;
+  function loadGoogleTranslate() {
+    if (_gtLoaded) return;
+    _gtLoaded = true;
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.body.appendChild(s);
+  }
+  btn.addEventListener('mouseenter', loadGoogleTranslate, { once: true });
+  btn.addEventListener('touchstart', loadGoogleTranslate, { once: true });
 })();
