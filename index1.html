@@ -48,7 +48,6 @@
 
 
   <link rel="stylesheet" href="footer.css">
-  <script src="c/index.a05c254c.js.download" defer=""></script>
   <link rel="stylesheet" href="./css/nav_home.css">
   <link rel="stylesheet" href="./css/index/box_flip.css">
 
@@ -189,7 +188,7 @@
 
       <!-- Slide Menu -->
       <div class="neuropi-menu-panel" id="neuropiSlideMenu" aria-hidden="true">
-        <button class="neuropi-menu-close" onclick="neuropiToggleMenu()" aria-label="Close menu">Ã—</button>
+        <button class="neuropi-menu-close" onclick="neuropiToggleMenu()" aria-label="Close menu">&times;</button>
 
         <ul class="neuropi-menu-list" id="neuropi-nav-links">
           <li><a href="index.html">HOME</a></li>
@@ -2028,9 +2027,11 @@
       const toggle = document.getElementById("menu-toggle");
       const navLinks = document.getElementById("nav-links");
 
-      toggle.addEventListener("click", function () {
-        navLinks.classList.toggle("show");
-      });
+      if (toggle && navLinks) {
+        toggle.addEventListener("click", function () {
+          navLinks.classList.toggle("show");
+        });
+      }
     });
   </script>
   <script>
@@ -2107,28 +2108,30 @@
   <script>
     const video = document.getElementById("bgVideo");
 
-    // Catch general video element errors
-    video.addEventListener("error", function (e) {
-      console.error("âŒ Video element error:", e);
-      alert("âš ï¸ Video failed to load. Please check the file path or format.");
-    });
+    if (video) {
+      // Catch general video element errors
+      video.addEventListener("error", function (e) {
+        console.error("Video element error:", e);
+      });
 
-    // Catch source load errors
-    const source = video.querySelector("source");
-    source.onerror = function (e) {
-      console.error("âŒ Video source error:", e);
-      alert("âš ï¸ Video source could not be loaded.");
-    };
+      // Catch source load errors
+      const source = video.querySelector("source");
+      if (source) {
+        source.onerror = function (e) {
+          console.error("Video source error:", e);
+        };
+      }
 
-    // Optional: Log success once video starts playing
-    video.addEventListener("playing", function () {
-      console.log("âœ… Background video is playing successfully.");
-    });
+      // Log success once video starts playing
+      video.addEventListener("playing", function () {
+        console.log("Background video is playing successfully.");
+      });
 
-    // Optional: Log when the video is ready
-    video.addEventListener("canplaythrough", function () {
-      console.log("ðŸŽ¥ Video loaded and ready to play through.");
-    });
+      // Log when the video is ready
+      video.addEventListener("canplaythrough", function () {
+        console.log("Video loaded and ready to play through.");
+      });
+    }
   </script>
 
   <script>
