@@ -8,8 +8,8 @@ https://neuropi.ai/Sports_main.html
 https://neuropi.ai/teens_main.html
 https://neuropi.ai/Midlife.html
 https://neuropi.ai/AeroSpace_new.html
-https://neuropi.ai/About_us_maiin.html
-https://neuropi.ai/Privacy-Policy.html
-https://neuropi.ai/Terms-of-Service.html
-https://neuropi.ai/Aperna.html
+https://neuropi.ai/about-us.html
+https://neuropi.ai/privacy-policy.html
+https://neuropi.ai/terms-of-service.html
+https://neuropi.ai/aperna.html
 
