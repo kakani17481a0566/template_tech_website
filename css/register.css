@@ -163,12 +163,65 @@ h2 {
 }
 
 .form-group label {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 8px;
   color: #1e293b;
   font-weight: 600;
   font-size: 14px;
   letter-spacing: 0.2px;
+}
+
+.autofill-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+  white-space: nowrap;
+  line-height: 1.6;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.autofill-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(16, 185, 129, 0.4);
+}
+
+.autofill-btn:active {
+  transform: translateY(0);
+}
+
+.autofill-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.autofill-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E") no-repeat center center;
+  background-size: contain;
+  flex-shrink: 0;
+}
+
+.autofill-icon.spinning {
+  animation: autofillSpin 0.8s linear infinite;
+}
+
+@keyframes autofillSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* ===== INPUTS ===== */

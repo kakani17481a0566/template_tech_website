@@ -256,6 +256,62 @@ function hideLoadingSpinner() {
   }
 }
 
+/**
+ * Auto-fill Address using Geolocation API + Nominatim reverse geocoding
+ */
+function autoFillAddress() {
+  const btn = document.getElementById('autofillAddrBtn');
+  if (!navigator.geolocation) {
+    alert('Geolocation is not supported by your browser.');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="autofill-icon spinning"></span> Locating...';
+
+  navigator.geolocation.getCurrentPosition(
+    async (position) => {
+      const { latitude, longitude } = position.coords;
+      try {
+        const res = await fetch(
+          `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&addressdetails=1`,
+          { headers: { 'Accept-Language': 'en' } }
+        );
+        const data = await res.json();
+        const addr = data.address || {};
+
+        const street = [addr.road, addr.house_number, addr.suburb, addr.neighbourhood]
+          .filter(Boolean).join(', ');
+        const city = addr.city || addr.town || addr.village || addr.municipality || addr.county || '';
+        const state = addr.state || '';
+        const pincode = addr.postcode || '';
+        const country = addr.country || '';
+
+        if (street)  document.getElementById('address').value = street;
+        if (city)    document.querySelector('input[name="city"]').value = city;
+        if (state)   document.querySelector('input[name="state"]').value = state;
+        if (pincode) document.querySelector('input[name="pincode"]').value = pincode;
+        if (country) document.querySelector('input[name="country"]').value = country;
+
+        btn.innerHTML = '<span class="autofill-icon"></span> Auto-filled';
+        setTimeout(() => { btn.innerHTML = '<span class="autofill-icon"></span> Use My Location'; btn.disabled = false; }, 3000);
+      } catch (err) {
+        console.error('Reverse geocoding failed:', err);
+        alert('Could not fetch address details. Please fill manually.');
+        btn.innerHTML = '<span class="autofill-icon"></span> Use My Location';
+        btn.disabled = false;
+      }
+    },
+    (err) => {
+      console.error('Geolocation error:', err);
+      alert('Location access denied or unavailable. Please fill address manually.');
+      btn.innerHTML = '<span class="autofill-icon"></span> Use My Location';
+      btn.disabled = false;
+    },
+    { enableHighAccuracy: true, timeout: 10000 }
+  );
+}
+
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initFormHandler);
