@@ -1481,9 +1481,9 @@
       <style>
         /* Responsive bottom bar padding + wrapping */
         .footer-bottom {
-          /* replace fixed 200px padding with fluid spacing for all screens */
-          padding-left: clamp(16px, 5vw, 200px) !important;
-          padding-right: clamp(16px, 5vw, 200px) !important;
+          /* Match container padding: 6rem = 60px at desktop */
+          padding-left: 6rem !important;
+          padding-right: 6rem !important;
           display: flex !important;
           justify-content: space-between !important;
           align-items: center !important;
@@ -1528,8 +1528,26 @@
           height: clamp(24px, 4vw, 40px) !important;
         }
 
-        /* Optional: slightly smaller text on very small screens */
-        @media (max-width: 480px) {
+        /* Responsive: match container padding at each breakpoint */
+        @media screen and (max-width: 991px) {
+          .footer-bottom {
+            padding-left: 4rem !important;
+            padding-right: 4rem !important;
+          }
+        }
+
+        @media screen and (max-width: 767px) {
+          .footer-bottom {
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
+          }
+        }
+
+        @media screen and (max-width: 476px) {
+          .footer-bottom {
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
+          }
 
           .footer-bottom .footer-left a,
           .footer-bottom .footer-left div {
