@@ -189,11 +189,10 @@
 }
 
 
-/* Role stays on one line; ellipsis if too long */
+/* Role text */
 .unz-card .card-content .role {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 13px;
+  line-height: 1.3;
 }
 
 /* Inline button (non-overlay) */

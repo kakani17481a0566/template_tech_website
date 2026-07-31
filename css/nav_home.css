@@ -14,7 +14,7 @@
   inset: 0 0 auto 0;
   width: 100%;
   background: transparent;
-  padding: 1rem 2rem;
+  padding: 1rem 6rem;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
@@ -152,6 +152,9 @@
     width: 55%;
     right: -55%;
   }
+  .neuropi-nav-bar {
+    padding: 1rem 4rem;
+  }
 }
 
 /* ===== Nav action buttons – all 3 (Menu / CarpeDiem / Log In) ===== */
@@ -197,6 +200,10 @@
 @media (max-width: 767px) {
   .neuropi-nav-brand img {
     height: 56px;
+  }
+
+  .neuropi-nav-bar {
+    padding: 1rem 2rem;
   }
 
   .neuropi-menu-panel {
