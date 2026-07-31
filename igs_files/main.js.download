@@ -96234,12 +96234,6 @@ var render = function() {
                     "ul",
                     { staticClass: "child" },
                     [
-                      _c("li", { staticClass: "child-title" }, [
-                        _c("span", {
-                          domProps: { innerHTML: _vm._s(navItem.title) }
-                        })
-                      ]),
-                      _vm._v(" "),
                       _vm._l(_vm.navItems(navItem), function(secondaryNavItem) {
                         return _c("li", { key: secondaryNavItem.ID }, [
                           _c(
