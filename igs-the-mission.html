@@ -995,7 +995,7 @@
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             }; if (!f._fbq) f._fbq = n;
             n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
             t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
@@ -2018,11 +2018,11 @@
 
                         </div>
                     </div>
-                      <div class="col-12 col-lg-4 inner-content d-flex align-items-center justify-content-end">
-                            <a href="foundation/" target="_blank" class="link-more" tabindex="0" id="discoverMoreBtn">
-                                Discover More
-                            </a>
-                        </div>
+                    <div class="col-12 col-lg-4 inner-content d-flex align-items-center justify-content-end">
+                                    <a href="foundation/" target="_blank" class="link-more" tabindex="0" id="discoverMoreBtn" data-drawer-target="missionDrawer">
+                                        Discover More
+                                    </a>
+                    </div>
                 </div>
             </div>
             <div class="section gateway-link theme-orange_pastel image-none fade-in">
@@ -2030,19 +2030,24 @@
                     <div class="row gateway-link__row">
                         <div class="col-12 col-md-6  link-content">
                             <div class="content container">
-                                <h3 class="heading">The IGS Advantage</h3>
+                                <h3 class="heading">Every Child Matters</h3>
 
                                 <h2 class="title">
-                                    Equipping our students to be world ready
+                                  OUR MISSION
+
                                 </h2>
 
                                 <div class="inner-content">
-                                    <p>IGS offers an extraordinary bilingual, secular education for girls and boys from
-                                        Preschool to Year 12.</p>
+                                    <p>To unite parents, families, educators, healthcare
+professionals, researchers, governments, schools,
+universities, civil society, corporations, and
+citizens in a nationwide movement that places the
+first 2,000 days of every child’s life at the centre of
+India’s development.</p>
 
 
                                     <a href="https://www.igssyd.nsw.edu.au/about-us/the-igs-advantage/" target=""
-                                        class="link-more">
+                                        class="link-more" tabindex="0" id="advantageMoreBtn" data-drawer-target="learnMoreDrawer">
                                         The IGS Advantage
                                     </a>
 
@@ -2082,19 +2087,24 @@
                         </div>
                         <div class="col-12 col-md-6  link-content">
                             <div class="content container">
-                                <h3 class="heading">VISION &amp; VALUES</h3>
+                                <h3 class="heading">Every Child Matters</h3>
 
                                 <h2 class="title">
-                                    A community of global citizens
+                           OUR MISSION
+
                                 </h2>
 
                                 <div class="inner-content">
-                                    <p>Our core values reflect a charter of diversity, individual and social
-                                        responsibility and respect for self and others.</p>
+                                    <p>To unite parents, families, educators, healthcare
+professionals, researchers, governments, schools,
+universities, civil society, corporations, and
+citizens in a nationwide movement that places the
+first 2,000 days of every child’s life at the centre of
+India’s development.</p>
 
 
                                     <a href="https://www.igssyd.nsw.edu.au/about-us/vision-values/" target=""
-                                        class="link-more">
+                                        class="link-more" tabindex="0" id="learnMoreBtn" data-drawer-target="learnMoreDrawer">
                                         Learn more
                                     </a>
 
@@ -2134,19 +2144,21 @@
                         </div>
                         <div class="col-12 col-md-6 pull-md-6 link-content">
                             <div class="content container">
-                                <h3 class="heading">About Our Principal</h3>
+                                <h3 class="heading">Childhood First</h3>
 
                                 <h2 class="title">
-                                    Read about our Principal Shauna Colnan
+                               OUR CORE VALUES
+
                                 </h2>
 
                                 <div class="inner-content">
-                                    <p>Shauna Colnan&nbsp;has held significant leadership roles in some of Sydney’s
-                                        leading independent schools.</p>
+                                    <p>The earliest years are not preparation for life—
+they are life itself. Every decision should place the
+child’s development at its heart.</p>
 
 
                                     <a href="https://www.igssyd.nsw.edu.au/about-us/about-our-principal/" target=""
-                                        class="link-more">
+                                        class="link-more" tabindex="0" id="valuesMoreBtn" data-drawer-target="valuesDrawer">
                                         Learn more
                                     </a>
 
@@ -2735,6 +2747,82 @@
         </div>
     </div>
 
+    <div id="learnMoreDrawer" class="drawer-overlay" aria-hidden="true">
+        <div class="drawer" role="dialog" aria-modal="true" aria-label="OUR MISSION">
+            <button type="button" class="drawer-close" aria-label="Close">&#xD7;</button>
+            <div class="drawer-content">
+                <span class="drawer-eyebrow">Mission 2000</span>
+                <h2 class="title">OUR MISSION</h2>
+                <p class="drawer-lead">Mission 2000 seeks to:</p>
+                <ul class="drawer-list">
+                    <li>Promote awareness of the critical importance of the first 2,000 days.</li>
+                    <li>Support parents as a child&rsquo;s first and most influential teachers.</li>
+                    <li>Elevate the status and professional development of early childhood educators.</li>
+                    <li>Encourage evidence-based practices grounded in neuroscience, child development, nutrition,
+                        psychology, and education.</li>
+                    <li>Foster collaboration across public, private, and community sectors.</li>
+                    <li>Inspire innovation through research, technology, and responsible use of artificial
+                        intelligence.</li>
+                    <li>Advocate policies that strengthen children, families, and early learning ecosystems.</li>
+                    <li>Build a national culture that celebrates childhood as the foundation of human potential.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="valuesDrawer" class="drawer-overlay" aria-hidden="true">
+        <div class="drawer" role="dialog" aria-modal="true" aria-label="OUR CORE VALUES">
+            <button type="button" class="drawer-close" aria-label="Close">&#xD7;</button>
+            <div class="drawer-content">
+                <span class="drawer-eyebrow">Mission 2000</span>
+                <h2 class="title">OUR CORE VALUES</h2>
+
+                <h4>Every Child Matters</h4>
+                <p>Every child possesses limitless potential and deserves an equal opportunity to thrive.</p>
+
+                <h4>Science with Compassion</h4>
+                <p>We embrace the latest research in neuroscience, psychology, health, nutrition, and education while
+                    recognising that love, relationships, and human connection remain the greatest influences on a
+                    child&rsquo;s development.</p>
+
+                <h4>Parents as Partners</h4>
+                <p>Parents and families are a child&rsquo;s first teachers. Mission 2000 exists to support, not
+                    replace, their essential role.</p>
+
+                <h4>Teachers Build Nations</h4>
+                <p>Early childhood educators shape the minds, character, confidence, and curiosity of future
+                    generations. They deserve recognition, respect, continuous learning, and professional excellence.
+                </p>
+
+                <h4>Learning Through Joy</h4>
+                <p>Children learn best through play, exploration, imagination, creativity, movement, language, music,
+                    and meaningful relationships.</p>
+
+                <h4>Equity and Inclusion</h4>
+                <p>Every child&mdash;regardless of economic status, gender, language, culture, ability, or
+                    location&mdash;deserves access to high-quality early childhood development.</p>
+
+                <h4>Collaboration Over Competition</h4>
+                <p>No single organisation can transform childhood alone. Governments, schools, healthcare providers,
+                    universities, NGOs, businesses, communities, and families must work together toward a shared
+                    national purpose.</p>
+
+                <h4>Innovation for Humanity</h4>
+                <p>Technology and artificial intelligence should enhance human potential, empower educators, strengthen
+                    families, and expand opportunities&mdash;always guided by ethics, responsibility, and the best
+                    interests of the child.</p>
+
+                <h4>Integrity and Accountability</h4>
+                <p>We act with transparency, honesty, evidence, and responsibility, ensuring that every initiative
+                    serves children and earns the trust of society.</p>
+
+                <h4>Lifelong Learning</h4>
+                <p>The first 2,000 days lay the foundation for a lifetime of curiosity, resilience, creativity,
+                    wellbeing, and continuous growth.</p>
+            </div>
+        </div>
+    </div>
+
     <style>
         :root {
             --igs-deep-navy: #0A1539;
@@ -2828,6 +2916,125 @@
             margin: 0 0 16px;
         }
 
+        .drawer-content .drawer-lead {
+            font-size: 1.0625rem;
+            font-weight: 600;
+            color: var(--igs-deep-navy);
+        }
+
+        .drawer-content h4 {
+            font-size: 1.0625rem;
+            line-height: 1.4;
+            color: var(--igs-saffron);
+            margin: 30px 0 10px;
+        }
+
+        .drawer-content .drawer-list {
+            margin: 0 0 16px;
+            padding-left: 20px;
+        }
+
+        .drawer-content .drawer-list li {
+            font-size: 0.9375rem;
+            line-height: 1.75;
+            color: var(--igs-primary-navy);
+            margin: 0 0 10px;
+        }
+
+        .drawer-acc-item {
+            border-top: 3px solid var(--igs-deep-navy);
+            padding-top: 6px;
+        }
+
+        .drawer-acc-item:last-child {
+            border-bottom: 3px solid var(--igs-deep-navy);
+            padding-bottom: 10px;
+        }
+
+        .drawer-acc-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            width: 100%;
+            padding: 16px 0;
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+            text-align: left;
+            font-family: inherit;
+            font-size: inherit;
+            color: inherit;
+        }
+
+        .drawer-acc-head:hover .drawer-acc-title {
+            color: var(--igs-primary-navy);
+        }
+
+        .drawer-acc-title {
+            font-size: 1.0625rem;
+            font-weight: 700;
+            line-height: 1.4;
+            color: var(--igs-saffron);
+            transition: color 0.2s ease;
+        }
+
+        .drawer-acc-icon {
+            flex: 0 0 22px;
+            width: 22px;
+            height: 22px;
+            position: relative;
+            border: 2px solid var(--igs-saffron);
+            border-radius: 50%;
+            transition: border-color 0.2s ease, transform 0.3s ease;
+        }
+
+        .drawer-acc-icon::before,
+        .drawer-acc-icon::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background: var(--igs-saffron);
+            transition: transform 0.3s ease, background 0.2s ease;
+        }
+
+        .drawer-acc-icon::before {
+            width: 10px;
+            height: 2px;
+            transform: translate(-50%, -50%);
+        }
+
+        .drawer-acc-icon::after {
+            width: 2px;
+            height: 10px;
+            transform: translate(-50%, -50%);
+        }
+
+        .drawer-acc-item.open .drawer-acc-icon {
+            border-color: #042562;
+            transform: rotate(180deg);
+        }
+
+        .drawer-acc-item.open .drawer-acc-icon::before,
+        .drawer-acc-item.open .drawer-acc-icon::after {
+            background: #042562;
+        }
+
+        .drawer-acc-item.open .drawer-acc-icon::after {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        .drawer-acc-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .drawer-acc-item.open .drawer-acc-body {
+            max-height: 2000px;
+        }
+
         @media (max-width: 640px) {
             .drawer {
                 padding: 36px 28px 56px;
@@ -2837,37 +3044,129 @@
 
     <script>
         (function () {
-            var btn = document.getElementById('discoverMoreBtn');
-            var overlay = document.getElementById('missionDrawer');
+            var drawers = {
+                missionDrawer: document.getElementById('missionDrawer'),
+                learnMoreDrawer: document.getElementById('learnMoreDrawer'),
+                valuesDrawer: document.getElementById('valuesDrawer')
+            };
 
-            if (!btn || !overlay) {
-                return;
-            }
-
-            function openDrawer(e) {
-                e.preventDefault();
+            function openDrawer(overlay) {
                 overlay.classList.add('open');
                 overlay.setAttribute('aria-hidden', 'false');
             }
 
-            function closeDrawer() {
+            function closeDrawer(overlay) {
                 overlay.classList.remove('open');
                 overlay.setAttribute('aria-hidden', 'true');
             }
 
-            btn.addEventListener('click', openDrawer);
+            document.addEventListener('click', function (e) {
+                var trigger = e.target && e.target.closest ? e.target.closest('a[data-drawer-target]') : null;
 
-            overlay.addEventListener('click', function (e) {
-                if (e.target === overlay || e.target.classList.contains('drawer-close')) {
-                    closeDrawer();
+                if (trigger) {
+                    e.preventDefault();
+                    var overlay = drawers[trigger.getAttribute('data-drawer-target')];
+                    if (overlay) {
+                        openDrawer(overlay);
+                    }
+                    return;
+                }
+
+                var overlayEl = e.target && e.target.closest ? e.target.closest('.drawer-overlay') : null;
+                if (overlayEl && (e.target === overlayEl || (e.target.classList && e.target.classList.contains('drawer-close')))) {
+                    closeDrawer(overlayEl);
                 }
             });
 
             document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape') {
-                    closeDrawer();
+                    for (var id in drawers) {
+                        if (drawers[id] && drawers[id].classList.contains('open')) {
+                            closeDrawer(drawers[id]);
+                        }
+                    }
                 }
             });
+
+            var drawerContents = document.querySelectorAll('.drawer-content');
+
+            for (var i = 0; i < drawerContents.length; i++) {
+                initDrawerAccordion(drawerContents[i]);
+            }
+
+            function initDrawerAccordion(content) {
+                var headings = content.querySelectorAll('h4');
+
+                for (var h = 0; h < headings.length; h++) {
+                    buildAccordionItem(content, headings[h]);
+                }
+            }
+
+            function buildAccordionItem(content, heading) {
+                var item = document.createElement('div');
+                item.className = 'drawer-acc-item';
+
+                var head = document.createElement('button');
+                head.type = 'button';
+                head.className = 'drawer-acc-head';
+                head.setAttribute('aria-expanded', 'false');
+
+                var title = document.createElement('span');
+                title.className = 'drawer-acc-title';
+                title.textContent = heading.textContent;
+
+                var icon = document.createElement('span');
+                icon.className = 'drawer-acc-icon';
+                icon.setAttribute('aria-hidden', 'true');
+
+                head.appendChild(title);
+                head.appendChild(icon);
+
+                var body = document.createElement('div');
+                body.className = 'drawer-acc-body';
+
+                var siblings = [];
+                var node = heading.nextElementSibling;
+                while (node && node.tagName !== 'H4') {
+                    siblings.push(node);
+                    node = node.nextElementSibling;
+                }
+
+                heading.parentNode.insertBefore(item, heading);
+                item.appendChild(head);
+                item.appendChild(body);
+                for (var s = 0; s < siblings.length; s++) {
+                    body.appendChild(siblings[s]);
+                }
+                heading.parentNode.removeChild(heading);
+
+                head.addEventListener('click', function () {
+                    var isOpen = item.classList.contains('open');
+                    closeAccordionItems(content);
+                    if (!isOpen) {
+                        item.classList.add('open');
+                        head.setAttribute('aria-expanded', 'true');
+                        body.style.maxHeight = body.scrollHeight + 'px';
+                    }
+                });
+            }
+
+            function closeAccordionItems(content) {
+                var items = content.querySelectorAll('.drawer-acc-item');
+                for (var i = 0; i < items.length; i++) {
+                    if (items[i].classList.contains('open')) {
+                        items[i].classList.remove('open');
+                        var h = items[i].querySelector('.drawer-acc-head');
+                        if (h) {
+                            h.setAttribute('aria-expanded', 'false');
+                        }
+                        var b = items[i].querySelector('.drawer-acc-body');
+                        if (b) {
+                            b.style.maxHeight = '0px';
+                        }
+                    }
+                }
+            }
         })();
     </script>
 </body>
