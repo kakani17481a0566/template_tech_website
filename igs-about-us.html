@@ -2244,19 +2244,22 @@
                         </div>
                         <div class="col-12 col-md-6  link-content">
                             <div class="content container">
-                                <h3 class="heading">VISION &amp; VALUES</h3>
+                                <h3 class="heading">Aligned With Our Vision</h3>
 
                                 <h2 class="title">
-                                    A community of global citizens
+                                GOVERNANCE & POLICIES
+
                                 </h2>
 
                                 <div class="inner-content">
-                                    <p>Our core values reflect a charter of diversity, individual and social
-                                        responsibility and respect for self and others.</p>
+                                    <p>Mission 2000 is a people-led national movement
+governed by the principles of transparency,
+accountability, child-first decision-making, and
+collaborative leadership.</p>
 
 
                                     <a href="https://www.igssyd.nsw.edu.au/about-us/vision-values/" target=""
-                                        class="link-more">
+                                        class="link-more" id="governanceMoreBtn">
                                         Learn more
                                     </a>
 
@@ -3000,6 +3003,48 @@
         </div>
     </div>
 
+    <div id="governanceDrawer" class="drawer-overlay" aria-hidden="true">
+        <div class="drawer" role="dialog" aria-modal="true" aria-label="GOVERNANCE &amp; POLICIES">
+            <button type="button" class="drawer-close" aria-label="Close">&#xD7;</button>
+            <div class="drawer-content">
+                <span class="drawer-eyebrow">Mission 2000</span>
+                <h2 class="title">GOVERNANCE &amp; POLICIES</h2>
+
+                <p class="drawer-lead">Our governance framework ensures that every initiative, partnership, and programme remains aligned with our vision of strengthening early childhood education across India while upholding the highest standards of integrity and public trust.</p>
+
+                <h4>Founding Enablers</h4>
+                <p>Mission 2000 has been initiated by a group of founding enablers who contribute their expertise, experience, and leadership in education, neuroscience, technology, public engagement, and institutional development. They serve as custodians of the Mission&rsquo;s vision, while recognising that the movement ultimately belongs to India&rsquo;s children and to every individual and organisation committed to their future.</p>
+
+                <h4>National Advisory Council</h4>
+                <p>The National Advisory Council brings together distinguished educators, child development experts, neuroscientists, healthcare professionals, policymakers, industry leaders, philanthropists, and social innovators. The Council provides strategic guidance, encourages innovation, and helps ensure that Mission 2000 reflects the highest standards of educational excellence and national relevance.</p>
+
+                <h4>State Chapters (Future)</h4>
+                <p>As Mission 2000 grows, State Chapters will enable regional leadership, local partnerships, and community participation across India. Each chapter will work within a common national framework while responding to the unique educational, cultural, and linguistic needs of its state, ensuring that the Mission remains locally relevant and nationally united.</p>
+
+                <h4>Ethics Charter</h4>
+                <p>Every decision within Mission 2000 is guided by a simple principle: the best interests of the child come first. Our Ethics Charter promotes honesty, fairness, inclusion, scientific integrity, respect for diversity, responsible innovation, and accountability. We are committed to creating an environment where every child, family, educator, and partner is treated with dignity and respect.</p>
+
+                <h4>Child Safeguarding Policy</h4>
+                <p>The safety and wellbeing of every child are central to Mission 2000. We maintain a zero-tolerance approach towards abuse, neglect, discrimination, exploitation, or any practice that may compromise a child&rsquo;s physical, emotional, psychological, or digital safety. All participating organisations and partners are expected to uphold robust child protection standards and comply with applicable laws and safeguarding practices.</p>
+
+                <h4>Privacy Policy</h4>
+                <p>Mission 2000 respects the privacy of every child, parent, educator, volunteer, and partner. Personal information is collected only for legitimate educational and operational purposes, handled securely, and processed responsibly in accordance with applicable data protection laws. Privacy is fundamental to maintaining the trust of the communities we serve.</p>
+
+                <h4>AI Ethics Policy</h4>
+                <p>Mission 2000 believes that artificial intelligence should strengthen human understanding&mdash;not replace human relationships. AI and technology are used responsibly to support educators, parents, and institutions while ensuring transparency, fairness, privacy, human oversight, and respect for every child&rsquo;s individuality. Technology will always remain a tool in service of people.</p>
+
+                <h4>Partnership Policy</h4>
+                <p>Mission 2000 welcomes collaboration with schools, universities, governments, NGOs, foundations, corporations, researchers, and community organisations that share our commitment to improving early childhood education. Every partnership is built on mutual respect, transparency, shared responsibility, and a common commitment to keeping children at the centre of every initiative.</p>
+
+                <h4>Financial Transparency</h4>
+                <p>Mission 2000 is committed to responsible stewardship of all financial resources. Contributions, grants, sponsorships, and programme funding are managed with transparency, accountability, and proper governance. Wherever applicable, annual reports, impact summaries, and financial disclosures will be made available to maintain public confidence and institutional credibility.</p>
+
+                <h4>Use of Logo Guidelines</h4>
+                <p>The Mission 2000 name and logo represent a shared national commitment to children and must be used with dignity and consistency. Authorised partners may use the logo in accordance with the official brand guidelines, ensuring that it is not altered, misrepresented, or associated with activities that conflict with the Mission&rsquo;s vision, values, or child-first principles.</p>
+            </div>
+        </div>
+    </div>
+
     <style>
         .drawer-overlay {
             position: fixed;
@@ -3125,8 +3170,10 @@
         (function () {
             var missionBtn = document.getElementById('discoverMoreBtn');
             var legacyBtn = document.getElementById('discoverMoreBtnLegacy');
+            var governanceBtn = document.getElementById('governanceMoreBtn');
             var missionOverlay = document.getElementById('missionDrawer');
             var legacyOverlay = document.getElementById('legacyDrawer');
+            var governanceOverlay = document.getElementById('governanceDrawer');
 
             function wire(btn, overlay) {
                 if (!btn || !overlay) {
@@ -3161,6 +3208,7 @@
 
             wire(missionBtn, missionOverlay);
             wire(legacyBtn, legacyOverlay);
+            wire(governanceBtn, governanceOverlay);
         })();
     </script>
 </body>
