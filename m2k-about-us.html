@@ -1053,6 +1053,18 @@
         a:where(:not(.wp-element-button)) {
             text-decoration: inherit !important;
         }
+
+        .section .section-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            mix-blend-mode: soft-light;
+            opacity: 0.4;
+            pointer-events: none;
+        }
     </style>
     <style type="text/css">
         /*!
@@ -2007,6 +2019,7 @@
             </div>
             <div class="section gateway-link theme-orange_pastel image-none fade-in">
                 <div class="section-wrapper wrapper container">
+                    <img class="section-overlay" src="igs_files/overlay.png" alt="" aria-hidden="true">
                     <div class="row gateway-link__row">
                         <div class="col-12 col-md-6  link-content">
                             <div class="content container">
