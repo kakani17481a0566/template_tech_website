@@ -1013,6 +1013,16 @@
         a:where(:not(.wp-element-button)) {
             text-decoration: inherit !important;
         }
+
+        .multi-language-title {
+            white-space: normal !important;
+            overflow-wrap: break-word;
+            word-break: break-word;
+            display: inline-block;
+            max-width: 100%;
+            line-height: 1.2;
+            vertical-align: bottom;
+        }
     </style>
     <style type="text/css">
         /*!
@@ -1951,7 +1961,9 @@
                                 <h3 class="heading">Where Every Great Nation Begins: With Its Children</h3>
 
                                 <h2 class="title">
-                                    INDIA’S EARLY EDUCATION LEGACY
+                                    <span class="multi-language-title"
+                                        data-titles="[{&quot;title&quot;:&quot;भारत की प्रारंभिक शिक्षा विरासत&quot;},{&quot;title&quot;:&quot;భారతదేశ ప్రారంభ విద్యా వారసత్వం&quot;},{&quot;title&quot;:&quot;இந்தியாவின் ஆரம்பக் கல்வி மரபு&quot;},{&quot;title&quot;:&quot;ഇന്ത്യയുടെ പ്രാരംഭ വിദ്യാഭ്യാസ പാരമ്പര്യം&quot;},{&quot;title&quot;:&quot;ਭਾਰਤ ਦੀ ਸ਼ੁਰੂਆਤੀ ਵਿਦਿਆ ਵਿਰਾਸਤ&quot;},{&quot;title&quot;:&quot;ভারতের প্রারম্ভিক শিক্ষার ঐতিহ্য&quot;},{&quot;title&quot;:&quot;ભારતનો પ્રારંભિક શિક્ષણ વારસો&quot;}]">INDIA’S
+                                        EARLY EDUCATION LEGACY</span>
                                 </h2>
 
                                 <div class="inner-content">
@@ -2169,7 +2181,9 @@
                                 <h3 class="heading">Aligned With Our Vision</h3>
 
                                 <h2 class="title">
-                                    GOVERNANCE & POLICIES
+                                    <span class="multi-language-title"
+                                        data-titles="[{&quot;title&quot;:&quot;शासन और नीतियाँ&quot;},{&quot;title&quot;:&quot;పరిపాలన మరియు విధానాలు&quot;},{&quot;title&quot;:&quot;நிர்வாகம் மற்றும் கொள்கைகள்&quot;},{&quot;title&quot;:&quot;ഭരണവും നയങ്ങളും&quot;},{&quot;title&quot;:&quot;ਪ੍ਰਸ਼ਾਸਨ ਅਤੇ ਨੀਤੀਆਂ&quot;},{&quot;title&quot;:&quot;শাসন ও নীতিমালা&quot;},{&quot;title&quot;:&quot;શાસન અને નીતિઓ&quot;}]">GOVERNANCE &amp;
+                                        POLICIES</span>
 
                                 </h2>
 
@@ -2498,7 +2512,9 @@
         <div class="drawer" role="dialog" aria-modal="true" aria-label="INDIA'S EARLY EDUCATION LEGACY">
             <button type="button" class="drawer-close" aria-label="Close">&#xD7;</button>
             <div class="drawer-content">
-                <span class="drawer-eyebrow">India&rsquo;s Early Education Legacy</span>
+                <span class="drawer-eyebrow multi-language-title"
+                    data-titles="[{&quot;title&quot;:&quot;भारत की प्रारंभिक शिक्षा विरासत&quot;},{&quot;title&quot;:&quot;భారతదేశ ప్రారంభ విద్యా వారసత్వం&quot;},{&quot;title&quot;:&quot;இந்தியாவின் ஆரம்பக் கல்வி மரபு&quot;},{&quot;title&quot;:&quot;ഇന്ത്യയുടെ പ്രാരംഭ വിദ്യാഭ്യാസ പാരമ്പര്യം&quot;},{&quot;title&quot;:&quot;ਭਾਰਤ ਦੀ ਸ਼ੁਰੂਆਤੀ ਵਿਦਿਆ ਵਿਰਾਸਤ&quot;},{&quot;title&quot;:&quot;ভারতের প্রারম্ভিক শিক্ষার ঐতিহ্য&quot;},{&quot;title&quot;:&quot;ભારતનો પ્રારંભિક શિક્ષણ વારસો&quot;}]">India&rsquo;s Early
+                    Education Legacy</span>
                 <h2 class="title">Where Every Great Nation Begins: With Its Children</h2>
 
                 <p class="drawer-lead">Mission 2000 is not introducing a new philosophy&mdash;it is continuing one of
@@ -2604,7 +2620,11 @@
             <button type="button" class="drawer-close" aria-label="Close">&#xD7;</button>
             <div class="drawer-content">
                 <span class="drawer-eyebrow">Mission 2000</span>
-                <h2 class="title">GOVERNANCE &amp; POLICIES</h2>
+                <h2 class="title">
+                    <span class="multi-language-title"
+                        data-titles="[{&quot;title&quot;:&quot;शासन और नीतियाँ&quot;},{&quot;title&quot;:&quot;పరిపాలన మరియు విధానాలు&quot;},{&quot;title&quot;:&quot;நிர்வாகம் மற்றும் கொள்கைகள்&quot;},{&quot;title&quot;:&quot;ഭരണവും നയങ്ങളും&quot;},{&quot;title&quot;:&quot;ਪ੍ਰਸ਼ਾਸਨ ਅਤੇ ਨੀਤੀਆਂ&quot;},{&quot;title&quot;:&quot;শাসন ও নীতিমালা&quot;},{&quot;title&quot;:&quot;શાસન અને નીતિઓ&quot;}]">GOVERNANCE &amp;
+                        POLICIES</span>
+                </h2>
 
                 <p class="drawer-lead">Our governance framework ensures that every initiative, partnership, and
                     programme remains aligned with our vision of strengthening early childhood education across India
@@ -3025,6 +3045,43 @@
                         }
                     }
                 }
+            }
+        })();
+    </script>
+    <script>
+        (function () {
+            function initMultiLanguageTitles() {
+                var containers = document.querySelectorAll('.multi-language-title');
+                Array.prototype.forEach.call(containers, function (container) {
+                    var titles = [];
+                    try {
+                        var raw = container.getAttribute('data-titles');
+                        if (raw) {
+                            titles = JSON.parse(raw);
+                        }
+                    } catch (e) {
+                        return;
+                    }
+                    if (!titles.length) {
+                        return;
+                    }
+                    var i = 0;
+                    container.style.transition = 'opacity 1.5s ease-in-out';
+                    setInterval(function () {
+                        container.style.opacity = '0';
+                        setTimeout(function () {
+                            container.textContent = titles[i].title;
+                            i = (i + 1) % titles.length;
+                            container.style.opacity = '1';
+                        }, 1500);
+                    }, 5500);
+                });
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initMultiLanguageTitles);
+            } else {
+                initMultiLanguageTitles();
             }
         })();
     </script>
