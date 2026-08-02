@@ -33210,7 +33210,7 @@ header.main-header nav > ul > li ul.child {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(237, 142, 12, 0.15);
+  background-color: rgba(110, 66, 6, 0.95);
   gap: 24px;
   padding: 64px 1.5rem 9rem;
   overflow-y: auto;
@@ -33317,6 +33317,7 @@ header.main-header nav > ul > li ul.child > li {
 /* line 347, resources/assets/styles/layouts/_header.scss */
 
 header.main-header nav > ul > li ul.child > li a {
+  color: #fff;
   font-weight: 600;
   padding: 6px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.9);
@@ -33338,6 +33339,7 @@ header.main-header nav > ul > li ul.child > li ul.grandchild {
 /* line 360, resources/assets/styles/layouts/_header.scss */
 
 header.main-header nav > ul > li ul.child > li ul.grandchild > li a {
+  color: #fff;
   font-weight: 400;
 }
 
@@ -33352,7 +33354,7 @@ header.main-header p nav > ul > li.menu-theme-green > a span.icon {
 /* line 377, resources/assets/styles/layouts/_header.scss */
 
 header.main-header nav > ul > li.menu-theme-green > ul.child {
-  background-color: rgba(23, 143, 110, 0.15);
+  background-color: rgba(10, 56, 44, 0.95);
 }
 
 /* line 384, resources/assets/styles/layouts/_header.scss */
@@ -33366,7 +33368,7 @@ header.main-header p nav > ul > li.menu-theme-aqua > a span.icon {
 /* line 389, resources/assets/styles/layouts/_header.scss */
 
 header.main-header nav > ul > li.menu-theme-aqua > ul.child {
-  background-color: rgba(8, 109, 201, 0.15);
+  background-color: rgba(5, 51, 94, 0.95);
 }
 
 /* line 396, resources/assets/styles/layouts/_header.scss */
@@ -33380,7 +33382,7 @@ header.main-header p nav > ul > li.menu-theme-yellow > a span.icon {
 /* line 401, resources/assets/styles/layouts/_header.scss */
 
 header.main-header nav > ul > li.menu-theme-yellow > ul.child {
-  background-color: rgba(237, 142, 12, 0.15);
+  background-color: rgba(110, 66, 6, 0.95);
 }
 
 /* line 408, resources/assets/styles/layouts/_header.scss */
@@ -33394,7 +33396,7 @@ header.main-header p nav > ul > li.menu-theme-orange > a span.icon {
 /* line 413, resources/assets/styles/layouts/_header.scss */
 
 header.main-header nav > ul > li.menu-theme-orange > ul.child {
-  background-color: rgba(237, 142, 12, 0.15);
+  background-color: rgba(110, 66, 6, 0.95);
 }
 
 /* line 420, resources/assets/styles/layouts/_header.scss */
@@ -33408,7 +33410,7 @@ header.main-header p nav > ul > li.menu-theme-pink > a span.icon {
 /* line 425, resources/assets/styles/layouts/_header.scss */
 
 header.main-header nav > ul > li.menu-theme-pink > ul.child {
-  background-color: rgba(237, 142, 12, 0.15);
+  background-color: rgba(110, 66, 6, 0.95);
 }
 
 /* line 433, resources/assets/styles/layouts/_header.scss */
