@@ -1,0 +1,9 @@
+.multi-language-title {
+    white-space: normal !important;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    display: inline-block;
+    max-width: 100%;
+    line-height: 1.2;
+    vertical-align: bottom;
+}
