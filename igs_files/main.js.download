@@ -69544,7 +69544,7 @@ _pointerDownHandler = function _pointerDownHandler() {
       parent = useFixedPosition ? _body : container,
       isStart = type.indexOf("start") !== -1,
       color = isStart ? startColor : endColor,
-      css = "border-color:" + color + ";font-size:" + fontSize + ";color:" + color + ";font-weight:" + fontWeight + ";pointer-events:none;white-space:nowrap;font-family:sans-serif,Arial;z-index:1000;padding:4px 8px;border-width:0;border-style:solid;";
+      css = "border-color:" + color + ";font-size:" + fontSize + ";color:" + color + ";font-weight:" + fontWeight + ";pointer-events:none;white-space:nowrap;font-family:'Lato';z-index:1000;padding:4px 8px;border-width:0;border-style:solid;";
 
   css += "position:" + ((isScroller || containerAnimation) && useFixedPosition ? "fixed;" : "absolute;");
   (isScroller || containerAnimation || !useFixedPosition) && (css += (direction === __WEBPACK_IMPORTED_MODULE_0__Observer_js__["i" /* _vertical */] ? _right : _bottom) + ":" + (offset + parseFloat(indent)) + "px;");
