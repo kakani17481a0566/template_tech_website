@@ -61972,6 +61972,9 @@ module.exports = "data:application/vnd.ms-fontobject;base64,AAgAAGQHAAABAAIAAAAA
         return +menuItem.menu_item_parent === +item.ID;
       });
     },
+    isAccordionParent: function isAccordionParent(navItem) {
+      return navItem.title === "Join the Movement";
+    },
     createMenuTheme: function createMenuTheme() {
       var rand = Math.floor(Math.random() * 5);
       var color = this.themeColors[rand];
@@ -96235,28 +96238,54 @@ var render = function() {
                     { staticClass: "child" },
                     [
                       _vm._l(_vm.navItems(navItem), function(secondaryNavItem) {
-                        return _c("li", { key: secondaryNavItem.ID }, [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                tabindex: "0",
-                                href: secondaryNavItem.url
-                              }
-                            },
-                            [
-                              _c("span", {
-                                domProps: {
-                                  innerHTML: _vm._s(secondaryNavItem.title)
+                        var _accordion = _vm.isAccordionParent(navItem) && _vm.hasChildren(secondaryNavItem.ID);
+                        return _c("li", { key: secondaryNavItem.ID, staticClass: _accordion ? "menu-item-accordion" : "" }, [
+                          _accordion
+                            ? _c("input", {
+                                staticClass: "accordion-checkbox",
+                                attrs: {
+                                  type: "checkbox",
+                                  id: "nav-accordion-" + secondaryNavItem.ID
                                 }
                               })
-                            ]
-                          ),
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _accordion
+                            ? _c("label", {
+                                staticClass: "accordion-toggle",
+                                attrs: {
+                                  for: "nav-accordion-" + secondaryNavItem.ID
+                                }
+                              }, [
+                                _c("span", {
+                                  domProps: {
+                                    innerHTML: _vm._s(secondaryNavItem.title)
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("span", { staticClass: "accordion-chevron" })
+                              ])
+                            : _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    tabindex: "0",
+                                    href: secondaryNavItem.url
+                                  }
+                                },
+                                [
+                                  _c("span", {
+                                    domProps: {
+                                      innerHTML: _vm._s(secondaryNavItem.title)
+                                    }
+                                  })
+                                ]
+                              ),
                           _vm._v(" "),
                           _vm.hasChildren(secondaryNavItem.ID)
                             ? _c(
                                 "ul",
-                                { staticClass: "grandchild" },
+                                { staticClass: _accordion ? "grandchild accordion-panel" : "grandchild" },
                                 _vm._l(_vm.navItems(secondaryNavItem), function(
                                   tertiaryNavItem
                                 ) {

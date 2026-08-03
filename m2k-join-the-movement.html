@@ -1166,6 +1166,109 @@
         header.main-header nav > ul > li:nth-child(6) > ul.child {
             background-color: #4F81BD !important;
         }
+
+        header.main-header nav > ul > li ul.child li.menu-item-accordion .accordion-checkbox {
+            display: none;
+        }
+
+        header.main-header nav > ul > li ul.child li.menu-item-accordion .accordion-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        header.main-header nav > ul > li ul.child li.menu-item-accordion .accordion-toggle .accordion-chevron {
+            flex: 0 0 auto;
+            width: 10px;
+            height: 10px;
+            margin-left: 0.5em;
+            border-right: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            transform: rotate(45deg);
+            transition: transform 0.3s ease;
+        }
+
+        header.main-header nav > ul > li ul.child li.menu-item-accordion .accordion-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        header.main-header nav > ul > li ul.child li.menu-item-accordion .accordion-checkbox:checked~.accordion-toggle .accordion-chevron {
+            transform: rotate(225deg);
+        }
+
+        header.main-header nav > ul > li ul.child li.menu-item-accordion .accordion-checkbox:checked~.accordion-panel {
+            max-height: 20em;
+        }
+
+        header.main-header nav > ul > li ul.child li.menu-item-accordion .accordion-panel > li a {
+            color: #fff;
+            font-weight: 400;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+        }
+
+        /* Sub-accordion: 3rd level nested inside grandchild accordion panel */
+        header.main-header nav > ul > li ul.child li.menu-item-accordion .accordion-panel li.menu-item-sub-accordion .sub-accordion-checkbox {
+            display: none;
+        }
+
+        header.main-header nav > ul > li ul.child li.menu-item-accordion .accordion-panel li.menu-item-sub-accordion .sub-accordion-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        header.main-header nav > ul > li ul.child li.menu-item-accordion .accordion-panel li.menu-item-sub-accordion .sub-accordion-chevron {
+            flex: 0 0 auto;
+            width: 8px;
+            height: 8px;
+            margin-left: 0.5em;
+            border-right: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            transform: rotate(45deg);
+            transition: transform 0.3s ease;
+        }
+
+        header.main-header nav > ul > li ul.child li.menu-item-accordion .accordion-panel li.menu-item-sub-accordion .sub-accordion-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            list-style: none;
+            padding: 0 0 0 0.75em;
+            margin: 0;
+        }
+
+        header.main-header nav > ul > li ul.child li.menu-item-accordion .accordion-panel li.menu-item-sub-accordion .sub-accordion-checkbox:checked ~ .sub-accordion-toggle .sub-accordion-chevron {
+            transform: rotate(225deg);
+        }
+
+        header.main-header nav > ul > li ul.child li.menu-item-accordion .accordion-panel li.menu-item-sub-accordion .sub-accordion-checkbox:checked ~ .sub-accordion-panel {
+            max-height: 25em;
+        }
+
+        header.main-header nav > ul > li ul.child li.menu-item-accordion .accordion-panel li.menu-item-sub-accordion .sub-accordion-panel > li a {
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 400;
+            font-size: 0.8rem;
+            padding: 4px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            display: block;
+            text-decoration: none;
+        }
     </style>
     <style type="text/css">
         /*!
@@ -1867,30 +1970,29 @@
 {"ID":2016,"title":"Our Call to the Nation","url":"m2k-ecce-day.html#our-call-to-the-nation","menu_item_parent":"1004","active":false,"alternate_label":"","target":""},
 {"ID":1005,"title":"Join the Movement","url":"m2k-join-the-movement.html","menu_item_parent":"0","active":false,"alternate_label":"","target":""},
 {"ID":2045,"title":"Who Can Join?","url":"m2k-join-the-movement.html#whoCanJoinDrawer","menu_item_parent":"1005","active":false,"alternate_label":"","target":""},
-{"ID":2017,"title":"How You Can Contribute","url":"m2k-join-the-movement.html#contributeDrawer","menu_item_parent":"1005","active":false,"alternate_label":"","target":""},
-{"ID":1006,"title":"For Schools","url":"#","menu_item_parent":"1005","active":false,"alternate_label":"","target":""},
+{"ID":2017,"title":"How You Can Contribute","url":"#","menu_item_parent":"1005","active":false,"alternate_label":"","target":""},
+{"ID":1006,"title":"For Schools","url":"#","menu_item_parent":"2017","active":false,"alternate_label":"","target":""},
 {"ID":2046,"title":"Our Theme for 2026","url":"#","menu_item_parent":"1006","active":false,"alternate_label":"","target":""},
 {"ID":2018,"title":"Our Commitments","url":"#","menu_item_parent":"1006","active":false,"alternate_label":"","target":""},
 {"ID":2019,"title":"Our Partnership with Families","url":"#","menu_item_parent":"1006","active":false,"alternate_label":"","target":""},
 {"ID":2020,"title":"Our Promise to Every Child","url":"#","menu_item_parent":"1006","active":false,"alternate_label":"","target":""},
 {"ID":2021,"title":"Our Vision Beyond the Classroom","url":"#","menu_item_parent":"1006","active":false,"alternate_label":"","target":""},
 {"ID":2022,"title":"Our School Pledge","url":"#","menu_item_parent":"1006","active":false,"alternate_label":"","target":""},
-{"ID":1007,"title":"For Teachers","url":"m2k-join-the-movement.html#teachersDrawer","menu_item_parent":"1005","active":false,"alternate_label":"","target":""},
+{"ID":1007,"title":"For Teachers","url":"#","menu_item_parent":"2017","active":false,"alternate_label":"","target":""},
 {"ID":2047,"title":"A Commitment to Transform Lives","url":"#","menu_item_parent":"1007","active":false,"alternate_label":"","target":""},
 {"ID":2023,"title":"Our Professional Commitments","url":"#","menu_item_parent":"1007","active":false,"alternate_label":"","target":""},
 {"ID":2024,"title":"The Mission 2026 Teacher Pledge","url":"#","menu_item_parent":"1007","active":false,"alternate_label":"","target":""},
-{"ID":1008,"title":"For Parents","url":"#","menu_item_parent":"1005","active":false,"alternate_label":"","target":""},
+{"ID":1008,"title":"For Parents","url":"#","menu_item_parent":"2017","active":false,"alternate_label":"","target":""},
 {"ID":2048,"title":"A Partnership for Every Child's Future","url":"#","menu_item_parent":"1008","active":false,"alternate_label":"","target":""},
 {"ID":2025,"title":"Our Shared Mission","url":"#","menu_item_parent":"1008","active":false,"alternate_label":"","target":""},
 {"ID":2026,"title":"Our Partnership","url":"#","menu_item_parent":"1008","active":false,"alternate_label":"","target":""},
 {"ID":2027,"title":"Our Promise to Our Children","url":"#","menu_item_parent":"1008","active":false,"alternate_label":"","target":""},
 {"ID":2028,"title":"The Mission 2026 Parent Pledge","url":"#","menu_item_parent":"1008","active":false,"alternate_label":"","target":""},
 {"ID":2029,"title":"Together We Build the Future","url":"#","menu_item_parent":"1008","active":false,"alternate_label":"","target":""},
-{"ID":1009,"title":"Partners","url":"m2k-join-the-movement.html#partnersDrawer","menu_item_parent":"1005","active":false,"alternate_label":"","target":""},
+{"ID":1009,"title":"Partners","url":"#","menu_item_parent":"2017","active":false,"alternate_label":"","target":""},
 {"ID":2049,"title":"An Invitation to Partner in Nation Building","url":"#","menu_item_parent":"1009","active":false,"alternate_label":"","target":""},
 {"ID":2030,"title":"Why Partner with Mission 2026?","url":"#","menu_item_parent":"1009","active":false,"alternate_label":"","target":""},
 {"ID":2031,"title":"Our Partnership Principles","url":"#","menu_item_parent":"1009","active":false,"alternate_label":"","target":""},
-{"ID":2032,"title":"How You Can Contribute","url":"#","menu_item_parent":"1009","active":false,"alternate_label":"","target":""},
 {"ID":2033,"title":"Our Commitment to Partners","url":"#","menu_item_parent":"1009","active":false,"alternate_label":"","target":""},
 {"ID":2034,"title":"A Shared Legacy","url":"#","menu_item_parent":"1009","active":false,"alternate_label":"","target":""},
 {"ID":2035,"title":"The Mission 2000 Pledge","url":"#","menu_item_parent":"1009","active":false,"alternate_label":"","target":""},
@@ -1951,61 +2053,61 @@
                                     class=""><span class="icon"></span> <span class="">Join the Movement</span></a>
                                 <ul class="child">
                                     <li><a tabindex="0" href="m2k-join-the-movement.html#whoCanJoinDrawer"><span>Who Can Join?</span></a></li>
-                                    <li><a tabindex="0" href="m2k-join-the-movement.html#contributeDrawer"><span>How You Can Contribute</span></a></li>
-                                    <li class="has-children"><a tabindex="0" href="#"><span>For Schools</span></a>
-                                        <ul class="grandchild">
-                                            <li><a tabindex="0" href="#"><span>Our Theme for 2026</span></a></li>
-                                            <li><a tabindex="0" href="#"><span>Our Commitments</span></a></li>
-                                            <li><a tabindex="0" href="#"><span>Our Partnership with Families</span></a>
+                                    <li class="menu-item-accordion">
+                                        <input type="checkbox" id="nav-accordion-contribute" class="accordion-checkbox">
+                                        <label for="nav-accordion-contribute" class="accordion-toggle"><span>How You Can Contribute</span><span class="accordion-chevron"></span></label>
+                                        <ul class="grandchild accordion-panel">
+                                            <!-- For Schools sub-accordion -->
+                                            <li class="menu-item-sub-accordion">
+                                                <input type="checkbox" id="nav-sub-schools" class="sub-accordion-checkbox">
+                                                <label for="nav-sub-schools" class="sub-accordion-toggle"><span>For Schools</span><span class="sub-accordion-chevron"></span></label>
+                                                <ul class="sub-accordion-panel">
+                                                    <li><a tabindex="0" href="#"><span>Our Theme for 2026</span></a></li>
+                                                    <li><a tabindex="0" href="#"><span>Our Commitments</span></a></li>
+                                                    <li><a tabindex="0" href="#"><span>Our Partnership with Families</span></a></li>
+                                                    <li><a tabindex="0" href="#"><span>Our Promise to Every Child</span></a></li>
+                                                    <li><a tabindex="0" href="#"><span>Our Vision Beyond the Classroom</span></a></li>
+                                                    <li><a tabindex="0" href="#"><span>Our School Pledge</span></a></li>
+                                                </ul>
                                             </li>
-                                            <li><a tabindex="0" href="#"><span>Our Promise to Every Child</span></a>
+                                            <!-- For Teachers sub-accordion -->
+                                            <li class="menu-item-sub-accordion">
+                                                <input type="checkbox" id="nav-sub-teachers" class="sub-accordion-checkbox">
+                                                <label for="nav-sub-teachers" class="sub-accordion-toggle"><span>For Teachers</span><span class="sub-accordion-chevron"></span></label>
+                                                <ul class="sub-accordion-panel">
+                                                    <li><a tabindex="0" href="#"><span>A Commitment to Transform Lives</span></a></li>
+                                                    <li><a tabindex="0" href="#"><span>Our Professional Commitments</span></a></li>
+                                                    <li><a tabindex="0" href="#"><span>The Mission 2026 Teacher Pledge</span></a></li>
+                                                </ul>
                                             </li>
-                                            <li><a tabindex="0" href="#"><span>Our Vision Beyond the
-                                                        Classroom</span></a></li>
-                                            <li><a tabindex="0" href="#"><span>Our School Pledge</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-children"><a tabindex="0" href="m2k-join-the-movement.html#teachersDrawer"><span>For Teachers</span></a>
-                                        <ul class="grandchild">
-                                            <li><a tabindex="0" href="#"><span>A Commitment to Transform
-                                                        Lives</span></a></li>
-                                            <li><a tabindex="0" href="#"><span>Our Professional Commitments</span></a>
+                                            <!-- For Parents sub-accordion -->
+                                            <li class="menu-item-sub-accordion">
+                                                <input type="checkbox" id="nav-sub-parents" class="sub-accordion-checkbox">
+                                                <label for="nav-sub-parents" class="sub-accordion-toggle"><span>For Parents</span><span class="sub-accordion-chevron"></span></label>
+                                                <ul class="sub-accordion-panel">
+                                                    <li><a tabindex="0" href="#"><span>A Partnership for Every Child's Future</span></a></li>
+                                                    <li><a tabindex="0" href="#"><span>Our Shared Mission</span></a></li>
+                                                    <li><a tabindex="0" href="#"><span>Our Partnership</span></a></li>
+                                                    <li><a tabindex="0" href="#"><span>Our Promise to Our Children</span></a></li>
+                                                    <li><a tabindex="0" href="#"><span>The Mission 2026 Parent Pledge</span></a></li>
+                                                    <li><a tabindex="0" href="#"><span>Together We Build the Future</span></a></li>
+                                                </ul>
                                             </li>
-                                            <li><a tabindex="0" href="#"><span>The Mission 2026 Teacher
-                                                        Pledge</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-children"><a tabindex="0" href="#"><span>For Parents</span></a>
-                                        <ul class="grandchild">
-                                            <li><a tabindex="0" href="#"><span>A Partnership for Every Child's
-                                                        Future</span></a></li>
-                                            <li><a tabindex="0" href="#"><span>Our Shared Mission</span></a></li>
-                                            <li><a tabindex="0" href="#"><span>Our Partnership</span></a></li>
-                                            <li><a tabindex="0" href="#"><span>Our Promise to Our Children</span></a>
+                                            <!-- Partners sub-accordion -->
+                                            <li class="menu-item-sub-accordion">
+                                                <input type="checkbox" id="nav-sub-partners" class="sub-accordion-checkbox">
+                                                <label for="nav-sub-partners" class="sub-accordion-toggle"><span>Partners</span><span class="sub-accordion-chevron"></span></label>
+                                                <ul class="sub-accordion-panel">
+                                                    <li><a tabindex="0" href="#"><span>An Invitation to Partner in Nation Building</span></a></li>
+                                                    <li><a tabindex="0" href="#"><span>Why Partner with Mission 2026?</span></a></li>
+                                                    <li><a tabindex="0" href="#"><span>Our Partnership Principles</span></a></li>
+                                                    <li><a tabindex="0" href="#"><span>Our Commitment to Partners</span></a></li>
+                                                    <li><a tabindex="0" href="#"><span>A Shared Legacy</span></a></li>
+                                                    <li><a tabindex="0" href="#"><span>The Mission 2000 Pledge</span></a></li>
+                                                    <li><a tabindex="0" href="#"><span>Together We Can Transform the Future</span></a></li>
+                                                    <li><a tabindex="0" href="#"><span>Join Us</span></a></li>
+                                                </ul>
                                             </li>
-                                            <li><a tabindex="0" href="#"><span>The Mission 2026 Parent
-                                                        Pledge</span></a></li>
-                                            <li><a tabindex="0" href="#"><span>Together We Build the Future</span></a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-children"><a tabindex="0" href="m2k-join-the-movement.html#partnersDrawer"><span>Partners</span></a>
-                                        <ul class="grandchild">
-                                            <li><a tabindex="0" href="#"><span>An Invitation to Partner in Nation
-                                                        Building</span></a></li>
-                                            <li><a tabindex="0" href="#"><span>Why Partner with Mission
-                                                        2026?</span></a></li>
-                                            <li><a tabindex="0" href="#"><span>Our Partnership Principles</span></a>
-                                            </li>
-                                            <li><a tabindex="0" href="m2k-join-the-movement.html#contributeDrawer"><span>How You Can Contribute</span></a></li>
-                                            <li><a tabindex="0" href="#"><span>Our Commitment to Partners</span></a>
-                                            </li>
-                                            <li><a tabindex="0" href="#"><span>A Shared Legacy</span></a></li>
-                                            <li><a tabindex="0" href="#"><span>The Mission 2000 Pledge</span></a>
-                                            </li>
-                                            <li><a tabindex="0" href="#"><span>Together We Can Transform the
-                                                        Future</span></a></li>
-                                            <li><a tabindex="0" href="#"><span>Join Us</span></a></li>
                                         </ul>
                                     </li>
                                 </ul>
