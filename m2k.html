@@ -1007,6 +1007,7 @@ Every nation is shaped long before its workforce enters the economy or its leade
         }
     </style>
     <link rel="stylesheet" href="igs_files/main.css">
+    <link rel="stylesheet" href="css/m2k-carousel-borders.css">
     <link rel="stylesheet" href="igs_files/icon">
     <script type="text/javascript" src="igs_files/jquery.min.js.download" id="jquery-core-js"></script>
     <script type="text/javascript" src="igs_files/jquery-migrate.min.js.download" id="jquery-migrate-js"></script>
@@ -2491,8 +2492,8 @@ Every nation is shaped long before its workforce enters the economy or its leade
                                                 <div class="slide" style="width: 100%; display: inline-block;">
                                                     <div class="image-inner image-crop-none"
                                                         style="background-color: ;">
-                                                        <img src="igs_files/KidssmilingComputer.png"
-                                                            alt="Kids looking at computer smiling" loading="lazy"
+                                                        <img src="igs_files/INDIAS-CHILDREN-DESERVE-A-NATIONAL-MOVEMENT.png"
+                                                            alt="India's Children Deserve a National Movement" loading="lazy"
                                                             class="fill">
                                                     </div>
                                                 </div>
@@ -2554,10 +2555,10 @@ Every nation is shaped long before its workforce enters the economy or its leade
                                             style="width: 977px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;">
                                             <div>
                                                 <div class="slide" style="width: 100%; display: inline-block;">
-                                                    <div class="image-inner image-crop-circle"
+                                                    <div class="image-inner image-crop-none"
                                                         style="background-color: ;">
-                                                        <img src="igs_files/igs-indigenous-students-diversity-1-1600x1068.jpg"
-                                                            alt="Two girls in school uniforms stand arm-in-arm, smiling at the camera on a playground. The younger wears a checked dress and white shirt; the older, in a logo shirt, shares how bursaries make their school experience possible. Playground equipment is in the background."
+                                                        <img src="igs_files/A-CALL-FOR-INDIAS-NATIONAL-EARLY-CHILDHOOD-EDUCATION-DAY.png"
+                                                            alt="A Call for India's National Early Childhood Education Day"
                                                             loading="lazy" class="fill">
                                                     </div>
                                                 </div>
@@ -2635,10 +2636,10 @@ Every nation is shaped long before its workforce enters the economy or its leade
                                             style="width: 977px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;">
                                             <div>
                                                 <div class="slide" style="width: 100%; display: inline-block;">
-                                                    <div class="image-inner image-crop-circle"
+                                                    <div class="image-inner image-crop-none"
                                                         style="background-color: ;">
-                                                        <img src="igs_files/ShaunaColnanALP2017-23-e1626393140216-1600x1452.jpg"
-                                                            alt="Shauna Colnan, M2K Principal, with long brown hair and a warm smile, sits at a desk with her arms folded. A notebook, pen, and laptop sit before her; white blinds and flowers brighten the background."
+                                                        <img src="igs_files/THE-NATIONAL-PROMISE.png"
+                                                            alt="The National Promise"
                                                             loading="lazy" class="fill">
                                                     </div>
                                                 </div>
@@ -2790,7 +2791,7 @@ Every nation is shaped long before its workforce enters the economy or its leade
 </h3>
 
 <h2 class="title" id="childhood-must-become-a-national-priority">
-    Childhood must become a national priority.
+    Childhood must become a national priority
 </h2>
 
                                 <div class="inner-content">
@@ -3142,6 +3143,84 @@ India</a></p><a
     <script src="js/multi-language-title.js"></script>
 
     <script src="js/accordion-fix.js"></script>
+
+    <script>
+        (function () {
+            var DB_NAME = 'm2k-image-cache';
+            var STORE = 'images';
+
+            function openDb() {
+                return new Promise(function (resolve, reject) {
+                    var req = indexedDB.open(DB_NAME, 1);
+                    req.onupgradeneeded = function () {
+                        var db = req.result;
+                        if (!db.objectStoreNames.contains(STORE)) {
+                            db.createObjectStore(STORE);
+                        }
+                    };
+                    req.onsuccess = function () { resolve(req.result); };
+                    req.onerror = function () { reject(req.error); };
+                });
+            }
+
+            function getCached(db, key) {
+                return new Promise(function (resolve, reject) {
+                    var req = db.transaction(STORE, 'readonly').objectStore(STORE).get(key);
+                    req.onsuccess = function () { resolve(req.result || null); };
+                    req.onerror = function () { reject(req.error); };
+                });
+            }
+
+            function setCached(db, key, blob) {
+                return new Promise(function (resolve, reject) {
+                    var tx = db.transaction(STORE, 'readwrite');
+                    tx.objectStore(STORE).put(blob, key);
+                    tx.oncomplete = function () { resolve(); };
+                    tx.onerror = function () { reject(tx.error); };
+                });
+            }
+
+            function useBlob(img, blob) {
+                var url = URL.createObjectURL(blob);
+                img.src = url;
+                img.onerror = function () { URL.revokeObjectURL(url); };
+            }
+
+            function cacheImages() {
+                if (!('indexedDB' in window) || !('fetch' in window)) return;
+                var imgs = Array.prototype.slice.call(document.querySelectorAll('.section.feature-carousel img'));
+                if (!imgs.length) return;
+                openDb().then(function (db) {
+                    var done = {};
+                    imgs.forEach(function (img) {
+                        var src = img.getAttribute('src');
+                        if (!src || done[src]) return;
+                        done[src] = true;
+                        getCached(db, src).then(function (cached) {
+                            if (cached) {
+                                useBlob(img, cached);
+                            } else {
+                                fetch(src).then(function (res) {
+                                    if (!res.ok) return;
+                                    return res.blob();
+                                }).then(function (blob) {
+                                    if (!blob) return;
+                                    useBlob(img, blob);
+                                    setCached(db, src, blob).catch(function () { });
+                                }).catch(function () { });
+                            }
+                        }).catch(function () { });
+                    });
+                }).catch(function () { });
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', cacheImages);
+            } else {
+                cacheImages();
+            }
+        })();
+    </script>
 
 </body>
 

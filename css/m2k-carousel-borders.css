@@ -1,0 +1,17 @@
+.section.feature-carousel .slick-slide[data-slick-index="0"] .image-inner,
+.section.feature-carousel .slick-slide[data-slick-index="2"] .image-inner,
+.section.feature-carousel .slick-slide[data-slick-index="4"] .image-inner {
+    border-top: 20px solid #0A1539;
+    border-left: 20px solid #0A1539;
+    border-bottom-right-radius: 48px;
+    box-shadow: 8px 8px 20px rgba(10, 21, 57, 0.3);
+}
+
+.section.feature-carousel .slick-slide[data-slick-index="1"] .image-inner,
+.section.feature-carousel .slick-slide[data-slick-index="3"] .image-inner {
+    border-bottom: 20px solid #0A1539;
+    border-right: 20px solid #0A1539;
+    border-top-left-radius: 48px;
+    box-shadow: -8px -8px 20px rgba(10, 21, 57, 0.3);
+}
+    
