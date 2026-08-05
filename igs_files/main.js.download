@@ -96778,7 +96778,7 @@ function init() {
   function setLongIframeAttr(url, src) {
     var result;
     if (src === "youtube") result = "https://www.youtube.com/embed/" + url + "?&controls=1&playlist=" + url;
-    if (src === "vimeo") result = "https://player.vimeo.com/video/" + url + "?loop=1&autopause=0";
+    if (src === "vimeo") result = "https://player.vimeo.com/video/" + url + "?loop=1&autopause=0&autoplay=1&dnt=1";
     if (longIframeTag) longIframeTag.setAttribute("src", result); // Set value
     if (longVideoTag) longVideoTag.style.display = "none"; // Hide video tag
   }
