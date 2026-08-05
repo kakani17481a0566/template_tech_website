@@ -829,7 +829,7 @@
   </div>
 
   <script>
-    const API_BASE = 'https://localhost:7230';
+    const API_BASE = 'https://context-doorway-ditch.ngrok-free.dev';
 
     document.addEventListener('DOMContentLoaded', () => {
       // Set today's date
@@ -905,6 +905,12 @@
       document.getElementById('submitHint').style.display = 'block';
     }
 
+    function setButtonLoading(btn, loading) {
+      if (!btn) return;
+      btn.disabled = loading;
+      btn.classList.toggle('loading', loading);
+    }
+
     async function sendOtp() {
       const fullName = document.getElementById('fullName').value.trim();
       const email = document.getElementById('email').value.trim();
@@ -922,12 +928,13 @@
       }
 
       const btn = document.getElementById('sendOtpBtn');
-      btn.disabled = true;
-      btn.innerText = 'Sending...';
+      const resendBtn = document.getElementById('resendOtpBtn');
+      setButtonLoading(btn, true);
+      if (resendBtn) setButtonLoading(resendBtn, true);
       try {
         const res = await fetch(`${API_BASE}/api/OnlineRegM2K/send-otp`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': 'true' },
           body: JSON.stringify({ emailAddress: email, fullName: fullName })
         });
         const json = await res.json();
@@ -946,8 +953,8 @@
       } catch (err) {
         alert('Could not reach the server. Please check your connection.');
       } finally {
-        btn.disabled = false;
-        btn.innerText = 'Send OTP';
+        setButtonLoading(btn, false);
+        if (resendBtn) setButtonLoading(resendBtn, false);
       }
     }
 
@@ -963,10 +970,12 @@
 
       const data = collectFormData();
 
+      const submitBtn = document.getElementById('submitBtn');
+      setButtonLoading(submitBtn, true);
       try {
         const res = await fetch(`${API_BASE}/api/OnlineRegM2K/register`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': 'true' },
           body: JSON.stringify(data)
         });
         const json = await res.json();
@@ -979,6 +988,8 @@
         showCertificate(json.data?.feid);
       } catch (err) {
         alert('Could not reach the server. Please check your connection.');
+      } finally {
+        setButtonLoading(submitBtn, false);
       }
     }
 
@@ -993,10 +1004,12 @@
         return;
       }
 
+      const btn = document.getElementById('verifyOtpBtn');
+      setButtonLoading(btn, true);
       try {
         const res = await fetch(`${API_BASE}/api/OnlineRegM2K/verify-email`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': 'true' },
           body: JSON.stringify({ emailAddress: email, otp: otp })
         });
         const json = await res.json();
@@ -1013,6 +1026,8 @@
       } catch (err) {
         errEl.innerText = 'Could not reach the server. Please try again.';
         errEl.style.display = 'block';
+      } finally {
+        setButtonLoading(btn, false);
       }
     }
 
@@ -1130,7 +1145,7 @@
         const dataUrl = certCanvas.toDataURL('image/jpeg', 0.9);
         const res = await fetch(`${API_BASE}/api/OnlineRegM2K/send-certificate`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': 'true' },
           body: JSON.stringify({
             emailAddress: document.getElementById('email').value,
             fullName: document.getElementById('fullName').value,
