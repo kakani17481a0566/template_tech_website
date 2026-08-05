@@ -1020,21 +1020,9 @@ Every nation is shaped long before its workforce enters the economy or its leade
     <script type="text/javascript" src="igs_files/jquery.min.js.download" id="jquery-core-js"></script>
     <script type="text/javascript" src="igs_files/jquery-migrate.min.js.download" id="jquery-migrate-js"></script>
     <link rel="icon" type="image/svg+xml" href="m2k-logo.svg" sizes="any">
-    <link rel="preload" as="image" href="igs_files/WELCOME-TO-MISSION-2000.png">
-    <link rel="preload" as="image" href="igs_files/overlay.png">
-    <link rel="preload" as="image" href="igs_files/NATIONAL-EARLY-CHILDHOOD-EDUCATION-DAY.png">
-    <link rel="preload" as="image" href="igs_files/A-MOVEMENT-ADVANCING-EVERY-CHILDS-POTENTIAL.png">
-    <link rel="preload" as="image" href="igs_files/THE-FIRST-2000-DAYS-BUILD-A-LIFETIME-AND-A-NATION.png">
-    <link rel="preload" as="image" href="igs_files/TRANSFORMING-EARLY-CHILDHOOD-TO-NATIONAL-CAPABILITY.png">
-    <link rel="preload" as="image" href="igs_files/HUMAN-CAPITAL.png">
-    <link rel="preload" as="image" href="igs_files/INDIAS-CHILDREN-DESERVE-A-NATIONAL-MOVEMENT.png">
-    <link rel="preload" as="image" href="igs_files/A-CALL-FOR-INDIAS-NATIONAL-EARLY-CHILDHOOD-EDUCATION-DAY.png">
-    <link rel="preload" as="image" href="igs_files/THE-NATIONAL-PROMISE.png">
-    <link rel="preload" as="image" href="igs_files/100-DAYS-OF-KINDY-2-560x373.jpg">
-    <link rel="preload" as="image" href="igs_files/Y3-FIRST-NATIONS-DAY-INCURSION-34-560x373.jpg">
-    <link rel="preload" as="image" href="igs_files/Y11-MARKET-DAY-8-560x373.jpg">
-    <link rel="preload" as="image" href="images/ece-day/childhood-must-become-a-national-priority.png">
-    <link rel="preload" as="image" href="m2k-footer-logo.svg">
+    <!-- Preload lightweight logo only -->
+    <link rel="preload" as="image" href="m2k-logo.svg" type="image/svg+xml">
+    <link rel="preload" as="image" href="m2k-footer-logo.svg" type="image/svg+xml">
 
     <style type="text/css" id="wp-custom-css">
         .page-id-31942 .section.blockquote .col-lg-8 {
@@ -3331,6 +3319,30 @@ India</a></p><a
                 cacheImages();
             }
         })();
+
+        // Smooth non-blocking background preloader into browser cache AFTER initial render
+        window.addEventListener('load', function () {
+            var backgroundImages = [
+                'igs_files/WELCOME-TO-MISSION-2000.png',
+                'igs_files/overlay.png',
+                'igs_files/NATIONAL-EARLY-CHILDHOOD-EDUCATION-DAY.png',
+                'igs_files/A-MOVEMENT-ADVANCING-EVERY-CHILDS-POTENTIAL.png',
+                'igs_files/THE-FIRST-2000-DAYS-BUILD-A-LIFETIME-AND-A-NATION.png',
+                'igs_files/TRANSFORMING-EARLY-CHILDHOOD-TO-NATIONAL-CAPABILITY.png',
+                'igs_files/HUMAN-CAPITAL.png',
+                'igs_files/INDIAS-CHILDREN-DESERVE-A-NATIONAL-MOVEMENT.png',
+                'igs_files/A-CALL-FOR-INDIAS-NATIONAL-EARLY-CHILDHOOD-EDUCATION-DAY.png',
+                'igs_files/THE-NATIONAL-PROMISE.png'
+            ];
+            setTimeout(function () {
+                backgroundImages.forEach(function (src, idx) {
+                    setTimeout(function () {
+                        var img = new Image();
+                        img.src = src;
+                    }, idx * 400);
+                });
+            }, 1500);
+        });
     </script>
 
 </body>
