@@ -6,4 +6,5 @@
     max-width: 100%;
     line-height: 1.2;
     vertical-align: bottom;
+    /* min-width / min-height are set dynamically by JS to lock layout size */
 }

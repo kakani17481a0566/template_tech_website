@@ -1,0 +1,38 @@
+/*
+ * m2k-fixes.css
+ * Shared scroll & layout-shift fixes for all m2k pages.
+ */
+
+/* ── 1. Scrollbar gutter fix ─────────────────────────────────────────────────
+   Always reserve space for the vertical scrollbar so the page width never
+   changes when the scrollbar appears / disappears (e.g. during loading or
+   when a popup opens). This eliminates the horizontal "shake / jump" on all
+   m2k pages.
+   ─────────────────────────────────────────────────────────────────────── */
+html {
+    overflow-y: scroll;               /* legacy browsers */
+    scrollbar-gutter: stable;         /* modern browsers — reserves gutter without forcing scroll */
+}
+
+/* ── 2. Prevent horizontal overflow ─────────────────────────────────────────
+   Stops any element wider than the viewport from creating an unwanted
+   horizontal scrollbar, which also causes the vertical scrollbar to
+   appear/disappear and shake the page.
+   ─────────────────────────────────────────────────────────────────────── */
+body {
+    overflow-x: hidden;
+}
+
+/* ── 3. Smooth scrolling ─────────────────────────────────────────────────────
+   Enables smooth scrolling for all anchor (#) links across m2k pages.
+   ─────────────────────────────────────────────────────────────────────── */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ── 4. Stable scroll padding for fixed header ───────────────────────────────
+   Prevents anchors from being hidden behind the fixed nav bar when scrolled.
+   ─────────────────────────────────────────────────────────────────────── */
+html {
+    scroll-padding-top: 80px; /* adjust if nav height differs */
+}
