@@ -102,6 +102,32 @@
       background: rgba(4, 37, 98, 0.04);
     }
 
+    /* Loading Spinner */
+    .btn .spinner {
+      display: none;
+      width: 14px;
+      height: 14px;
+      border: 2px solid currentColor;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spinner-rotate 0.7s linear infinite;
+      vertical-align: -2px;
+      margin-right: 8px;
+    }
+
+    .btn.loading .spinner {
+      display: inline-block;
+    }
+
+    .btn.loading {
+      pointer-events: none;
+      opacity: 0.75;
+    }
+
+    @keyframes spinner-rotate {
+      to { transform: rotate(360deg); }
+    }
+
     /* Main Container Section */
     .main-section {
       max-width: 1140px;
@@ -513,7 +539,7 @@
 
           <!-- Email Verification (before registration) -->
           <div style="margin-top: 16px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-            <button type="button" onclick="sendOtp()" class="btn btn-outline" id="sendOtpBtn" style="padding: 10px 22px;">Send OTP</button>
+            <button type="button" onclick="sendOtp()" class="btn btn-outline" id="sendOtpBtn" style="padding: 10px 22px;"><span class="spinner"></span>Send OTP</button>
             <span id="verifyHint" style="font-size: 0.85rem; color: var(--text-muted);">Verify your email before submitting the declaration.</span>
           </div>
 
@@ -523,12 +549,12 @@
                 <div style="font-weight: 800; color: var(--primary-navy);">Verify Your Email</div>
                 <div style="font-size: 0.85rem; color: var(--text-muted);">OTP sent to <strong id="otpEmail"></strong></div>
               </div>
-              <button onclick="sendOtp()" class="btn btn-outline" style="padding: 8px 18px;">Resend OTP</button>
+              <button onclick="sendOtp()" class="btn btn-outline" id="resendOtpBtn" style="padding: 8px 18px;"><span class="spinner"></span>Resend OTP</button>
             </div>
             <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; max-width: 460px; margin: 0 auto;">
               <input type="text" id="otpInput" maxlength="6" class="form-input"
                      style="flex: 1; min-width: 170px; font-size: 1.4rem; letter-spacing: 8px; text-align: center;" placeholder="------">
-              <button onclick="verifyOtp()" class="btn btn-navy" style="min-width: 120px;">Verify</button>
+              <button onclick="verifyOtp()" class="btn btn-navy" id="verifyOtpBtn" style="min-width: 120px;"><span class="spinner"></span>Verify</button>
             </div>
             <p id="otpError" style="color: #C53030; margin-top: 10px; display: none;"></p>
             <p id="otpSuccess" style="color: var(--teal-green); font-weight: 700; margin-top: 10px; display: none;">Email verified successfully. You can now submit your declaration.</p>
@@ -759,7 +785,7 @@
           <!-- Submit Action -->
           <div style="text-align: center; margin-top: 32px;">
             <button type="submit" id="submitBtn" class="btn btn-saffron" style="padding: 14px 48px; font-size: 1.05rem; min-width: 280px;" disabled>
-              Submit Declaration &rarr;
+              <span class="spinner"></span>Submit Declaration &rarr;
             </button>
             <p id="submitHint" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 10px;">Verify your email above to enable submission.</p>
           </div>
@@ -929,7 +955,9 @@
       event.preventDefault();
 
       if (!emailVerified) {
-        alert('Please verify your email before submitting.');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.getElementById('verifyHint').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        document.getElementById('email').focus();
         return;
       }
 
