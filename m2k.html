@@ -1016,7 +1016,6 @@ Every nation is shaped long before its workforce enters the economy or its leade
     </style>
     <link rel="stylesheet" href="igs_files/main.css">
     <link rel="stylesheet" href="css/m2k-carousel-borders.css">
-    <link rel="stylesheet" href="igs_files/icon">
     <script type="text/javascript" src="igs_files/jquery.min.js.download" id="jquery-core-js"></script>
     <script type="text/javascript" src="igs_files/jquery-migrate.min.js.download" id="jquery-migrate-js"></script>
     <link rel="icon" type="image/svg+xml" href="m2k-logo.svg" sizes="any">
@@ -3129,108 +3128,6 @@ India</a></p><a
     <script src="js/multi-language-title.js"></script>
 
     <script src="js/accordion-fix.js"></script>
-
-    <script>
-        (function () {
-            var DB_NAME = 'm2k-image-cache';
-            var STORE = 'images';
-
-            function openDb() {
-                return new Promise(function (resolve, reject) {
-                    var req = indexedDB.open(DB_NAME, 1);
-                    req.onupgradeneeded = function () {
-                        var db = req.result;
-                        if (!db.objectStoreNames.contains(STORE)) {
-                            db.createObjectStore(STORE);
-                        }
-                    };
-                    req.onsuccess = function () { resolve(req.result); };
-                    req.onerror = function () { reject(req.error); };
-                });
-            }
-
-            function getCached(db, key) {
-                return new Promise(function (resolve, reject) {
-                    var req = db.transaction(STORE, 'readonly').objectStore(STORE).get(key);
-                    req.onsuccess = function () { resolve(req.result || null); };
-                    req.onerror = function () { reject(req.error); };
-                });
-            }
-
-            function setCached(db, key, blob) {
-                return new Promise(function (resolve, reject) {
-                    var tx = db.transaction(STORE, 'readwrite');
-                    tx.objectStore(STORE).put(blob, key);
-                    tx.oncomplete = function () { resolve(); };
-                    tx.onerror = function () { reject(tx.error); };
-                });
-            }
-
-            function useBlob(img, blob) {
-                var url = URL.createObjectURL(blob);
-                img.src = url;
-                img.onerror = function () { URL.revokeObjectURL(url); };
-            }
-
-            function cacheImages() {
-                if (!('indexedDB' in window) || !('fetch' in window)) return;
-                var imgs = Array.prototype.slice.call(document.querySelectorAll('.section.feature-carousel img'));
-                if (!imgs.length) return;
-                openDb().then(function (db) {
-                    var done = {};
-                    imgs.forEach(function (img) {
-                        var src = img.getAttribute('src');
-                        if (!src || done[src]) return;
-                        done[src] = true;
-                        getCached(db, src).then(function (cached) {
-                            if (cached) {
-                                useBlob(img, cached);
-                            } else {
-                                fetch(src).then(function (res) {
-                                    if (!res.ok) return;
-                                    return res.blob();
-                                }).then(function (blob) {
-                                    if (!blob) return;
-                                    useBlob(img, blob);
-                                    setCached(db, src, blob).catch(function () { });
-                                }).catch(function () { });
-                            }
-                        }).catch(function () { });
-                    });
-                }).catch(function () { });
-            }
-
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', cacheImages);
-            } else {
-                cacheImages();
-            }
-        })();
-
-        // Smooth non-blocking background preloader into browser cache AFTER initial render
-        window.addEventListener('load', function () {
-            var backgroundImages = [
-                'igs_files/WELCOME-TO-MISSION-2000.webp',
-                'igs_files/overlay.webp',
-                'igs_files/NATIONAL-EARLY-CHILDHOOD-EDUCATION-DAY.webp',
-                'igs_files/A-MOVEMENT-ADVANCING-EVERY-CHILDS-POTENTIAL.webp',
-                'igs_files/THE-FIRST-2000-DAYS-BUILD-A-LIFETIME-AND-A-NATION.webp',
-                'igs_files/TRANSFORMING-EARLY-CHILDHOOD-TO-NATIONAL-CAPABILITY.webp',
-                'igs_files/HUMAN-CAPITAL.webp',
-                'igs_files/INDIAS-CHILDREN-DESERVE-A-NATIONAL-MOVEMENT.webp',
-                'igs_files/A-CALL-FOR-INDIAS-NATIONAL-EARLY-CHILDHOOD-EDUCATION-DAY.webp',
-                'igs_files/THE-NATIONAL-PROMISE.webp'
-            ];
-            setTimeout(function () {
-                backgroundImages.forEach(function (src, idx) {
-                    setTimeout(function () {
-                        var img = new Image();
-                        img.src = src;
-                    }, idx * 400);
-                });
-            }, 1500);
-        });
-    </script>
 
 </body>
 

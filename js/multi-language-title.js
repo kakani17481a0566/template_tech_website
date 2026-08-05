@@ -29,6 +29,21 @@
 
             var i = 0;
             var busy = false;
+            var timer = null;
+            var visible = false;
+
+            function resetText() {
+                container.textContent = originalText;
+                container.style.opacity = '1';
+                busy = false;
+            }
+
+            function stop() {
+                if (timer) {
+                    clearInterval(timer);
+                    timer = null;
+                }
+            }
 
             function showNext() {
                 if (busy) return;
@@ -49,6 +64,10 @@
                     setTimeout(function () {
                         container.style.opacity = '0';
                         setTimeout(function () {
+                            if (!visible) {
+                                resetText();
+                                return;
+                            }
                             container.textContent = originalText;
                             container.style.opacity = '1';
                             busy = false;
@@ -58,10 +77,45 @@
                 }, 500);
             }
 
-            // Start cycling every 6 seconds
-            setInterval(showNext, 6000);
+            function start() {
+                if (!visible || timer) return;
+                timer = setInterval(showNext, 6000);
+            }
+
+            if ('IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        visible = entry.isIntersecting;
+                        if (visible) {
+                            start();
+                        } else {
+                            stop();
+                        }
+                    });
+                }, { threshold: 0 });
+                observer.observe(container);
+            } else {
+                visible = true;
+                start();
+            }
+
+            // Expose stop/start so tab visibility changes can pause cycling
+            container._m2kStop = stop;
+            container._m2kStart = start;
         });
     }
+
+    // Pause all cycling while the tab is hidden, resume when it is visible again
+    document.addEventListener('visibilitychange', function () {
+        var containers = document.querySelectorAll('.multi-language-title');
+        Array.prototype.forEach.call(containers, function (container) {
+            if (document.hidden) {
+                if (container._m2kStop) container._m2kStop();
+            } else if (container._m2kStart) {
+                container._m2kStart();
+            }
+        });
+    });
 
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initMultiLanguageTitles);
