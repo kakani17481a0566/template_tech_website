@@ -1012,6 +1012,21 @@ Every nation is shaped long before its workforce enters the economy or its leade
     <script type="text/javascript" src="igs_files/jquery.min.js.download" id="jquery-core-js"></script>
     <script type="text/javascript" src="igs_files/jquery-migrate.min.js.download" id="jquery-migrate-js"></script>
     <link rel="icon" type="image/svg+xml" href="m2k-logo.svg" sizes="any">
+    <link rel="preload" as="image" href="igs_files/WELCOME-TO-MISSION-2000.png">
+    <link rel="preload" as="image" href="igs_files/overlay.png">
+    <link rel="preload" as="image" href="igs_files/NATIONAL-EARLY-CHILDHOOD-EDUCATION-DAY.png">
+    <link rel="preload" as="image" href="igs_files/A-MOVEMENT-ADVANCING-EVERY-CHILDS-POTENTIAL.png">
+    <link rel="preload" as="image" href="igs_files/THE-FIRST-2000-DAYS-BUILD-A-LIFETIME-AND-A-NATION.png">
+    <link rel="preload" as="image" href="igs_files/TRANSFORMING-EARLY-CHILDHOOD-TO-NATIONAL-CAPABILITY.png">
+    <link rel="preload" as="image" href="igs_files/HUMAN-CAPITAL.png">
+    <link rel="preload" as="image" href="igs_files/INDIAS-CHILDREN-DESERVE-A-NATIONAL-MOVEMENT.png">
+    <link rel="preload" as="image" href="igs_files/A-CALL-FOR-INDIAS-NATIONAL-EARLY-CHILDHOOD-EDUCATION-DAY.png">
+    <link rel="preload" as="image" href="igs_files/THE-NATIONAL-PROMISE.png">
+    <link rel="preload" as="image" href="igs_files/100-DAYS-OF-KINDY-2-560x373.jpg">
+    <link rel="preload" as="image" href="igs_files/Y3-FIRST-NATIONS-DAY-INCURSION-34-560x373.jpg">
+    <link rel="preload" as="image" href="igs_files/Y11-MARKET-DAY-8-560x373.jpg">
+    <link rel="preload" as="image" href="images/ece-day/childhood-must-become-a-national-priority.png">
+    <link rel="preload" as="image" href="m2k-footer-logo.svg">
 
     <style type="text/css" id="wp-custom-css">
         .page-id-31942 .section.blockquote .col-lg-8 {
@@ -1343,6 +1358,29 @@ Every nation is shaped long before its workforce enters the economy or its leade
             line-height: 1.4;
             padding-bottom: 0.9em;
             margin: 0;
+        }
+
+        .section.introduction .intro-title {
+            align-items: center;
+        }
+
+        .section.introduction .intro-image {
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            border-radius: 0.75rem;
+        }
+
+        .section.introduction .intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (max-width: 767px) {
+            .section.introduction .intro-image {
+                margin-top: 2rem;
+            }
         }
     </style>
     <style type="text/css">
@@ -2303,13 +2341,11 @@ Every nation is shaped long before its workforce enters the economy or its leade
                     <div class="row">
                         <div class="col-12 intro-content">
                             <div class="row intro-title">
-                                <div class="col-12">
+                                <div class="col-md-6">
 <h2 class="title" id="welcome-to-mission-2000" style="margin:0; line-height:1.2;">
     <span>Welcome to<br>MISSION 2000</span>
 </h2>
-</div>
 
-                                <div class="col-12">
                                     <p class="heading" style="text-align: justify;">
                                         Mission 2000 is India's national movement that celebrates childhood, strengthens
                                         families, empowers teachers, and shapes the future of the nation. It is
@@ -2327,6 +2363,10 @@ Every nation is shaped long before its workforce enters the economy or its leade
                                         Because every child deserves the best beginning, and every nation deserves the
                                         brightest future.
                                     </p>
+                                </div>
+                                <div class="col-md-6 intro-image">
+                                    <img src="igs_files/WELCOME-TO-MISSION-2000.png"
+                                        alt="Welcome to Mission 2000">
                                 </div>
                             </div>
 
@@ -2371,7 +2411,7 @@ Every nation is shaped long before its workforce enters the economy or its leade
                                                     <div class="image-inner">
                                                         <img src="igs_files/NATIONAL-EARLY-CHILDHOOD-EDUCATION-DAY.png"
                                                             alt="National Early Childhood Education Day"
-                                                            loading="lazy" class="fill">
+                                                            class="fill">
                                                     </div>
                                                 </div>
                                             </div>
@@ -2394,7 +2434,7 @@ Every nation is shaped long before its workforce enters the economy or its leade
                                                     <div class="image-inner">
                                                         <img src="igs_files/A-MOVEMENT-ADVANCING-EVERY-CHILDS-POTENTIAL.png"
                                                             alt="A Movement Advancing Every Child's Potential"
-                                                            loading="lazy" class="fill">
+                                                            class="fill">
                                                     </div>
                                                 </div>
                                             </div>
@@ -2417,7 +2457,7 @@ Every nation is shaped long before its workforce enters the economy or its leade
                                                     <div class="image-inner">
                                                         <img src="igs_files/THE-FIRST-2000-DAYS-BUILD-A-LIFETIME-AND-A-NATION.png"
                                                             alt="The First 2000 Days Build a Lifetime - And a Nation"
-                                                            loading="lazy" class="fill">
+                                                            class="fill">
                                                     </div>
                                                 </div>
                                             </div>
@@ -2441,7 +2481,7 @@ Every nation is shaped long before its workforce enters the economy or its leade
                                                 <div class="image-wrapper">
                                                     <div class="image-inner">
                                                         <img src="igs_files/TRANSFORMING-EARLY-CHILDHOOD-TO-NATIONAL-CAPABILITY.png"
-                                                            alt="Transforming Early Childhood to National Capability" loading="lazy"
+                                                            alt="Transforming Early Childhood to National Capability"
                                                             class="fill">
                                                     </div>
                                                 </div>
@@ -2465,7 +2505,7 @@ Every nation is shaped long before its workforce enters the economy or its leade
                                                     <div class="image-inner">
                                                         <img src="igs_files/HUMAN-CAPITAL.png"
                                                             alt="Human Capital"
-                                                            loading="lazy" class="fill">
+                                                            class="fill">
                                                     </div>
                                                 </div>
                                             </div>
@@ -2493,7 +2533,7 @@ Every nation is shaped long before its workforce enters the economy or its leade
                                                     <div class="image-inner image-crop-none"
                                                         style="background-color: ;">
                                                         <img src="igs_files/INDIAS-CHILDREN-DESERVE-A-NATIONAL-MOVEMENT.png"
-                                                            alt="India's Children Deserve a National Movement" loading="lazy"
+                                                            alt="India's Children Deserve a National Movement"
                                                             class="fill">
                                                     </div>
                                                 </div>
@@ -2559,7 +2599,7 @@ Every nation is shaped long before its workforce enters the economy or its leade
                                                         style="background-color: ;">
                                                         <img src="igs_files/A-CALL-FOR-INDIAS-NATIONAL-EARLY-CHILDHOOD-EDUCATION-DAY.png"
                                                             alt="A Call for India's National Early Childhood Education Day"
-                                                            loading="lazy" class="fill">
+                                                            class="fill">
                                                     </div>
                                                 </div>
                                             </div>
@@ -2640,7 +2680,7 @@ Every nation is shaped long before its workforce enters the economy or its leade
                                                         style="background-color: ;">
                                                         <img src="igs_files/THE-NATIONAL-PROMISE.png"
                                                             alt="The National Promise"
-                                                            loading="lazy" class="fill">
+                                                            class="fill">
                                                     </div>
                                                 </div>
                                             </div>
@@ -2672,13 +2712,15 @@ Every nation is shaped long before its workforce enters the economy or its leade
 
                                 <div class="inner-content">
                                     <p>On 10 August, India will make a promise to its children.</p>
-                                    <p>We promise to understand before we judge.<br>
-                                        We promise to encourage before we compare.<br>
-                                        We promise to protect childhood from unnecessary pressure.<br>
-                                        We promise to make learning joyful, meaningful and inclusive.<br>
-                                        We promise to respect every child's pace, personality and potential.<br>
-                                        We promise to strengthen the people who care for and educate our children.<br>
-                                        We promise that no child will be made to feel invisible.</p>
+                                    <ul>
+                                        <li>We promise to understand before we judge.</li>
+                                        <li>We promise to encourage before we compare.</li>
+                                        <li>We promise to protect childhood from unnecessary pressure.</li>
+                                        <li>We promise to make learning joyful, meaningful and inclusive.</li>
+                                        <li>We promise to respect every child's pace, personality and potential.</li>
+                                        <li>We promise to strengthen the people who care for and educate our children.</li>
+                                        <li>We promise that no child will be made to feel invisible.</li>
+                                    </ul>
                                
 
 
@@ -2707,7 +2749,7 @@ Every nation is shaped long before its workforce enters the economy or its leade
                                         <div class="bg-wrapper">
                                             <img src="igs_files/100-DAYS-OF-KINDY-2-560x373.jpg"
                                                 alt="A smiling person holds large silver balloons forming 100 in front of a pink wall with M2K and school-related text."
-                                                loading="lazy">
+                                               >
                                         </div>
                                         <div class="inner-content">
                                             <h4 class="title">100 Days of Growth</h4>
@@ -2720,7 +2762,7 @@ Every nation is shaped long before its workforce enters the economy or its leade
                                         <div class="bg-wrapper">
                                             <img src="igs_files/Y3-FIRST-NATIONS-DAY-INCURSION-34-560x373.jpg"
                                                 alt="A group of children and an adult instructor raise their arms together in a gymnasium, facing away from the camera, engaging in an energetic group activity."
-                                                loading="lazy">
+                                               >
                                         </div>
                                         <div class="inner-content">
                                             <h4 class="title">Year 3 in Their Element</h4>
@@ -2733,7 +2775,7 @@ Every nation is shaped long before its workforce enters the economy or its leade
                                         <div class="bg-wrapper">
                                             <img src="igs_files/Y11-MARKET-DAY-8-560x373.jpg"
                                                 alt="Four smiling teenagers in white shirts kneel indoors, each holding a paper aeroplane. They pose with a blue board decorated with clouds and a circular cut-out, suggesting an engaging enterprise activity or event for future business leaders."
-                                                loading="lazy">
+                                               >
                                         </div>
                                         <div class="inner-content">
                                             <h4 class="title">Tomorrow’s Entrepreneurs</h4>
@@ -2764,7 +2806,7 @@ Every nation is shaped long before its workforce enters the economy or its leade
                                                         style="background-color: ;">
                                                         <img src="./images/ece-day/childhood-must-become-a-national-priority.png"
                                                             alt="Childhood must become a national priority"
-                                                            loading="lazy" class="fill">
+                                                            class="fill">
                                                     </div>
                                                 </div>
                                             </div>
@@ -2815,8 +2857,8 @@ Every nation is shaped long before its workforce enters the economy or its leade
                                         belongs to every person who believes that the future of India begins with how we
                                         understand and educate our YOUNGEST children.</p>
                                     <p><a href="https://www.linkedin.com/in/pgarapati/" target="_blank">Prasad Garapati</a><br>
-<a href="https://mnrgupta.com/" target="_blank">MNR Gupta</a><br>
 <a href="https://www.volluruaperna.com/" target="_blank">Dr Aperna Volluru</a><br>
+<a href="https://mnrgupta.com/" target="_blank">MNR Gupta</a><br>
                                         Founding Enablers, Mission 2000</p>
 
 
