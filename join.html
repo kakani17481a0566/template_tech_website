@@ -128,6 +128,34 @@
       to { transform: rotate(360deg); }
     }
 
+    /* Close / Back Button */
+    .page-close-btn {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 2000;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary-navy);
+      color: var(--pure-white);
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(4, 37, 98, 0.35);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .page-close-btn:hover {
+      background: var(--deep-navy);
+      transform: scale(1.06);
+    }
+
     /* Main Container Section */
     .main-section {
       max-width: 1140px;
@@ -512,6 +540,8 @@
 </head>
 <body>
 
+  <button class="page-close-btn" onclick="goBack()" title="Close and go back" aria-label="Close and go back">&times;</button>
+
   <!-- Registration Form Section -->
   <section class="main-section" id="register" style="background: #EDF2F7; max-width: 100%; border-top: 1px solid var(--card-border);">
     <div style="max-width: 1140px; margin: 0 auto;">
@@ -822,7 +852,7 @@
         <button onclick="downloadCertPNG()" class="btn btn-navy">Download PNG</button>
         <button onclick="downloadCertPDF()" class="btn btn-saffron">Download PDF</button>
         <button onclick="window.print()" class="btn btn-outline">Print</button>
-        <button onclick="closeModal()" class="btn btn-outline">Close</button>
+        <button onclick="goBack()" class="btn btn-outline">Back to Website</button>
       </div>
 
     </div>
@@ -1192,6 +1222,20 @@
 
     function closeModal() {
       document.getElementById('certModal').classList.remove('active');
+    }
+
+    function goBack() {
+      const fallback = location.pathname.includes('/m2k/') ? '../m2k.html' : 'm2k.html';
+      if (document.referrer) {
+        try {
+          const ref = new URL(document.referrer);
+          if (ref.origin === location.origin) {
+            window.history.back();
+            return;
+          }
+        } catch (e) { /* ignore */ }
+      }
+      window.location.href = fallback;
     }
   </script>
 </body>
