@@ -36,3 +36,41 @@ html {
 html {
     scroll-padding-top: 80px; /* adjust if nav height differs */
 }
+
+/* ── 5. Accordion & Dropdown styles for Header Nav & Directory ───────────── */
+.accordion-checkbox,
+.sub-accordion-checkbox {
+    display: none !important;
+}
+
+.accordion-toggle,
+.sub-accordion-toggle {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Ensure hidden accordion panel expands when checkbox is checked */
+.accordion-checkbox:checked ~ .accordion-panel {
+    display: block !important;
+    max-height: 1000px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Desktop & Directory sub-menu styling for Founder Enablers and nested items */
+#menu .grandchild,
+#menu-directory .sub-menu {
+    list-style: none;
+}
+
+#menu .grandchild li a,
+#menu-directory .sub-menu li a {
+    text-decoration: none;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+#menu .grandchild li a:hover,
+#menu-directory .sub-menu li a:hover {
+    opacity: 0.85;
+}
+
