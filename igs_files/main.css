@@ -32302,7 +32302,7 @@ a.link-more.gform_button {
 /* line 3, resources/assets/styles/layouts/_elements.scss */
 
 span.binding-fabric {
-  background-image: url(overlay.png);
+  background-image: url(overlay.webp);
   background-position: 50% 50%;
   background-repeat: repeat;
   position: absolute;
@@ -32604,7 +32604,7 @@ footer.main-footer .container .footer-secondary .footer-copyright p a:link {
 /* line 3, resources/assets/styles/layouts/_elements.scss */
 
 span.binding-fabric {
-  background-image: url(overlay.png);
+  background-image: url(overlay.webp);
   background-position: 50% 50%;
   background-repeat: repeat;
   position: absolute;
