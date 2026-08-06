@@ -265,6 +265,7 @@
     const googleSelect = document.querySelector('.goog-te-combo');
     if (googleSelect) {
       googleSelect.value = langCode;
+      if (!googleSelect.value) googleSelect.value = '/en/' + langCode;
       googleSelect.dispatchEvent(new Event('change'));
       
       // Update our UI active class
@@ -329,7 +330,9 @@
   gtDiv.style.display = 'none';
   document.body.appendChild(gtDiv);
 
-  // Load Google Translate API Script on first interaction (lazy load to reduce cookie impact)
+  // Load Google Translate API Script on page load so a saved language
+  // (googtrans cookie) is applied automatically and language selection works
+  // instantly. Kept guarded by _gtLoaded so it is only ever injected once.
   var _gtLoaded = false;
   function loadGoogleTranslate() {
     if (_gtLoaded) return;
@@ -339,6 +342,7 @@
     s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
     document.body.appendChild(s);
   }
+  loadGoogleTranslate();
   btn.addEventListener('mouseenter', loadGoogleTranslate, { once: true });
   btn.addEventListener('touchstart', loadGoogleTranslate, { once: true });
 })();

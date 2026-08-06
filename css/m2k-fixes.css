@@ -74,3 +74,46 @@ html {
     opacity: 0.85;
 }
 
+/* ── 6. Directory readability ────────────────────────────────────────────────
+   The Directory heading, link text, link underlines and accordion chevrons
+   inherit the dark navy (#0A1539) brand color. Swap them to a neutral dark
+   gray that reads clearly on white, with light underlines.
+   ─────────────────────────────────────────────────────────────────────── */
+section.directory,
+section.directory nav ul li a,
+section.directory .accordion-toggle,
+section.directory .sub-accordion-toggle {
+    color: #1F2937;
+}
+
+section.directory .accordion-toggle:hover,
+section.directory .sub-accordion-toggle:hover,
+section.directory .accordion-toggle:focus,
+section.directory .sub-accordion-toggle:focus {
+    color: #ED8E0C; /* saffron accent on hover */
+}
+
+section.directory nav > ul > li > a,
+section.directory nav > ul > li ul li a,
+section.directory .menu-item-accordion .accordion-toggle {
+    border-bottom-color: #E2E8F0;
+}
+
+section.directory .menu-item-accordion .accordion-toggle .accordion-chevron {
+    border-right-color: #1F2937;
+    border-bottom-color: #1F2937;
+}
+
+/* ── Header nav: auto-close after redirect ──────────────────────────────────
+   Force-hides a top-level submenu that is open via hover/active immediately
+   after one of its links is clicked (the pointer is still over the menu, so
+   plain :hover keeps it open). The suppressed state is cleared by nav-close.js
+   on the next hover of any top-level item.
+   ─────────────────────────────────────────────────────────────────────── */
+header.main-header nav > ul > li.nav-suppressed > ul.child {
+    opacity: 0 !important;
+    transform: scaleY(0) !important;
+    filter: blur(0) !important;
+    pointer-events: none !important;
+}
+
