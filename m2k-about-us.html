@@ -1337,6 +1337,29 @@
             padding-bottom: 0.9em;
             margin: 0;
         }
+
+        .section.gateway-link .content.container .title {
+            overflow-wrap: break-word;
+            word-break: normal;
+            white-space: normal;
+        }
+
+        @supports (font-size: 1cqw) {
+            .section.gateway-link .content.container {
+                container-type: inline-size;
+            }
+
+            .section.gateway-link .content.container .title {
+                font-size: clamp(1.5rem, 12cqw, 6rem) !important;
+            }
+        }
+
+        @media screen and (max-width: 991px) {
+            .section.gateway-link .content.container .title {
+                font-size: clamp(1.25rem, 11vw, 2.5rem) !important;
+                container-type: normal;
+            }
+        }
     </style>
     <style type="text/css">
         /*!
