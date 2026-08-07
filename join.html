@@ -618,7 +618,7 @@
   <section class="main-section" id="register" style="background: #FFFFFF; max-width: 100%; border-top: 1px solid var(--card-border);">
     <div style="max-width: 1140px; margin: 0 auto;">
       <div class="section-header hero-banner" style="text-align: center;">
-        <img src="Mission_2000_AUG10.png" alt="Mission 2000 — National Early Childhood Education Day, 10 August" class="hero-banner-img">
+        <img src="Mission_2000_AUG10.png" alt="Mission 2000 — National Early Childhood Education Day, 10 August" class="hero-banner-img" data-cache="true">
         <div class="hero-banner-content">
           <span class="hero-banner-badge">National Early Childhood Education Day &middot; 10 August</span>
           <h2 class="section-title">Declaration & Registration</h2>
@@ -1314,6 +1314,36 @@
       }
       window.location.href = fallback;
     }
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Image caching logic
+      const imagesToCache = document.querySelectorAll('img[data-cache="true"]');
+      imagesToCache.forEach(img => {
+        const originalSrc = img.getAttribute('src');
+        const storageKey = 'imgCache_' + btoa(originalSrc);
+        const cachedData = sessionStorage.getItem(storageKey);
+        
+        if (cachedData) {
+          img.src = cachedData;
+        } else {
+          fetch(originalSrc)
+            .then(response => response.blob())
+            .then(blob => {
+              const reader = new FileReader();
+              reader.onloadend = function() {
+                try {
+                  sessionStorage.setItem(storageKey, reader.result);
+                } catch (e) {
+                  console.warn('Session storage full or error');
+                }
+              }
+              reader.readAsDataURL(blob);
+            })
+            .catch(err => console.error('Error caching image', err));
+        }
+      });
+    });
   </script>
 </body>
 </html>
