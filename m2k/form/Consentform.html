@@ -335,7 +335,14 @@
           document.getElementById("step-email").style.display = "none";
           document.getElementById("step-otp").style.display = "block";
         } else {
-          Swal.fire({ icon: 'error', title: 'Error', text: 'Could not send OTP. Please try again.' });
+          let errorMsg = 'Could not send OTP. Please try again.';
+          try {
+            const data = await response.json();
+            if (data && data.message) {
+              errorMsg = data.message;
+            }
+          } catch(e) {}
+          Swal.fire({ icon: 'error', title: 'Email Error', text: errorMsg });
         }
       } catch (error) {
         console.error("Error sending OTP:", error);
