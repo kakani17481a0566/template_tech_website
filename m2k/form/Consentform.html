@@ -352,17 +352,33 @@
       const data = Object.fromEntries(formData.entries());
       
       // Convert checkbox 'on' values to booleans
-      data.consent_participation = !!data.consent_participation;
-      data.consent_snacks = !!data.consent_snacks;
-      data.consent_media = !!data.consent_media;
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.textContent = "Submitting...";
+      btn.disabled = true;
 
       // Convert date format from dd-mm-yyyy to yyyy-MM-dd for the .NET DateOnly backend
-      if (data.submission_date) {
-        const parts = data.submission_date.split('-');
+      let formattedDate = data.submission_date;
+      if (formattedDate) {
+        const parts = formattedDate.split('-');
         if (parts.length === 3) {
-          data.submission_date = `${parts[2]}-${parts[1]}-${parts[0]}`;
+          formattedDate = `${parts[2]}-${parts[1]}-${parts[0]}`;
         }
       }
+
+      // Map form fields to exactly match C# ConsentFormRequestVM properties (camelCase mapping)
+      const payload = {
+        parentEmail: data.parent_email,
+        parentName: data.parent_name,
+        childName: data.child_name,
+        grade: data.grade,
+        centreName: data.centre_name,
+        consentParticipation: !!data.consent_participation,
+        consentSnacks: !!data.consent_snacks,
+        consentMedia: !!data.consent_media,
+        signatureName: data.signature_name,
+        submissionDate: formattedDate
+      };
 
       // Call the actual backend endpoint
       const API_ENDPOINT = "https://neuropi-crm-api.azurewebsites.net/api/ConsentForm/CreateConsentForm";
@@ -373,7 +389,7 @@
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify(data)
+          body: JSON.stringify(payload)
         });
 
         if (response.ok) {
@@ -402,6 +418,9 @@
       } catch (error) {
         console.error("Error submitting form:", error);
         alert("Network error. Please check your connection and try again.");
+      } finally {
+        btn.textContent = originalText;
+        btn.disabled = false;
       }
     }
   </script>
