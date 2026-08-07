@@ -181,6 +181,78 @@
       margin-top: 6px;
     }
 
+    /* Modern Hero Banner */
+    .hero-banner {
+      position: relative;
+      max-width: 860px;
+      margin: 0 auto 32px;
+      aspect-ratio: 3 / 2;
+      border-radius: 18px;
+      overflow: hidden;
+      text-align: center;
+      animation: heroFadeIn 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .hero-banner-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1.03);
+      animation: heroZoom 6s ease-out forwards;
+    }
+
+    .hero-banner-content {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 30px 28px;
+      color: var(--pure-white);
+    }
+
+    .hero-banner-badge {
+      display: inline-block;
+      background: rgba(4, 37, 98, 0.06);
+      border: 1px solid rgba(4, 37, 98, 0.3);
+      color: var(--primary-navy);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .hero-banner-content .section-title {
+      color: var(--primary-navy);
+      font-size: 2.1rem;
+      margin: 0;
+    }
+
+    .hero-banner-content .section-desc {
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    @keyframes heroFadeIn {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes heroZoom {
+      from { transform: scale(1.08); }
+      to { transform: scale(1.03); }
+    }
+
+    @media (max-width: 768px) {
+      .hero-banner-content { padding: 20px 16px; }
+      .hero-banner-content .section-title { font-size: 1.5rem; }
+      .hero-banner-badge { font-size: 0.62rem; letter-spacing: 1.2px; }
+    }
+
     /* Form Container */
     .form-card {
       background: var(--pure-white);
@@ -543,11 +615,15 @@
   <button class="page-close-btn" onclick="goBack()" title="Close and go back" aria-label="Close and go back">&times;</button>
 
   <!-- Registration Form Section -->
-  <section class="main-section" id="register" style="background: #EDF2F7; max-width: 100%; border-top: 1px solid var(--card-border);">
+  <section class="main-section" id="register" style="background: #FFFFFF; max-width: 100%; border-top: 1px solid var(--card-border);">
     <div style="max-width: 1140px; margin: 0 auto;">
-      <div class="section-header" style="text-align: center;">
-        <h2 class="section-title">Declaration & Registration</h2>
-        <p class="section-desc">Submit your details to register as an official Founding Enabler of Mission 2000.</p>
+      <div class="section-header hero-banner" style="text-align: center;">
+        <img src="Mission_2000_AUG10.png" alt="Mission 2000 — National Early Childhood Education Day, 10 August" class="hero-banner-img">
+        <div class="hero-banner-content">
+          <span class="hero-banner-badge">National Early Childhood Education Day &middot; 10 August</span>
+          <h2 class="section-title">Declaration & Registration</h2>
+          <p class="section-desc">Submit your details to register as an official Founding Enabler of Mission 2000.</p>
+        </div>
       </div>
 
       <div class="form-card">
