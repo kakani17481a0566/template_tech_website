@@ -655,12 +655,12 @@
                 <div style="font-weight: 800; color: var(--primary-navy);">Verify Your Email</div>
                 <div style="font-size: 0.85rem; color: var(--text-muted);">OTP sent to <strong id="otpEmail"></strong></div>
               </div>
-              <button onclick="sendOtp()" class="btn btn-outline" id="resendOtpBtn" style="padding: 8px 18px;"><span class="spinner"></span>Resend OTP</button>
+              <button type="button" onclick="sendOtp()" class="btn btn-outline" id="resendOtpBtn" style="padding: 8px 18px;"><span class="spinner"></span>Resend OTP</button>
             </div>
             <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; max-width: 460px; margin: 0 auto;">
               <input type="text" id="otpInput" maxlength="6" class="form-input"
                      style="flex: 1; min-width: 170px; font-size: 1.4rem; letter-spacing: 8px; text-align: center;" placeholder="------">
-              <button onclick="verifyOtp()" class="btn btn-navy" id="verifyOtpBtn" style="min-width: 120px;"><span class="spinner"></span>Verify</button>
+              <button type="button" onclick="verifyOtp()" class="btn btn-navy" id="verifyOtpBtn" style="min-width: 120px;"><span class="spinner"></span>Verify</button>
             </div>
             <p id="otpError" style="color: #C53030; margin-top: 10px; display: none;"></p>
             <p id="otpSuccess" style="color: var(--teal-green); font-weight: 700; margin-top: 10px; display: none;">Email verified successfully. You can now submit your declaration.</p>
@@ -810,7 +810,7 @@
             </div>
             <div class="form-group">
               <label class="form-label" for="website">Website (Optional)</label>
-              <input type="url" id="website" class="form-input" placeholder="https://...">
+              <input type="text" id="website" class="form-input" placeholder="e.g. yourwebsite.com">
             </div>
           </div>
 
@@ -1249,7 +1249,14 @@
     async function sendCertificateEmail() {
       const statusEl = document.getElementById('certEmailStatus');
       try {
-        const dataUrl = certCanvas.toDataURL('image/jpeg', 0.9);
+        // Resize canvas to a reasonable size for email attachments to prevent Payload Too Large or SMTP Timeouts
+        const emailCanvas = document.createElement('canvas');
+        emailCanvas.width = CERT_W / 4;
+        emailCanvas.height = CERT_H / 4;
+        const emailCtx = emailCanvas.getContext('2d');
+        emailCtx.drawImage(certCanvas, 0, 0, emailCanvas.width, emailCanvas.height);
+        
+        const dataUrl = emailCanvas.toDataURL('image/jpeg', 0.85);
         const res = await fetch(`${API_BASE}/api/OnlineRegM2K/send-certificate`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': 'true' },
