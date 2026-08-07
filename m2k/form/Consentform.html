@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Parent/Guardian Consent Form</title>
+  <!-- SweetAlert2 for beautiful toasts -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
     body {
       font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
@@ -275,9 +277,9 @@
     const BASE_URL = "https://neuropi-crm-api.azurewebsites.net/api/ConsentForm";
 
     async function sendOTP() {
-      const email = document.getElementById("userEmail").value;
+      const email = document.getElementById("userEmail").value.trim();
       if (!email || !email.includes('@')) {
-        alert("Please enter a valid email address.");
+        Swal.fire({ icon: 'warning', title: 'Invalid Email', text: 'Please enter a valid email address.' });
         return;
       }
       
@@ -293,15 +295,15 @@
         });
 
         if (response.ok) {
-          alert("Verification Code sent to " + email);
+          Swal.fire({ icon: 'success', title: 'Sent', text: "Verification Code sent to " + email });
           document.getElementById("step-email").style.display = "none";
           document.getElementById("step-otp").style.display = "block";
         } else {
-          alert("Failed to send OTP. Please try again.");
+          Swal.fire({ icon: 'error', title: 'Error', text: 'Could not send OTP. Please try again.' });
         }
       } catch (error) {
         console.error("Error sending OTP:", error);
-        alert("Network error. Please check your connection.");
+        Swal.fire({ icon: 'error', title: 'Network Error', text: 'Please check your connection and try again.' });
       } finally {
         btn.textContent = "Send OTP";
         btn.disabled = false;
@@ -309,11 +311,11 @@
     }
 
     async function verifyOTP() {
-      const code = document.getElementById("otpCode").value;
+      const code = document.getElementById("otpCode").value.trim();
       const email = document.getElementById("userEmail").value;
       
-      if (!code) {
-        alert("Please enter the verification code.");
+      if (code.length !== 4) {
+        Swal.fire({ icon: 'warning', title: 'Invalid OTP', text: 'Please enter the 4-digit OTP code.' });
         return;
       }
 
@@ -332,12 +334,19 @@
           document.getElementById("verifiedEmailInput").value = email;
           document.getElementById("email-verification").style.display = "none";
           document.getElementById("main-form").style.display = "block";
+          Swal.fire({
+            icon: 'success',
+            title: 'Verified!',
+            text: 'Email verified successfully. You can now fill out the consent form.',
+            timer: 2500,
+            showConfirmButton: false
+          });
         } else {
-          alert("Invalid or expired code. Please try again.");
+          Swal.fire({ icon: 'error', title: 'Invalid Code', text: 'Invalid or expired code. Please try again.' });
         }
       } catch (error) {
         console.error("Error verifying OTP:", error);
-        alert("Network error. Please check your connection.");
+        Swal.fire({ icon: 'error', title: 'Network Error', text: 'Please check your connection and try again.' });
       } finally {
         btn.textContent = "Verify & Proceed";
         btn.disabled = false;
@@ -393,31 +402,50 @@
         });
 
         if (response.ok) {
-          if (confirm("Success! The consent form has been submitted for this child.\n\nDo you need to submit a consent form for ANOTHER child?")) {
-            // They want to add another child. Clear only the child-specific fields.
-            form.elements['child_name'].value = '';
-            form.elements['grade'].value = '';
-            form.elements['consent_participation'].checked = false;
-            form.elements['consent_snacks'].checked = false;
-            form.elements['consent_media'].checked = false;
-            
-            // Scroll to top of the form so they see the empty child name field
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          } else {
-            // They are completely done. Reset everything to the beginning.
-            form.reset();
-            document.getElementById("main-form").style.display = "none";
-            document.getElementById("email-verification").style.display = "block";
-            document.getElementById("step-otp").style.display = "none";
-            document.getElementById("step-email").style.display = "block";
-            document.getElementById("userEmail").value = "";
-          }
+          Swal.fire({
+            title: 'Success!',
+            text: 'The consent form has been submitted for this child. Do you need to submit a consent form for ANOTHER child?',
+            icon: 'success',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, add another child',
+            cancelButtonText: 'No, I am done',
+            confirmButtonColor: '#042562',
+            cancelButtonColor: '#178F65'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              // They want to add another child. Clear only the child-specific fields.
+              form.elements['child_name'].value = '';
+              form.elements['grade'].value = '';
+              form.elements['consent_participation'].checked = false;
+              form.elements['consent_snacks'].checked = false;
+              form.elements['consent_media'].checked = false;
+              
+              // Scroll to top of the form so they see the empty child name field
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+              // They are completely done. Reset everything to the beginning.
+              form.reset();
+              document.getElementById("main-form").style.display = "none";
+              document.getElementById("email-verification").style.display = "block";
+              document.getElementById("step-otp").style.display = "none";
+              document.getElementById("step-email").style.display = "block";
+              document.getElementById("userEmail").value = "";
+              
+              Swal.fire({
+                icon: 'info',
+                title: 'Completed',
+                text: 'Thank you. All consent forms have been successfully submitted.',
+                timer: 3000,
+                showConfirmButton: false
+              });
+            }
+          });
         } else {
-          alert("There was an error submitting the form. Please try again.");
+          Swal.fire({ icon: 'error', title: 'Submission Failed', text: 'There was an error submitting the form. Please try again.' });
         }
       } catch (error) {
         console.error("Error submitting form:", error);
-        alert("Network error. Please check your connection and try again.");
+        Swal.fire({ icon: 'error', title: 'Network Error', text: 'Please check your connection and try again.' });
       } finally {
         btn.textContent = originalText;
         btn.disabled = false;
