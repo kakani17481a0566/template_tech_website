@@ -1197,25 +1197,27 @@
       ctx.textAlign = 'center';
       ctx.textBaseline = 'alphabetic';
 
-      ctx.font = `400 130px 'Great Vibes', cursive`;
+      ctx.font = `400 130px 'Brush Script MT', cursive`;
       ctx.fillText(name, certPositions.name.x, certPositions.name.y);
 
       if (place) {
-        ctx.font = `600 80px 'EB Garamond', serif`;
+        ctx.font = `400 80px 'Brush Script MT', cursive`;
         ctx.fillText(place, certPositions.place.x, certPositions.place.y);
       }
       if (state) {
-        ctx.font = `600 80px 'EB Garamond', serif`;
+        ctx.font = `400 80px 'Brush Script MT', cursive`;
         ctx.fillText(state, certPositions.state.x, certPositions.state.y);
       }
 
-      ctx.font = `500 70px 'EB Garamond', serif`;
+      ctx.font = `400 70px 'Brush Script MT', cursive`;
       ctx.fillText(certDate, certPositions.date.x, certPositions.date.y);
 
-      ctx.font = `400 90px 'Great Vibes', cursive`;
-      ctx.fillText("Dr. Aperna Vollur", certPositions.sig.x, certPositions.sig.y);
+      ctx.fillStyle = '#1B6101';
+      ctx.font = `400 90px 'SignPainter', cursive`;
+      ctx.fillText("Aperna Volluru", certPositions.sig.x, certPositions.sig.y);
 
-      ctx.font = `600 46px 'EB Garamond', serif`;
+      ctx.fillStyle = '#1a1f2c';
+      ctx.font = `400 46px 'Brush Script MT', cursive`;
       ctx.fillText(currentFeid, certPositions.feid.x, certPositions.feid.y);
     }
 
