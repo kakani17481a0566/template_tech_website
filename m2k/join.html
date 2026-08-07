@@ -1192,13 +1192,12 @@
       const place = document.getElementById('place').value.trim();
       const state = document.getElementById('state').value;
       const certDate = formatCertDate(document.getElementById('sigDate').value);
-      const sig = document.getElementById('digitalSig').value.trim() || name;
 
       ctx.fillStyle = '#1a1f2c';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'alphabetic';
 
-      ctx.font = `600 95px 'EB Garamond', serif`;
+      ctx.font = `400 130px 'Great Vibes', cursive`;
       ctx.fillText(name, certPositions.name.x, certPositions.name.y);
 
       if (place) {
@@ -1214,7 +1213,7 @@
       ctx.fillText(certDate, certPositions.date.x, certPositions.date.y);
 
       ctx.font = `400 90px 'Great Vibes', cursive`;
-      ctx.fillText(sig, certPositions.sig.x, certPositions.sig.y);
+      ctx.fillText("Dr. Aperna Vollur", certPositions.sig.x, certPositions.sig.y);
 
       ctx.font = `600 46px 'EB Garamond', serif`;
       ctx.fillText(currentFeid, certPositions.feid.x, certPositions.feid.y);
