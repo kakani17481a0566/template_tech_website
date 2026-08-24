@@ -100,8 +100,8 @@
             }
 
             // Expose stop/start so tab visibility changes can pause cycling
-            container._m2kStop = stop;
-            container._m2kStart = start;
+            container._mltStop = stop;
+            container._mltStart = start;
         });
     }
 
@@ -110,9 +110,9 @@
         var containers = document.querySelectorAll('.multi-language-title');
         Array.prototype.forEach.call(containers, function (container) {
             if (document.hidden) {
-                if (container._m2kStop) container._m2kStop();
-            } else if (container._m2kStart) {
-                container._m2kStart();
+                if (container._mltStop) container._mltStop();
+            } else if (container._mltStart) {
+                container._mltStart();
             }
         });
     });
