@@ -183,6 +183,42 @@
   .uix-slide-menu__list, .neuropi-slide-menu__list { padding-top: 4rem; }
   .uix-slide-menu__list li a, .neuropi-slide-menu__list li a { font-size: 1.25rem; }
   .uix-slide-menu__footer, .neuropi-slide-menu__footer { padding: 1rem; }
+
+  .neuropi-nav-actions {
+    display: grid !important;
+    grid-template-columns: auto auto !important;
+    grid-template-areas:
+      "menu login"
+      "apk  apk" !important;
+    gap: 6px 8px !important;
+    justify-content: end !important;
+    justify-items: end !important;
+    align-items: center !important;
+  }
+
+  .neuropi-nav-actions a[href*="neuropi.apk"],
+  .neuropi-nav-actions .neuropi-apk-btn {
+    grid-area: apk !important;
+    justify-self: stretch !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+  }
+
+  .neuropi-nav-actions button[onclick*="ToggleMenu"],
+  .neuropi-nav-actions button[onclick*="toggleMenu"],
+  .neuropi-nav-actions .neuropi-menu-btn,
+  .neuropi-nav-actions .uix-navbar__menu-btn {
+    grid-area: menu !important;
+    white-space: nowrap !important;
+  }
+
+  .neuropi-nav-actions button[onclick*="neuropiconnect"],
+  .neuropi-nav-actions .neuropi-login-btn {
+    grid-area: login !important;
+    white-space: nowrap !important;
+  }
 }
 
 

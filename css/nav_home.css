@@ -64,7 +64,7 @@
 /* ===== Scroll State (navbar after scrolling) ===== */
 .neuropi-nav-bar.scrolled {
   background: #fff;
-  box-shadow: 0 4px 6px rgba(0,0,0,.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, .1);
 }
 
 .neuropi-nav-bar.scrolled .neuropi-nav-brand {
@@ -119,18 +119,21 @@
 }
 
 .neuropi-menu-list li {
-  margin: 1.75rem 0; /* ⬅ Increased spacing between items */
+  margin: 1.75rem 0;
+  /* ⬅ Increased spacing between items */
 }
 
 /* ===== Bigger & bolder links ===== */
 .neuropi-menu-list li a {
   color: #fff;
   text-decoration: none;
-  font-size: 2.25rem; /* ⬅ Bigger than before (was 1.75rem) */
+  font-size: 2.25rem;
+  /* ⬅ Bigger than before (was 1.75rem) */
   font-weight: bold;
   display: block;
-  padding-bottom: 0.75rem; /* ⬅ Slightly more padding under text */
-  border-bottom: 2px solid rgba(255,255,255,0.4);
+  padding-bottom: 0.75rem;
+  /* ⬅ Slightly more padding under text */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
   transition: border-color 0.3s ease;
 }
 
@@ -152,6 +155,7 @@
     width: 55%;
     right: -55%;
   }
+
   .neuropi-nav-bar {
     padding: 1rem 4rem;
   }
@@ -160,34 +164,77 @@
 /* ===== Nav action buttons – all 3 (Menu / CarpeDiem / Log In) ===== */
 /* zoom scales buttons visually without fighting inline !important styles   */
 
+/* ===== Nav action buttons (Desktop: Neuropi APK | Menu | Log In) ===== */
+.neuropi-nav-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
 /* Base: all buttons single-line */
-.neuropi-nav-actions button {
+.neuropi-nav-actions button,
+.neuropi-nav-actions a {
   white-space: nowrap !important;
 }
 
-/* Mid-range mobile (≤ 767px): tighten gap */
+/* Mobile (≤ 767px): move Neuropi APK below Menu and Log In */
 @media (max-width: 767px) {
   .neuropi-nav-actions {
-    gap: 6px !important;
+    display: grid !important;
+    grid-template-columns: auto auto !important;
+    grid-template-areas:
+      "menu login"
+      "apk  apk" !important;
+    gap: 6px 8px !important;
+    justify-content: end !important;
+    justify-items: end !important;
+    align-items: center !important;
+  }
+
+  .neuropi-nav-actions:has(.neuropi-carpe-btn) {
+    grid-template-columns: auto auto auto !important;
+    grid-template-areas:
+      "menu carpe login"
+      "apk  apk   apk" !important;
+  }
+
+  .neuropi-nav-actions a[href*="neuropi.apk"],
+  .neuropi-nav-actions .neuropi-apk-btn {
+    grid-area: apk !important;
+    justify-self: stretch !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+  }
+
+  .neuropi-nav-actions button[onclick*="ToggleMenu"],
+  .neuropi-nav-actions button[onclick*="toggleMenu"],
+  .neuropi-nav-actions .neuropi-menu-btn,
+  .neuropi-nav-actions .uix-navbar__menu-btn {
+    grid-area: menu !important;
+    white-space: nowrap !important;
+  }
+
+  .neuropi-nav-actions button[onclick*="neuropiconnect"],
+  .neuropi-nav-actions .neuropi-login-btn {
+    grid-area: login !important;
+    white-space: nowrap !important;
+  }
+
+  .neuropi-nav-actions .neuropi-carpe-btn {
+    grid-area: carpe !important;
   }
 }
 
-/* Small phones (≤ 600px): zoom all buttons to 85% */
-@media (max-width: 600px) {
-  .neuropi-nav-actions {
-    gap: 4px !important;
-    zoom: 0.85;
-  }
-}
-
-/* Very small phones (≤ 400px): zoom to 70% + shrink logo */
+/* Very small phones (≤ 400px): tighten gap slightly */
 @media (max-width: 400px) {
   .neuropi-nav-actions {
-    gap: 3px !important;
-    zoom: 0.70;
+    gap: 4px 6px !important;
   }
+
   .neuropi-nav-brand img {
-    height: 42px !important;
+    height: 44px !important;
   }
 }
 
@@ -203,7 +250,7 @@
   }
 
   .neuropi-nav-bar {
-    padding: 1rem 2rem;
+    padding: 0.75rem 1.25rem;
   }
 
   .neuropi-menu-panel {
@@ -217,32 +264,37 @@
   }
 
   .neuropi-menu-list li {
-    margin: 1.5rem 0; /* Slightly tighter on small screens */
+    margin: 1.5rem 0;
+    /* Slightly tighter on small screens */
   }
 
   .neuropi-menu-list li a {
-    font-size: 1.75rem; /* Bigger on mobile than before */
+    font-size: 1.75rem;
+    /* Bigger on mobile than before */
   }
 }
 
 
 @media (max-width: 767px) {
+
   /* Target the inner flex container */
   .neuropi-footer-contact[style*="display: flex"] {
     flex-direction: column !important;
-    align-items: center !important; /* centers children horizontally */
+    align-items: center !important;
+    /* centers children horizontally */
     justify-content: center !important;
-    text-align: center !important; /* centers text inside p */
+    text-align: center !important;
+    /* centers text inside p */
     gap: 1rem;
-    padding: 1rem; /* ⬅ added padding all around */
+    padding: 1rem;
+    /* ⬅ added padding all around */
   }
 
   /* Make sure all text inside is centered and spaced */
   .neuropi-footer-contact p {
     text-align: center !important;
     margin: 0;
-    padding: 0 0.5rem; /* ⬅ small left/right padding for breathing space */
+    padding: 0 0.5rem;
+    /* ⬅ small left/right padding for breathing space */
   }
 }
-
-

@@ -143,7 +143,7 @@
           </div>
           <div class="neuropi-nav-actions" style="display:flex; align-items:center; gap:10px;">
 
-            <a href="neuropi.apk" download="neuropi.apk" role="button" style="
+            <a href="neuropi.apk" download="neuropi.apk" class="neuropi-apk-btn" role="button" style="
       background:#ff471d !important;
       color:#fff !important;
       border:2px solid #ff471d !important;
@@ -161,14 +161,17 @@
       text-decoration:none !important;
       line-height:normal !important;
       box-sizing:border-box !important;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" style="display:inline-block; vertical-align:middle; flex-shrink:0;">
-                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="24" fill="currentColor" viewBox="0 0 16 16"
+                aria-hidden="true" style="display:inline-block; vertical-align:middle; flex-shrink:0;">
+                <path
+                  d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                <path
+                  d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
               </svg>
               <span>Neuropi APK</span>
             </a>
 
-            <button onclick="neuropiToggleMenu()" style="
+            <button class="neuropi-menu-btn" onclick="neuropiToggleMenu()" style="
     background: #ff471d !important;
     color: #fff !important;
     border: 2px solid #ff471d !important;
@@ -221,9 +224,9 @@
           <li><a href="what-is-neuropi.html#early-edu-section-problem">PROBLEM</a></li>
           <li><a href="what-is-neuropi.html#early-edu-section-solutions">TECHNOLOGY SUITE</a></li>
           <li><a href="index.html#Home-solutions">SOLUTION</a></li>
-           <li><a href="media-press-coverage.html">MEDIA PRESS COVERAGE</a></li>
-           <li><a href="mou.html">MoU</a></li>
-           <li><a href="what-is-neuropi.html#early-edu-section-why">WHY US? WHY NOW?</a></li>
+          <li><a href="media-press-coverage.html">MEDIA PRESS COVERAGE</a></li>
+          <li><a href="mou.html">MoU</a></li>
+          <li><a href="what-is-neuropi.html#early-edu-section-why">WHY US? WHY NOW?</a></li>
           <li><a href="blower-policy.html">WHISTLE BLOWER POLICY</a></li>
           <li><a href="https://flic.kr/s/aHBqjCLDRB" target="_blank" rel="noopener noreferrer">CARPEDIEM 2026</a></li>
         </ul>
@@ -677,7 +680,8 @@
 
   <div id="videobgfull" style="position: relative; overflow: hidden;">
 
-    <video autoplay muted loop playsinline preload="auto" title="NeuroPi platform overview animation" poster="images/neuropi-neurogenomic-brain-hero.jpeg" style="
+    <video autoplay muted loop playsinline preload="auto" title="NeuroPi platform overview animation"
+      poster="images/neuropi-neurogenomic-brain-hero.jpeg" style="
       position: absolute;
       top: 0;
       left: 0;

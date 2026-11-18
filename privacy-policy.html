@@ -95,9 +95,9 @@
           <div class="neuropi-nav-brand">
             <a href="index.html"><img src="images/neuropi-logo.png" alt="Logo"></a>
           </div>
-          <div style="display:flex; align-items:center; gap:10px;">
+          <div class="neuropi-nav-actions" style="display:flex; align-items:center; gap:10px;">
 
-            <a href="neuropi.apk" download="neuropi.apk" role="button" style="
+            <a href="neuropi.apk" download="neuropi.apk" class="neuropi-apk-btn" role="button" style="
       background:#ff471d !important;
       color:#fff !important;
       border:2px solid #ff471d !important;
@@ -115,14 +115,17 @@
       text-decoration:none !important;
       line-height:normal !important;
       box-sizing:border-box !important;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" style="display:inline-block; vertical-align:middle; flex-shrink:0;">
-                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="24" fill="currentColor" viewBox="0 0 16 16"
+                aria-hidden="true" style="display:inline-block; vertical-align:middle; flex-shrink:0;">
+                <path
+                  d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                <path
+                  d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
               </svg>
               <span>Neuropi APK</span>
             </a>
 
-            <button onclick="neuropiToggleMenu()" style="
+            <button class="neuropi-menu-btn" onclick="neuropiToggleMenu()" style="
       background:#ff471d !important;
       color:#fff !important;
       border:2px solid #ff471d !important;
@@ -139,7 +142,7 @@
               Menu
             </button>
 
-            <button onclick="window.open('https://neuropiconnect.com','_blank')" style="
+            <button class="neuropi-login-btn" onclick="window.open('https://neuropiconnect.com','_blank')" style="
       background:#ff471d !important;
       color:#fff !important;
       border:2px solid #ff471d !important;
@@ -171,9 +174,9 @@
           <li><a href="what-is-neuropi.html#early-edu-section-problem">PROBLEM</a></li>
           <li><a href="what-is-neuropi.html#early-edu-section-solutions">TECHNOLOGY SUITE</a></li>
           <li><a href="index.html#Home-solutions">SOLUTION</a></li>
-           <li><a href="media-press-coverage.html">MEDIA PRESS COVERAGE</a></li>
-           <li><a href="mou.html">MoU</a></li>
-           <li><a href="what-is-neuropi.html#early-edu-section-why">WHY US? WHY NOW?</a></li>
+          <li><a href="media-press-coverage.html">MEDIA PRESS COVERAGE</a></li>
+          <li><a href="mou.html">MoU</a></li>
+          <li><a href="what-is-neuropi.html#early-edu-section-why">WHY US? WHY NOW?</a></li>
           <li><a href="blower-policy.html">WHISTLE BLOWER POLICY</a></li>
         </ul>
 
@@ -248,8 +251,11 @@
         </svg>
         1. Overview
       </h3>
-      <p>At NeuroPi, we are committed to protecting your privacy and handling your personal data responsibly. This policy outlines how we collect, use, store, and protect your data &mdash; especially your genetic, neurological, and cognitive data.</p>
-      <p>We comply with global privacy regulations, including GDPR, HIPAA (where applicable), and local data protection laws.</p>
+      <p>At NeuroPi, we are committed to protecting your privacy and handling your personal data responsibly. This
+        policy outlines how we collect, use, store, and protect your data &mdash; especially your genetic, neurological,
+        and cognitive data.</p>
+      <p>We comply with global privacy regulations, including GDPR, HIPAA (where applicable), and local data protection
+        laws.</p>
 
       <h3 id="what-we-collect">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#008281" stroke-width="2">
@@ -344,7 +350,8 @@
 
       <h3 id="retention">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#008281" stroke-width="2">
-          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+          <path
+            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
         </svg>
         7. Data Retention
       </h3>
@@ -375,7 +382,8 @@
         </svg>
         9. Children's Privacy
       </h3>
-      <p>NeuroPi is not intended for individuals under the age of 18 without parental or guardian consent. We do not knowingly collect data from minors.</p>
+      <p>NeuroPi is not intended for individuals under the age of 18 without parental or guardian consent. We do not
+        knowingly collect data from minors.</p>
 
       <h3 id="your-rights">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#008281" stroke-width="2">
@@ -400,11 +408,13 @@
         </svg>
         11. Policy Updates
       </h3>
-      <p>We may update this policy to reflect changes in law or our practices. We will notify users via email and/or in-app messages.</p>
+      <p>We may update this policy to reflect changes in law or our practices. We will notify users via email and/or
+        in-app messages.</p>
 
       <h3 id="contact">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#008281" stroke-width="2">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
         </svg>
         12. Contact Us
       </h3>
@@ -610,6 +620,7 @@
         }
 
         @media (max-width: 480px) {
+
           .footer-bottom .footer-left a,
           .footer-bottom .footer-left div {
             font-size: 14px !important;
